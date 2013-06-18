@@ -1,0 +1,5 @@
+suspend-blocker (0.01.00) saucy; urgency=low
+
+  * Initial version 
+
+ -- Colin King <colin.king@canonical.com>  Tue, 18 Jun 2013 18:28:00 +0100

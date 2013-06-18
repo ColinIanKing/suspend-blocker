@@ -1,0 +1,15 @@
+Source: suspend-blocker
+Section: admin
+Priority: optional
+Maintainer: Colin King <colin.king@canonical.com>
+Standards-Version: 3.9.4
+Build-Depends: debhelper (>= 7)
+Homepage: http://kernel.ubuntu.com/~cking/suspend-blocker
+
+Package: suspend-blocker
+Architecture: linux-any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: kernel suspend wakelock blocker diagnostics
+ suspend-blocker examines the kernel log and find the wakelocks
+ that prevent the kernel from suspending.  In the verbose mode
+ it will explain why each suspend got blocked from succeeding.

@@ -1,0 +1,51 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH SUSPEND-BLOCKER 8 "June 13, 2012"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+suspend-blocker \- a tool to measure system events.
+.br
+
+.SH SYNOPSIS
+.B suspend-blocker
+.RI [options] " [kernel-logs]
+.br
+
+.SH DESCRIPTION
+suspend-blocker examines the kernel log and find the wakelocks
+that prevent the kernel from suspending.  In the verbose mode
+it will explain why a suspend got blocked from succeeding. One
+can specify one or more kernel log files to parse. If no file
+is given input is assumed from stdin.
+
+.SH OPTIONS
+suspend-blocker options are as follow:
+.TP
+.B \-h
+show help
+.TP
+.B \-v
+verbose mode, display information on when a suspend was initiated and
+if it succeeded or failed and any wakelocks that caused it to fail.
+.TP
+.B \-b
+display wakelock names that blocked suspend and the number of times that
+suspend got blocked by this wakelock.
+.SH AUTHOR
+suspend-blocker was written by Colin King <colin.king@canonical.com>
+.PP
+This manual page was written by Colin King <colin.king@canonical.com>,
+for the Ubuntu project (but may be used by others).
