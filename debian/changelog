@@ -1,3 +1,10 @@
+suspend-blocker (0.01.02) saucy; urgency=low
+
+  * Makefile: bump version
+  * suspend_blocker.c: remove some debug
+
+ -- Colin King <colin.king@canonical.com>  Thu, 20 Jun 2013 16:35:29 +0100
+
 suspend-blocker (0.01.01) saucy; urgency=low
 
   * Add some example kernel logs for simple testing
