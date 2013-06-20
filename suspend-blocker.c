@@ -192,7 +192,6 @@ static void suspend_blocker(FILE *fp)
 			sscanf(ptr + 17, "%[^,^\n]", wakelock);
 			if (opt_flags & OPT_WAKELOCK_BLOCKERS) {
 				wakelock_increment(wakelock);
-printf("Going to suspend <%s>\n", buf);
 			}
 			state |= STATE_ACTIVE_WAKELOCK;
 			continue;
