@@ -1,0 +1,1815 @@
+[   10.251307] init: startpar-bridge (passwd--stopped) main process (82) exited normally
+[   10.251477] init: startpar-bridge (passwd--stopped) goal changed from start to stop
+[   10.251659] init: startpar-bridge (passwd--stopped) state changed from running to stopping
+[   10.251905] init: startpar-bridge (ubuntu-session--started) main process (84) exited normally
+[   10.252054] init: startpar-bridge (ubuntu-session--started) goal changed from start to stop
+[   10.252238] init: startpar-bridge (ubuntu-session--started) state changed from running to stopping
+[   10.252588] init: startpar-bridge (mounted-run--started) main process (86) exited normally
+[   10.252793] init: startpar-bridge (mounted-run--started) goal changed from start to stop
+[   10.253113] init: startpar-bridge (mounted-run--started) state changed from running to stopping
+[   10.258483] init: Handling stopping event
+[   10.259023] init: flush-early-job-log state changed from stopping to killed
+[   10.259313] init: flush-early-job-log state changed from killed to post-stop
+[   10.259540] init: flush-early-job-log state changed from post-stop to waiting
+[   10.260372] init: Handling stopping event
+[   10.260704] init: startpar-bridge (passwd--stopped) state changed from stopping to killed
+[   10.261005] init: startpar-bridge (passwd--stopped) state changed from killed to post-stop
+[   10.261338] init: startpar-bridge (passwd--stopped) state changed from post-stop to waiting
+[   10.262216] init: Handling stopping event
+[   10.262526] init: startpar-bridge (ubuntu-session--started) state changed from stopping to killed
+[   10.262820] init: startpar-bridge (ubuntu-session--started) state changed from killed to post-stop
+[   10.263099] init: startpar-bridge (ubuntu-session--started) state changed from post-stop to waiting
+[   10.263896] init: Handling stopping event
+[   10.264263] init: startpar-bridge (mounted-run--started) state changed from stopping to killed
+[   10.264628] init: startpar-bridge (mounted-run--started) state changed from killed to post-stop
+[   10.264902] init: startpar-bridge (mounted-run--started) state changed from post-stop to waiting
+[   10.265783] init: Handling stopped event
+[   10.266206] init: startpar-bridge (flush-early-job-log--stopped) goal changed from stop to start
+[   10.266594] init: startpar-bridge (flush-early-job-log--stopped) state changed from waiting to starting
+[   10.267165] init: Handling stopped event
+[   10.267886] init: Handling stopped event
+[   10.268578] init: Handling stopped event
+[   10.269289] init: Handling starting event
+[   10.269708] init: startpar-bridge (flush-early-job-log--stopped) state changed from starting to pre-start
+[   10.270090] init: startpar-bridge (flush-early-job-log--stopped) state changed from pre-start to spawned
+[   10.274067] init: startpar-bridge (flush-early-job-log--stopped) main process (98)
+[   10.274251] init: startpar-bridge (flush-early-job-log--stopped) state changed from spawned to post-start
+[   10.274566] init: startpar-bridge (flush-early-job-log--stopped) state changed from post-start to running
+[   10.275057] init: Handling started event
+[   10.277187] init: Connection from private client
+[   10.278886] init: mounted-run main process (79) exited normally
+[   10.279167] init: mounted-run goal changed from start to stop
+[   10.279720] init: mounted-run state changed from running to stopping
+[   10.280878] init: Handling stopping event
+[   10.281308] init: mounted-run state changed from stopping to killed
+[   10.282038] init: mounted-run state changed from killed to post-stop
+[   10.282545] init: mounted-run state changed from post-stop to waiting
+[   10.285286] init: Handling stopped event
+[   10.285833] init: startpar-bridge (mounted-run--stopped) goal changed from stop to start
+[   10.286202] init: startpar-bridge (mounted-run--stopped) state changed from waiting to starting
+[   10.286933] init: Handling starting event
+[   10.287312] init: startpar-bridge (mounted-run--stopped) state changed from starting to pre-start
+[   10.287904] init: startpar-bridge (mounted-run--stopped) state changed from pre-start to spawned
+[   10.291770] init: startpar-bridge (mounted-run--stopped) main process (108)
+[   10.291913] init: startpar-bridge (mounted-run--stopped) state changed from spawned to post-start
+[   10.292458] init: startpar-bridge (mounted-run--stopped) state changed from post-start to running
+[   10.293398] init: Handling started event
+[   10.295183] init: Connection from private client
+[   10.296918] init: startpar-bridge (flush-early-job-log--stopped) main process (98) exited normally
+[   10.297141] init: startpar-bridge (flush-early-job-log--stopped) goal changed from start to stop
+[   10.297628] init: startpar-bridge (flush-early-job-log--stopped) state changed from running to stopping
+[   10.299709] init: startpar-bridge (mounted-run--stopped) main process (108) exited normally
+[   10.299877] init: startpar-bridge (mounted-run--stopped) goal changed from start to stop
+[   10.300241] init: startpar-bridge (mounted-run--stopped) state changed from running to stopping
+[   10.300658] init: Handling mounted event
+[   10.301235] init: mounted-proc goal changed from stop to start
+[   10.302012] init: mounted-proc state changed from waiting to starting
+[   10.302726] init: Handling stopping event
+[   10.303023] init: startpar-bridge (flush-early-job-log--stopped) state changed from stopping to killed
+[   10.303496] init: startpar-bridge (flush-early-job-log--stopped) state changed from killed to post-stop
+[   10.306323] init: startpar-bridge (flush-early-job-log--stopped) state changed from post-stop to waiting
+[   10.307600] init: Handling stopping event
+[   10.307923] init: startpar-bridge (mounted-run--stopped) state changed from stopping to killed
+[   10.308336] init: startpar-bridge (mounted-run--stopped) state changed from killed to post-stop
+[   10.308710] init: startpar-bridge (mounted-run--stopped) state changed from post-stop to waiting
+[   10.310029] init: Handling starting event
+[   10.310380] init: mounted-proc state changed from starting to pre-start
+[   10.310925] init: mounted-proc state changed from pre-start to spawned
+[   10.316381] init: mounted-proc main process (114)
+[   10.316531] init: mounted-proc state changed from spawned to post-start
+[   10.317248] init: mounted-proc state changed from post-start to running
+[   10.318377] init: Handling stopped event
+[   10.319593] init: Handling stopped event
+[   10.320725] init: Handling started event
+[   10.321340] init: startpar-bridge (mounted-proc--started) goal changed from stop to start
+[   10.321785] init: startpar-bridge (mounted-proc--started) state changed from waiting to starting
+[   10.322578] init: Handling starting event
+[   10.323022] init: startpar-bridge (mounted-proc--started) state changed from starting to pre-start
+[   10.323743] init: startpar-bridge (mounted-proc--started) state changed from pre-start to spawned
+[   10.327745] init: startpar-bridge (mounted-proc--started) main process (120)
+[   10.327904] init: startpar-bridge (mounted-proc--started) state changed from spawned to post-start
+[   10.328520] init: startpar-bridge (mounted-proc--started) state changed from post-start to running
+[   10.329485] init: Handling started event
+[   10.332514] init: Connection from private client
+[   10.333878] init: container-detect pre-start process (81) exited normally
+[   10.334174] init: container-detect state changed from pre-start to spawned
+[   10.334635] init: container-detect state changed from spawned to post-start
+[   10.335113] init: container-detect state changed from post-start to running
+[   10.335547] init: mounted-proc main process (114) exited normally
+[   10.335804] init: mounted-proc goal changed from start to stop
+[   10.336284] init: mounted-proc state changed from running to stopping
+[   10.336753] init: startpar-bridge (mounted-proc--started) main process (120) exited normally
+[   10.336919] init: startpar-bridge (mounted-proc--started) goal changed from start to stop
+[   10.337998] init: startpar-bridge (mounted-proc--started) state changed from running to stopping
+[   10.338527] init: Handling container event
+[   10.339265] init: udev-fallback-graphics goal changed from stop to start
+[   10.339789] init: udev-fallback-graphics state changed from waiting to starting
+[   10.340906] init: networking goal changed from stop to start
+[   10.341302] init: networking state changed from waiting to starting
+[   10.342049] init: network-interface-container goal changed from stop to start
+[   10.342401] init: network-interface-container state changed from waiting to starting
+[   10.342773] init: Handling started event
+[   10.343250] init: startpar-bridge (container-detect--started) goal changed from stop to start
+[   10.343618] init: startpar-bridge (container-detect--started) state changed from waiting to starting
+[   10.344187] init: Handling stopping event
+[   10.344404] init: mounted-proc state changed from stopping to killed
+[   10.344767] init: mounted-proc state changed from killed to post-stop
+[   10.345129] init: mounted-proc state changed from post-stop to waiting
+[   10.346206] init: Handling stopping event
+[   10.346435] init: startpar-bridge (mounted-proc--started) state changed from stopping to killed
+[   10.346801] init: startpar-bridge (mounted-proc--started) state changed from killed to post-stop
+[   10.347157] init: startpar-bridge (mounted-proc--started) state changed from post-stop to waiting
+[   10.348523] init: Handling starting event
+[   10.348881] init: udev-fallback-graphics state changed from starting to pre-start
+[   10.349384] init: udev-fallback-graphics state changed from pre-start to spawned
+[   10.354740] init: udev-fallback-graphics main process (122)
+[   10.355001] init: udev-fallback-graphics state changed from spawned to post-start
+[   10.355639] init: udev-fallback-graphics state changed from post-start to running
+[   10.356440] init: Handling starting event
+[   10.357253] init: network-interface-security (networking) goal changed from stop to start
+[   10.357672] init: network-interface-security (networking) state changed from waiting to starting
+[   10.358085] init: Handling starting event
+[   10.358369] init: network-interface-container state changed from starting to pre-start
+[   10.358737] init: network-interface-container state changed from pre-start to spawned
+[   10.362826] init: network-interface-container main process (123)
+[   10.362965] init: network-interface-container state changed from spawned to post-start
+[   10.363433] init: network-interface-container state changed from post-start to running
+[   10.364214] init: Handling starting event
+[   10.364613] init: startpar-bridge (container-detect--started) state changed from starting to pre-start
+[   10.364993] init: startpar-bridge (container-detect--started) state changed from pre-start to spawned
+[   10.370099] init: startpar-bridge (container-detect--started) main process (124)
+[   10.370248] init: startpar-bridge (container-detect--started) state changed from spawned to post-start
+[   10.370922] init: startpar-bridge (container-detect--started) state changed from post-start to running
+[   10.371930] init: Handling stopped event
+[   10.372711] init: startpar-bridge (mounted-proc--stopped) goal changed from stop to start
+[   10.373274] init: startpar-bridge (mounted-proc--stopped) state changed from waiting to starting
+[   10.374196] init: Handling stopped event
+[   10.375112] init: Handling started event
+[   10.375750] init: startpar-bridge (udev-fallback-graphics--started) goal changed from stop to start
+[   10.376134] init: startpar-bridge (udev-fallback-graphics--started) state changed from waiting to starting
+[   10.376722] init: Handling starting event
+[   10.376999] init: network-interface-security (networking) state changed from starting to pre-start
+[   10.381185] init: network-interface-security (networking) pre-start process (126)
+[   10.381854] init: Handling started event
+[   10.382416] init: startpar-bridge (network-interface-container--started) goal changed from stop to start
+[   10.382794] init: startpar-bridge (network-interface-container--started) state changed from waiting to starting
+[   10.383516] init: Handling started event
+[   10.384172] init: Handling starting event
+[   10.384452] init: startpar-bridge (mounted-proc--stopped) state changed from starting to pre-start
+[   10.384826] init: startpar-bridge (mounted-proc--stopped) state changed from pre-start to spawned
+[   10.388170] init: startpar-bridge (mounted-proc--stopped) main process (127)
+[   10.388383] init: startpar-bridge (mounted-proc--stopped) state changed from spawned to post-start
+[   10.389173] init: startpar-bridge (mounted-proc--stopped) state changed from post-start to running
+[   10.390570] init: Handling starting event
+[   10.391307] init: startpar-bridge (udev-fallback-graphics--started) state changed from starting to pre-start
+[   10.391977] init: startpar-bridge (udev-fallback-graphics--started) state changed from pre-start to spawned
+[   10.398620] init: startpar-bridge (udev-fallback-graphics--started) main process (129)
+[   10.398807] init: startpar-bridge (udev-fallback-graphics--started) state changed from spawned to post-start
+[   10.399657] init: startpar-bridge (udev-fallback-graphics--started) state changed from post-start to running
+[   10.401142] init: Handling starting event
+[   10.402065] init: startpar-bridge (network-interface-container--started) state changed from starting to pre-start
+[   10.402909] init: startpar-bridge (network-interface-container--started) state changed from pre-start to spawned
+[   10.408127] init: startpar-bridge (network-interface-container--started) main process (131)
+[   10.408285] init: startpar-bridge (network-interface-container--started) state changed from spawned to post-start
+[   10.409053] init: startpar-bridge (network-interface-container--started) state changed from post-start to running
+[   10.410400] init: Handling started event
+[   10.411590] init: Handling started event
+[   10.412389] init: Handling started event
+[   10.416249] init: Connection from private client
+[   10.419898] init: network-interface-container main process (123) exited normally
+[   10.420231] init: network-interface-container goal changed from start to stop
+[   10.420827] init: network-interface-container state changed from running to stopping
+[   10.421460] init: startpar-bridge (container-detect--started) main process (124) exited normally
+[   10.421630] init: startpar-bridge (container-detect--started) goal changed from start to stop
+[   10.422113] init: startpar-bridge (container-detect--started) state changed from running to stopping
+[   10.422788] init: network-interface-security (networking) pre-start process (126) exited normally
+[   10.423109] init: network-interface-security (networking) state changed from pre-start to spawned
+[   10.423637] init: network-interface-security (networking) state changed from spawned to post-start
+[   10.428821] init: network-interface-security (networking) state changed from post-start to running
+[   10.429639] init: startpar-bridge (mounted-proc--stopped) main process (127) exited normally
+[   10.429862] init: startpar-bridge (mounted-proc--stopped) goal changed from start to stop
+[   10.430449] init: startpar-bridge (mounted-proc--stopped) state changed from running to stopping
+[   10.431056] init: startpar-bridge (udev-fallback-graphics--started) main process (129) exited normally
+[   10.431227] init: startpar-bridge (udev-fallback-graphics--started) goal changed from start to stop
+[   10.431762] init: startpar-bridge (udev-fallback-graphics--started) state changed from running to stopping
+[   10.432353] init: startpar-bridge (network-interface-container--started) main process (131) exited normally
+[   10.432518] init: startpar-bridge (network-interface-container--started) goal changed from start to stop
+[   10.433044] init: startpar-bridge (network-interface-container--started) state changed from running to stopping
+[   10.433606] init: networking state changed from starting to pre-start
+[   10.437725] init: networking pre-start process (134)
+[   10.438787] init: Handling stopping event
+[   10.439221] init: network-interface-container state changed from stopping to killed
+[   10.439779] init: network-interface-container state changed from killed to post-stop
+[   10.440361] init: network-interface-container state changed from post-stop to waiting
+[   10.442414] init: Handling stopping event
+[   10.442834] init: startpar-bridge (container-detect--started) state changed from stopping to killed
+[   10.443623] init: startpar-bridge (container-detect--started) state changed from killed to post-stop
+[   10.444323] init: startpar-bridge (container-detect--started) state changed from post-stop to waiting
+[   10.446129] init: Handling started event
+[   10.446940] init: startpar-bridge (network-interface-security-networking-started) goal changed from stop to start
+[   10.447575] init: startpar-bridge (network-interface-security-networking-started) state changed from waiting to starting
+[   10.448521] init: Handling stopping event
+[   10.448763] init: startpar-bridge (mounted-proc--stopped) state changed from stopping to killed
+[   10.449317] init: startpar-bridge (mounted-proc--stopped) state changed from killed to post-stop
+[   10.449768] init: startpar-bridge (mounted-proc--stopped) state changed from post-stop to waiting
+[   10.451140] init: Handling stopping event
+[   10.451383] init: startpar-bridge (udev-fallback-graphics--started) state changed from stopping to killed
+[   10.452038] init: startpar-bridge (udev-fallback-graphics--started) state changed from killed to post-stop
+[   10.452624] init: startpar-bridge (udev-fallback-graphics--started) state changed from post-stop to waiting
+[   10.454305] init: Handling stopping event
+[   10.454632] init: startpar-bridge (network-interface-container--started) state changed from stopping to killed
+[   10.455263] init: startpar-bridge (network-interface-container--started) state changed from killed to post-stop
+[   10.455791] init: startpar-bridge (network-interface-container--started) state changed from post-stop to waiting
+[   10.457287] init: Handling stopped event
+[   10.458009] init: startpar-bridge (network-interface-container--stopped) goal changed from stop to start
+[   10.458492] init: startpar-bridge (network-interface-container--stopped) state changed from waiting to starting
+[   10.459293] init: Handling stopped event
+[   10.460084] init: Handling starting event
+[   10.460370] init: startpar-bridge (network-interface-security-networking-started) state changed from starting to pre-start
+[   10.460888] init: startpar-bridge (network-interface-security-networking-started) state changed from pre-start to spawned
+[   10.466690] init: startpar-bridge (network-interface-security-networking-started) main process (135)
+[   10.466871] init: startpar-bridge (network-interface-security-networking-started) state changed from spawned to post-start
+[   10.467849] init: startpar-bridge (network-interface-security-networking-started) state changed from post-start to running
+[   10.469438] init: Handling stopped event
+[   10.470593] init: Handling stopped event
+[   10.471463] init: Handling stopped event
+[   10.472455] init: Handling starting event
+[   10.472762] init: startpar-bridge (network-interface-container--stopped) state changed from starting to pre-start
+[   10.473237] init: startpar-bridge (network-interface-container--stopped) state changed from pre-start to spawned
+[   10.477664] init: startpar-bridge (network-interface-container--stopped) main process (137)
+[   10.477830] init: startpar-bridge (network-interface-container--stopped) state changed from spawned to post-start
+[   10.478635] init: startpar-bridge (network-interface-container--stopped) state changed from post-start to running
+[   10.479893] init: Handling started event
+[   10.480845] init: Handling started event
+[   10.493197] init: rsyslog pre-start process (66) exited normally
+[   10.493755] init: rsyslog state changed from pre-start to spawned
+[   10.499085] init: rsyslog main process (142)
+[   10.499357] init: startpar-bridge (network-interface-security-networking-started) main process (135) exited normally
+[   10.499578] init: startpar-bridge (network-interface-security-networking-started) goal changed from start to stop
+[   10.499898] init: startpar-bridge (network-interface-security-networking-started) state changed from running to stopping
+[   10.500227] init: startpar-bridge (network-interface-container--stopped) main process (137) exited normally
+[   10.500403] init: startpar-bridge (network-interface-container--stopped) goal changed from start to stop
+[   10.500628] init: startpar-bridge (network-interface-container--stopped) state changed from running to stopping
+[   10.500889] init: Handling mounted event
+[   10.501563] init: mounted-dev goal changed from stop to start
+[   10.501800] init: mounted-dev state changed from waiting to starting
+[   10.502137] init: Handling stopping event
+[   10.502422] init: startpar-bridge (network-interface-security-networking-started) state changed from stopping to killed
+[   10.502641] init: startpar-bridge (network-interface-security-networking-started) state changed from killed to post-stop
+[   10.502848] init: startpar-bridge (network-interface-security-networking-started) state changed from post-stop to waiting
+[   10.503475] init: Handling stopping event
+[   10.503811] init: startpar-bridge (network-interface-container--stopped) state changed from stopping to killed
+[   10.504102] init: startpar-bridge (network-interface-container--stopped) state changed from killed to post-stop
+[   10.504387] init: startpar-bridge (network-interface-container--stopped) state changed from post-stop to waiting
+[   10.505261] init: Handling starting event
+[   10.505726] init: mounted-dev state changed from starting to pre-start
+[   10.506029] init: mounted-dev state changed from pre-start to spawned
+[   10.512150] init: mounted-dev main process (147)
+[   10.512331] init: mounted-dev state changed from spawned to post-start
+[   10.512583] init: mounted-dev state changed from post-start to running
+[   10.513001] init: Handling stopped event
+[   10.513614] init: Handling stopped event
+[   10.514080] init: Handling started event
+[   10.514380] init: startpar-bridge (mounted-dev--started) goal changed from stop to start
+[   10.514567] init: startpar-bridge (mounted-dev--started) state changed from waiting to starting
+[   10.514939] init: Handling starting event
+[   10.515209] init: startpar-bridge (mounted-dev--started) state changed from starting to pre-start
+[   10.515397] init: startpar-bridge (mounted-dev--started) state changed from pre-start to spawned
+[   10.521008] init: startpar-bridge (mounted-dev--started) main process (149)
+[   10.521127] init: startpar-bridge (mounted-dev--started) state changed from spawned to post-start
+[   10.521399] init: startpar-bridge (mounted-dev--started) state changed from post-start to running
+[   10.521857] init: Handling started event
+[   10.523844] init: Connection from private client
+[   10.530941] init: startpar-bridge (mounted-dev--started) main process (149) exited normally
+[   10.531115] init: startpar-bridge (mounted-dev--started) goal changed from start to stop
+[   10.531402] init: startpar-bridge (mounted-dev--started) state changed from running to stopping
+[   10.531688] init: Handling static-network-up event
+[   10.532135] init: rc-sysinit goal changed from stop to start
+[   10.532384] init: rc-sysinit state changed from waiting to starting
+[   10.532965] init: procps (static-network-up) goal changed from stop to start
+[   10.533217] init: procps (static-network-up) state changed from waiting to starting
+[   10.533506] init: Handling stopping event
+[   10.533740] init: startpar-bridge (mounted-dev--started) state changed from stopping to killed
+[   10.534011] init: startpar-bridge (mounted-dev--started) state changed from killed to post-stop
+[   10.534267] init: startpar-bridge (mounted-dev--started) state changed from post-stop to waiting
+[   10.534979] init: Handling starting event
+[   10.535258] init: rc-sysinit state changed from starting to pre-start
+[   10.535511] init: rc-sysinit state changed from pre-start to spawned
+[   10.536656] init: Failed to open system console: No such device
+[   10.539553] init: rc-sysinit main process (152)
+[   10.539703] init: rc-sysinit state changed from spawned to post-start
+[   10.540050] init: rc-sysinit state changed from post-start to running
+[   10.540573] init: Handling starting event
+[   10.540968] init: procps (static-network-up) state changed from starting to pre-start
+[   10.541237] init: procps (static-network-up) state changed from pre-start to spawned
+[   10.546897] init: procps (static-network-up) main process (153)
+[   10.547049] init: procps (static-network-up) state changed from spawned to post-start
+[   10.547609] init: procps (static-network-up) state changed from post-start to running
+[   10.548447] init: Handling stopped event
+[   10.550388] init: Handling started event
+[   10.550947] init: startpar-bridge (rc-sysinit--started) goal changed from stop to start
+[   10.551256] init: startpar-bridge (rc-sysinit--started) state changed from waiting to starting
+[   10.551816] init: Handling started event
+[   10.552218] init: startpar-bridge (procps-static-network-up-started) goal changed from stop to start
+[   10.552505] init: startpar-bridge (procps-static-network-up-started) state changed from waiting to starting
+[   10.552983] init: Handling starting event
+[   10.553390] init: startpar-bridge (rc-sysinit--started) state changed from starting to pre-start
+[   10.553750] init: startpar-bridge (rc-sysinit--started) state changed from pre-start to spawned
+[   10.556715] init: startpar-bridge (rc-sysinit--started) main process (156)
+[   10.556844] init: startpar-bridge (rc-sysinit--started) state changed from spawned to post-start
+[   10.557268] init: startpar-bridge (rc-sysinit--started) state changed from post-start to running
+[   10.558016] init: Handling starting event
+[   10.558578] init: startpar-bridge (procps-static-network-up-started) state changed from starting to pre-start
+[   10.559022] init: startpar-bridge (procps-static-network-up-started) state changed from pre-start to spawned
+[   10.562784] init: startpar-bridge (procps-static-network-up-started) main process (158)
+[   10.562939] init: startpar-bridge (procps-static-network-up-started) state changed from spawned to post-start
+[   10.563218] init: startpar-bridge (procps-static-network-up-started) state changed from post-start to running
+[   10.563687] init: Handling started event
+[   10.564382] init: Handling started event
+[   10.569301] init: procps (static-network-up) main process (153) exited normally
+[   10.569556] init: procps (static-network-up) goal changed from start to stop
+[   10.570165] init: procps (static-network-up) state changed from running to stopping
+[   10.570872] init: startpar-bridge (rc-sysinit--started) main process (156) exited normally
+[   10.571119] init: startpar-bridge (rc-sysinit--started) goal changed from start to stop
+[   10.571548] init: startpar-bridge (rc-sysinit--started) state changed from running to stopping
+[   10.571923] init: startpar-bridge (procps-static-network-up-started) main process (158) exited normally
+[   10.572290] init: startpar-bridge (procps-static-network-up-started) goal changed from start to stop
+[   10.572588] init: startpar-bridge (procps-static-network-up-started) state changed from running to stopping
+[   10.572922] init: Handling stopping event
+[   10.573280] init: procps (static-network-up) state changed from stopping to killed
+[   10.573593] init: procps (static-network-up) state changed from killed to post-stop
+[   10.573899] init: procps (static-network-up) state changed from post-stop to waiting
+[   10.574648] init: Handling stopping event
+[   10.574968] init: startpar-bridge (rc-sysinit--started) state changed from stopping to killed
+[   10.575265] init: startpar-bridge (rc-sysinit--started) state changed from killed to post-stop
+[   10.575545] init: startpar-bridge (rc-sysinit--started) state changed from post-stop to waiting
+[   10.576190] init: Handling stopping event
+[   10.576503] init: startpar-bridge (procps-static-network-up-started) state changed from stopping to killed
+[   10.576755] init: startpar-bridge (procps-static-network-up-started) state changed from killed to post-stop
+[   10.576980] init: startpar-bridge (procps-static-network-up-started) state changed from post-stop to waiting
+[   10.577751] init: Handling stopped event
+[   10.578074] init: startpar-bridge (procps-static-network-up-stopped) goal changed from stop to start
+[   10.578300] init: startpar-bridge (procps-static-network-up-stopped) state changed from waiting to starting
+[   10.578725] init: Handling stopped event
+[   10.579167] init: Handling stopped event
+[   10.579854] init: Handling starting event
+[   10.580710] init: startpar-bridge (procps-static-network-up-stopped) state changed from starting to pre-start
+[   10.580955] init: startpar-bridge (procps-static-network-up-stopped) state changed from pre-start to spawned
+[   10.585706] init: startpar-bridge (procps-static-network-up-stopped) main process (164)
+[   10.585853] init: startpar-bridge (procps-static-network-up-stopped) state changed from spawned to post-start
+[   10.586314] init: startpar-bridge (procps-static-network-up-stopped) state changed from post-start to running
+[   10.586910] init: Handling started event
+[   10.589692] init: rsyslog main process (142) executable changed
+[   10.591134] init: startpar-bridge (procps-static-network-up-stopped) main process (164) exited normally
+[   10.591308] init: startpar-bridge (procps-static-network-up-stopped) goal changed from start to stop
+[   10.591475] init: startpar-bridge (procps-static-network-up-stopped) state changed from running to stopping
+[   10.591739] init: Handling stopping event
+[   10.592021] init: startpar-bridge (procps-static-network-up-stopped) state changed from stopping to killed
+[   10.592259] init: startpar-bridge (procps-static-network-up-stopped) state changed from killed to post-stop
+[   10.592509] init: startpar-bridge (procps-static-network-up-stopped) state changed from post-stop to waiting
+[   10.593102] init: Handling stopped event
+[   10.612983] init: mounted-dev main process (147) exited normally
+[   10.613148] init: mounted-dev goal changed from start to stop
+[   10.613449] init: mounted-dev state changed from running to stopping
+[   10.613774] init: Handling stopping event
+[   10.614150] init: mounted-dev state changed from stopping to killed
+[   10.614438] init: mounted-dev state changed from killed to post-stop
+[   10.614751] init: mounted-dev state changed from post-stop to waiting
+[   10.615549] init: Handling stopped event
+[   10.615927] init: startpar-bridge (mounted-dev--stopped) goal changed from stop to start
+[   10.616197] init: startpar-bridge (mounted-dev--stopped) state changed from waiting to starting
+[   10.616759] init: Handling starting event
+[   10.617107] init: startpar-bridge (mounted-dev--stopped) state changed from starting to pre-start
+[   10.617426] init: startpar-bridge (mounted-dev--stopped) state changed from pre-start to spawned
+[   10.620871] init: startpar-bridge (mounted-dev--stopped) main process (168)
+[   10.621007] init: startpar-bridge (mounted-dev--stopped) state changed from spawned to post-start
+[   10.621200] init: startpar-bridge (mounted-dev--stopped) state changed from post-start to running
+[   10.621509] init: Handling started event
+[   10.630599] init: startpar-bridge (mounted-dev--stopped) main process (168) exited normally
+[   10.630847] init: startpar-bridge (mounted-dev--stopped) goal changed from start to stop
+[   10.631234] init: startpar-bridge (mounted-dev--stopped) state changed from running to stopping
+[   10.631633] init: Handling stopping event
+[   10.632073] init: startpar-bridge (mounted-dev--stopped) state changed from stopping to killed
+[   10.632457] init: startpar-bridge (mounted-dev--stopped) state changed from killed to post-stop
+[   10.633016] init: startpar-bridge (mounted-dev--stopped) state changed from post-stop to waiting
+[   10.633819] init: Handling stopped event
+[   10.645538] init: rsyslog main process (142) became new process (174)
+[   10.645675] init: rsyslog state changed from spawned to post-start
+[   10.645874] init: rsyslog state changed from post-start to running
+[   10.646082] init: Handling started event
+[   10.646338] init: startpar-bridge (rsyslog--started) goal changed from stop to start
+[   10.646542] init: startpar-bridge (rsyslog--started) state changed from waiting to starting
+[   10.646990] init: Handling starting event
+[   10.647308] init: startpar-bridge (rsyslog--started) state changed from starting to pre-start
+[   10.647539] init: startpar-bridge (rsyslog--started) state changed from pre-start to spawned
+[   10.652124] init: startpar-bridge (rsyslog--started) main process (175)
+[   10.652276] init: startpar-bridge (rsyslog--started) state changed from spawned to post-start
+[   10.652805] init: startpar-bridge (rsyslog--started) state changed from post-start to running
+[   10.653729] init: Handling started event
+[   10.656114] init: startpar-bridge (rsyslog--started) main process (175) exited normally
+[   10.656330] init: startpar-bridge (rsyslog--started) goal changed from start to stop
+[   10.656638] init: startpar-bridge (rsyslog--started) state changed from running to stopping
+[   10.656982] init: Handling stopping event
+[   10.657280] init: startpar-bridge (rsyslog--started) state changed from stopping to killed
+[   10.657697] init: startpar-bridge (rsyslog--started) state changed from killed to post-stop
+[   10.657983] init: startpar-bridge (rsyslog--started) state changed from post-stop to waiting
+[   10.658710] init: Handling stopped event
+[   10.666822] init: udev-fallback-graphics main process (122) terminated with status 1
+[   10.667177] init: udev-fallback-graphics goal changed from start to stop
+[   10.667432] init: udev-fallback-graphics state changed from running to stopping
+[   10.667778] init: Handling stopping event
+[   10.668064] init: udev-fallback-graphics state changed from stopping to killed
+[   10.668353] init: udev-fallback-graphics state changed from killed to post-stop
+[   10.668635] init: udev-fallback-graphics state changed from post-stop to waiting
+[   10.669466] init: Handling stopped event
+[   10.669895] init: startpar-bridge (udev-fallback-graphics--stopped) goal changed from stop to start
+[   10.671103] init: startpar-bridge (udev-fallback-graphics--stopped) state changed from waiting to starting
+[   10.674202] init: Handling starting event
+[   10.674602] init: startpar-bridge (udev-fallback-graphics--stopped) state changed from starting to pre-start
+[   10.674994] init: startpar-bridge (udev-fallback-graphics--stopped) state changed from pre-start to spawned
+[   10.679920] init: startpar-bridge (udev-fallback-graphics--stopped) main process (180)
+[   10.680056] init: startpar-bridge (udev-fallback-graphics--stopped) state changed from spawned to post-start
+[   10.680329] init: startpar-bridge (udev-fallback-graphics--stopped) state changed from post-start to running
+[   10.680603] init: Handling started event
+[   10.692712] init: startpar-bridge (udev-fallback-graphics--stopped) main process (180) exited normally
+[   10.692988] init: startpar-bridge (udev-fallback-graphics--stopped) goal changed from start to stop
+[   10.693374] init: startpar-bridge (udev-fallback-graphics--stopped) state changed from running to stopping
+[   10.693615] init: Handling stopping event
+[   10.694031] init: startpar-bridge (udev-fallback-graphics--stopped) state changed from stopping to killed
+[   10.694320] init: startpar-bridge (udev-fallback-graphics--stopped) state changed from killed to post-stop
+[   10.694510] init: startpar-bridge (udev-fallback-graphics--stopped) state changed from post-stop to waiting
+[   10.694899] init: Handling stopped event
+[   10.723696] init: upstart-file-bridge main process (80) became new process (195)
+[   10.725341] init: upstart-file-bridge main process (195) became new process (198)
+[   10.725450] init: upstart-file-bridge state changed from spawned to post-start
+[   10.725656] init: upstart-file-bridge state changed from post-start to running
+[   10.725847] init: Handling started event
+[   10.726139] init: startpar-bridge (upstart-file-bridge--started) goal changed from stop to start
+[   10.726321] init: startpar-bridge (upstart-file-bridge--started) state changed from waiting to starting
+[   10.726948] init: Handling starting event
+[   10.727270] init: startpar-bridge (upstart-file-bridge--started) state changed from starting to pre-start
+[   10.727404] init: startpar-bridge (upstart-file-bridge--started) state changed from pre-start to spawned
+[   10.735637] init: startpar-bridge (upstart-file-bridge--started) main process (199)
+[   10.735775] init: startpar-bridge (upstart-file-bridge--started) state changed from spawned to post-start
+[   10.735979] init: startpar-bridge (upstart-file-bridge--started) state changed from post-start to running
+[   10.736240] init: Handling started event
+[   10.743382] init: startpar-bridge (upstart-file-bridge--started) main process (199) exited normally
+[   10.743603] init: startpar-bridge (upstart-file-bridge--started) goal changed from start to stop
+[   10.743823] init: startpar-bridge (upstart-file-bridge--started) state changed from running to stopping
+[   10.744051] init: Handling stopping event
+[   10.744395] init: startpar-bridge (upstart-file-bridge--started) state changed from stopping to killed
+[   10.744624] init: startpar-bridge (upstart-file-bridge--started) state changed from killed to post-stop
+[   10.744854] init: startpar-bridge (upstart-file-bridge--started) state changed from post-stop to waiting
+[   10.745267] init: Handling stopped event
+[   10.802608] init: resolvconf pre-start process (77) exited normally
+[   10.802797] init: resolvconf state changed from pre-start to spawned
+[   10.802989] init: resolvconf state changed from spawned to post-start
+[   10.803117] init: resolvconf state changed from post-start to running
+[   10.803359] init: Handling started event
+[   10.803589] init: startpar-bridge (resolvconf--started) goal changed from stop to start
+[   10.803720] init: startpar-bridge (resolvconf--started) state changed from waiting to starting
+[   10.804111] init: Handling starting event
+[   10.804401] init: startpar-bridge (resolvconf--started) state changed from starting to pre-start
+[   10.804535] init: startpar-bridge (resolvconf--started) state changed from pre-start to spawned
+[   10.807320] init: startpar-bridge (resolvconf--started) main process (213)
+[   10.807440] init: startpar-bridge (resolvconf--started) state changed from spawned to post-start
+[   10.807841] init: startpar-bridge (resolvconf--started) state changed from post-start to running
+[   10.808420] init: Handling started event
+[   10.811964] init: startpar-bridge (resolvconf--started) main process (213) exited normally
+[   10.812168] init: startpar-bridge (resolvconf--started) goal changed from start to stop
+[   10.812338] init: startpar-bridge (resolvconf--started) state changed from running to stopping
+[   10.812503] init: Handling stopping event
+[   10.812791] init: startpar-bridge (resolvconf--started) state changed from stopping to killed
+[   10.812928] init: startpar-bridge (resolvconf--started) state changed from killed to post-stop
+[   10.813053] init: startpar-bridge (resolvconf--started) state changed from post-stop to waiting
+[   10.813357] init: Handling stopped event
+[   10.874031] init: dbus main process (92) became new process (218)
+[   10.874216] init: dbus state changed from spawned to post-start
+[   10.889624] init: dbus post-start process (220)
+[   10.896729] init: Connection from private client
+[   10.898058] init: Reconnecting to system bus
+[   10.901622] init: dbus post-start process (220) exited normally
+[   10.902057] init: dbus state changed from post-start to running
+[   10.902752] init: Handling started event
+[   10.903424] init: startpar-bridge (dbus--started) goal changed from stop to start
+[   10.903903] init: startpar-bridge (dbus--started) state changed from waiting to starting
+[   10.905300] init: systemd-logind goal changed from stop to start
+[   10.906138] init: systemd-logind state changed from waiting to starting
+[   10.907310] init: network-manager goal changed from stop to start
+[   10.907894] init: network-manager state changed from waiting to starting
+[   10.909135] init: ofono goal changed from stop to start
+[   10.909696] init: ofono state changed from waiting to starting
+[   10.910870] init: bluetooth goal changed from stop to start
+[   10.911439] init: bluetooth state changed from waiting to starting
+[   10.912624] init: powerd goal changed from stop to start
+[   10.913176] init: powerd state changed from waiting to starting
+[   10.914344] init: plymouth-upstart-bridge goal changed from stop to start
+[   10.914825] init: plymouth-upstart-bridge state changed from waiting to starting
+[   10.915511] init: Handling starting event
+[   10.915938] init: startpar-bridge (dbus--started) state changed from starting to pre-start
+[   10.916642] init: startpar-bridge (dbus--started) state changed from pre-start to spawned
+[   10.919934] init: startpar-bridge (dbus--started) main process (230)
+[   10.920035] init: startpar-bridge (dbus--started) state changed from spawned to post-start
+[   10.920349] init: startpar-bridge (dbus--started) state changed from post-start to running
+[   10.920936] init: Handling starting event
+[   10.921415] init: systemd-logind state changed from starting to pre-start
+[   10.924973] init: systemd-logind pre-start process (231)
+[   10.925526] init: Handling starting event
+[   10.926321] init: network-interface-security (network-manager) goal changed from stop to start
+[   10.926620] init: network-interface-security (network-manager) state changed from waiting to starting
+[   10.926933] init: Handling starting event
+[   10.927397] init: ofono state changed from starting to pre-start
+[   10.932753] init: ofono pre-start process (233)
+[   10.933547] init: Handling starting event
+[   10.934015] init: bluetooth state changed from starting to pre-start
+[   10.934480] init: bluetooth state changed from pre-start to spawned
+[   10.957432] init: bluetooth main process (235)
+[   10.958942] init: Handling starting event
+[   10.959560] init: powerd state changed from starting to pre-start
+[   10.960178] init: powerd state changed from pre-start to spawned
+[   10.965127] init: powerd main process (238)
+[   10.965276] init: powerd state changed from spawned to post-start
+[   10.965865] init: powerd state changed from post-start to running
+[   10.966858] init: Handling starting event
+[   10.967355] init: plymouth-upstart-bridge state changed from starting to pre-start
+[   10.967949] init: plymouth-upstart-bridge state changed from pre-start to spawned
+[   10.974148] init: Failed to open system console: No such device
+[   10.981211] init: plymouth-upstart-bridge main process (239)
+[   10.981355] init: plymouth-upstart-bridge state changed from spawned to post-start
+[   10.982830] init: plymouth-upstart-bridge state changed from post-start to running
+[   10.986428] init: Handling started event
+[   10.991280] init: Handling starting event
+[   10.991943] init: network-interface-security (network-manager) state changed from starting to pre-start
+[   10.996789] init: network-interface-security (network-manager) pre-start process (243)
+[   10.997581] init: Handling started event
+[   10.998288] init: startpar-bridge (powerd--started) goal changed from stop to start
+[   10.998701] init: startpar-bridge (powerd--started) state changed from waiting to starting
+[   10.999611] init: Handling started event
+[   11.000675] init: startpar-bridge (plymouth-upstart-bridge--started) goal changed from stop to start
+[   11.001616] init: startpar-bridge (plymouth-upstart-bridge--started) state changed from waiting to starting
+[   11.002667] init: Handling starting event
+[   11.003069] init: startpar-bridge (powerd--started) state changed from starting to pre-start
+[   11.003799] init: startpar-bridge (powerd--started) state changed from pre-start to spawned
+[   11.009125] init: startpar-bridge (powerd--started) main process (245)
+[   11.009238] init: startpar-bridge (powerd--started) state changed from spawned to post-start
+[   11.009696] init: startpar-bridge (powerd--started) state changed from post-start to running
+[   11.010294] init: Handling starting event
+[   11.010978] init: startpar-bridge (plymouth-upstart-bridge--started) state changed from starting to pre-start
+[   11.011269] init: startpar-bridge (plymouth-upstart-bridge--started) state changed from pre-start to spawned
+[   11.016078] init: startpar-bridge (plymouth-upstart-bridge--started) main process (249)
+[   11.016227] init: startpar-bridge (plymouth-upstart-bridge--started) state changed from spawned to post-start
+[   11.016604] init: startpar-bridge (plymouth-upstart-bridge--started) state changed from post-start to running
+[   11.017137] init: Handling started event
+[   11.018035] init: Handling started event
+[   11.024426] init: startpar-bridge (dbus--started) main process (230) exited normally
+[   11.024678] init: startpar-bridge (dbus--started) goal changed from start to stop
+[   11.025479] init: startpar-bridge (dbus--started) state changed from running to stopping
+[   11.026291] init: plymouth-upstart-bridge main process (239) terminated with status 1
+[   11.027058] init: plymouth-upstart-bridge goal changed from start to stop
+[   11.028531] init: plymouth-upstart-bridge state changed from running to stopping
+[   11.029463] init: network-interface-security (network-manager) pre-start process (243) exited normally
+[   11.029958] init: network-interface-security (network-manager) state changed from pre-start to spawned
+[   11.030639] init: network-interface-security (network-manager) state changed from spawned to post-start
+[   11.031232] init: network-interface-security (network-manager) state changed from post-start to running
+[   11.031909] init: startpar-bridge (powerd--started) main process (245) exited normally
+[   11.032126] init: startpar-bridge (powerd--started) goal changed from start to stop
+[   11.032767] init: startpar-bridge (powerd--started) state changed from running to stopping
+[   11.033430] init: startpar-bridge (plymouth-upstart-bridge--started) main process (249) exited normally
+[   11.033955] init: startpar-bridge (plymouth-upstart-bridge--started) goal changed from start to stop
+[   11.034657] init: startpar-bridge (plymouth-upstart-bridge--started) state changed from running to stopping
+[   11.035314] init: network-manager state changed from starting to pre-start
+[   11.035914] init: network-manager state changed from pre-start to spawned
+[   11.040189] init: network-manager main process (258)
+[   11.040777] init: Handling stopping event
+[   11.041198] init: startpar-bridge (dbus--started) state changed from stopping to killed
+[   11.043284] init: startpar-bridge (dbus--started) state changed from killed to post-stop
+[   11.043729] init: startpar-bridge (dbus--started) state changed from post-stop to waiting
+[   11.047395] init: Handling stopping event
+[   11.047868] init: plymouth-upstart-bridge state changed from stopping to killed
+[   11.048569] init: plymouth-upstart-bridge state changed from killed to post-stop
+[   11.049181] init: plymouth-upstart-bridge state changed from post-stop to waiting
+[   11.050846] init: Handling started event
+[   11.051757] init: startpar-bridge (network-interface-security-network-manager-started) goal changed from stop to start
+[   11.052535] init: startpar-bridge (network-interface-security-network-manager-started) state changed from waiting to starting
+[   11.053397] init: Handling stopping event
+[   11.053684] init: startpar-bridge (powerd--started) state changed from stopping to killed
+[   11.054223] init: startpar-bridge (powerd--started) state changed from killed to post-stop
+[   11.054784] init: startpar-bridge (powerd--started) state changed from post-stop to waiting
+[   11.056526] init: Handling stopping event
+[   11.056912] init: startpar-bridge (plymouth-upstart-bridge--started) state changed from stopping to killed
+[   11.057569] init: startpar-bridge (plymouth-upstart-bridge--started) state changed from killed to post-stop
+[   11.058175] init: startpar-bridge (plymouth-upstart-bridge--started) state changed from post-stop to waiting
+[   11.059943] init: Handling stopped event
+[   11.060868] init: Handling stopped event
+[   11.061634] init: startpar-bridge (plymouth-upstart-bridge--stopped) goal changed from stop to start
+[   11.062203] init: startpar-bridge (plymouth-upstart-bridge--stopped) state changed from waiting to starting
+[   11.062967] init: Handling starting event
+[   11.063306] init: startpar-bridge (network-interface-security-network-manager-started) state changed from starting to pre-start
+[   11.063850] init: startpar-bridge (network-interface-security-network-manager-started) state changed from pre-start to spawned
+[   11.067781] init: startpar-bridge (network-interface-security-network-manager-started) main process (270)
+[   11.067959] init: startpar-bridge (network-interface-security-network-manager-started) state changed from spawned to post-start
+[   11.068546] init: startpar-bridge (network-interface-security-network-manager-started) state changed from post-start to running
+[   11.069335] init: Handling stopped event
+[   11.070353] init: Handling stopped event
+[   11.071141] init: Handling starting event
+[   11.071492] init: startpar-bridge (plymouth-upstart-bridge--stopped) state changed from starting to pre-start
+[   11.071837] init: startpar-bridge (plymouth-upstart-bridge--stopped) state changed from pre-start to spawned
+[   11.076829] init: startpar-bridge (plymouth-upstart-bridge--stopped) main process (272)
+[   11.077019] init: startpar-bridge (plymouth-upstart-bridge--stopped) state changed from spawned to post-start
+[   11.077883] init: startpar-bridge (plymouth-upstart-bridge--stopped) state changed from post-start to running
+[   11.078920] init: Handling started event
+[   11.080319] init: Handling started event
+[   11.082843] init: Connection from private client
+[   11.084121] init: startpar-bridge (network-interface-security-network-manager-started) main process (270) exited normally
+[   11.084298] init: startpar-bridge (network-interface-security-network-manager-started) goal changed from start to stop
+[   11.084730] init: startpar-bridge (network-interface-security-network-manager-started) state changed from running to stopping
+[   11.085205] init: startpar-bridge (plymouth-upstart-bridge--stopped) main process (272) exited normally
+[   11.085490] init: startpar-bridge (plymouth-upstart-bridge--stopped) goal changed from start to stop
+[   11.085822] init: startpar-bridge (plymouth-upstart-bridge--stopped) state changed from running to stopping
+[   11.086304] init: Handling stopping event
+[   11.086661] init: startpar-bridge (network-interface-security-network-manager-started) state changed from stopping to killed
+[   11.087154] init: startpar-bridge (network-interface-security-network-manager-started) state changed from killed to post-stop
+[   11.088599] init: startpar-bridge (network-interface-security-network-manager-started) state changed from post-stop to waiting
+[   11.090156] init: Handling stopping event
+[   11.090619] init: startpar-bridge (plymouth-upstart-bridge--stopped) state changed from stopping to killed
+[   11.091308] init: startpar-bridge (plymouth-upstart-bridge--stopped) state changed from killed to post-stop
+[   11.092008] init: startpar-bridge (plymouth-upstart-bridge--stopped) state changed from post-stop to waiting
+[   11.093638] init: Handling stopped event
+[   11.094710] init: Handling stopped event
+[   11.098789] init: bluetooth main process (235) became new process (274)
+[   11.098945] init: bluetooth state changed from spawned to post-start
+[   11.105937] init: bluetooth post-start process (277)
+[   11.106449] init: Handling static-network-up event
+[   11.109592] init: procps (static-network-up) goal changed from stop to start
+[   11.110151] init: procps (static-network-up) state changed from waiting to starting
+[   11.110686] init: Handling starting event
+[   11.111121] init: procps (static-network-up) state changed from starting to pre-start
+[   11.116698] init: procps (static-network-up) state changed from pre-start to spawned
+[   11.121403] init: procps (static-network-up) main process (285)
+[   11.121559] init: procps (static-network-up) state changed from spawned to post-start
+[   11.122200] init: procps (static-network-up) state changed from post-start to running
+[   11.123138] init: Handling started event
+[   11.124027] init: startpar-bridge (procps-static-network-up-started) goal changed from stop to start
+[   11.125557] init: startpar-bridge (procps-static-network-up-started) state changed from waiting to starting
+[   11.126932] init: Handling starting event
+[   11.127601] init: startpar-bridge (procps-static-network-up-started) state changed from starting to pre-start
+[   11.129486] init: startpar-bridge (procps-static-network-up-started) state changed from pre-start to spawned
+[   11.133493] init: startpar-bridge (procps-static-network-up-started) main process (291)
+[   11.133637] init: startpar-bridge (procps-static-network-up-started) state changed from spawned to post-start
+[   11.134036] init: startpar-bridge (procps-static-network-up-started) state changed from post-start to running
+[   11.134598] init: Handling started event
+[   11.137798] init: Connection from private client
+[   11.141216] init: procps (static-network-up) main process (285) exited normally
+[   11.141563] init: procps (static-network-up) goal changed from start to stop
+[   11.142105] init: procps (static-network-up) state changed from running to stopping
+[   11.142633] init: startpar-bridge (procps-static-network-up-started) main process (291) exited normally
+[   11.143119] init: startpar-bridge (procps-static-network-up-started) goal changed from start to stop
+[   11.143517] init: startpar-bridge (procps-static-network-up-started) state changed from running to stopping
+[   11.143990] init: Handling stopping event
+[   11.144291] init: procps (static-network-up) state changed from stopping to killed
+[   11.144665] init: procps (static-network-up) state changed from killed to post-stop
+[   11.145644] init: procps (static-network-up) state changed from post-stop to waiting
+[   11.146760] init: Handling stopping event
+[   11.147018] init: startpar-bridge (procps-static-network-up-started) state changed from stopping to killed
+[   11.147412] init: startpar-bridge (procps-static-network-up-started) state changed from killed to post-stop
+[   11.147983] init: startpar-bridge (procps-static-network-up-started) state changed from post-stop to waiting
+[   11.151329] init: Handling stopped event
+[   11.152093] init: startpar-bridge (procps-static-network-up-stopped) goal changed from stop to start
+[   11.152519] init: startpar-bridge (procps-static-network-up-stopped) state changed from waiting to starting
+[   11.153171] init: Handling stopped event
+[   11.154114] init: Handling starting event
+[   11.154480] init: startpar-bridge (procps-static-network-up-stopped) state changed from starting to pre-start
+[   11.155084] init: startpar-bridge (procps-static-network-up-stopped) state changed from pre-start to spawned
+[   11.159975] init: startpar-bridge (procps-static-network-up-stopped) main process (294)
+[   11.160133] init: startpar-bridge (procps-static-network-up-stopped) state changed from spawned to post-start
+[   11.160962] init: startpar-bridge (procps-static-network-up-stopped) state changed from post-start to running
+[   11.164851] init: Handling started event
+[   11.168920] init: Connection from private client
+[   11.170756] init: rc-sysinit main process (152) exited normally
+[   11.171012] init: rc-sysinit goal changed from start to stop
+[   11.171913] init: rc-sysinit state changed from running to stopping
+[   11.172992] init: startpar-bridge (procps-static-network-up-stopped) main process (294) exited normally
+[   11.173313] init: startpar-bridge (procps-static-network-up-stopped) goal changed from start to stop
+[   11.173983] init: startpar-bridge (procps-static-network-up-stopped) state changed from running to stopping
+[   11.175089] init: network-manager main process (258) executable changed
+[   11.175948] init: Handling runlevel event
+[   11.179148] init: rc goal changed from stop to start
+[   11.180839] init: rc state changed from waiting to starting
+[   11.182983] init: alsa-restore goal changed from stop to start
+[   11.183651] init: alsa-restore state changed from waiting to starting
+[   11.185154] init: cron goal changed from stop to start
+[   11.185745] init: cron state changed from waiting to starting
+[   11.187247] init: dmesg goal changed from stop to start
+[   11.188876] init: dmesg state changed from waiting to starting
+[   11.189642] init: Handling stopping event
+[   11.190043] init: rc-sysinit state changed from stopping to killed
+[   11.190821] init: rc-sysinit state changed from killed to post-stop
+[   11.191583] init: rc-sysinit state changed from post-stop to waiting
+[   11.194710] init: Handling stopping event
+[   11.195238] init: startpar-bridge (procps-static-network-up-stopped) state changed from stopping to killed
+[   11.195960] init: startpar-bridge (procps-static-network-up-stopped) state changed from killed to post-stop
+[   11.196759] init: startpar-bridge (procps-static-network-up-stopped) state changed from post-stop to waiting
+[   11.199583] init: Handling starting event
+[   11.200022] init: rc state changed from starting to pre-start
+[   11.201198] init: rc state changed from pre-start to spawned
+[   11.206462] init: Failed to open system console: No such device
+[   11.210981] init: rc main process (316)
+[   11.211186] init: rc state changed from spawned to post-start
+[   11.212032] init: rc state changed from post-start to running
+[   11.213535] init: Handling starting event
+[   11.215211] init: alsa-restore state changed from starting to pre-start
+[   11.217875] init: alsa-restore state changed from pre-start to spawned
+[   11.692430] init: alsa-restore main process (324)
+[   11.692654] init: alsa-restore state changed from spawned to post-start
+[   11.693100] init: alsa-restore state changed from post-start to running
+[   11.694007] init: Handling starting event
+[   11.694645] init: cron state changed from starting to pre-start
+[   11.695414] init: cron state changed from pre-start to spawned
+[   11.756197] init: cron main process (347)
+[   11.759000] init: Handling starting event
+[   11.759665] init: dmesg state changed from starting to pre-start
+[   11.760345] init: dmesg state changed from pre-start to spawned
+[   11.764947] init: dmesg main process (349)
+[   11.765193] init: dmesg state changed from spawned to post-start
+[   11.768665] init: dmesg state changed from post-start to running
+[   11.773103] init: Handling stopped event
+[   11.773998] init: startpar-bridge (rc-sysinit--stopped) goal changed from stop to start
+[   11.774665] init: startpar-bridge (rc-sysinit--stopped) state changed from waiting to starting
+[   11.775699] init: Handling stopped event
+[   11.776879] init: Handling started event
+[   11.778065] init: startpar-bridge (rc--started) goal changed from stop to start
+[   11.778807] init: startpar-bridge (rc--started) state changed from waiting to starting
+[   11.779817] init: Handling started event
+[   11.780840] init: startpar-bridge (alsa-restore--started) goal changed from stop to start
+[   11.781606] init: startpar-bridge (alsa-restore--started) state changed from waiting to starting
+[   11.782691] init: Handling started event
+[   11.783656] init: startpar-bridge (dmesg--started) goal changed from stop to start
+[   11.784462] init: startpar-bridge (dmesg--started) state changed from waiting to starting
+[   11.785524] init: Handling starting event
+[   11.785940] init: startpar-bridge (rc-sysinit--stopped) state changed from starting to pre-start
+[   11.786768] init: startpar-bridge (rc-sysinit--stopped) state changed from pre-start to spawned
+[   11.791517] init: startpar-bridge (rc-sysinit--stopped) main process (352)
+[   11.791649] init: startpar-bridge (rc-sysinit--stopped) state changed from spawned to post-start
+[   11.792323] init: startpar-bridge (rc-sysinit--stopped) state changed from post-start to running
+[   11.793549] init: Handling starting event
+[   11.794053] init: startpar-bridge (rc--started) state changed from starting to pre-start
+[   11.795832] init: startpar-bridge (rc--started) state changed from pre-start to spawned
+[   11.800086] init: startpar-bridge (rc--started) main process (355)
+[   11.800225] init: startpar-bridge (rc--started) state changed from spawned to post-start
+[   11.800618] init: startpar-bridge (rc--started) state changed from post-start to running
+[   11.801256] init: Handling starting event
+[   11.802966] init: startpar-bridge (alsa-restore--started) state changed from starting to pre-start
+[   11.803705] init: startpar-bridge (alsa-restore--started) state changed from pre-start to spawned
+[   11.807182] init: startpar-bridge (alsa-restore--started) main process (357)
+[   11.807320] init: startpar-bridge (alsa-restore--started) state changed from spawned to post-start
+[   11.808216] init: startpar-bridge (alsa-restore--started) state changed from post-start to running
+[   11.808800] init: Handling starting event
+[   11.809486] init: startpar-bridge (dmesg--started) state changed from starting to pre-start
+[   11.810316] init: startpar-bridge (dmesg--started) state changed from pre-start to spawned
+[   11.816983] init: startpar-bridge (dmesg--started) main process (360)
+[   11.817114] init: startpar-bridge (dmesg--started) state changed from spawned to post-start
+[   11.817898] init: startpar-bridge (dmesg--started) state changed from post-start to running
+[   11.818484] init: Handling started event
+[   11.822090] init: Handling started event
+[   11.823171] init: Handling started event
+[   11.826259] init: Handling started event
+[   11.837859] init: Connection from private client
+[   11.843405] init: systemd-logind pre-start process (231) exited normally
+[   11.843628] init: systemd-logind state changed from pre-start to spawned
+[   11.906945] TF : INFO 00000002 09:45:30.563 P-0005 T-0010 TL OTF --------- SDrvCreate
+[   11.906988] TF : INFO 00000003 09:45:30.563 P-0009 T-0018 NV RSA --------- SDrvCreate
+[   11.930297] TF : INFO 00000004 09:45:30.586 ------ ------  --------------- Booted
+[   12.000053] init: systemd-logind main process (366)
+[   12.000171] init: systemd-logind state changed from spawned to post-start
+[   12.000576] init: systemd-logind state changed from post-start to running
+[   12.001034] init: networking pre-start process (134) exited normally
+[   12.001410] init: networking state changed from pre-start to spawned
+[   12.002143] init: networking state changed from spawned to post-start
+[   12.002560] init: networking state changed from post-start to running
+[   12.003448] init: bluetooth post-start process (277) exited normally
+[   12.003629] init: bluetooth state changed from post-start to running
+[   12.004112] init: alsa-restore main process (324) terminated with status 99
+[   12.004869] init: alsa-restore goal changed from start to stop
+[   12.005282] init: alsa-restore state changed from running to stopping
+[   12.005787] init: startpar-bridge (rc-sysinit--stopped) main process (352) exited normally
+[   12.006017] init: startpar-bridge (rc-sysinit--stopped) goal changed from start to stop
+[   12.006599] init: startpar-bridge (rc-sysinit--stopped) state changed from running to stopping
+[   12.007233] init: startpar-bridge (rc--started) main process (355) exited normally
+[   12.008605] init: startpar-bridge (rc--started) goal changed from start to stop
+[   12.009448] init: startpar-bridge (rc--started) state changed from running to stopping
+[   12.012792] init: startpar-bridge (alsa-restore--started) main process (357) exited normally
+[   12.013444] init: startpar-bridge (alsa-restore--started) goal changed from start to stop
+[   12.014076] init: startpar-bridge (alsa-restore--started) state changed from running to stopping
+[   12.014789] init: startpar-bridge (dmesg--started) main process (360) exited normally
+[   12.015010] init: startpar-bridge (dmesg--started) goal changed from start to stop
+[   12.015636] init: startpar-bridge (dmesg--started) state changed from running to stopping
+[   12.017025] init: network-manager main process (258) became new process (369)
+[   12.032888] init: network-manager state changed from spawned to post-start
+[   12.033492] init: network-manager state changed from post-start to running
+[   12.035486] request_suspend_state: wakeup (3->0) at 12038035002 (2000-01-02 09:45:36.123874999 UTC)
+[   12.040700] init: Handling started event
+[   12.041561] init: startpar-bridge (systemd-logind--started) goal changed from stop to start
+[   12.042122] init: startpar-bridge (systemd-logind--started) state changed from waiting to starting
+[   12.044090] init: Handling started event
+[   12.048886] init: startpar-bridge (networking--started) goal changed from stop to start
+[   12.049467] init: startpar-bridge (networking--started) state changed from waiting to starting
+[   12.050249] init: Handling started event
+[   12.050955] init: startpar-bridge (bluetooth--started) goal changed from stop to start
+[   12.051448] init: startpar-bridge (bluetooth--started) state changed from waiting to starting
+[   12.052192] init: Handling stopping event
+[   12.052523] init: alsa-restore state changed from stopping to killed
+[   12.053194] init: alsa-restore state changed from killed to post-stop
+[   12.053731] init: alsa-restore state changed from post-stop to waiting
+[   12.055503] init: Handling stopping event
+[   12.055927] init: startpar-bridge (rc-sysinit--stopped) state changed from stopping to killed
+[   12.056645] init: startpar-bridge (rc-sysinit--stopped) state changed from killed to post-stop
+[   12.057210] init: startpar-bridge (rc-sysinit--stopped) state changed from post-stop to waiting
+[   12.059468] init: Handling stopping event
+[   12.059787] init: startpar-bridge (rc--started) state changed from stopping to killed
+[   12.060268] init: startpar-bridge (rc--started) state changed from killed to post-stop
+[   12.060711] init: startpar-bridge (rc--started) state changed from post-stop to waiting
+[   12.062132] init: Handling stopping event
+[   12.062437] init: startpar-bridge (alsa-restore--started) state changed from stopping to killed
+[   12.067344] init: startpar-bridge (alsa-restore--started) state changed from killed to post-stop
+[   12.069691] init: startpar-bridge (alsa-restore--started) state changed from post-stop to waiting
+[   12.071602] init: Handling stopping event
+[   12.071998] init: startpar-bridge (dmesg--started) state changed from stopping to killed
+[   12.079911] init: startpar-bridge (dmesg--started) state changed from killed to post-stop
+[   12.080885] init: startpar-bridge (dmesg--started) state changed from post-stop to waiting
+[   12.084777] init: Handling started event
+[   12.085806] init: startpar-bridge (network-manager--started) goal changed from stop to start
+[   12.086538] init: startpar-bridge (network-manager--started) state changed from waiting to starting
+[   12.087354] init: Handling container/failed event
+[   12.088893] init: Handling starting event
+[   12.089205] init: startpar-bridge (systemd-logind--started) state changed from starting to pre-start
+[   12.089738] init: startpar-bridge (systemd-logind--started) state changed from pre-start to spawned
+[   12.093399] init: startpar-bridge (systemd-logind--started) main process (390)
+[   12.093525] init: startpar-bridge (systemd-logind--started) state changed from spawned to post-start
+[   12.094206] init: startpar-bridge (systemd-logind--started) state changed from post-start to running
+[   12.095312] init: Handling starting event
+[   12.101046] init: startpar-bridge (networking--started) state changed from starting to pre-start
+[   12.101663] init: startpar-bridge (networking--started) state changed from pre-start to spawned
+[   12.106698] init: startpar-bridge (networking--started) main process (392)
+[   12.106824] init: startpar-bridge (networking--started) state changed from spawned to post-start
+[   12.107540] init: startpar-bridge (networking--started) state changed from post-start to running
+[   12.113268] init: Handling starting event
+[   12.113932] init: startpar-bridge (bluetooth--started) state changed from starting to pre-start
+[   12.114565] init: startpar-bridge (bluetooth--started) state changed from pre-start to spawned
+[   12.119143] init: startpar-bridge (bluetooth--started) main process (394)
+[   12.119300] init: startpar-bridge (bluetooth--started) state changed from spawned to post-start
+[   12.120144] init: startpar-bridge (bluetooth--started) state changed from post-start to running
+[   12.123437] init: Handling stopped event
+[   12.124402] init: startpar-bridge (alsa-restore--stopped) goal changed from stop to start
+[   12.125579] init: startpar-bridge (alsa-restore--stopped) state changed from waiting to starting
+[   12.126622] init: Handling stopped event
+[   12.127893] init: Handling stopped event
+[   12.128814] init: Handling stopped event
+[   12.129724] init: Handling stopped event
+[   12.130566] init: Handling starting event
+[   12.130960] init: startpar-bridge (network-manager--started) state changed from starting to pre-start
+[   12.131623] init: startpar-bridge (network-manager--started) state changed from pre-start to spawned
+[   12.135131] init: startpar-bridge (network-manager--started) main process (396)
+[   12.135260] init: startpar-bridge (network-manager--started) state changed from spawned to post-start
+[   12.135602] init: startpar-bridge (network-manager--started) state changed from post-start to running
+[   12.136410] init: Handling started event
+[   12.137269] init: Handling started event
+[   12.139064] init: Handling started event
+[   12.140356] init: Handling starting event
+[   12.140808] init: startpar-bridge (alsa-restore--stopped) state changed from starting to pre-start
+[   12.141539] init: startpar-bridge (alsa-restore--stopped) state changed from pre-start to spawned
+[   12.145694] init: startpar-bridge (alsa-restore--stopped) main process (399)
+[   12.145831] init: startpar-bridge (alsa-restore--stopped) state changed from spawned to post-start
+[   12.146157] init: startpar-bridge (alsa-restore--stopped) state changed from post-start to running
+[   12.146743] init: Handling started event
+[   12.151808] init: Handling started event
+[   12.161151] init: startpar-bridge (systemd-logind--started) main process (390) exited normally
+[   12.161366] init: startpar-bridge (systemd-logind--started) goal changed from start to stop
+[   12.164728] init: startpar-bridge (systemd-logind--started) state changed from running to stopping
+[   12.167232] init: startpar-bridge (networking--started) main process (392) exited normally
+[   12.168105] init: startpar-bridge (networking--started) goal changed from start to stop
+[   12.168785] init: startpar-bridge (networking--started) state changed from running to stopping
+[   12.169382] init: startpar-bridge (bluetooth--started) main process (394) exited normally
+[   12.169630] init: startpar-bridge (bluetooth--started) goal changed from start to stop
+[   12.170151] init: startpar-bridge (bluetooth--started) state changed from running to stopping
+[   12.173741] init: rc main process (316) exited normally
+[   12.173973] init: rc goal changed from start to stop
+[   12.175621] init: rc state changed from running to stopping
+[   12.176124] init: startpar-bridge (network-manager--started) main process (396) exited normally
+[   12.177151] init: startpar-bridge (network-manager--started) goal changed from start to stop
+[   12.178341] init: startpar-bridge (network-manager--started) state changed from running to stopping
+[   12.180007] init: startpar-bridge (alsa-restore--stopped) main process (399) exited normally
+[   12.180245] init: startpar-bridge (alsa-restore--stopped) goal changed from start to stop
+[   12.180707] init: startpar-bridge (alsa-restore--stopped) state changed from running to stopping
+[   12.181422] init: cron main process (347) became new process (397)
+[   12.181874] init: cron state changed from spawned to post-start
+[   12.182517] init: cron state changed from post-start to running
+[   12.183311] init: Handling stopping event
+[   12.183614] init: startpar-bridge (systemd-logind--started) state changed from stopping to killed
+[   12.184081] init: startpar-bridge (systemd-logind--started) state changed from killed to post-stop
+[   12.184609] init: startpar-bridge (systemd-logind--started) state changed from post-stop to waiting
+[   12.186047] init: Handling stopping event
+[   12.186389] init: startpar-bridge (networking--started) state changed from stopping to killed
+[   12.186919] init: startpar-bridge (networking--started) state changed from killed to post-stop
+[   12.187399] init: startpar-bridge (networking--started) state changed from post-stop to waiting
+[   12.190249] init: Handling stopping event
+[   12.190573] init: startpar-bridge (bluetooth--started) state changed from stopping to killed
+[   12.191036] init: startpar-bridge (bluetooth--started) state changed from killed to post-stop
+[   12.191513] init: startpar-bridge (bluetooth--started) state changed from post-stop to waiting
+[   12.193217] init: Handling stopping event
+[   12.193552] init: rc state changed from stopping to killed
+[   12.194104] init: rc state changed from killed to post-stop
+[   12.194595] init: rc state changed from post-stop to waiting
+[   12.196065] init: Handling stopping event
+[   12.197112] init: startpar-bridge (network-manager--started) state changed from stopping to killed
+[   12.199141] init: startpar-bridge (network-manager--started) state changed from killed to post-stop
+[   12.199904] init: startpar-bridge (network-manager--started) state changed from post-stop to waiting
+[   12.202555] init: Handling stopping event
+[   12.202924] init: startpar-bridge (alsa-restore--stopped) state changed from stopping to killed
+[   12.203432] init: startpar-bridge (alsa-restore--stopped) state changed from killed to post-stop
+[   12.203909] init: startpar-bridge (alsa-restore--stopped) state changed from post-stop to waiting
+[   12.207204] init: Handling started event
+[   12.208871] init: startpar-bridge (cron--started) goal changed from stop to start
+[   12.209363] init: startpar-bridge (cron--started) state changed from waiting to starting
+[   12.210271] init: Handling stopped event
+[   12.211136] init: Handling stopped event
+[   12.211997] init: Handling stopped event
+[   12.212859] init: Handling stopped event
+[   12.213504] init: startpar-bridge (rc--stopped) goal changed from stop to start
+[   12.214520] init: startpar-bridge (rc--stopped) state changed from waiting to starting
+[   12.215552] init: plymouth-stop goal changed from stop to start
+[   12.215951] init: plymouth-stop state changed from waiting to starting
+[   12.216511] init: ureadahead goal changed from start to stop
+[   12.216904] init: ureadahead state changed from running to pre-stop
+[   12.225208] init: ureadahead pre-stop process (412)
+[   12.225332] init: Handling stopped event
+[   12.226366] init: Handling stopped event
+[   12.227167] init: Handling starting event
+[   12.227564] init: startpar-bridge (cron--started) state changed from starting to pre-start
+[   12.228052] init: startpar-bridge (cron--started) state changed from pre-start to spawned
+[   12.233779] init: startpar-bridge (cron--started) main process (413)
+[   12.233920] init: startpar-bridge (cron--started) state changed from spawned to post-start
+[   12.234591] init: startpar-bridge (cron--started) state changed from post-start to running
+[   12.235591] init: Handling starting event
+[   12.236025] init: startpar-bridge (rc--stopped) state changed from starting to pre-start
+[   12.236440] init: startpar-bridge (rc--stopped) state changed from pre-start to spawned
+[   12.242242] init: startpar-bridge (rc--stopped) main process (415)
+[   12.242389] init: startpar-bridge (rc--stopped) state changed from spawned to post-start
+[   12.243075] init: startpar-bridge (rc--stopped) state changed from post-start to running
+[   12.244132] init: Handling starting event
+[   12.244572] init: plymouth-stop state changed from starting to pre-start
+[   12.248134] init: plymouth-stop pre-start process (417)
+[   12.248896] init: Handling started event
+[   12.249949] init: Handling started event
+[   12.254456] init: startpar-bridge (cron--started) main process (413) exited normally
+[   12.254749] init: startpar-bridge (cron--started) goal changed from start to stop
+[   12.255154] init: startpar-bridge (cron--started) state changed from running to stopping
+[   12.255536] init: startpar-bridge (rc--stopped) main process (415) exited normally
+[   12.255779] init: startpar-bridge (rc--stopped) goal changed from start to stop
+[   12.256102] init: startpar-bridge (rc--stopped) state changed from running to stopping
+[   12.256447] init: Handling stopping event
+[   12.256800] init: startpar-bridge (cron--started) state changed from stopping to killed
+[   12.257155] init: startpar-bridge (cron--started) state changed from killed to post-stop
+[   12.258590] init: startpar-bridge (cron--started) state changed from post-stop to waiting
+[   12.259435] init: Handling stopping event
+[   12.259723] init: startpar-bridge (rc--stopped) state changed from stopping to killed
+[   12.260015] init: startpar-bridge (rc--stopped) state changed from killed to post-stop
+[   12.260288] init: startpar-bridge (rc--stopped) state changed from post-stop to waiting
+[   12.261025] init: Handling stopped event
+[   12.261588] init: Handling stopped event
+[   12.269284] init: plymouth-stop pre-start process (417) terminated with status 1
+[   12.270006] init: plymouth-stop goal changed from start to stop
+[   12.270332] init: plymouth-stop state changed from pre-start to stopping
+[   12.270763] init: Handling stopping event
+[   12.271212] init: plymouth-stop state changed from stopping to killed
+[   12.271596] init: plymouth-stop state changed from killed to post-stop
+[   12.271887] init: plymouth-stop state changed from post-stop to waiting
+[   12.272924] init: Handling stopped event
+[   12.273414] init: startpar-bridge (plymouth-stop--stopped) goal changed from stop to start
+[   12.274094] init: startpar-bridge (plymouth-stop--stopped) state changed from waiting to starting
+[   12.278645] init: Handling starting event
+[   12.278946] init: startpar-bridge (plymouth-stop--stopped) state changed from starting to pre-start
+[   12.279612] init: startpar-bridge (plymouth-stop--stopped) state changed from pre-start to spawned
+[   12.298113] init: startpar-bridge (plymouth-stop--stopped) main process (418)
+[   12.298259] init: startpar-bridge (plymouth-stop--stopped) state changed from spawned to post-start
+[   12.298510] init: startpar-bridge (plymouth-stop--stopped) state changed from post-start to running
+[   12.298887] init: Handling started event
+[   12.318216] init: startpar-bridge (plymouth-stop--stopped) main process (418) exited normally
+[   12.318449] init: startpar-bridge (plymouth-stop--stopped) goal changed from start to stop
+[   12.318656] init: startpar-bridge (plymouth-stop--stopped) state changed from running to stopping
+[   12.318874] init: Handling stopping event
+[   12.319217] init: startpar-bridge (plymouth-stop--stopped) state changed from stopping to killed
+[   12.319413] init: startpar-bridge (plymouth-stop--stopped) state changed from killed to post-stop
+[   12.319592] init: startpar-bridge (plymouth-stop--stopped) state changed from post-stop to waiting
+[   12.320067] init: Handling stopped event
+[   12.342545] 
+[   12.342549] Dongle Host Driver, version 5.90.195.104
+[   12.342553] Compiled in drivers/net/wireless/bcmdhd on Jun 19 2013 at 15:26:36
+[   12.342563] wl_android_wifi_on in
+[   12.342569] wifi_set_power = 1
+[   12.342574] Powering on wifi
+[   12.361532] init: dmesg main process (349) exited normally
+[   12.361732] init: dmesg goal changed from start to stop
+[   12.361955] init: dmesg state changed from running to stopping
+[   12.362173] init: Handling stopping event
+[   12.362492] init: dmesg state changed from stopping to killed
+[   12.362714] init: dmesg state changed from killed to post-stop
+[   12.362921] init: dmesg state changed from post-stop to waiting
+[   12.363484] init: Handling stopped event
+[   12.363822] init: startpar-bridge (dmesg--stopped) goal changed from stop to start
+[   12.364027] init: startpar-bridge (dmesg--stopped) state changed from waiting to starting
+[   12.364440] init: Handling starting event
+[   12.364752] init: startpar-bridge (dmesg--stopped) state changed from starting to pre-start
+[   12.364979] init: startpar-bridge (dmesg--stopped) state changed from pre-start to spawned
+[   12.371142] init: startpar-bridge (dmesg--stopped) main process (422)
+[   12.371292] init: startpar-bridge (dmesg--stopped) state changed from spawned to post-start
+[   12.371525] init: startpar-bridge (dmesg--stopped) state changed from post-start to running
+[   12.371890] init: Handling started event
+[   12.377259] init: startpar-bridge (dmesg--stopped) main process (422) exited normally
+[   12.377540] init: startpar-bridge (dmesg--stopped) goal changed from start to stop
+[   12.377746] init: startpar-bridge (dmesg--stopped) state changed from running to stopping
+[   12.377964] init: Handling stopping event
+[   12.378252] init: startpar-bridge (dmesg--stopped) state changed from stopping to killed
+[   12.378426] init: startpar-bridge (dmesg--stopped) state changed from killed to post-stop
+[   12.378587] init: startpar-bridge (dmesg--stopped) state changed from post-stop to waiting
+[   12.379036] init: Handling stopped event
+[   12.687710] =========== WLAN going back to live  ========
+[   12.687735] sdio_reset_comm():
+[   12.743008] init: Connection from private client
+[   12.792122] dhdsdio_write_vars: Download, Upload and compare of NVRAM succeeded.
+[   12.917419] Wake32 for irq=340
+[   12.917541] Wake32 for irq=340
+[   12.917547] Enabling wake32
+[   12.917554] gpio bank wake found: wake32 for irq=67
+[   12.917559] Enabling wake32
+[   12.929589] Firmware up: op_mode=4, Broadcom Dongle Host Driver mac=30:85:a9:61:93:93
+[   12.936354] Firmware version = wl0: Sep 14 2012 13:35:17 version 5.90.195.107 FWID 01-eae76561
+[   12.937290] p2p0: p2p_dev_addr=32:85:a9:61:93:93
+[   13.030170] dhd_rx_frame: net device is NOT registered yet. drop packet
+[   13.030261] dhd_rx_frame: net device is NOT registered yet. drop packet
+[   13.055196] wl_android_wifi_off in
+[   13.064186] Wake32 for irq=340
+[   13.064193] Disabling wake32
+[   13.064200] gpio bank wake found: wake32 for irq=67
+[   13.064204] Disabling wake32
+[   13.064318] wifi_set_power = 0
+[   13.064325] Powering off wifi
+[   13.513826] =========== WLAN placed in RESET ========
+[   13.523182] dhd_prot_ioctl : bus is down. we have nothing to do
+[   13.523196] wlan0: set cur_etheraddr failed
+[   13.526922] wl_android_wifi_on in
+[   13.526938] Powering on wifi
+[   13.797601] iio-buffer, current state requested again
+[   13.861988] =========== WLAN going back to live  ========
+[   13.862001] sdio_reset_comm():
+[   14.033454] Wake32 for irq=340
+[   14.033461] Enabling wake32
+[   14.033467] gpio bank wake found: wake32 for irq=67
+[   14.033472] Enabling wake32
+[   14.052828] p2p0: p2p_dev_addr=32:85:a9:61:93:93
+[   18.951113] init: ofono pre-start process (233) exited normally
+[   18.951331] init: ofono state changed from pre-start to spawned
+[   18.954152] init: ofono main process (511)
+[   19.392613] init: ofono main process (511) executable changed
+[   19.403393] init: ofono main process (511) became new process (512)
+[   19.403679] init: ofono state changed from spawned to post-start
+[   19.403953] init: ofono state changed from post-start to running
+[   19.404461] init: Handling started event
+[   19.404784] init: startpar-bridge (ofono--started) goal changed from stop to start
+[   19.404964] init: startpar-bridge (ofono--started) state changed from waiting to starting
+[   19.405524] init: Handling starting event
+[   19.405945] init: startpar-bridge (ofono--started) state changed from starting to pre-start
+[   19.406180] init: startpar-bridge (ofono--started) state changed from pre-start to spawned
+[   19.412691] init: startpar-bridge (ofono--started) main process (513)
+[   19.412814] init: startpar-bridge (ofono--started) state changed from spawned to post-start
+[   19.413017] init: startpar-bridge (ofono--started) state changed from post-start to running
+[   19.413357] init: Handling started event
+[   19.423588] init: startpar-bridge (ofono--started) main process (513) exited normally
+[   19.423800] init: startpar-bridge (ofono--started) goal changed from start to stop
+[   19.424017] init: startpar-bridge (ofono--started) state changed from running to stopping
+[   19.424227] init: Handling stopping event
+[   19.424535] init: startpar-bridge (ofono--started) state changed from stopping to killed
+[   19.424708] init: startpar-bridge (ofono--started) state changed from killed to post-stop
+[   19.424869] init: startpar-bridge (ofono--started) state changed from post-stop to waiting
+[   19.425334] init: Handling stopped event
+[   24.757472] wlan0: no IPv6 routers present
+[   57.232233] init: ureadahead pre-stop process (412) exited normally
+[   57.234279] init: ureadahead state changed from pre-stop to stopping
+[   57.242410] init: Handling stopping event
+[   57.245385] init: ureadahead state changed from stopping to killed
+[   57.250303] init: Sending TERM signal to ureadahead main process (20)
+[   57.756169] init: ureadahead main process (20) exited normally
+[   57.756656] init: ureadahead state changed from killed to post-stop
+[   57.759698] init: ureadahead state changed from post-stop to waiting
+[   57.762762] init: Handling stopped event
+[   57.764569] init: startpar-bridge (ureadahead--stopped) goal changed from stop to start
+[   57.765849] init: startpar-bridge (ureadahead--stopped) state changed from waiting to starting
+[   57.769780] init: Handling starting event
+[   57.770822] init: startpar-bridge (ureadahead--stopped) state changed from starting to pre-start
+[   57.772269] init: startpar-bridge (ureadahead--stopped) state changed from pre-start to spawned
+[   57.782609] init: startpar-bridge (ureadahead--stopped) main process (612)
+[   57.782748] init: startpar-bridge (ureadahead--stopped) state changed from spawned to post-start
+[   57.783378] init: startpar-bridge (ureadahead--stopped) state changed from post-start to running
+[   57.784289] init: Handling started event
+[   57.785346] init: startpar-bridge (ureadahead--stopped) main process (612) exited normally
+[   57.785548] init: startpar-bridge (ureadahead--stopped) goal changed from start to stop
+[   57.785925] init: startpar-bridge (ureadahead--stopped) state changed from running to stopping
+[   57.786307] init: Handling stopping event
+[   57.786560] init: startpar-bridge (ureadahead--stopped) state changed from stopping to killed
+[   57.786916] init: startpar-bridge (ureadahead--stopped) state changed from killed to post-stop
+[   57.787257] init: startpar-bridge (ureadahead--stopped) state changed from post-stop to waiting
+[   57.789029] init: Handling stopped event
+[   69.917740] gpio_keys: Pressed KEY_VOLUMEUP
+[   70.137610] gpio_keys: Released KEY_VOLUMEUP
+[   71.980995] gpio_keys: Pressed KEY_POWER
+[   71.999000] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[   72.015478] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[   72.032151] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[   72.051920] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[   72.065549] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[   72.082214] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[   72.096885] request_suspend_state: sleep (0->3) at 72099414002 (2000-01-02 09:46:36.185249999 UTC)
+[   72.098518] early_suspend: call handlers
+[   72.098574] [ektf3k]:[elan] elan_ktf3k_ts_suspend: enter
+[   72.104654] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[   72.105004] stop_drawing_early_suspended
+[   72.110257] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[   72.110268] grouper_panel_early_suspended
+[   72.110273] al3010_early_suspend+
+[   72.110630] al3010_early_suspend-
+[   72.110636] early_suspend: sync
+[   72.171127] active wake lock usb_config_wake_lock
+[   72.171170] active wake lock wlan_ctrl_wake, time left 68
+[   72.297580] gpio_keys: Released KEY_POWER
+[   72.312671] request_suspend_state: wakeup (3->0) at 72315183003 (2000-01-02 09:46:36.401020000 UTC)
+[   72.313654] late_resume: call handlers
+[   72.313681] al3010_late_resume+
+[   72.333099] al3010_late_resume-
+[   72.333141] Disp: diff_msec= 228
+[   72.567555] gpio_keys: Pressed KEY_VOLUMEUP
+[   72.710879] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[   72.710908] grouper_panel_late_resumed
+[   72.712848] start_drawing_late_resumed
+[   72.712860] [ektf3k]:[elan] elan_ktf3k_ts_resume: enter
+[   72.713434] [ektf3k]:[elan] dump repsponse: 58
+[   72.713497] late_resume: done
+[   72.797461] gpio_keys: Released KEY_VOLUMEUP
+[  119.254403] wl_bss_connect_done succeeded with 00:22:cf:41:49:c8
+[  119.282369] wl_bss_connect_done succeeded with 00:22:cf:41:49:c8
+[  125.866932] init: Connection from private client
+[  125.881568] init: Connection from private client
+[  125.883303] init: Connection from private client
+[  125.888735] init: Handling net-device-up event
+[  125.889386] init: mountall-net goal changed from stop to start
+[  125.889837] init: mountall-net state changed from waiting to starting
+[  125.890969] init: Handling starting event
+[  125.891323] init: mountall-net state changed from starting to pre-start
+[  125.893328] init: mountall-net state changed from pre-start to spawned
+[  125.905254] init: mountall-net main process (687)
+[  125.905425] init: mountall-net state changed from spawned to post-start
+[  125.905761] init: mountall-net state changed from post-start to running
+[  125.906269] init: Handling started event
+[  125.906662] init: startpar-bridge (mountall-net--started) goal changed from stop to start
+[  125.906945] init: startpar-bridge (mountall-net--started) state changed from waiting to starting
+[  125.908210] init: Handling starting event
+[  125.908600] init: startpar-bridge (mountall-net--started) state changed from starting to pre-start
+[  125.909124] init: startpar-bridge (mountall-net--started) state changed from pre-start to spawned
+[  125.914927] init: startpar-bridge (mountall-net--started) main process (691)
+[  125.915095] init: startpar-bridge (mountall-net--started) state changed from spawned to post-start
+[  125.915510] init: startpar-bridge (mountall-net--started) state changed from post-start to running
+[  125.916202] init: Handling started event
+[  125.926782] init: startpar-bridge (mountall-net--started) main process (691) exited normally
+[  125.927038] init: startpar-bridge (mountall-net--started) goal changed from start to stop
+[  125.927309] init: startpar-bridge (mountall-net--started) state changed from running to stopping
+[  125.927741] init: Handling stopping event
+[  125.928212] init: startpar-bridge (mountall-net--started) state changed from stopping to killed
+[  125.928443] init: startpar-bridge (mountall-net--started) state changed from killed to post-stop
+[  125.928624] init: startpar-bridge (mountall-net--started) state changed from post-stop to waiting
+[  125.929185] init: Handling stopped event
+[  125.930284] init: Connection from private client
+[  125.936210] init: mountall-net main process (687) exited normally
+[  125.936445] init: mountall-net goal changed from start to stop
+[  125.936892] init: mountall-net state changed from running to stopping
+[  125.937300] init: Handling stopping event
+[  125.937750] init: mountall-net state changed from stopping to killed
+[  125.938193] init: mountall-net state changed from killed to post-stop
+[  125.938530] init: mountall-net state changed from post-stop to waiting
+[  125.939524] init: Handling stopped event
+[  125.939970] init: startpar-bridge (mountall-net--stopped) goal changed from stop to start
+[  125.940337] init: startpar-bridge (mountall-net--stopped) state changed from waiting to starting
+[  125.940977] init: Handling starting event
+[  125.941311] init: startpar-bridge (mountall-net--stopped) state changed from starting to pre-start
+[  125.941653] init: startpar-bridge (mountall-net--stopped) state changed from pre-start to spawned
+[  125.946297] init: startpar-bridge (mountall-net--stopped) main process (704)
+[  125.946492] init: startpar-bridge (mountall-net--stopped) state changed from spawned to post-start
+[  125.947059] init: startpar-bridge (mountall-net--stopped) state changed from post-start to running
+[  125.950806] init: Handling started event
+[  125.952678] init: startpar-bridge (mountall-net--stopped) main process (704) exited normally
+[  125.952959] init: startpar-bridge (mountall-net--stopped) goal changed from start to stop
+[  125.953416] init: startpar-bridge (mountall-net--stopped) state changed from running to stopping
+[  125.953900] init: Handling stopping event
+[  125.954220] init: startpar-bridge (mountall-net--stopped) state changed from stopping to killed
+[  125.954663] init: startpar-bridge (mountall-net--stopped) state changed from killed to post-stop
+[  125.956887] init: startpar-bridge (mountall-net--stopped) state changed from post-stop to waiting
+[  125.958291] init: Handling stopped event
+[  131.307506] wlan0: no IPv6 routers present
+[  132.113141] init: Connection from private client
+[  140.994336] adb_release
+[  140.994410] adb_release
+[  140.994556] reset_config : usb reset config wake unlock --
+[  141.012260] adb_open
+[  141.012279] adb_open(adbd)
+[  141.012293] adb_bind_config
+[  141.158428] android_work: sent uevent USB_STATE=DISCONNECTED
+[  141.285781] android_work: sent uevent USB_STATE=CONNECTED
+[  141.294896] set_config : usb set config wake lock ++
+[  141.294965] android_usb gadget: high speed config #1: android
+[  141.295364] android_work: sent uevent USB_STATE=CONFIGURED
+[  178.085914] request_suspend_state: sleep (0->3) at 178088460002 (2013-06-20 14:05:28.094118000 UTC)
+[  178.086270] early_suspend: call handlers
+[  178.086312] [ektf3k]:[elan] elan_ktf3k_ts_suspend: enter
+[  178.086606] stop_drawing_early_suspended
+[  178.092706] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  178.092721] grouper_panel_early_suspended
+[  178.092726] al3010_early_suspend+
+[  178.093097] al3010_early_suspend-
+[  178.093104] early_suspend: sync
+[  178.730645] active wake lock usb_config_wake_lock
+[  178.730660] active wake lock wlan_rx_wake, time left 13
+[  240.432613] init: Connection from private client
+[  240.440639] init: Connection from private client
+[  240.457278] init: Connection from private client
+[  240.514028] init: Connection from private client
+[  240.523684] init: Connection from private client
+[  240.537276] init: Connection from private client
+[  240.546530] init: Connection from private client
+[  240.549439] init: ssh goal changed from stop to start
+[  240.549654] init: ssh state changed from waiting to starting
+[  240.549923] init: Handling starting event
+[  240.550262] init: ssh state changed from starting to pre-start
+[  240.554090] init: ssh pre-start process (721)
+[  240.558957] init: ssh pre-start process (721) exited normally
+[  240.559148] init: ssh state changed from pre-start to spawned
+[  240.561604] init: ssh main process (723)
+[  240.561687] init: ssh state changed from spawned to post-start
+[  240.561942] init: ssh state changed from post-start to running
+[  240.562253] init: Handling started event
+[  240.562628] init: startpar-bridge (ssh--started) goal changed from stop to start
+[  240.562842] init: startpar-bridge (ssh--started) state changed from waiting to starting
+[  240.563453] init: Handling starting event
+[  240.563778] init: startpar-bridge (ssh--started) state changed from starting to pre-start
+[  240.563996] init: startpar-bridge (ssh--started) state changed from pre-start to spawned
+[  240.568561] init: startpar-bridge (ssh--started) main process (724)
+[  240.568688] init: startpar-bridge (ssh--started) state changed from spawned to post-start
+[  240.569512] init: startpar-bridge (ssh--started) state changed from post-start to running
+[  240.570860] init: Handling started event
+[  240.572344] init: startpar-bridge (ssh--started) main process (724) exited normally
+[  240.572543] init: startpar-bridge (ssh--started) goal changed from start to stop
+[  240.573039] init: startpar-bridge (ssh--started) state changed from running to stopping
+[  240.573539] init: Handling stopping event
+[  240.573802] init: startpar-bridge (ssh--started) state changed from stopping to killed
+[  240.575680] init: startpar-bridge (ssh--started) state changed from killed to post-stop
+[  240.576205] init: startpar-bridge (ssh--started) state changed from post-stop to waiting
+[  240.579276] init: Handling stopped event
+[  546.637817] gpio_keys: Pressed KEY_POWER
+[  547.037497] gpio_keys: Released KEY_POWER
+[  547.039041] request_suspend_state: wakeup (3->0) at 547041589001 (2013-06-20 14:11:37.047246999 UTC)
+[  547.039701] late_resume: call handlers
+[  547.039713] al3010_late_resume+
+[  547.057288] al3010_late_resume-
+[  547.057310] Disp: diff_msec= 368970
+[  547.640738] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  547.640753] grouper_panel_late_resumed
+[  547.641613] start_drawing_late_resumed
+[  547.641622] [ektf3k]:[elan] elan_ktf3k_ts_resume: enter
+[  547.642138] [ektf3k]:[elan] dump repsponse: 58
+[  547.642178] late_resume: done
+[  609.002413] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  609.018916] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  609.035584] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  609.052448] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  609.068947] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  609.085609] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  609.102289] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  609.105264] request_suspend_state: sleep (0->3) at 609107799001 (2013-06-20 14:12:39.113451999 UTC)
+[  609.105333] early_suspend: call handlers
+[  609.105460] [ektf3k]:[elan] elan_ktf3k_ts_suspend: enter
+[  609.105988] stop_drawing_early_suspended
+[  609.115275] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  609.115340] grouper_panel_early_suspended
+[  609.115370] al3010_early_suspend+
+[  609.115865] al3010_early_suspend-
+[  609.115896] early_suspend: sync
+[  609.171815] active wake lock usb_config_wake_lock
+[  609.171844] active wake lock wlan_rx_wake, time left 65
+[  634.029274] tegra-otg tegra-otg: PERIPHERAL --> SUSPEND
+[  634.029323] fsl_vbus_session(): vbus_active = 1 and  is_active = 0
+[  634.029451] reset_config : usb reset config wake unlock --
+[  634.029891] adb_release
+[  634.029911] adb_release
+[  634.030791] adb_open
+[  634.030817] adb_open(adbd)
+[  634.030838] adb_bind_config
+[  634.032538] android_work: sent uevent USB_STATE=DISCONNECTED
+[  634.032586] tegra-otg tegra-otg: SUSPEND --> SUSPEND
+[  634.032616] cable_detection_work_handler(): vbus_active = 1 and is_active = 0
+[  634.032637] The USB cable is disconnected.
+[  634.032669] elan-ktf3k 1-0010: Update power source to 0
+[  634.607774] INOK=H
+[  634.607872] ========================================================
+[  634.607896] battery_callback  usb_cable_state = 0
+[  634.607912] ========================================================
+[  634.607930] battery_callback cable_wake_lock 5 sec...
+[  634.607940]  
+[  634.608043] elan-ktf3k 1-0010: Update power source to 0
+[  641.827491] wake lock wlan_rx_wake, expired
+[  641.872983] suspend: enter suspend
+[  641.872996] PM: Syncing filesystems ... done.
+[  641.915367] PM: Preparing system for mem sleep
+[  641.916614] Tegra emc suspend: enabled bridge.emc
+[  641.916633] Tegra cpufreq suspend: setting frequency to 475000 kHz
+[  641.919129] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[  641.937679] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[  641.957571] PM: Entering mem sleep
+[  641.958713] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  641.958734] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  641.958751] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  641.974255] vi vi: suspend status: 0
+[  641.974287] isp isp: suspend status: 0
+[  641.974321] gr2d gr2d: suspend status: 0
+[  641.974349] dsi dsi: suspend status: 0
+[  641.975362] gr3d gr3d: suspend status: 0
+[  641.975402] mpe mpe: suspend status: 0
+[  641.975994] al3010_suspend+
+[  641.976405] al3010_suspend-
+[  641.977243] smb347_suspend+
+[  641.977259] smb347_suspend-
+[  641.977328] tegradc tegradc.1: suspend
+[  642.077509] tegradc tegradc.0: suspend
+[  642.077579] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  642.078130] host1x host1x: suspend status: 0
+[  642.078164] gpio-keys gpio-keys.0: suspending
+[  642.078187] Wake24 for irq=392
+[  642.078198] Enabling wake24
+[  642.078213] gpio-keys gpio-keys.0: suspended
+[  642.078244] [mmc]:sdhci_pltfm_suspend:203 mmc1: ++
+[  642.078301] [mmc]:sdhci_pltfm_suspend:218 mmc1: --
+[  642.078326] [mmc]:sdhci_pltfm_suspend:203 mmc0: ++
+[  642.080711] [mmc]:tegra_sdhci_suspend:847 mmc0: pull up data pin
+[  642.080740] [mmc]:sdhci_pltfm_suspend:218 mmc0: --
+[  642.091854] rt5640_suspend+
+[  642.117151] rt5640_suspend-
+[  642.119377] tegra_otg_suspend(): tegra_otg->intr_reg_data = 0X440001C5
+[  642.119565] PM: suspend of devices complete after 161.258 msecs
+[  642.120741] power_suspend_late return 0
+[  642.120763] PM: late suspend of devices complete after 1.173 msecs
+[  642.120779] Disabling non-boot CPUs ...
+[  642.123654] vfp_pm_suspend: saving vfp state
+[  642.124349] Wake[31-0] level=0x2000090
+[  642.124361] Tegra3 wake[63-32] level=0x1
+[  642.124373] Wake[31-0] enable=0x13041000
+[  642.124384] Tegra3 wake[63-32] enable=0x101
+[  642.124397] Entering suspend state LP0
+[  642.126560] Tegra: switched to LP cluster
+[  642.126623] partition 3d0 is left on before suspend
+[  642.126623] partition vde is left on before suspend
+[  642.126623] partition heg is left on before suspend
+[  642.126623] partition 3d1 is left on before suspend
+[  642.130145] Tegra: switched to G cluster
+[  642.130167] Exited suspend state LP0
+[  642.130181]  legacy wake status=0x0
+[  642.130193]  tegra3 wake status=0x1
+[  642.130206] Resume caused by WAKE32, bcmsdh_sdmmc
+[  642.130344] Suspended for 2.877 seconds
+[  642.130636] Enabling non-boot CPUs ...
+[  642.195485] CPU1 is up
+[  642.201263] PM: early resume of devices complete after 5.754 msecs
+[  642.201492] hall_sensor: [lid_interrupt_handler] LID interrupt handler...gpio: 1..
+[  642.205063] tegra_uart tegra_uart.2: Setting clk_src clk_m
+[  642.205384] tegra_uart tegra_uart.2: Setting clk_src pll_p
+[  642.207066] rt5640_resume+
+[  642.207314] [mmc]:sdhci_pltfm_resume:229 mmc0: ++
+[  642.207395] [mmc]:tegra_sdhci_resume:908 mmc0: disable data pin
+[  642.207431] [mmc]:sdhci_pltfm_resume:242 mmc0: --
+[  642.207451] [mmc]:sdhci_pltfm_resume:229 mmc1: ++
+[  642.209612] wakeup wake lock: wlan_wake
+[  642.210759] [mmc]:sdhci_pltfm_resume:242 mmc1: --
+[  642.210792] gpio-keys gpio-keys.0: resuming
+[  642.210814] Wake24 for irq=392
+[  642.210826] Disabling wake24
+[  642.210851] gpio-keys gpio-keys.0: resumed
+[  642.210870] host1x host1x: resuming
+[  642.210927] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  642.210949] tegradc tegradc.0: resume
+[  642.210967] tegradc tegradc.1: resume
+[  642.211104] smb347_resume+
+[  642.211119] INOK=H
+[  642.211130] ========================================================
+[  642.211144] battery_callback  usb_cable_state = 0
+[  642.211156] ========================================================
+[  642.211180] elan-ktf3k 1-0010: Update power source to 0
+[  642.211450] smb347_resume-
+[  642.212141] al3010_resume+
+[  642.216586] al3010_resume-
+[  642.216890] mpe mpe: resuming
+[  642.216910] gr3d gr3d: resuming
+[  642.216929] dsi dsi: resuming
+[  642.216946] gr2d gr2d: resuming
+[  642.216962] isp isp: resuming
+[  642.216979] vi vi: resuming
+[  642.230885] rt5640_resume-
+[  642.254202] hall_sensor: [lid_report_function] SW_LID report value = 1
+[  642.259197] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  642.259230] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  642.259258] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  642.259721] PM: resume of devices complete after 57.999 msecs
+[  642.274150] tegra_otg_resume(): tegra_otg->intr_reg_data = 0X440001C5
+[  642.274212] tegra-otg tegra-otg: SUSPEND --> SUSPEND
+[  642.274270] PM: Finishing wakeup.
+[  642.274282] Restarting tasks ... mmc0: Starting deferred resume
+[  642.285024] done.
+[  642.285362] Tegra cpufreq resume: restoring frequency to 1200000 kHz
+[  642.285573] Tegra emc resume: disabled bridge.emc
+[  642.285656] suspend: exit suspend, ret = 0 (2013-06-20 14:13:15.164237000 UTC)
+[  642.347203] [mmc]:mmc_read_ext_csd:285 ext_csd.sectors 0xe3e000 prod_name MMC08G BOOT_MULTI 0x10
+[  642.351399] mmc0: Deferred resume completed
+[  644.524132] wake lock wlan_rx_wake, expired
+[  644.575286] suspend: enter suspend
+[  644.575457] PM: Syncing filesystems ... done.
+[  644.615485] PM: Preparing system for mem sleep
+[  644.615612] Tegra emc suspend: enabled bridge.emc
+[  644.615623] Tegra cpufreq suspend: setting frequency to 475000 kHz
+[  644.617526] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[  644.634291] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[  644.654226] PM: Entering mem sleep
+[  644.655369] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  644.655390] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  644.655408] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  644.671110] vi vi: suspend status: 0
+[  644.671142] isp isp: suspend status: 0
+[  644.671174] gr2d gr2d: suspend status: 0
+[  644.671201] dsi dsi: suspend status: 0
+[  644.671236] gr3d gr3d: suspend status: 0
+[  644.671263] mpe mpe: suspend status: 0
+[  644.671849] al3010_suspend+
+[  644.672263] al3010_suspend-
+[  644.673094] smb347_suspend+
+[  644.673109] smb347_suspend-
+[  644.673179] tegradc tegradc.1: suspend
+[  644.774148] tegradc tegradc.0: suspend
+[  644.774217] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  644.774265] host1x host1x: suspend status: 0
+[  644.774288] gpio-keys gpio-keys.0: suspending
+[  644.774309] Wake24 for irq=392
+[  644.774321] Enabling wake24
+[  644.774335] gpio-keys gpio-keys.0: suspended
+[  644.774366] [mmc]:sdhci_pltfm_suspend:203 mmc1: ++
+[  644.774425] [mmc]:sdhci_pltfm_suspend:218 mmc1: --
+[  644.774451] [mmc]:sdhci_pltfm_suspend:203 mmc0: ++
+[  644.776838] [mmc]:tegra_sdhci_suspend:847 mmc0: pull up data pin
+[  644.776861] gpio_request: gpio-208 (PAA0) status -16
+[  644.776876] gpio_request: gpio-209 (PAA1) status -16
+[  644.776890] gpio_request: gpio-210 (PAA2) status -16
+[  644.776904] gpio_request: gpio-211 (PAA3) status -16
+[  644.776918] gpio_request: gpio-212 (PAA4) status -16
+[  644.776932] gpio_request: gpio-213 (PAA5) status -16
+[  644.776946] gpio_request: gpio-214 (PAA6) status -16
+[  644.776960] gpio_request: gpio-215 (PAA7) status -16
+[  644.776980] [mmc]:sdhci_pltfm_suspend:218 mmc0: --
+[  644.787538] rt5640_suspend+
+[  644.812575] rt5640_suspend-
+[  644.814878] tegra_otg_suspend(): tegra_otg->intr_reg_data = 0X440001C5
+[  644.815062] PM: suspend of devices complete after 160.103 msecs
+[  644.816233] power_suspend_late return 0
+[  644.816254] PM: late suspend of devices complete after 1.167 msecs
+[  644.816269] Disabling non-boot CPUs ...
+[  644.816514] vfp_pm_suspend: saving vfp state
+[  644.817202] Wake[31-0] level=0x2000090
+[  644.817215] Tegra3 wake[63-32] level=0x1
+[  644.817226] Wake[31-0] enable=0x13041000
+[  644.817237] Tegra3 wake[63-32] enable=0x101
+[  644.817250] Entering suspend state LP0
+[  644.819417] Tegra: switched to LP cluster
+[  644.819480] partition 3d0 is left on before suspend
+[  644.819480] partition vde is left on before suspend
+[  644.819480] partition heg is left on before suspend
+[  644.819480] partition 3d1 is left on before suspend
+[  644.823002] Tegra: switched to G cluster
+[  644.823023] Exited suspend state LP0
+[  644.823038]  legacy wake status=0x0
+[  644.823049]  tegra3 wake status=0x1
+[  644.823063] Resume caused by WAKE32, bcmsdh_sdmmc
+[  644.823202] Suspended for 3.052 seconds
+[  644.829268] PM: early resume of devices complete after 5.762 msecs
+[  644.829499] hall_sensor: [lid_interrupt_handler] LID interrupt handler...gpio: 1..
+[  644.832823] tegra_uart tegra_uart.2: Setting clk_src clk_m
+[  644.833121] tegra_uart tegra_uart.2: Setting clk_src pll_p
+[  644.834806] rt5640_resume+
+[  644.835057] [mmc]:sdhci_pltfm_resume:229 mmc0: ++
+[  644.835136] [mmc]:tegra_sdhci_resume:908 mmc0: disable data pin
+[  644.835172] [mmc]:sdhci_pltfm_resume:242 mmc0: --
+[  644.835193] [mmc]:sdhci_pltfm_resume:229 mmc1: ++
+[  644.837357] wakeup wake lock: wlan_wake
+[  644.838591] [mmc]:sdhci_pltfm_resume:242 mmc1: --
+[  644.838623] gpio-keys gpio-keys.0: resuming
+[  644.838644] Wake24 for irq=392
+[  644.838656] Disabling wake24
+[  644.838682] gpio-keys gpio-keys.0: resumed
+[  644.838700] host1x host1x: resuming
+[  644.838758] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  644.838781] tegradc tegradc.0: resume
+[  644.838798] tegradc tegradc.1: resume
+[  644.838929] smb347_resume+
+[  644.838944] INOK=H
+[  644.838955] ========================================================
+[  644.838969] battery_callback  usb_cable_state = 0
+[  644.838980] ========================================================
+[  644.839006] elan-ktf3k 1-0010: Update power source to 0
+[  644.839276] smb347_resume-
+[  644.839957] al3010_resume+
+[  644.844279] al3010_resume-
+[  644.844574] mpe mpe: resuming
+[  644.844594] gr3d gr3d: resuming
+[  644.844613] dsi dsi: resuming
+[  644.844630] gr2d gr2d: resuming
+[  644.844648] isp isp: resuming
+[  644.844665] vi vi: resuming
+[  644.858574] rt5640_resume-
+[  644.880795] hall_sensor: [lid_report_function] SW_LID report value = 1
+[  644.885790] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  644.885822] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  644.885849] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  644.886306] PM: resume of devices complete after 56.577 msecs
+[  644.900797] tegra_otg_resume(): tegra_otg->intr_reg_data = 0X440001C5
+[  644.900863] PM: Finishing wakeup.
+[  644.900875] Restarting tasks ... 
+[  644.901297] tegra-otg tegra-otg: SUSPEND --> SUSPEND
+[  644.922787] done.
+[  644.923102] Tegra cpufreq resume: restoring frequency to 1300000 kHz
+[  644.923131] Tegra emc resume: disabled bridge.emc
+[  644.923380] suspend: exit suspend, ret = 0 (2013-06-20 14:13:20.847104000 UTC)
+[  647.210804] wake lock wlan_rx_wake, expired
+[  647.212821] mmc0: Starting deferred resume
+[  647.292114] [mmc]:mmc_read_ext_csd:285 ext_csd.sectors 0xe3e000 prod_name MMC08G BOOT_MULTI 0x10
+[  647.299274] mmc0: Deferred resume completed
+[  647.343711] suspend: enter suspend
+[  647.343826] PM: Syncing filesystems ... done.
+[  647.404993] PM: Preparing system for mem sleep
+[  647.405197] Tegra emc suspend: enabled bridge.emc
+[  647.405215] Tegra cpufreq suspend: setting frequency to 475000 kHz
+[  647.406370] Freezing user space processes ... 
+[  647.410216] active wake lock wlan_rx_wake, time left 89
+[  647.410235] 
+[  647.410246] Freezing of user space  aborted
+[  647.410624] 
+[  647.410633] Restarting tasks ... done.
+[  647.416637] Tegra cpufreq resume: restoring frequency to 640000 kHz
+[  647.417456] Tegra emc resume: disabled bridge.emc
+[  647.417888] suspend: exit suspend, ret = -16 (2013-06-20 14:13:23.341605000 UTC)
+[  648.290950] wake lock wlan_rx_wake, expired
+[  648.341880] suspend: enter suspend
+[  648.341907] PM: Syncing filesystems ... done.
+[  648.381157] PM: Preparing system for mem sleep
+[  648.381273] Tegra emc suspend: enabled bridge.emc
+[  648.381283] Tegra cpufreq suspend: setting frequency to 475000 kHz
+[  648.383158] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[  648.400896] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[  648.420895] PM: Entering mem sleep
+[  648.422037] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  648.422057] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  648.422075] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  648.437459] vi vi: suspend status: 0
+[  648.437491] isp isp: suspend status: 0
+[  648.437522] gr2d gr2d: suspend status: 0
+[  648.437549] dsi dsi: suspend status: 0
+[  648.437585] gr3d gr3d: suspend status: 0
+[  648.437612] mpe mpe: suspend status: 0
+[  648.438192] al3010_suspend+
+[  648.438600] al3010_suspend-
+[  648.439428] smb347_suspend+
+[  648.439444] smb347_suspend-
+[  648.439513] tegradc tegradc.1: suspend
+[  648.540785] tegradc tegradc.0: suspend
+[  648.540854] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  648.540901] host1x host1x: suspend status: 0
+[  648.540924] gpio-keys gpio-keys.0: suspending
+[  648.540945] Wake24 for irq=392
+[  648.540957] Enabling wake24
+[  648.540972] gpio-keys gpio-keys.0: suspended
+[  648.541003] [mmc]:sdhci_pltfm_suspend:203 mmc1: ++
+[  648.541060] [mmc]:sdhci_pltfm_suspend:218 mmc1: --
+[  648.541086] [mmc]:sdhci_pltfm_suspend:203 mmc0: ++
+[  648.543474] [mmc]:tegra_sdhci_suspend:847 mmc0: pull up data pin
+[  648.543496] gpio_request: gpio-208 (PAA0) status -16
+[  648.543511] gpio_request: gpio-209 (PAA1) status -16
+[  648.543526] gpio_request: gpio-210 (PAA2) status -16
+[  648.543539] gpio_request: gpio-211 (PAA3) status -16
+[  648.543553] gpio_request: gpio-212 (PAA4) status -16
+[  648.543567] gpio_request: gpio-213 (PAA5) status -16
+[  648.543581] gpio_request: gpio-214 (PAA6) status -16
+[  648.543594] gpio_request: gpio-215 (PAA7) status -16
+[  648.543615] [mmc]:sdhci_pltfm_suspend:218 mmc0: --
+[  648.554138] rt5640_suspend+
+[  648.579212] rt5640_suspend-
+[  648.581495] tegra_otg_suspend(): tegra_otg->intr_reg_data = 0X440001C5
+[  648.581677] PM: suspend of devices complete after 160.049 msecs
+[  648.582799] power_suspend_late return 0
+[  648.582821] PM: late suspend of devices complete after 1.120 msecs
+[  648.582837] Disabling non-boot CPUs ...
+[  648.583079] vfp_pm_suspend: saving vfp state
+[  648.583765] Wake[31-0] level=0x2000090
+[  648.583777] Tegra3 wake[63-32] level=0x1
+[  648.583789] Wake[31-0] enable=0x13041000
+[  648.583800] Tegra3 wake[63-32] enable=0x101
+[  648.583813] Entering suspend state LP0
+[  648.585968] Tegra: switched to LP cluster
+[  648.586030] partition 3d0 is left on before suspend
+[  648.586030] partition vde is left on before suspend
+[  648.586030] partition heg is left on before suspend
+[  648.586030] partition 3d1 is left on before suspend
+[  648.589552] Tegra: switched to G cluster
+[  648.589574] Exited suspend state LP0
+[  648.589588]  legacy wake status=0x0
+[  648.589600]  tegra3 wake status=0x1
+[  648.589614] Resume caused by WAKE32, bcmsdh_sdmmc
+[  648.589751] Suspended for 2.689 seconds
+[  648.595814] PM: early resume of devices complete after 5.759 msecs
+[  648.596043] hall_sensor: [lid_interrupt_handler] LID interrupt handler...gpio: 1..
+[  648.599360] tegra_uart tegra_uart.2: Setting clk_src clk_m
+[  648.599656] tegra_uart tegra_uart.2: Setting clk_src pll_p
+[  648.601345] rt5640_resume+
+[  648.601594] [mmc]:sdhci_pltfm_resume:229 mmc0: ++
+[  648.601674] [mmc]:tegra_sdhci_resume:908 mmc0: disable data pin
+[  648.601710] [mmc]:sdhci_pltfm_resume:242 mmc0: --
+[  648.601731] [mmc]:sdhci_pltfm_resume:229 mmc1: ++
+[  648.603894] wakeup wake lock: wlan_wake
+[  648.604645] [mmc]:sdhci_pltfm_resume:242 mmc1: --
+[  648.604676] gpio-keys gpio-keys.0: resuming
+[  648.604697] Wake24 for irq=392
+[  648.604709] Disabling wake24
+[  648.604735] gpio-keys gpio-keys.0: resumed
+[  648.604754] host1x host1x: resuming
+[  648.604812] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  648.604835] tegradc tegradc.0: resume
+[  648.604852] tegradc tegradc.1: resume
+[  648.604984] smb347_resume+
+[  648.604999] INOK=H
+[  648.605010] ========================================================
+[  648.605024] battery_callback  usb_cable_state = 0
+[  648.605036] ========================================================
+[  648.605062] elan-ktf3k 1-0010: Update power source to 0
+[  648.605332] smb347_resume-
+[  648.606012] al3010_resume+
+[  648.610313] al3010_resume-
+[  648.610607] mpe mpe: resuming
+[  648.610627] gr3d gr3d: resuming
+[  648.610646] dsi dsi: resuming
+[  648.610664] gr2d gr2d: resuming
+[  648.610681] isp isp: resuming
+[  648.610698] vi vi: resuming
+[  648.625132] rt5640_resume-
+[  648.647432] hall_sensor: [lid_report_function] SW_LID report value = 1
+[  648.652725] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  648.652757] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  648.652784] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  648.653264] PM: resume of devices complete after 56.990 msecs
+[  648.667423] tegra_otg_resume(): tegra_otg->intr_reg_data = 0X440001C5
+[  648.667488] PM: Finishing wakeup.
+[  648.667501] Restarting tasks ... 
+[  648.667932] tegra-otg tegra-otg: SUSPEND --> SUSPEND
+[  648.689965] done.
+[  648.690281] Tegra cpufreq resume: restoring frequency to 1300000 kHz
+[  648.690311] Tegra emc resume: disabled bridge.emc
+[  648.690549] suspend: exit suspend, ret = 0 (2013-06-20 14:13:27.296722999 UTC)
+[  649.717387] wake lock wlan_rx_wake, expired
+[  649.718566] mmc0: Starting deferred resume
+[  649.790771] [mmc]:mmc_read_ext_csd:285 ext_csd.sectors 0xe3e000 prod_name MMC08G BOOT_MULTI 0x10
+[  649.794988] mmc0: Deferred resume completed
+[  649.839695] suspend: enter suspend
+[  649.839726] PM: Syncing filesystems ... done.
+[  649.890970] PM: Preparing system for mem sleep
+[  649.891089] Tegra emc suspend: enabled bridge.emc
+[  649.891100] Tegra cpufreq suspend: setting frequency to 475000 kHz
+[  649.892991] Freezing user space processes ... 
+[  649.896862] active wake lock wlan_rx_wake, time left 94
+[  649.896881] 
+[  649.896892] Freezing of user space  aborted
+[  649.897534] 
+[  649.897547] Restarting tasks ... done.
+[  649.903498] Tegra cpufreq resume: restoring frequency to 340000 kHz
+[  649.904512] Tegra emc resume: disabled bridge.emc
+[  649.905140] suspend: exit suspend, ret = -16 (2013-06-20 14:13:28.511296000 UTC)
+[  650.827368] wake lock wlan_rx_wake, expired
+[  650.864042] suspend: enter suspend
+[  650.864068] PM: Syncing filesystems ... done.
+[  650.900781] PM: Preparing system for mem sleep
+[  650.900934] Tegra emc suspend: enabled bridge.emc
+[  650.900947] Tegra cpufreq suspend: setting frequency to 475000 kHz
+[  650.902628] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[  650.917544] Freezing remaining freezable tasks ... 
+[  650.937429] gpio_keys: Pressed KEY_POWER
+[  650.937603] (elapsed 0.02 seconds) done.
+[  650.937623] PM: Entering mem sleep
+[  650.938763] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  650.938784] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  650.938802] [mmc]:mmc_queue_suspend:354 mmc0: blk_stop_queue start
+[  650.954426] vi vi: suspend status: 0
+[  650.954458] isp isp: suspend status: 0
+[  650.954491] gr2d gr2d: suspend status: 0
+[  650.954518] dsi dsi: suspend status: 0
+[  650.954553] gr3d gr3d: suspend status: 0
+[  650.954581] mpe mpe: suspend status: 0
+[  650.955167] al3010_suspend+
+[  650.955578] al3010_suspend-
+[  650.956406] smb347_suspend+
+[  650.956422] smb347_suspend-
+[  650.956491] tegradc tegradc.1: suspend
+[  651.057417] tegradc tegradc.0: suspend
+[  651.057490] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  651.057538] host1x host1x: suspend status: 0
+[  651.057561] gpio-keys gpio-keys.0: suspending
+[  651.057584] Wake24 for irq=392
+[  651.057596] Enabling wake24
+[  651.057610] gpio-keys gpio-keys.0: suspended
+[  651.057640] [mmc]:sdhci_pltfm_suspend:203 mmc1: ++
+[  651.057699] [mmc]:sdhci_pltfm_suspend:218 mmc1: --
+[  651.057726] [mmc]:sdhci_pltfm_suspend:203 mmc0: ++
+[  651.060113] [mmc]:tegra_sdhci_suspend:847 mmc0: pull up data pin
+[  651.060134] gpio_request: gpio-208 (PAA0) status -16
+[  651.060149] gpio_request: gpio-209 (PAA1) status -16
+[  651.060164] gpio_request: gpio-210 (PAA2) status -16
+[  651.060177] gpio_request: gpio-211 (PAA3) status -16
+[  651.060191] gpio_request: gpio-212 (PAA4) status -16
+[  651.060205] gpio_request: gpio-213 (PAA5) status -16
+[  651.060218] gpio_request: gpio-214 (PAA6) status -16
+[  651.060231] gpio_request: gpio-215 (PAA7) status -16
+[  651.060252] [mmc]:sdhci_pltfm_suspend:218 mmc0: --
+[  651.070815] rt5640_suspend+
+[  651.095851] rt5640_suspend-
+[  651.098067] tegra_otg_suspend(): tegra_otg->intr_reg_data = 0X440001C5
+[  651.098255] PM: suspend of devices complete after 159.899 msecs
+[  651.099433] active wake lock event2-238
+[  651.099448] active wake lock event2-132
+[  651.099460] power_suspend_late return -11
+[  651.099501] pm_noirq_op(): platform_pm_suspend_noirq+0x0/0x40 returns -11
+[  651.099660] PM: Device power.0 failed to suspend late: error -11
+[  651.105489] PM: early resume of devices complete after 5.568 msecs
+[  651.105847] PM: Some devices failed to power down
+[  651.109113] tegra_uart tegra_uart.2: Setting clk_src clk_m
+[  651.109415] tegra_uart tegra_uart.2: Setting clk_src pll_p
+[  651.110859] rt5640_resume+
+[  651.111099] [mmc]:sdhci_pltfm_resume:229 mmc0: ++
+[  651.111177] [mmc]:tegra_sdhci_resume:908 mmc0: disable data pin
+[  651.111212] [mmc]:sdhci_pltfm_resume:242 mmc0: --
+[  651.111231] [mmc]:sdhci_pltfm_resume:229 mmc1: ++
+[  651.113377] [mmc]:sdhci_pltfm_resume:242 mmc1: --
+[  651.113403] gpio-keys gpio-keys.0: resuming
+[  651.113423] Wake24 for irq=392
+[  651.113434] Disabling wake24
+[  651.113466] gpio-keys gpio-keys.0: resumed
+[  651.113485] host1x host1x: resuming
+[  651.113536] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  651.113558] tegradc tegradc.0: resume
+[  651.113576] tegradc tegradc.1: resume
+[  651.113703] smb347_resume+
+[  651.113719] INOK=H
+[  651.113730] ========================================================
+[  651.113744] battery_callback  usb_cable_state = 0
+[  651.113755] ========================================================
+[  651.113780] elan-ktf3k 1-0010: Update power source to 0
+[  651.114051] smb347_resume-
+[  651.114727] al3010_resume+
+[  651.119033] al3010_resume-
+[  651.119317] mpe mpe: resuming
+[  651.119337] gr3d gr3d: resuming
+[  651.119355] dsi dsi: resuming
+[  651.119372] gr2d gr2d: resuming
+[  651.119389] isp isp: resuming
+[  651.119406] vi vi: resuming
+[  651.134657] rt5640_resume-
+[  651.162415] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  651.162447] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  651.162474] [mmc]:mmc_queue_resume:375 mmc0: blk_start_queue start
+[  651.162943] PM: resume of devices complete after 56.946 msecs
+[  651.177427] tegra_otg_resume(): tegra_otg->intr_reg_data = 0X440001C5
+[  651.177472] PM: Finishing wakeup.
+[  651.177483] Restarting tasks ... 
+[  651.189953] request_suspend_state: wakeup (3->0) at 651172592003 (2013-06-20 14:13:29.796105000 UTC)
+[  651.199237] done.
+[  651.199593] Tegra cpufreq resume: restoring frequency to 1300000 kHz
+[  651.199622] Tegra emc resume: disabled bridge.emc
+[  651.199856] suspend: exit suspend, ret = -11 (2013-06-20 14:13:29.806030999 UTC)
+[  651.199865] late_resume: call handlers
+[  651.199870] al3010_late_resume+
+[  651.217370] al3010 debug log : light sensor chip is resumed
+[  651.217381] al3010_late_resume-
+[  651.217392] Disp: diff_msec= 50709
+[  651.237408] gpio_keys: Released KEY_POWER
+[  651.657512] tegra_pwm tegra_pwm.0: pwm_disable called on disabled PWM
+[  651.657536] grouper_panel_late_resumed
+[  651.657554] start_drawing_late_resumed
+[  651.657561] [ektf3k]:[elan] elan_ktf3k_ts_resume: enter
+[  651.658286] [ektf3k]:[elan] dump repsponse: 58
+[  651.658385] late_resume: done
+[  656.179516] mmc0: Starting deferred resume
+[  656.250354] [mmc]:mmc_read_ext_csd:285 ext_csd.sectors 0xe3e000 prod_name MMC08G BOOT_MULTI 0x10
+[  656.254649] mmc0: Deferred resume completed

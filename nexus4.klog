@@ -1,0 +1,2275 @@
+2013-06-20 14:16:08.565082479 UTC)
+[ 2476.670867] suspend: enter suspend
+[ 2476.670898] PM: suspend entry 2013-06-20 14:16:08.566181212 UTC
+[ 2476.671234] Freezing user space processes ... 
+[ 2476.680848] PM: Syncing filesystems...
+[ 2476.694979] (elapsed 0.02 seconds) done.
+[ 2476.720768] sync done.
+[ 2476.944269] Freezing remaining freezable tasks ... 
+[ 2476.945246] active wake lock smd_sns_dsps, time left 196
+[ 2476.945276] 
+[ 2476.945276] Freezing of tasks  aborted
+[ 2476.945520] 
+[ 2476.945551] Restarting kernel threads ... done.
+[ 2476.946192] Restarting tasks ... 
+[ 2476.954463] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2476.954493] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2476.954798] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2476.954829] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2476.965969] done.
+[ 2476.969265] PM: suspend exit 2013-06-20 14:16:08.864517852 UTC
+[ 2476.969326] suspend: exit suspend, ret = -16 (2013-06-20 14:16:08.864578893 UTC)
+[ 2476.970364] suspend: enter suspend
+[ 2476.970394] PM: suspend entry 2013-06-20 14:16:08.865677626 UTC
+[ 2476.970944] Freezing user space processes ... 
+[ 2476.980588] PM: Syncing filesystems...
+[ 2476.994994] (elapsed 0.02 seconds) done.
+[ 2477.024995] sync done.
+[ 2477.244223] Freezing remaining freezable tasks ... 
+[ 2477.245200] active wake lock smd_sns_dsps, time left 186
+[ 2477.245200] 
+[ 2477.245230] Freezing of tasks  aborted
+[ 2477.245475] 
+[ 2477.245505] Restarting kernel threads ... done.
+[ 2477.246146] Restarting tasks ... 
+[ 2477.254020] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2477.254081] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2477.254631] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2477.254692] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2477.271142] done.
+[ 2477.277338] PM: suspend exit 2013-06-20 14:16:09.172590489 UTC
+[ 2477.277399] suspend: exit suspend, ret = -16 (2013-06-20 14:16:09.172651530 UTC)
+[ 2477.277429] suspend: enter suspend
+[ 2477.277490] PM: suspend entry 2013-06-20 14:16:09.172743091 UTC
+[ 2477.277521] PM: Syncing filesystems...
+[ 2477.285914] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[ 2477.329222] sync done.
+[ 2477.564229] Freezing remaining freezable tasks ... 
+[ 2477.565145] active wake lock smd_sns_dsps, time left 194
+[ 2477.565175] 
+[ 2477.565175] Freezing of tasks  aborted
+[ 2477.565603] 
+[ 2477.565633] Restarting kernel threads ... done.
+[ 2477.566274] Restarting tasks ... 
+[ 2477.575278] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2477.575339] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2477.575613] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2477.575644] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2477.588279] done.
+[ 2477.589012] PM: suspend exit 2013-06-20 14:16:09.484264532 UTC
+[ 2477.589073] suspend: exit suspend, ret = -16 (2013-06-20 14:16:09.484325572 UTC)
+[ 2477.590111] suspend: enter suspend
+[ 2477.590172] PM: suspend entry 2013-06-20 14:16:09.485424306 UTC
+[ 2477.590477] Freezing user space processes ... 
+[ 2477.600091] PM: Syncing filesystems...
+[ 2477.614924] (elapsed 0.02 seconds) done.
+[ 2477.643369] sync done.
+[ 2477.864275] Freezing remaining freezable tasks ... 
+[ 2477.865252] active wake lock smd_sns_dsps, time left 184
+[ 2477.865282] 
+[ 2477.865282] Freezing of tasks  aborted
+[ 2477.865526] 
+[ 2477.865557] Restarting kernel threads ... done.
+[ 2477.866198] Restarting tasks ... 
+[ 2477.873797] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2477.873828] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2477.874408] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2477.874438] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2477.885792] done.
+[ 2477.886494] PM: suspend exit 2013-06-20 14:16:09.781746601 UTC
+[ 2477.886555] suspend: exit suspend, ret = -16 (2013-06-20 14:16:09.781807642 UTC)
+[ 2477.887593] suspend: enter suspend
+[ 2477.887654] PM: suspend entry 2013-06-20 14:16:09.782906375 UTC
+[ 2477.888203] Freezing user space processes ... 
+[ 2477.897847] PM: Syncing filesystems...
+[ 2477.915091] (elapsed 0.02 seconds) done.
+[ 2477.941095] sync done.
+[ 2478.164229] Freezing remaining freezable tasks ... 
+[ 2478.165206] active wake lock smd_sns_dsps, time left 194
+[ 2478.165236] 
+[ 2478.165236] Freezing of tasks  aborted
+[ 2478.165664] 
+[ 2478.165664] Restarting kernel threads ... done.
+[ 2478.166335] Restarting tasks ... 
+[ 2478.175339] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2478.175400] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2478.175674] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2478.175705] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2478.186265] done.
+[ 2478.192583] PM: suspend exit 2013-06-20 14:16:10.087835415 UTC
+[ 2478.192613] suspend: exit suspend, ret = -16 (2013-06-20 14:16:10.087896456 UTC)
+[ 2478.193651] suspend: enter suspend
+[ 2478.193712] PM: suspend entry 2013-06-20 14:16:10.088964669 UTC
+[ 2478.194017] Freezing user space processes ... 
+[ 2478.203417] PM: Syncing filesystems...
+[ 2478.235189] (elapsed 0.04 seconds) done.
+[ 2478.246573] sync done.
+[ 2478.484235] Freezing remaining freezable tasks ... 
+[ 2478.485090] active wake lock smd_sns_dsps, time left 183
+[ 2478.485120] 
+[ 2478.485151] Freezing of tasks  aborted
+[ 2478.485395] 
+[ 2478.485395] Restarting kernel threads ... done.
+[ 2478.486067] Restarting tasks ... 
+[ 2478.494856] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2478.494887] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2478.495375] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2478.495406] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2478.505081] done.
+[ 2478.508987] PM: suspend exit 2013-06-20 14:16:10.404240115 UTC
+[ 2478.509048] suspend: exit suspend, ret = -16 (2013-06-20 14:16:10.404301156 UTC)
+[ 2478.509109] suspend: enter suspend
+[ 2478.509140] PM: suspend entry 2013-06-20 14:16:10.404392717 UTC
+[ 2478.509445] Freezing user space processes ... 
+[ 2478.519090] active wake lock smd_sns_dsps
+[ 2478.519120] 
+[ 2478.519151] Freezing of user space  aborted
+[ 2478.519578] 
+[ 2478.519578] Restarting tasks ... 
+[ 2478.529589] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2478.529619] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2478.530230] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2478.530260] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2478.533098] done.
+[ 2478.533770] PM: suspend exit 2013-06-20 14:16:10.429022657 UTC
+[ 2478.533800] suspend: exit suspend, ret = -16 (2013-06-20 14:16:10.429053178 UTC)
+[ 2478.533831] PM: Syncing filesystems...
+[ 2478.544696] suspend: enter suspend
+[ 2478.544757] PM: suspend entry 2013-06-20 14:16:10.440009991 UTC
+[ 2478.545093] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[ 2478.588127] sync done.
+[ 2478.588157] PM: Syncing filesystems...
+[ 2478.616236] sync done.
+[ 2478.814222] Freezing remaining freezable tasks ... 
+[ 2478.815198] active wake lock smd_sns_dsps, time left 190
+[ 2478.815229] 
+[ 2478.815259] Freezing of tasks  aborted
+[ 2478.815473] 
+[ 2478.815503] Restarting kernel threads ... done.
+[ 2478.816175] Restarting tasks ... 
+[ 2478.824080] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2478.824232] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2478.824721] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2478.824751] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2478.838241] done.
+[ 2478.838943] PM: suspend exit 2013-06-20 14:16:10.734195861 UTC
+[ 2478.839004] suspend: exit suspend, ret = -16 (2013-06-20 14:16:10.734256901 UTC)
+[ 2478.839035] suspend: too many immediate wakeups, back off
+[ 2478.840103] active wake lock suspend_backoff, time left 1000
+[ 2478.840103] suspend: abort suspend
+[ 2482.194322] adjust_soc: ibat_ua = 52700, vbat_uv = 3968610, soc = 99, batt_temp=274
+[ 2488.834182] wake lock suspend_backoff, expired
+[ 2488.834304] suspend: enter suspend
+[ 2488.834365] PM: suspend entry 2013-06-20 14:16:20.729617806 UTC
+[ 2488.834457] PM: Syncing filesystems...
+[ 2488.856309] Freezing user space processes ... 
+[ 2488.872027] sync done.
+[ 2488.874530] (elapsed 0.01 seconds) done.
+[ 2488.874560] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2488.894399] Suspending console(s) (use no_console_suspend to debug)
+[ 2488.898885] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2488.900503] hsd_suspend: hsd_suspend
+[ 2488.909445] PM: suspend of devices complete after 13.520 msecs
+[ 2488.910117] PM: late suspend of devices complete after 0.671 msecs
+[ 2488.911765] power_suspend_late return 0
+[ 2488.911765] PM: noirq suspend of devices complete after 1.617 msecs
+[ 2488.911795] Disabling non-boot CPUs ...
+[ 2488.912345] msm_pm_enter
+[ 2488.912345] msm_pm_enter: power collapse
+[ 2488.912345] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2488.912345] msm_pm_enter: return
+[ 2488.913779] PM: noirq resume of devices complete after 1.251 msecs
+[ 2488.915000] wakeup wake lock: smd_sns_dsps
+[ 2488.915885] PM: early resume of devices complete after 0.671 msecs
+[ 2488.917442] hsd_resume: hsd_resume
+[ 2488.918723] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2488.972439] PM: resume of devices complete after 56.503 msecs
+[ 2488.973935] Restarting tasks ... 
+[ 2488.978391] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2488.978391] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2488.978574] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2488.978604] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2488.986631] done.
+[ 2488.986997] PM: suspend exit 2013-06-20 14:16:20.995906445 UTC
+[ 2488.987028] suspend: exit suspend, ret = 0 (2013-06-20 14:16:20.995906445 UTC)
+[ 2489.914817] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2489.914847] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2489.915458] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2489.915488] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2489.915519] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2490.345429] suspend: enter suspend
+[ 2490.345490] PM: suspend entry 2013-06-20 14:16:22.353822042 UTC
+[ 2490.345551] PM: Syncing filesystems...
+[ 2490.357942] Freezing user space processes ... 
+[ 2490.427773] sync done.
+[ 2490.435067] (elapsed 0.07 seconds) done.
+[ 2490.435098] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[ 2490.455455] Suspending console(s) (use no_console_suspend to debug)
+[ 2490.460460] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2490.462261] hsd_suspend: hsd_suspend
+[ 2490.471417] PM: suspend of devices complete after 14.342 msecs
+[ 2490.472210] PM: late suspend of devices complete after 0.793 msecs
+[ 2490.474042] power_suspend_late return 0
+[ 2490.474042] PM: noirq suspend of devices complete after 1.830 msecs
+[ 2490.474072] Disabling non-boot CPUs ...
+[ 2490.474652] msm_pm_enter
+[ 2490.474652] msm_pm_enter: power collapse
+[ 2490.474652] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2490.474652] msm_pm_enter: return
+[ 2490.476239] PM: noirq resume of devices complete after 1.373 msecs
+[ 2490.477490] wakeup wake lock: smd_sns_dsps
+[ 2490.478498] PM: early resume of devices complete after 0.793 msecs
+[ 2490.480268] hsd_resume: hsd_resume
+[ 2490.481641] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2490.531939] PM: resume of devices complete after 53.402 msecs
+[ 2490.533648] Restarting tasks ... 
+[ 2490.538836] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2490.538867] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2490.539080] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2490.539080] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2490.548115] done.
+[ 2490.548511] PM: suspend exit 2013-06-20 14:16:22.556805332 UTC
+[ 2490.548542] suspend: exit suspend, ret = 0 (2013-06-20 14:16:22.556835831 UTC)
+[ 2490.548572] active wake lock msm_hsic_host
+[ 2490.548572] suspend: abort suspend
+[ 2491.475354] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2491.475384] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2491.476086] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2491.476117] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2491.476147] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2492.356447] suspend: enter suspend
+[ 2492.356508] PM: suspend entry 2013-06-20 14:16:24.364191012 UTC
+[ 2492.356599] PM: Syncing filesystems...
+[ 2492.366671] Freezing user space processes ... 
+[ 2492.461284] sync done.
+[ 2492.466076] (elapsed 0.09 seconds) done.
+[ 2492.466137] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[ 2492.486402] Suspending console(s) (use no_console_suspend to debug)
+[ 2492.497939] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2492.501540] hsd_suspend: hsd_suspend
+[ 2492.512497] PM: suspend of devices complete after 22.766 msecs
+[ 2492.514084] PM: late suspend of devices complete after 1.556 msecs
+[ 2492.517960] active wake lock smd_sns_dsps, time left 196
+[ 2492.517991] power_suspend_late return -11
+[ 2492.518052] dpm_run_callback(): power_suspend_late+0x0/0x68 returns -11
+[ 2492.518052] PM: Device power.0 failed to suspend noirq: error -11
+[ 2492.519944] PM: noirq resume of devices complete after 1.831 msecs
+[ 2492.523362] PM: early resume of devices complete after 1.525 msecs
+[ 2492.523393] PM: Some devices failed to power down
+[ 2492.526781] hsd_resume: hsd_resume
+[ 2492.528948] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2492.587364] PM: resume of devices complete after 63.906 msecs
+[ 2492.591789] Restarting tasks ... 
+[ 2492.600457] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2492.600487] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2492.600945] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2492.601006] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2492.625606] done.
+[ 2492.626399] PM: suspend exit 2013-06-20 14:16:24.634067645 UTC
+[ 2492.626430] suspend: exit suspend, ret = -11 (2013-06-20 14:16:24.634128683 UTC)
+[ 2492.626491] active wake lock msm_hsic_host
+[ 2492.626491] suspend: abort suspend
+[ 2493.525529] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2493.525560] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2493.526384] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2493.526415] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2493.526445] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2494.346100] suspend: enter suspend
+[ 2494.346131] PM: suspend entry 2013-06-20 14:16:26.353803599 UTC
+[ 2494.346222] PM: Syncing filesystems...
+[ 2494.356447] Freezing user space processes ... (elapsed 0.07 seconds) done.
+[ 2494.446817] sync done.
+[ 2494.685548] Freezing remaining freezable tasks ... 
+[ 2494.686280] active wake lock smd_sns_dsps, time left 181
+[ 2494.686280] 
+[ 2494.686311] Freezing of tasks  aborted
+[ 2494.686555] 
+[ 2494.686585] Restarting kernel threads ... done.
+[ 2494.687257] Restarting tasks ... 
+[ 2494.696230] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2494.696291] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2494.696749] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2494.696779] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2494.711124] done.
+[ 2494.711917] PM: suspend exit 2013-06-20 14:16:26.719528494 UTC
+[ 2494.711948] suspend: exit suspend, ret = -16 (2013-06-20 14:16:26.719589534 UTC)
+[ 2494.712009] suspend: enter suspend
+[ 2494.712039] PM: suspend entry 2013-06-20 14:16:26.719711615 UTC
+[ 2494.712131] PM: Syncing filesystems...
+[ 2494.716434] Freezing user space processes ... (elapsed 0.03 seconds) done.
+[ 2494.762642] sync done.
+[ 2494.995543] Freezing remaining freezable tasks ... 
+[ 2494.996428] active wake lock smd_sns_dsps, time left 190
+[ 2494.996459] 
+[ 2494.996489] Freezing of tasks  aborted
+[ 2494.996703] 
+[ 2494.996733] Restarting kernel threads ... done.
+[ 2494.997374] Restarting tasks ... 
+[ 2495.005188] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2495.005249] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2495.005645] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2495.005676] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2495.015351] done.
+[ 2495.020539] PM: suspend exit 2013-06-20 14:16:27.028180663 UTC
+[ 2495.020570] suspend: exit suspend, ret = -16 (2013-06-20 14:16:27.028211183 UTC)
+[ 2495.020631] suspend: enter suspend
+[ 2495.020692] PM: suspend entry 2013-06-20 14:16:27.028333265 UTC
+[ 2495.021058] Freezing user space processes ... 
+[ 2495.030764] PM: Syncing filesystems...
+[ 2495.046360] (elapsed 0.02 seconds) done.
+[ 2495.072973] sync done.
+[ 2495.295528] Freezing remaining freezable tasks ... 
+[ 2495.296505] active wake lock smd_sns_dsps, time left 180
+[ 2495.296535] 
+[ 2495.296535] Freezing of tasks  aborted
+[ 2495.296779] 
+[ 2495.296810] Restarting kernel threads ... done.
+[ 2495.297451] Restarting tasks ... 
+[ 2495.305355] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2495.305386] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2495.305966] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2495.305996] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2495.317197] done.
+[ 2495.317930] PM: suspend exit 2013-06-20 14:16:27.325570964 UTC
+[ 2495.317991] suspend: exit suspend, ret = -16 (2013-06-20 14:16:27.325632004 UTC)
+[ 2495.319029] suspend: enter suspend
+[ 2495.319059] PM: suspend entry 2013-06-20 14:16:27.326700217 UTC
+[ 2495.322203] Freezing user space processes ... 
+[ 2495.331878] PM: Syncing filesystems...
+[ 2495.346344] (elapsed 0.02 seconds) done.
+[ 2495.371646] sync done.
+[ 2495.595543] Freezing remaining freezable tasks ... 
+[ 2495.596520] active wake lock smd_sns_dsps, time left 190
+[ 2495.596550] 
+[ 2495.596550] Freezing of tasks  aborted
+[ 2495.596795] 
+[ 2495.596825] Restarting kernel threads ... done.
+[ 2495.597466] Restarting tasks ... 
+[ 2495.605706] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2495.605737] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2495.606012] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2495.606042] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2495.617121] done.
+[ 2495.618556] PM: suspend exit 2013-06-20 14:16:27.626196499 UTC
+[ 2495.618617] suspend: exit suspend, ret = -16 (2013-06-20 14:16:27.626257540 UTC)
+[ 2495.619654] suspend: enter suspend
+[ 2495.619685] PM: suspend entry 2013-06-20 14:16:27.627356273 UTC
+[ 2495.620143] Freezing user space processes ... 
+[ 2495.629848] PM: Syncing filesystems...
+[ 2495.646390] (elapsed 0.02 seconds) done.
+[ 2495.671753] sync done.
+[ 2495.895528] Freezing remaining freezable tasks ... 
+[ 2495.896505] active wake lock smd_sns_dsps, time left 181
+[ 2495.896535] 
+[ 2495.896535] Freezing of tasks  aborted
+[ 2495.896779] 
+[ 2495.896810] Restarting kernel threads ... done.
+[ 2495.897451] Restarting tasks ... 
+[ 2495.905142] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2495.905172] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2495.905935] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2495.905966] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2495.918082] done.
+[ 2495.923942] PM: suspend exit 2013-06-20 14:16:27.931583263 UTC
+[ 2495.924003] suspend: exit suspend, ret = -16 (2013-06-20 14:16:27.931644303 UTC)
+[ 2495.925041] suspend: enter suspend
+[ 2495.925072] PM: suspend entry 2013-06-20 14:16:27.932712516 UTC
+[ 2495.926445] Freezing user space processes ... 
+[ 2495.935815] PM: Syncing filesystems...
+[ 2495.966457] (elapsed 0.03 seconds) done.
+[ 2495.978360] sync done.
+[ 2496.215534] Freezing remaining freezable tasks ... 
+[ 2496.216419] active wake lock smd_sns_dsps, time left 189
+[ 2496.216419] 
+[ 2496.216450] Freezing of tasks  aborted
+[ 2496.216877] 
+[ 2496.216907] Restarting kernel threads ... done.
+[ 2496.217548] Restarting tasks ... 
+[ 2496.226338] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2496.226399] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2496.226674] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2496.226704] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2496.240042] done.
+[ 2496.240774] PM: suspend exit 2013-06-20 14:16:28.248415196 UTC
+[ 2496.240835] suspend: exit suspend, ret = -16 (2013-06-20 14:16:28.248476237 UTC)
+[ 2496.240896] suspend: enter suspend
+[ 2496.240927] PM: suspend entry 2013-06-20 14:16:28.248567798 UTC
+[ 2496.241232] Freezing user space processes ... 
+[ 2496.250999] PM: Syncing filesystems...
+[ 2496.266320] (elapsed 0.02 seconds) done.
+[ 2496.290462] sync done.
+[ 2496.515519] Freezing remaining freezable tasks ... 
+[ 2496.516495] active wake lock smd_sns_dsps, time left 199
+[ 2496.516526] 
+[ 2496.516556] Freezing of tasks  aborted
+[ 2496.516770] 
+[ 2496.516801] Restarting kernel threads ... done.
+[ 2496.517442] Restarting tasks ... 
+[ 2496.525407] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2496.525652] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2496.525682] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2496.535998] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2496.537463] done.
+[ 2496.540301] PM: suspend exit 2013-06-20 14:16:28.547942101 UTC
+[ 2496.540362] suspend: exit suspend, ret = -16 (2013-06-20 14:16:28.548003142 UTC)
+[ 2496.540362] suspend: too many immediate wakeups, back off
+[ 2496.541431] active wake lock suspend_backoff, time left 1000
+[ 2496.541461] suspend: abort suspend
+[ 2502.195574] adjust_soc: ibat_ua = 88700, vbat_uv = 3953653, soc = 99, batt_temp=274
+[ 2506.535510] wake lock suspend_backoff, expired
+[ 2506.535723] suspend: enter suspend
+[ 2506.535784] PM: suspend entry 2013-06-20 14:16:38.543425028 UTC
+[ 2506.535876] PM: Syncing filesystems...
+[ 2506.571005] Freezing user space processes ... 
+[ 2506.578696] sync done.
+[ 2506.585655] (elapsed 0.01 seconds) done.
+[ 2506.585655] Freezing remaining freezable tasks ... 
+[ 2506.585868] active wake lock smd_sns_dsps, time left 199
+[ 2506.585868] 
+[ 2506.585899] Freezing of tasks  aborted
+[ 2506.585990] 
+[ 2506.585990] Restarting kernel threads ... done.
+[ 2506.586204] Restarting tasks ... 
+[ 2506.588462] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2506.588462] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2506.588554] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2506.588554] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2506.591972] done.
+[ 2506.592216] PM: suspend exit 2013-06-20 14:16:38.599857198 UTC
+[ 2506.592216] suspend: exit suspend, ret = -16 (2013-06-20 14:16:38.599887718 UTC)
+[ 2506.592552] suspend: enter suspend
+[ 2506.592583] PM: suspend entry 2013-06-20 14:16:38.600223442 UTC
+[ 2506.592644] Freezing user space processes ... 
+[ 2506.595604] PM: Syncing filesystems...
+[ 2506.605737] (elapsed 0.01 seconds) done.
+[ 2506.605951] sync done.
+[ 2506.855455] Freezing remaining freezable tasks ... 
+[ 2506.855668] active wake lock smd_sns_dsps, time left 192
+[ 2506.855668] 
+[ 2506.855668] Freezing of tasks  aborted
+[ 2506.855760] 
+[ 2506.855760] Restarting kernel threads ... done.
+[ 2506.855943] Restarting tasks ... 
+[ 2506.858568] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2506.858598] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2506.858720] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2506.858720] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2506.862749] done.
+[ 2506.863024] PM: suspend exit 2013-06-20 14:16:38.870664461 UTC
+[ 2506.863024] suspend: exit suspend, ret = -16 (2013-06-20 14:16:38.870694981 UTC)
+[ 2506.863329] suspend: enter suspend
+[ 2506.863359] PM: suspend entry 2013-06-20 14:16:38.871030705 UTC
+[ 2506.863451] Freezing user space processes ... 
+[ 2506.866350] PM: Syncing filesystems...
+[ 2506.875751] (elapsed 0.01 seconds) done.
+[ 2506.882191] sync done.
+[ 2507.125468] Freezing remaining freezable tasks ... 
+[ 2507.125743] active wake lock smd_sns_dsps, time left 186
+[ 2507.125743] 
+[ 2507.125743] Freezing of tasks  aborted
+[ 2507.125865] 
+[ 2507.125865] Restarting kernel threads ... done.
+[ 2507.126048] Restarting tasks ... 
+[ 2507.128734] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2507.128734] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2507.128826] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2507.128826] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2507.134228] done.
+[ 2507.134838] PM: suspend exit 2013-06-20 14:16:39.142509416 UTC
+[ 2507.134869] suspend: exit suspend, ret = -16 (2013-06-20 14:16:39.142509416 UTC)
+[ 2507.135174] suspend: enter suspend
+[ 2507.135204] PM: suspend entry 2013-06-20 14:16:39.142845140 UTC
+[ 2507.135265] Freezing user space processes ... 
+[ 2507.138348] PM: Syncing filesystems...
+[ 2507.152601] sync done.
+[ 2507.155714] (elapsed 0.02 seconds) done.
+[ 2507.155714] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2507.175583] Suspending console(s) (use no_console_suspend to debug)
+[ 2507.178574] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2507.179673] hsd_suspend: hsd_suspend
+[ 2507.187791] PM: suspend of devices complete after 11.200 msecs
+[ 2507.188279] PM: late suspend of devices complete after 0.488 msecs
+[ 2507.189409] active wake lock smd_sns_dsps, time left 200
+[ 2507.189439] power_suspend_late return -11
+[ 2507.189439] dpm_run_callback(): power_suspend_late+0x0/0x68 returns -11
+[ 2507.189439] PM: Device power.0 failed to suspend noirq: error -11
+[ 2507.190172] PM: noirq resume of devices complete after 0.732 msecs
+[ 2507.191331] PM: early resume of devices complete after 0.427 msecs
+[ 2507.191362] PM: Some devices failed to power down
+[ 2507.192308] hsd_resume: hsd_resume
+[ 2507.193193] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2507.242758] PM: resume of devices complete after 51.396 msecs
+[ 2507.243948] Restarting tasks ... 
+[ 2507.246878] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2507.246878] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2507.247001] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2507.247001] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2507.252311] done.
+[ 2507.252555] PM: suspend exit 2013-06-20 14:16:39.260195972 UTC
+[ 2507.252555] suspend: exit suspend, ret = -11 (2013-06-20 14:16:39.260226492 UTC)
+[ 2508.185441] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2508.185471] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2508.185655] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2508.185655] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2508.185655] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2508.455851] suspend: enter suspend
+[ 2508.455851] PM: suspend entry 2013-06-20 14:16:40.463522694 UTC
+[ 2508.455882] PM: Syncing filesystems...
+[ 2508.464031] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[ 2508.535021] sync done.
+[ 2508.725438] Freezing remaining freezable tasks ... 
+[ 2508.725682] active wake lock smd_sns_dsps, time left 187
+[ 2508.725682] 
+[ 2508.725713] Freezing of tasks  aborted
+[ 2508.725804] 
+[ 2508.725804] Restarting kernel threads ... done.
+[ 2508.726506] Restarting tasks ... 
+[ 2508.729100] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2508.729100] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2508.729192] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2508.729192] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2508.732702] done.
+[ 2508.732946] PM: suspend exit 2013-06-20 14:16:40.740586633 UTC
+[ 2508.732946] suspend: exit suspend, ret = -16 (2013-06-20 14:16:40.740617153 UTC)
+[ 2508.733251] suspend: enter suspend
+[ 2508.733282] PM: suspend entry 2013-06-20 14:16:40.740922357 UTC
+[ 2508.733343] Freezing user space processes ... 
+[ 2508.737036] PM: Syncing filesystems...
+[ 2508.745734] (elapsed 0.01 seconds) done.
+[ 2508.760017] sync done.
+[ 2508.995452] Freezing remaining freezable tasks ... 
+[ 2508.995665] active wake lock smd_sns_dsps, time left 180
+[ 2508.995696] 
+[ 2508.995696] Freezing of tasks  aborted
+[ 2508.995757] 
+[ 2508.995757] Restarting kernel threads ... done.
+[ 2508.995940] Restarting tasks ... 
+[ 2508.998717] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2508.998748] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2508.998870] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2508.998870] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2509.003112] done.
+[ 2509.003326] PM: suspend exit 2013-06-20 14:16:41.010997131 UTC
+[ 2509.003356] suspend: exit suspend, ret = -16 (2013-06-20 14:16:41.010997131 UTC)
+[ 2509.003356] suspend: enter suspend
+[ 2509.003387] PM: suspend entry 2013-06-20 14:16:41.011027651 UTC
+[ 2509.003448] Freezing user space processes ... 
+[ 2509.006408] PM: Syncing filesystems...
+[ 2509.015870] (elapsed 0.01 seconds) done.
+[ 2509.025697] sync done.
+[ 2509.265435] Freezing remaining freezable tasks ... 
+[ 2509.265679] active wake lock smd_sns_dsps, time left 193
+[ 2509.265679] 
+[ 2509.265679] Freezing of tasks  aborted
+[ 2509.265801] 
+[ 2509.265801] Restarting kernel threads ... done.
+[ 2509.265984] Restarting tasks ... 
+[ 2509.268670] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2509.268670] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2509.268762] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2509.268762] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2509.272607] done.
+[ 2509.272821] PM: suspend exit 2013-06-20 14:16:41.280492020 UTC
+[ 2509.272851] suspend: exit suspend, ret = -16 (2013-06-20 14:16:41.280522541 UTC)
+[ 2509.273156] suspend: enter suspend
+[ 2509.273156] PM: suspend entry 2013-06-20 14:16:41.280827745 UTC
+[ 2509.273248] Freezing user space processes ... 
+[ 2509.276178] PM: Syncing filesystems...
+[ 2509.285761] (elapsed 0.01 seconds) done.
+[ 2509.295009] sync done.
+[ 2509.535449] Freezing remaining freezable tasks ... 
+[ 2509.535723] active wake lock smd_sns_dsps, time left 186
+[ 2509.535723] 
+[ 2509.535723] Freezing of tasks  aborted
+[ 2509.535784] 
+[ 2509.535784] Restarting kernel threads ... done.
+[ 2509.535967] Restarting tasks ... 
+[ 2509.538775] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2509.538806] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2509.538928] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2509.538928] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2509.542682] done.
+[ 2509.542926] PM: suspend exit 2013-06-20 14:16:41.550566794 UTC
+[ 2509.542926] suspend: exit suspend, ret = -16 (2013-06-20 14:16:41.550597314 UTC)
+[ 2509.543231] suspend: enter suspend
+[ 2509.543231] PM: suspend entry 2013-06-20 14:16:41.550902518 UTC
+[ 2509.543323] Freezing user space processes ... 
+[ 2509.546253] PM: Syncing filesystems...
+[ 2509.555745] (elapsed 0.01 seconds) done.
+[ 2509.562032] sync done.
+[ 2509.805432] Freezing remaining freezable tasks ... 
+[ 2509.805706] active wake lock smd_sns_dsps, time left 179
+[ 2509.805737] 
+[ 2509.805737] Freezing of tasks  aborted
+[ 2509.805798] 
+[ 2509.805798] Restarting kernel threads ... done.
+[ 2509.805981] Restarting tasks ... 
+[ 2509.808758] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2509.808758] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2509.808911] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2509.808911] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2509.812818] done.
+[ 2509.813031] PM: suspend exit 2013-06-20 14:16:41.820702610 UTC
+[ 2509.813031] suspend: exit suspend, ret = -16 (2013-06-20 14:16:41.820702610 UTC)
+[ 2509.813337] suspend: enter suspend
+[ 2509.813367] PM: suspend entry 2013-06-20 14:16:41.821038334 UTC
+[ 2509.813459] Freezing user space processes ... 
+[ 2509.816358] PM: Syncing filesystems...
+[ 2509.825758] (elapsed 0.01 seconds) done.
+[ 2509.830764] sync done.
+[ 2510.075446] Freezing remaining freezable tasks ... 
+[ 2510.075720] active wake lock smd_sns_dsps, time left 193
+[ 2510.075751] 
+[ 2510.075751] Freezing of tasks  aborted
+[ 2510.075812] 
+[ 2510.075812] Restarting kernel threads ... done.
+[ 2510.075995] Restarting tasks ... 
+[ 2510.078681] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2510.078681] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2510.078803] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2510.078833] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2510.082557] done.
+[ 2510.082770] PM: suspend exit 2013-06-20 14:16:42.090441661 UTC
+[ 2510.082770] suspend: exit suspend, ret = -16 (2013-06-20 14:16:42.090441661 UTC)
+[ 2510.082801] suspend: too many immediate wakeups, back off
+[ 2510.083106] active wake lock suspend_backoff, time left 1000
+[ 2510.083106] suspend: abort suspend
+[ 2520.075507] wake lock suspend_backoff, expired
+[ 2520.075690] suspend: enter suspend
+[ 2520.075720] PM: suspend entry 2013-06-20 14:16:52.083360934 UTC
+[ 2520.075812] PM: Syncing filesystems...
+[ 2520.104898] Freezing user space processes ... 
+[ 2520.115916] sync done.
+[ 2520.125713] (elapsed 0.02 seconds) done.
+[ 2520.125743] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2520.145612] Suspending console(s) (use no_console_suspend to debug)
+[ 2520.148664] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2520.149763] hsd_suspend: hsd_suspend
+[ 2520.157179] PM: suspend of devices complete after 10.529 msecs
+[ 2520.157637] PM: late suspend of devices complete after 0.427 msecs
+[ 2520.158766] power_suspend_late return 0
+[ 2520.158766] PM: noirq suspend of devices complete after 1.129 msecs
+[ 2520.158797] Disabling non-boot CPUs ...
+[ 2520.159254] msm_pm_enter
+[ 2520.159254] msm_pm_enter: power collapse
+[ 2520.159254] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2520.159254] msm_pm_enter: return
+[ 2520.160292] PM: noirq resume of devices complete after 0.946 msecs
+[ 2520.161208] wakeup wake lock: smd_sns_dsps
+[ 2520.161818] PM: early resume of devices complete after 0.457 msecs
+[ 2520.162886] hsd_resume: hsd_resume
+[ 2520.163863] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2520.212665] PM: resume of devices complete after 50.827 msecs
+[ 2520.213642] Restarting tasks ... 
+[ 2520.216724] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2520.216755] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2520.216877] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2520.216877] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2520.221852] done.
+[ 2520.222096] PM: suspend exit 2013-06-20 14:16:52.229739956 UTC
+[ 2520.222126] suspend: exit suspend, ret = 0 (2013-06-20 14:16:52.229770450 UTC)
+[ 2520.222126] active wake lock msm_hsic_host
+[ 2520.222126] suspend: abort suspend
+[ 2521.156019] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2521.156050] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2521.156660] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2521.156721] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2521.156752] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2521.427590] suspend: enter suspend
+[ 2521.427651] PM: suspend entry 2013-06-20 14:16:53.434738453 UTC
+[ 2521.427742] PM: Syncing filesystems...
+[ 2521.437417] Freezing user space processes ... (elapsed 0.07 seconds) done.
+[ 2521.521012] sync done.
+[ 2521.766152] Freezing remaining freezable tasks ... 
+[ 2521.766885] active wake lock smd_sns_dsps, time left 199
+[ 2521.766885] 
+[ 2521.766915] Freezing of tasks  aborted
+[ 2521.767342] 
+[ 2521.767342] Restarting kernel threads ... done.
+[ 2521.768014] Restarting tasks ... 
+[ 2521.776498] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2521.776529] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2521.776834] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2521.776865] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2521.789348] done.
+[ 2521.790874] PM: suspend exit 2013-06-20 14:16:53.797908447 UTC
+[ 2521.790935] suspend: exit suspend, ret = -16 (2013-06-20 14:16:53.797969481 UTC)
+[ 2521.790996] suspend: enter suspend
+[ 2521.791026] PM: suspend entry 2013-06-20 14:16:53.798061033 UTC
+[ 2521.791087] PM: Syncing filesystems...
+[ 2521.797069] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[ 2521.842178] sync done.
+[ 2522.066167] Freezing remaining freezable tasks ... 
+[ 2522.067113] active wake lock smd_sns_dsps, time left 189
+[ 2522.067144] 
+[ 2522.067174] Freezing of tasks  aborted
+[ 2522.067419] 
+[ 2522.067419] Restarting kernel threads ... done.
+[ 2522.068090] Restarting tasks ... 
+[ 2522.075842] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2522.075903] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2522.076636] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2522.076697] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2522.090889] done.
+[ 2522.093086] PM: suspend exit 2013-06-20 14:16:54.100095233 UTC
+[ 2522.093117] suspend: exit suspend, ret = -16 (2013-06-20 14:16:54.100125751 UTC)
+[ 2522.094154] suspend: enter suspend
+[ 2522.094216] PM: suspend entry 2013-06-20 14:16:54.101224412 UTC
+[ 2522.094856] Freezing user space processes ... 
+[ 2522.104867] PM: Syncing filesystems...
+[ 2522.137097] (elapsed 0.04 seconds) done.
+[ 2522.145825] sync done.
+[ 2522.196337] adjust_soc: ibat_ua = 68700, vbat_uv = 3962157, soc = 99, batt_temp=274
+[ 2522.386204] Freezing remaining freezable tasks ... 
+[ 2522.387059] active wake lock smd_sns_dsps, time left 198
+[ 2522.387089] 
+[ 2522.387120] Freezing of tasks  aborted
+[ 2522.387333] 
+[ 2522.387364] Restarting kernel threads ... done.
+[ 2522.388005] Restarting tasks ... 
+[ 2522.396428] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2522.396459] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2522.396917] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2522.396947] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2522.421485] done.
+[ 2522.425209] PM: suspend exit 2013-06-20 14:16:54.432200934 UTC
+[ 2522.425239] suspend: exit suspend, ret = -16 (2013-06-20 14:16:54.432261973 UTC)
+[ 2522.425301] suspend: enter suspend
+[ 2522.425331] PM: suspend entry 2013-06-20 14:16:54.432353530 UTC
+[ 2522.425392] PM: Syncing filesystems...
+[ 2522.431710] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[ 2522.466595] sync done.
+[ 2522.706180] Freezing remaining freezable tasks ... 
+[ 2522.707065] active wake lock smd_sns_dsps, time left 186
+[ 2522.707095] 
+[ 2522.707126] Freezing of tasks  aborted
+[ 2522.707339] 
+[ 2522.707370] Restarting kernel threads ... done.
+[ 2522.708041] Restarting tasks ... 
+[ 2522.716221] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2522.716251] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2522.716556] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2522.716587] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2522.732519] done.
+[ 2522.733251] PM: suspend exit 2013-06-20 14:16:54.740233490 UTC
+[ 2522.733312] suspend: exit suspend, ret = -16 (2013-06-20 14:16:54.740294529 UTC)
+[ 2522.734350] suspend: enter suspend
+[ 2522.734380] PM: suspend entry 2013-06-20 14:16:54.741393237 UTC
+[ 2522.734686] Freezing user space processes ... 
+[ 2522.744269] PM: Syncing filesystems...
+[ 2522.773935] sync done.
+[ 2522.776956] (elapsed 0.04 seconds) done.
+[ 2522.777017] Freezing remaining freezable tasks ... 
+[ 2522.777719] active wake lock smd_sns_dsps, time left 199
+[ 2522.777750] 
+[ 2522.777780] Freezing of tasks  aborted
+[ 2522.778024] 
+[ 2522.778024] Restarting kernel threads ... done.
+[ 2522.778696] Restarting tasks ... 
+[ 2522.787822] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2522.787852] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2522.788340] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2522.788371] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2522.802166] done.
+[ 2522.802868] PM: suspend exit 2013-06-20 14:16:54.809848928 UTC
+[ 2522.802929] suspend: exit suspend, ret = -16 (2013-06-20 14:16:54.809909967 UTC)
+[ 2522.802990] suspend: enter suspend
+[ 2522.803021] PM: suspend entry 2013-06-20 14:16:54.810032046 UTC
+[ 2522.803326] Freezing user space processes ... 
+[ 2522.813489] PM: Syncing filesystems...
+[ 2522.827010] (elapsed 0.02 seconds) done.
+[ 2522.842209] sync done.
+[ 2523.076209] Freezing remaining freezable tasks ... 
+[ 2523.077155] active wake lock smd_sns_dsps, time left 189
+[ 2523.077185] 
+[ 2523.077185] Freezing of tasks  aborted
+[ 2523.077612] 
+[ 2523.077612] Restarting kernel threads ... done.
+[ 2523.078284] Restarting tasks ... 
+[ 2523.086921] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2523.086982] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2523.087257] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2523.087287] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2523.101693] done.
+[ 2523.102456] PM: suspend exit 2013-06-20 14:16:55.109431902 UTC
+[ 2523.102487] suspend: exit suspend, ret = -16 (2013-06-20 14:16:55.109462422 UTC)
+[ 2523.103524] suspend: enter suspend
+[ 2523.103555] PM: suspend entry 2013-06-20 14:16:55.110561142 UTC
+[ 2523.103860] Freezing user space processes ... 
+[ 2523.113962] PM: Syncing filesystems...
+[ 2523.142865] sync done.
+[ 2523.146985] (elapsed 0.04 seconds) done.
+[ 2523.147046] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2523.166762] Suspending console(s) (use no_console_suspend to debug)
+[ 2523.177170] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2523.181168] hsd_suspend: hsd_suspend
+[ 2523.201891] PM: suspend of devices complete after 31.771 msecs
+[ 2523.203448] PM: late suspend of devices complete after 1.556 msecs
+[ 2523.207232] active wake lock smd_sns_dsps, time left 196
+[ 2523.207263] power_suspend_late return -11
+[ 2523.207324] dpm_run_callback(): power_suspend_late+0x0/0x68 returns -11
+[ 2523.207324] PM: Device power.0 failed to suspend noirq: error -11
+[ 2523.209216] PM: noirq resume of devices complete after 1.831 msecs
+[ 2523.212665] PM: early resume of devices complete after 1.526 msecs
+[ 2523.212665] PM: Some devices failed to power down
+[ 2523.215961] hsd_resume: hsd_resume
+[ 2523.218342] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2523.274133] PM: resume of devices complete after 61.406 msecs
+[ 2523.278314] Restarting tasks ... 
+[ 2523.288356] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2523.288386] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2523.288844] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2523.288874] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2523.307858] done.
+[ 2523.308621] PM: suspend exit 2013-06-20 14:16:55.315594760 UTC
+[ 2523.308682] suspend: exit suspend, ret = -11 (2013-06-20 14:16:55.315655800 UTC)
+[ 2524.216205] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2524.216236] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2524.217060] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2524.217091] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2524.217121] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2524.487776] suspend: enter suspend
+[ 2524.487837] PM: suspend entry 2013-06-20 14:16:56.494805411 UTC
+[ 2524.487898] PM: Syncing filesystems...
+[ 2524.497634] Freezing user space processes ... (elapsed 0.07 seconds) done.
+[ 2524.581962] sync done.
+[ 2524.826216] Freezing remaining freezable tasks ... 
+[ 2524.826979] active wake lock smd_sns_dsps, time left 195
+[ 2524.827010] 
+[ 2524.827010] Freezing of tasks  aborted
+[ 2524.827254] 
+[ 2524.827284] Restarting kernel threads ... done.
+[ 2524.827956] Restarting tasks ... 
+[ 2524.837081] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2524.837142] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2524.837417] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2524.837448] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2524.847001] done.
+[ 2524.850175] PM: suspend exit 2013-06-20 14:16:56.857142900 UTC
+[ 2524.850236] suspend: exit suspend, ret = -16 (2013-06-20 14:16:56.857203940 UTC)
+[ 2524.850297] suspend: enter suspend
+[ 2524.850327] PM: suspend entry 2013-06-20 14:16:56.857295502 UTC
+[ 2524.850388] PM: Syncing filesystems...
+[ 2524.857133] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[ 2524.902395] sync done.
+[ 2525.136212] Freezing remaining freezable tasks ... 
+[ 2525.137097] active wake lock smd_sns_dsps, time left 185
+[ 2525.137127] 
+[ 2525.137158] Freezing of tasks  aborted
+[ 2525.137402] 
+[ 2525.137402] Restarting kernel threads ... done.
+[ 2525.138073] Restarting tasks ... 
+[ 2525.146070] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2525.146222] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2525.146680] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2525.146741] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2525.159987] done.
+[ 2525.160994] PM: suspend exit 2013-06-20 14:16:57.167962186 UTC
+[ 2525.161055] suspend: exit suspend, ret = -16 (2013-06-20 14:16:57.168023227 UTC)
+[ 2525.161086] suspend: too many immediate wakeups, back off
+[ 2525.162123] active wake lock suspend_backoff, time left 1000
+[ 2525.162154] suspend: abort suspend
+[ 2535.156660] wake lock suspend_backoff, expired
+[ 2535.156782] suspend: enter suspend
+[ 2535.156813] PM: suspend entry 2013-06-20 14:17:07.163780595 UTC
+[ 2535.156843] PM: Syncing filesystems...
+[ 2535.169876] Freezing user space processes ... 
+[ 2535.180466] sync done.
+[ 2535.186448] (elapsed 0.01 seconds) done.
+[ 2535.186448] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2535.206286] Suspending console(s) (use no_console_suspend to debug)
+[ 2535.209857] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2535.211139] hsd_suspend: hsd_suspend
+[ 2535.219074] PM: suspend of devices complete after 11.567 msecs
+[ 2535.219593] PM: late suspend of devices complete after 0.518 msecs
+[ 2535.220875] power_suspend_late return 0
+[ 2535.220906] PM: noirq suspend of devices complete after 1.312 msecs
+[ 2535.220906] Disabling non-boot CPUs ...
+[ 2535.221394] msm_pm_enter
+[ 2535.221394] msm_pm_enter: power collapse
+[ 2535.221394] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2535.221394] msm_pm_enter: return
+[ 2535.222554] PM: noirq resume of devices complete after 1.007 msecs
+[ 2535.223561] wakeup wake lock: smd_sns_dsps
+[ 2535.224232] PM: early resume of devices complete after 0.518 msecs
+[ 2535.225484] hsd_resume: hsd_resume
+[ 2535.226674] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2535.273767] PM: resume of devices complete after 49.474 msecs
+[ 2535.274896] Restarting tasks ... 
+[ 2535.278436] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2535.278467] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2535.278620] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2535.278620] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2535.284632] done.
+[ 2535.284937] PM: suspend exit 2013-06-20 14:17:07.291866450 UTC
+[ 2535.284937] suspend: exit suspend, ret = 0 (2013-06-20 14:17:07.291896945 UTC)
+[ 2536.226735] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2536.226766] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2536.227376] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2536.227406] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2536.227437] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2536.487806] suspend: enter suspend
+[ 2536.487837] PM: suspend entry 2013-06-20 14:17:08.494279728 UTC
+[ 2536.487928] PM: Syncing filesystems...
+[ 2536.497908] Freezing user space processes ... 
+[ 2536.592674] sync done.
+[ 2536.597374] (elapsed 0.09 seconds) done.
+[ 2536.597435] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2536.617304] Suspending console(s) (use no_console_suspend to debug)
+[ 2536.628932] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2536.632534] hsd_suspend: hsd_suspend
+[ 2536.643887] PM: suspend of devices complete after 23.283 msecs
+[ 2536.645474] PM: late suspend of devices complete after 1.556 msecs
+[ 2536.649229] active wake lock smd_sns_dsps, time left 197
+[ 2536.649259] power_suspend_late return -11
+[ 2536.649320] dpm_run_callback(): power_suspend_late+0x0/0x68 returns -11
+[ 2536.649351] PM: Device power.0 failed to suspend noirq: error -11
+[ 2536.651212] PM: noirq resume of devices complete after 1.830 msecs
+[ 2536.654631] PM: early resume of devices complete after 1.525 msecs
+[ 2536.654661] PM: Some devices failed to power down
+[ 2536.658049] hsd_resume: hsd_resume
+[ 2536.660246] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2536.717533] PM: resume of devices complete after 62.812 msecs
+[ 2536.721745] Restarting tasks ... 
+[ 2536.732152] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2536.732183] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2536.732671] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2536.732702] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2536.750190] done.
+[ 2536.751014] PM: suspend exit 2013-06-20 14:17:09.017981988 UTC
+[ 2536.751044] suspend: exit suspend, ret = -11 (2013-06-20 14:17:09.018012486 UTC)
+[ 2536.751075] active wake lock msm_hsic_host
+[ 2536.751106] suspend: abort suspend
+[ 2537.657286] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2537.657316] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2537.658171] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2537.658201] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2537.658232] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2538.349335] suspend: enter suspend
+[ 2538.349396] PM: suspend entry 2013-06-20 14:17:10.615803144 UTC
+[ 2538.349457] PM: Syncing filesystems...
+[ 2538.358705] Freezing user space processes ... (elapsed 0.07 seconds) done.
+[ 2538.443338] sync done.
+[ 2538.687471] Freezing remaining freezable tasks ... 
+[ 2538.688234] active wake lock smd_sns_dsps, time left 195
+[ 2538.688264] 
+[ 2538.688264] Freezing of tasks  aborted
+[ 2538.688691] 
+[ 2538.688722] Restarting kernel threads ... done.
+[ 2538.689393] Restarting tasks ... 
+[ 2538.697451] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2538.697512] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2538.697786] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2538.697817] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2538.710544] done.
+[ 2538.711795] PM: suspend exit 2013-06-20 14:17:10.978176310 UTC
+[ 2538.711826] suspend: exit suspend, ret = -16 (2013-06-20 14:17:10.978237348 UTC)
+[ 2538.711887] suspend: enter suspend
+[ 2538.711917] PM: suspend entry 2013-06-20 14:17:10.978328904 UTC
+[ 2538.711978] PM: Syncing filesystems...
+[ 2538.718662] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[ 2538.764870] sync done.
+[ 2538.997466] Freezing remaining freezable tasks ... 
+[ 2538.998382] active wake lock smd_sns_dsps, time left 184
+[ 2538.998412] 
+[ 2538.998443] Freezing of tasks  aborted
+[ 2538.998687] 
+[ 2538.998687] Restarting kernel threads ... done.
+[ 2538.999358] Restarting tasks ... 
+[ 2539.007049] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2539.007110] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2539.007690] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2539.007721] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2539.021119] done.
+[ 2539.021852] PM: suspend exit 2013-06-20 14:17:11.288219981 UTC
+[ 2539.021913] suspend: exit suspend, ret = -16 (2013-06-20 14:17:11.288281020 UTC)
+[ 2539.022950] suspend: enter suspend
+[ 2539.023012] PM: suspend entry 2013-06-20 14:17:11.289379719 UTC
+[ 2539.023866] Freezing user space processes ... 
+[ 2539.033511] PM: Syncing filesystems...
+[ 2539.048221] (elapsed 0.02 seconds) done.
+[ 2539.075201] sync done.
+[ 2539.297420] Freezing remaining freezable tasks ... 
+[ 2539.298397] active wake lock smd_sns_dsps, time left 194
+[ 2539.298427] 
+[ 2539.298458] Freezing of tasks  aborted
+[ 2539.298855] 
+[ 2539.298885] Restarting kernel threads ... done.
+[ 2539.299526] Restarting tasks ... 
+[ 2539.308377] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2539.308408] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2539.308682] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2539.308713] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2539.319395] done.
+[ 2539.323729] PM: suspend exit 2013-06-20 14:17:11.590089415 UTC
+[ 2539.323790] suspend: exit suspend, ret = -16 (2013-06-20 14:17:11.590150454 UTC)
+[ 2539.323820] suspend: enter suspend
+[ 2539.323881] PM: suspend entry 2013-06-20 14:17:11.590242013 UTC
+[ 2539.324187] Freezing user space processes ... 
+[ 2539.333923] PM: Syncing filesystems...
+[ 2539.348237] (elapsed 0.02 seconds) done.
+[ 2539.375827] sync done.
+[ 2539.597466] Freezing remaining freezable tasks ... 
+[ 2539.598443] active wake lock smd_sns_dsps, time left 184
+[ 2539.598473] 
+[ 2539.598473] Freezing of tasks  aborted
+[ 2539.598717] 
+[ 2539.598748] Restarting kernel threads ... done.
+[ 2539.599389] Restarting tasks ... 
+[ 2539.607080] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2539.607110] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2539.607690] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2539.607721] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2539.619074] done.
+[ 2539.619807] PM: suspend exit 2013-06-20 14:17:11.886162955 UTC
+[ 2539.619837] suspend: exit suspend, ret = -16 (2013-06-20 14:17:11.886223995 UTC)
+[ 2539.620906] suspend: enter suspend
+[ 2539.620936] PM: suspend entry 2013-06-20 14:17:11.887292196 UTC
+[ 2539.621241] Freezing user space processes ... 
+[ 2539.630916] PM: Syncing filesystems...
+[ 2539.648221] (elapsed 0.02 seconds) done.
+[ 2539.672363] sync done.
+[ 2539.897451] Freezing remaining freezable tasks ... 
+[ 2539.898427] active wake lock smd_sns_dsps, time left 195
+[ 2539.898458] 
+[ 2539.898458] Freezing of tasks  aborted
+[ 2539.898702] 
+[ 2539.898733] Restarting kernel threads ... done.
+[ 2539.899373] Restarting tasks ... 
+[ 2539.907309] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2539.907431] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2539.907919] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2539.907950] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2539.917564] done.
+[ 2539.924950] PM: suspend exit 2013-06-20 14:17:12.191302710 UTC
+[ 2539.925011] suspend: exit suspend, ret = -16 (2013-06-20 14:17:12.191363750 UTC)
+[ 2539.926048] suspend: enter suspend
+[ 2539.926079] PM: suspend entry 2013-06-20 14:17:12.192462475 UTC
+[ 2539.927116] Freezing user space processes ... 
+[ 2539.936669] PM: Syncing filesystems...
+[ 2539.968380] (elapsed 0.04 seconds) done.
+[ 2539.977445] sync done.
+[ 2540.217457] Freezing remaining freezable tasks ... 
+[ 2540.218281] active wake lock smd_sns_dsps, time left 183
+[ 2540.218311] 
+[ 2540.218342] Freezing of tasks  aborted
+[ 2540.218586] 
+[ 2540.218586] Restarting kernel threads ... done.
+[ 2540.219257] Restarting tasks ... 
+[ 2540.228200] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2540.228261] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2540.228536] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2540.228566] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2540.238791] done.
+[ 2540.242636] PM: suspend exit 2013-06-20 14:17:12.508987416 UTC
+[ 2540.242667] suspend: exit suspend, ret = -16 (2013-06-20 14:17:12.509017936 UTC)
+[ 2540.242728] suspend: enter suspend
+[ 2540.242789] PM: suspend entry 2013-06-20 14:17:12.509140017 UTC
+[ 2540.243094] Freezing user space processes ... 
+[ 2540.252769] active wake lock smd_sns_dsps
+[ 2540.252799] 
+[ 2540.252830] Freezing of user space  aborted
+[ 2540.253044] 
+[ 2540.253074] Restarting tasks ... 
+[ 2540.263146] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2540.263207] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2540.263817] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2540.263848] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2540.266595] done.
+[ 2540.267236] PM: suspend exit 2013-06-20 14:17:12.533586728 UTC
+[ 2540.267297] suspend: exit suspend, ret = -16 (2013-06-20 14:17:12.533647769 UTC)
+[ 2540.267327] PM: Syncing filesystems...
+[ 2540.278009] suspend: enter suspend
+[ 2540.278040] PM: suspend entry 2013-06-20 14:17:12.544390895 UTC
+[ 2540.278375] Freezing user space processes ... (elapsed 0.03 seconds) done.
+[ 2540.326079] sync done.
+[ 2540.326140] PM: Syncing filesystems...
+[ 2540.354310] sync done.
+[ 2540.567525] Freezing remaining freezable tasks ... 
+[ 2540.568472] active wake lock smd_sns_dsps, time left 188
+[ 2540.568502] 
+[ 2540.568533] Freezing of tasks  aborted
+[ 2540.568960] 
+[ 2540.568960] Restarting kernel threads ... done.
+[ 2540.569601] Restarting tasks ... 
+[ 2540.578330] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2540.578391] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2540.578665] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2540.578696] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2540.591118] done.
+[ 2540.599358] PM: suspend exit 2013-06-20 14:17:12.865738821 UTC
+[ 2540.599358] suspend: exit suspend, ret = -16 (2013-06-20 14:17:12.865738821 UTC)
+[ 2540.599389] suspend: too many immediate wakeups, back off
+[ 2540.599389] active wake lock suspend_backoff, time left 1000
+[ 2540.599389] suspend: abort suspend
+[ 2542.198168] adjust_soc: ibat_ua = 51500, vbat_uv = 3968610, soc = 99, batt_temp=274
+[ 2550.597466] wake lock suspend_backoff, expired
+[ 2550.597619] suspend: enter suspend
+[ 2550.597680] PM: suspend entry 2013-06-20 14:17:22.864028106 UTC
+[ 2550.597771] PM: Syncing filesystems...
+[ 2550.625087] Freezing user space processes ... 
+[ 2550.635433] sync done.
+[ 2550.637631] (elapsed 0.01 seconds) done.
+[ 2550.637661] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2550.657530] Suspending console(s) (use no_console_suspend to debug)
+[ 2550.660582] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2550.661681] hsd_suspend: hsd_suspend
+[ 2550.669036] PM: suspend of devices complete after 10.499 msecs
+[ 2550.669494] PM: late suspend of devices complete after 0.457 msecs
+[ 2550.670623] power_suspend_late return 0
+[ 2550.670654] PM: noirq suspend of devices complete after 1.129 msecs
+[ 2550.670654] Disabling non-boot CPUs ...
+[ 2550.671112] msm_pm_enter
+[ 2550.671112] msm_pm_enter: power collapse
+[ 2550.671112] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2550.671112] msm_pm_enter: return
+[ 2550.672149] PM: noirq resume of devices complete after 0.946 msecs
+[ 2550.673126] wakeup wake lock: smd_sns_dsps
+[ 2550.673706] PM: early resume of devices complete after 0.427 msecs
+[ 2550.674713] hsd_resume: hsd_resume
+[ 2550.675690] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2550.726140] PM: resume of devices complete after 52.375 msecs
+[ 2550.727086] Restarting tasks ... 
+[ 2550.730169] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2550.730169] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2550.730260] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2550.730260] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2550.735510] done.
+[ 2550.735754] PM: suspend exit 2013-06-20 14:17:23.002096726 UTC
+[ 2550.735784] suspend: exit suspend, ret = 0 (2013-06-20 14:17:23.002127220 UTC)
+[ 2551.667968] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2551.667999] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2551.668639] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2551.668670] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2551.668700] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2552.348725] suspend: enter suspend
+[ 2552.348786] PM: suspend entry 2013-06-20 14:17:24.614521507 UTC
+[ 2552.348878] PM: Syncing filesystems...
+[ 2552.359468] Freezing user space processes ... (elapsed 0.09 seconds) done.
+[ 2552.472119] sync done.
+[ 2552.708102] Freezing remaining freezable tasks ... 
+[ 2552.708835] active wake lock smd_sns_dsps, time left 196
+[ 2552.708865] 
+[ 2552.708896] Freezing of tasks  aborted
+[ 2552.709109] 
+[ 2552.709140] Restarting kernel threads ... done.
+[ 2552.709811] Restarting tasks ... 
+[ 2552.718937] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2552.718968] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2552.719456] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2552.719486] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2552.730291] done.
+[ 2552.733312] PM: suspend exit 2013-06-20 14:17:24.999019856 UTC
+[ 2552.733373] suspend: exit suspend, ret = -16 (2013-06-20 14:17:24.999080894 UTC)
+[ 2552.733434] suspend: enter suspend
+[ 2552.733465] PM: suspend entry 2013-06-20 14:17:24.999172450 UTC
+[ 2552.733526] PM: Syncing filesystems...
+[ 2552.738989] Freezing user space processes ... (elapsed 0.03 seconds) done.
+[ 2552.784068] sync done.
+[ 2553.018128] Freezing remaining freezable tasks ... 
+[ 2553.019044] active wake lock smd_sns_dsps, time left 186
+[ 2553.019074] 
+[ 2553.019105] Freezing of tasks  aborted
+[ 2553.019319] 
+[ 2553.019349] Restarting kernel threads ... done.
+[ 2553.019990] Restarting tasks ... 
+[ 2553.027681] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.027742] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2553.028139] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.028169] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2553.044132] done.
+[ 2553.045108] PM: suspend exit 2013-06-20 14:17:25.310803229 UTC
+[ 2553.045139] suspend: exit suspend, ret = -16 (2013-06-20 14:17:25.310864268 UTC)
+[ 2553.046176] suspend: enter suspend
+[ 2553.046238] PM: suspend entry 2013-06-20 14:17:25.311932448 UTC
+[ 2553.046634] Freezing user space processes ... 
+[ 2553.056706] PM: Syncing filesystems...
+[ 2553.088966] (elapsed 0.04 seconds) done.
+[ 2553.097573] sync done.
+[ 2553.338165] Freezing remaining freezable tasks ... 
+[ 2553.338989] active wake lock smd_sns_dsps, time left 194
+[ 2553.339019] 
+[ 2553.339050] Freezing of tasks  aborted
+[ 2553.339294] 
+[ 2553.339294] Restarting kernel threads ... done.
+[ 2553.339966] Restarting tasks ... 
+[ 2553.349244] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.349305] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2553.349763] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.349793] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2553.366610] done.
+[ 2553.367342] PM: suspend exit 2013-06-20 14:17:25.633029487 UTC
+[ 2553.367373] suspend: exit suspend, ret = -16 (2013-06-20 14:17:25.633090526 UTC)
+[ 2553.367464] suspend: enter suspend
+[ 2553.367495] PM: suspend entry 2013-06-20 14:17:25.633182086 UTC
+[ 2553.367800] Freezing user space processes ... 
+[ 2553.378269] PM: Syncing filesystems...
+[ 2553.398992] (elapsed 0.03 seconds) done.
+[ 2553.407141] sync done.
+[ 2553.648160] Freezing remaining freezable tasks ... 
+[ 2553.648954] active wake lock smd_sns_dsps, time left 183
+[ 2553.648984] 
+[ 2553.648984] Freezing of tasks  aborted
+[ 2553.649412] 
+[ 2553.649442] Restarting kernel threads ... done.
+[ 2553.650083] Restarting tasks ... 
+[ 2553.657774] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.657805] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2553.658171] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.658201] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2553.675140] done.
+[ 2553.675873] PM: suspend exit 2013-06-20 14:17:25.941555346 UTC
+[ 2553.675903] suspend: exit suspend, ret = -16 (2013-06-20 14:17:25.941616386 UTC)
+[ 2553.676941] suspend: enter suspend
+[ 2553.677002] PM: suspend entry 2013-06-20 14:17:25.942684587 UTC
+[ 2553.677307] Freezing user space processes ... 
+[ 2553.686250] active wake lock smd_sns_dsps, time left 200
+[ 2553.686280] 
+[ 2553.686280] Freezing of user space  aborted
+[ 2553.686524] 
+[ 2553.686524] Restarting tasks ... 
+[ 2553.696596] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.696627] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2553.697084] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.697115] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2553.698916] done.
+[ 2553.699587] PM: suspend exit 2013-06-20 14:17:25.965269415 UTC
+[ 2553.699618] suspend: exit suspend, ret = -16 (2013-06-20 14:17:25.965330455 UTC)
+[ 2553.699679] PM: Syncing filesystems...
+[ 2553.709903] suspend: enter suspend
+[ 2553.709964] PM: suspend entry 2013-06-20 14:17:25.975646231 UTC
+[ 2553.710178] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[ 2553.742346] sync done.
+[ 2553.742407] PM: Syncing filesystems...
+[ 2553.770242] sync done.
+[ 2553.978177] Freezing remaining freezable tasks ... 
+[ 2553.979154] active wake lock smd_sns_dsps, time left 190
+[ 2553.979184] 
+[ 2553.979184] Freezing of tasks  aborted
+[ 2553.979612] 
+[ 2553.979612] Restarting kernel threads ... done.
+[ 2553.980283] Restarting tasks ... 
+[ 2553.988920] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.988951] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2553.989256] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2553.989286] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2554.003540] done.
+[ 2554.004241] PM: suspend exit 2013-06-20 14:17:26.269921102 UTC
+[ 2554.004303] suspend: exit suspend, ret = -16 (2013-06-20 14:17:26.269982142 UTC)
+[ 2554.004364] suspend: enter suspend
+[ 2554.004394] PM: suspend entry 2013-06-20 14:17:26.270104223 UTC
+[ 2554.004699] Freezing user space processes ... 
+[ 2554.014771] PM: Syncing filesystems...
+[ 2554.043796] sync done.
+[ 2554.048893] (elapsed 0.04 seconds) done.
+[ 2554.048954] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2554.068670] Suspending console(s) (use no_console_suspend to debug)
+[ 2554.078955] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2554.083533] hsd_suspend: hsd_suspend
+[ 2554.105111] PM: suspend of devices complete after 33.114 msecs
+[ 2554.106668] PM: late suspend of devices complete after 1.556 msecs
+[ 2554.110544] active wake lock smd_sns_dsps, time left 197
+[ 2554.110574] power_suspend_late return -11
+[ 2554.110635] dpm_run_callback(): power_suspend_late+0x0/0x68 returns -11
+[ 2554.110666] PM: Device power.0 failed to suspend noirq: error -11
+[ 2554.112528] PM: noirq resume of devices complete after 1.831 msecs
+[ 2554.115946] PM: early resume of devices complete after 1.526 msecs
+[ 2554.115977] PM: Some devices failed to power down
+[ 2554.119395] hsd_resume: hsd_resume
+[ 2554.121562] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2554.177597] PM: resume of devices complete after 61.559 msecs
+[ 2554.181931] Restarting tasks ... 
+[ 2554.192033] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2554.192094] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2554.192552] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2554.192583] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2554.209674] done.
+[ 2554.210437] PM: suspend exit 2013-06-20 14:17:26.476115601 UTC
+[ 2554.210498] suspend: exit suspend, ret = -11 (2013-06-20 14:17:26.476176641 UTC)
+[ 2555.118144] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2555.118174] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2555.118998] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2555.119029] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2555.119059] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2555.389744] suspend: enter suspend
+[ 2555.389805] PM: suspend entry 2013-06-20 14:17:27.655481315 UTC
+[ 2555.389897] PM: Syncing filesystems...
+[ 2555.399267] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[ 2555.478925] sync done.
+[ 2555.668182] Freezing remaining freezable tasks ... 
+[ 2555.669158] active wake lock smd_sns_dsps, time left 182
+[ 2555.669189] 
+[ 2555.669189] Freezing of tasks  aborted
+[ 2555.669616] 
+[ 2555.669616] Restarting kernel threads ... done.
+[ 2555.670318] Restarting tasks ... 
+[ 2555.679352] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2555.679383] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2555.679688] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2555.679718] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2555.694734] done.
+[ 2555.695558] PM: suspend exit 2013-06-20 14:17:27.961234242 UTC
+[ 2555.695619] suspend: exit suspend, ret = -16 (2013-06-20 14:17:27.961295283 UTC)
+[ 2555.695681] PM: Syncing filesystems...
+[ 2555.711032] suspend: enter suspend
+[ 2555.711093] PM: suspend entry 2013-06-20 14:17:27.976769105 UTC
+[ 2555.711704] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[ 2555.752082] sync done.
+[ 2555.752143] PM: Syncing filesystems...
+[ 2555.780283] sync done.
+[ 2555.988127] Freezing remaining freezable tasks ... 
+[ 2555.989103] active wake lock smd_sns_dsps, time left 191
+[ 2555.989134] 
+[ 2555.989164] Freezing of tasks  aborted
+[ 2555.989378] 
+[ 2555.989409] Restarting kernel threads ... done.
+[ 2555.990049] Restarting tasks ... 
+[ 2555.997985] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2555.998015] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2555.998778] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2555.998809] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2556.009613] done.
+[ 2556.014283] PM: suspend exit 2013-06-20 14:17:28.279958390 UTC
+[ 2556.014313] suspend: exit suspend, ret = -16 (2013-06-20 14:17:28.279988911 UTC)
+[ 2556.014344] suspend: too many immediate wakeups, back off
+[ 2556.015412] active wake lock suspend_backoff, time left 1000
+[ 2556.015442] suspend: abort suspend
+[ 2562.198321] adjust_soc: ibat_ua = 41800, vbat_uv = 3973008, soc = 99, batt_temp=274
+[ 2566.008301] wake lock suspend_backoff, expired
+[ 2566.008667] suspend: enter suspend
+[ 2566.008697] PM: suspend entry 2013-06-20 14:17:38.274403512 UTC
+[ 2566.008789] PM: Syncing filesystems...
+[ 2566.023164] Freezing user space processes ... (elapsed 0.03 seconds) done.
+[ 2566.065038] sync done.
+[ 2566.308133] Freezing remaining freezable tasks ... 
+[ 2566.308865] active wake lock smd_sns_dsps, time left 186
+[ 2566.308896] 
+[ 2566.308896] Freezing of tasks  aborted
+[ 2566.309323] 
+[ 2566.309323] Restarting kernel threads ... done.
+[ 2566.309995] Restarting tasks ... 
+[ 2566.317747] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2566.317777] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2566.318174] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2566.318205] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2566.328246] done.
+[ 2566.331969] PM: suspend exit 2013-06-20 14:17:38.597614255 UTC
+[ 2566.332000] suspend: exit suspend, ret = -16 (2013-06-20 14:17:38.597675296 UTC)
+[ 2566.333037] suspend: enter suspend
+[ 2566.333098] PM: suspend entry 2013-06-20 14:17:38.598774029 UTC
+[ 2566.333495] Freezing user space processes ... 
+[ 2566.343109] PM: Syncing filesystems...
+[ 2566.358980] (elapsed 0.02 seconds) done.
+[ 2566.386570] sync done.
+[ 2566.608148] Freezing remaining freezable tasks ... 
+[ 2566.609125] active wake lock smd_sns_dsps, time left 196
+[ 2566.609155] 
+[ 2566.609186] Freezing of tasks  aborted
+[ 2566.609399] 
+[ 2566.609430] Restarting kernel threads ... done.
+[ 2566.610071] Restarting tasks ... 
+[ 2566.617945] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2566.618006] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2566.618556] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2566.618586] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2566.629757] done.
+[ 2566.630489] PM: suspend exit 2013-06-20 14:17:38.896164538 UTC
+[ 2566.630550] suspend: exit suspend, ret = -16 (2013-06-20 14:17:38.896225578 UTC)
+[ 2566.631588] suspend: enter suspend
+[ 2566.631618] PM: suspend entry 2013-06-20 14:17:38.897324312 UTC
+[ 2566.632137] Freezing user space processes ... 
+[ 2566.641965] PM: Syncing filesystems...
+[ 2566.658964] (elapsed 0.02 seconds) done.
+[ 2566.685243] sync done.
+[ 2566.908133] Freezing remaining freezable tasks ... 
+[ 2566.909109] active wake lock smd_sns_dsps, time left 186
+[ 2566.909140] 
+[ 2566.909140] Freezing of tasks  aborted
+[ 2566.909567] 
+[ 2566.909598] Restarting kernel threads ... done.
+[ 2566.910239] Restarting tasks ... 
+[ 2566.919090] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2566.919151] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2566.919425] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2566.919456] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2566.930016] done.
+[ 2566.936334] PM: suspend exit 2013-06-20 14:17:39.202009189 UTC
+[ 2566.936364] suspend: exit suspend, ret = -16 (2013-06-20 14:17:39.202070230 UTC)
+[ 2566.937432] suspend: enter suspend
+[ 2566.937463] PM: suspend entry 2013-06-20 14:17:39.203138443 UTC
+[ 2566.937768] Freezing user space processes ... 
+[ 2566.947443] PM: Syncing filesystems...
+[ 2566.959743] (elapsed 0.02 seconds) done.
+[ 2566.988401] sync done.
+[ 2567.208148] Freezing remaining freezable tasks ... 
+[ 2567.209094] active wake lock smd_sns_dsps, time left 197
+[ 2567.209125] 
+[ 2567.209155] Freezing of tasks  aborted
+[ 2567.209399] 
+[ 2567.209399] Restarting kernel threads ... done.
+[ 2567.210071] Restarting tasks ... 
+[ 2567.218617] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2567.218647] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2567.219135] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2567.219166] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2567.234121] done.
+[ 2567.239279] PM: suspend exit 2013-06-20 14:17:39.504923886 UTC
+[ 2567.239309] suspend: exit suspend, ret = -16 (2013-06-20 14:17:39.504984926 UTC)
+[ 2567.239370] suspend: enter suspend
+[ 2567.239401] PM: suspend entry 2013-06-20 14:17:39.505107008 UTC
+[ 2567.239737] Freezing user space processes ... 
+[ 2567.249839] PM: Syncing filesystems...
+[ 2567.269006] (elapsed 0.02 seconds) done.
+[ 2567.290919] sync done.
+[ 2567.518143] Freezing remaining freezable tasks ... 
+[ 2567.519090] active wake lock smd_sns_dsps, time left 186
+[ 2567.519120] 
+[ 2567.519151] Freezing of tasks  aborted
+[ 2567.519547] 
+[ 2567.519578] Restarting kernel threads ... done.
+[ 2567.520249] Restarting tasks ... 
+[ 2567.529558] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2567.529619] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2567.529894] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2567.529924] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2567.540332] done.
+[ 2567.545978] PM: suspend exit 2013-06-20 14:17:39.811653627 UTC
+[ 2567.546039] suspend: exit suspend, ret = -16 (2013-06-20 14:17:39.811714668 UTC)
+[ 2567.547077] suspend: enter suspend
+[ 2567.547107] PM: suspend entry 2013-06-20 14:17:39.812782881 UTC
+[ 2567.547413] Freezing user space processes ... 
+[ 2567.557026] PM: Syncing filesystems...
+[ 2567.589012] (elapsed 0.04 seconds) done.
+[ 2567.599602] sync done.
+[ 2567.838150] Freezing remaining freezable tasks ... 
+[ 2567.839004] active wake lock smd_sns_dsps, time left 194
+[ 2567.839035] 
+[ 2567.839035] Freezing of tasks  aborted
+[ 2567.839279] 
+[ 2567.839309] Restarting kernel threads ... done.
+[ 2567.839950] Restarting tasks ... 
+[ 2567.848008] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2567.848160] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2567.848618] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2567.848649] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2567.859758] done.
+[ 2567.860674] PM: suspend exit 2013-06-20 14:17:40.126349185 UTC
+[ 2567.860735] suspend: exit suspend, ret = -16 (2013-06-20 14:17:40.126410226 UTC)
+[ 2567.860796] suspend: enter suspend
+[ 2567.860826] PM: suspend entry 2013-06-20 14:17:40.126532307 UTC
+[ 2567.864153] Freezing user space processes ... 
+[ 2567.873950] PM: Syncing filesystems...
+[ 2567.888936] (elapsed 0.02 seconds) done.
+[ 2567.916404] sync done.
+[ 2568.138104] Freezing remaining freezable tasks ... 
+[ 2568.139080] active wake lock smd_sns_dsps, time left 184
+[ 2568.139111] 
+[ 2568.139111] Freezing of tasks  aborted
+[ 2568.139355] 
+[ 2568.139355] Restarting kernel threads ... done.
+[ 2568.140027] Restarting tasks ... 
+[ 2568.147901] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2568.147931] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2568.148572] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2568.148603] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2568.159377] done.
+[ 2568.163253] PM: suspend exit 2013-06-20 14:17:40.428928159 UTC
+[ 2568.163283] suspend: exit suspend, ret = -16 (2013-06-20 14:17:40.428989199 UTC)
+[ 2568.164321] suspend: enter suspend
+[ 2568.164382] PM: suspend entry 2013-06-20 14:17:40.430057412 UTC
+[ 2568.164779] Freezing user space processes ... 
+[ 2568.174423] PM: Syncing filesystems...
+[ 2568.188920] (elapsed 0.02 seconds) done.
+[ 2568.213214] sync done.
+[ 2568.438150] Freezing remaining freezable tasks ... 
+[ 2568.439126] active wake lock smd_sns_dsps, time left 195
+[ 2568.439157] 
+[ 2568.439187] Freezing of tasks  aborted
+[ 2568.439431] 
+[ 2568.439431] Restarting kernel threads ... done.
+[ 2568.440072] Restarting tasks ... 
+[ 2568.447977] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2568.448130] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2568.448404] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2568.448435] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2568.459850] done.
+[ 2568.460582] PM: suspend exit 2013-06-20 14:17:40.726257625 UTC
+[ 2568.460613] suspend: exit suspend, ret = -16 (2013-06-20 14:17:40.726318666 UTC)
+[ 2568.461650] suspend: enter suspend
+[ 2568.461711] PM: suspend entry 2013-06-20 14:17:40.727386879 UTC
+[ 2568.462474] Freezing user space processes ... 
+[ 2568.472210] PM: Syncing filesystems...
+[ 2568.489027] (elapsed 0.02 seconds) done.
+[ 2568.513932] sync done.
+[ 2568.738134] Freezing remaining freezable tasks ... 
+[ 2568.739111] active wake lock smd_sns_dsps, time left 185
+[ 2568.739142] 
+[ 2568.739142] Freezing of tasks  aborted
+[ 2568.739386] 
+[ 2568.739416] Restarting kernel threads ... done.
+[ 2568.740057] Restarting tasks ... 
+[ 2568.747687] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2568.747718] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2568.748298] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2568.748328] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2568.758247] done.
+[ 2568.764870] PM: suspend exit 2013-06-20 14:17:41.030545737 UTC
+[ 2568.764901] suspend: exit suspend, ret = -16 (2013-06-20 14:17:41.030606778 UTC)
+[ 2568.765938] suspend: enter suspend
+[ 2568.765999] PM: suspend entry 2013-06-20 14:17:41.031674991 UTC
+[ 2568.767037] Freezing user space processes ... 
+[ 2568.776651] PM: Syncing filesystems...
+[ 2568.808972] (elapsed 0.04 seconds) done.
+[ 2568.823683] sync done.
+[ 2569.058140] Freezing remaining freezable tasks ... 
+[ 2569.059056] active wake lock smd_sns_dsps, time left 193
+[ 2569.059087] 
+[ 2569.059117] Freezing of tasks  aborted
+[ 2569.059514] 
+[ 2569.059544] Restarting kernel threads ... done.
+[ 2569.060185] Restarting tasks ... 
+[ 2569.069280] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2569.069311] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2569.069586] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2569.069616] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2569.079413] done.
+[ 2569.083869] PM: suspend exit 2013-06-20 14:17:41.349544669 UTC
+[ 2569.083930] suspend: exit suspend, ret = -16 (2013-06-20 14:17:41.349605710 UTC)
+[ 2569.083930] suspend: too many immediate wakeups, back off
+[ 2569.084022] active wake lock suspend_backoff, time left 1000
+[ 2569.084052] suspend: abort suspend
+[ 2579.078101] wake lock suspend_backoff, expired
+[ 2579.078375] suspend: enter suspend
+[ 2579.078436] PM: suspend entry 2013-06-20 14:17:51.344112041 UTC
+[ 2579.078528] PM: Syncing filesystems...
+[ 2579.106607] Freezing user space processes ... 
+[ 2579.116495] sync done.
+[ 2579.118296] (elapsed 0.01 seconds) done.
+[ 2579.118327] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2579.138195] Suspending console(s) (use no_console_suspend to debug)
+[ 2579.141278] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2579.142377] hsd_suspend: hsd_suspend
+[ 2579.149702] PM: suspend of devices complete after 10.468 msecs
+[ 2579.150159] PM: late suspend of devices complete after 0.457 msecs
+[ 2579.151289] power_suspend_late return 0
+[ 2579.151289] PM: noirq suspend of devices complete after 1.129 msecs
+[ 2579.151319] Disabling non-boot CPUs ...
+[ 2579.151777] msm_pm_enter
+[ 2579.151777] msm_pm_enter: power collapse
+[ 2579.151777] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2579.151777] msm_pm_enter: return
+[ 2579.152815] PM: noirq resume of devices complete after 0.946 msecs
+[ 2579.153730] wakeup wake lock: smd_sns_dsps
+[ 2579.154341] PM: early resume of devices complete after 0.457 msecs
+[ 2579.155409] hsd_resume: hsd_resume
+[ 2579.156386] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2579.204455] PM: resume of devices complete after 50.057 msecs
+[ 2579.205401] Restarting tasks ... 
+[ 2579.208484] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2579.208514] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2579.208575] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2579.208606] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2579.214039] done.
+[ 2579.214283] PM: suspend exit 2013-06-20 14:17:51.479954031 UTC
+[ 2579.214313] suspend: exit suspend, ret = 0 (2013-06-20 14:17:51.479984525 UTC)
+[ 2580.148633] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2580.148664] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2580.149274] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2580.149335] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2580.149366] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2580.419715] suspend: enter suspend
+[ 2580.419746] PM: suspend entry 2013-06-20 14:17:52.684896033 UTC
+[ 2580.419837] PM: Syncing filesystems...
+[ 2580.432686] Freezing user space processes ... (elapsed 0.07 seconds) done.
+[ 2580.515793] sync done.
+[ 2580.758736] Freezing remaining freezable tasks ... 
+[ 2580.759468] active wake lock smd_sns_dsps, time left 199
+[ 2580.759499] 
+[ 2580.759499] Freezing of tasks  aborted
+[ 2580.759743] 
+[ 2580.759773] Restarting kernel threads ... done.
+[ 2580.760445] Restarting tasks ... 
+[ 2580.770059] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2580.770089] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2580.770547] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2580.770577] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2580.782267] done.
+[ 2580.783060] PM: suspend exit 2013-06-20 14:17:53.048128057 UTC
+[ 2580.783121] suspend: exit suspend, ret = -16 (2013-06-20 14:17:53.048189091 UTC)
+[ 2580.783152] suspend: enter suspend
+[ 2580.783213] PM: suspend entry 2013-06-20 14:17:53.048280643 UTC
+[ 2580.783274] PM: Syncing filesystems...
+[ 2580.789622] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[ 2580.836166] sync done.
+[ 2581.068762] Freezing remaining freezable tasks ... 
+[ 2581.069677] active wake lock smd_sns_dsps, time left 188
+[ 2581.069708] 
+[ 2581.069738] Freezing of tasks  aborted
+[ 2581.069982] 
+[ 2581.069982] Restarting kernel threads ... done.
+[ 2581.070623] Restarting tasks ... 
+[ 2581.078406] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2581.078436] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2581.079016] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2581.079047] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2581.088172] done.
+[ 2581.094582] PM: suspend exit 2013-06-20 14:17:53.359623737 UTC
+[ 2581.094612] suspend: exit suspend, ret = -16 (2013-06-20 14:17:53.359684774 UTC)
+[ 2581.095650] suspend: enter suspend
+[ 2581.095711] PM: suspend entry 2013-06-20 14:17:53.360752919 UTC
+[ 2581.099923] PM: Syncing filesystems...
+[ 2581.112375] Freezing user space processes ... 
+[ 2581.127635] sync done.
+[ 2581.128948] (elapsed 0.01 seconds) done.
+[ 2581.128948] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2581.148847] Suspending console(s) (use no_console_suspend to debug)
+[ 2581.151930] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2581.153028] hsd_suspend: hsd_suspend
+[ 2581.160536] PM: suspend of devices complete after 10.651 msecs
+[ 2581.160994] PM: late suspend of devices complete after 0.457 msecs
+[ 2581.162123] active wake lock smd_sns_dsps, time left 200
+[ 2581.162123] power_suspend_late return -11
+[ 2581.162154] dpm_run_callback(): power_suspend_late+0x0/0x68 returns -11
+[ 2581.162154] PM: Device power.0 failed to suspend noirq: error -11
+[ 2581.162856] PM: noirq resume of devices complete after 0.701 msecs
+[ 2581.164046] PM: early resume of devices complete after 0.427 msecs
+[ 2581.164046] PM: Some devices failed to power down
+[ 2581.165023] hsd_resume: hsd_resume
+[ 2581.165908] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2581.216846] PM: resume of devices complete after 52.797 msecs
+[ 2581.218037] Restarting tasks ... 
+[ 2581.221058] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2581.221058] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2581.221180] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2581.221180] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2581.226186] done.
+[ 2581.226430] PM: suspend exit 2013-06-20 14:17:53.491494739 UTC
+[ 2581.226430] suspend: exit suspend, ret = -11 (2013-06-20 14:17:53.491494739 UTC)
+[ 2582.158736] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2582.158766] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2582.159285] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2582.159315] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2582.159315] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2582.198900] adjust_soc: ibat_ua = 80100, vbat_uv = 3957172, soc = 99, batt_temp=274
+[ 2582.430428] suspend: enter suspend
+[ 2582.430458] PM: suspend entry 2013-06-20 14:17:54.695465529 UTC
+[ 2582.430550] PM: Syncing filesystems...
+[ 2582.440164] Freezing user space processes ... (elapsed 0.07 seconds) done.
+[ 2582.522722] sync done.
+[ 2582.768838] Freezing remaining freezable tasks ... 
+[ 2582.769570] active wake lock smd_sns_dsps, time left 180
+[ 2582.769601] 
+[ 2582.769631] Freezing of tasks  aborted
+[ 2582.769845] 
+[ 2582.769876] Restarting kernel threads ... done.
+[ 2582.770547] Restarting tasks ... 
+[ 2582.779459] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2582.779489] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2582.779978] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2582.780008] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2582.790385] done.
+[ 2582.793834] PM: suspend exit 2013-06-20 14:17:55.058839104 UTC
+[ 2582.793865] suspend: exit suspend, ret = -16 (2013-06-20 14:17:55.058900145 UTC)
+[ 2582.793956] suspend: enter suspend
+[ 2582.793987] PM: suspend entry 2013-06-20 14:17:55.058991705 UTC
+[ 2582.794048] PM: Syncing filesystems...
+[ 2582.799694] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[ 2582.846787] sync done.
+[ 2583.078833] Freezing remaining freezable tasks ... 
+[ 2583.079749] active wake lock smd_sns_dsps, time left 189
+[ 2583.079779] 
+[ 2583.079810] Freezing of tasks  aborted
+[ 2583.080054] 
+[ 2583.080054] Restarting kernel threads ... done.
+[ 2583.080726] Restarting tasks ... 
+[ 2583.088508] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2583.088539] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2583.089119] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2583.089149] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2583.098885] done.
+[ 2583.103158] PM: suspend exit 2013-06-20 14:17:55.368162101 UTC
+[ 2583.103189] suspend: exit suspend, ret = -16 (2013-06-20 14:17:55.368223142 UTC)
+[ 2583.104226] suspend: enter suspend
+[ 2583.104287] PM: suspend entry 2013-06-20 14:17:55.369291352 UTC
+[ 2583.104867] Freezing user space processes ... 
+[ 2583.114512] PM: Syncing filesystems...
+[ 2583.129650] (elapsed 0.02 seconds) done.
+[ 2583.156019] sync done.
+[ 2583.378787] Freezing remaining freezable tasks ... 
+[ 2583.379764] active wake lock smd_sns_dsps, time left 199
+[ 2583.379795] 
+[ 2583.379795] Freezing of tasks  aborted
+[ 2583.380039] 
+[ 2583.380069] Restarting kernel threads ... done.
+[ 2583.380710] Restarting tasks ... 
+[ 2583.389073] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2583.389134] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2583.389409] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2583.389439] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2583.402380] done.
+[ 2583.406225] PM: suspend exit 2013-06-20 14:17:55.671198295 UTC
+[ 2583.406256] suspend: exit suspend, ret = -16 (2013-06-20 14:17:55.671259335 UTC)
+[ 2583.407294] suspend: enter suspend
+[ 2583.407324] PM: suspend entry 2013-06-20 14:17:55.672358067 UTC
+[ 2583.408148] Freezing user space processes ... 
+[ 2583.418006] PM: Syncing filesystems...
+[ 2583.429543] (elapsed 0.02 seconds) done.
+[ 2583.459270] sync done.
+[ 2583.678833] Freezing remaining freezable tasks ... 
+[ 2583.679779] active wake lock smd_sns_dsps, time left 189
+[ 2583.679810] 
+[ 2583.679840] Freezing of tasks  aborted
+[ 2583.680085] 
+[ 2583.680085] Restarting kernel threads ... done.
+[ 2583.680756] Restarting tasks ... 
+[ 2583.688447] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2583.688478] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2583.689027] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2583.689088] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2583.700747] done.
+[ 2583.704379] PM: suspend exit 2013-06-20 14:17:55.969381980 UTC
+[ 2583.704440] suspend: exit suspend, ret = -16 (2013-06-20 14:17:55.969443021 UTC)
+[ 2583.705478] suspend: enter suspend
+[ 2583.705508] PM: suspend entry 2013-06-20 14:17:55.970511233 UTC
+[ 2583.705813] Freezing user space processes ... 
+[ 2583.715580] PM: Syncing filesystems...
+[ 2583.729680] (elapsed 0.02 seconds) done.
+[ 2583.759285] sync done.
+[ 2583.978849] Freezing remaining freezable tasks ... 
+[ 2583.979856] active wake lock smd_sns_dsps
+[ 2583.979886] 
+[ 2583.979917] Freezing of tasks  aborted
+[ 2583.980344] 
+[ 2583.980344] Restarting kernel threads ... done.
+[ 2583.981015] Restarting tasks ... 
+[ 2583.990049] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2583.990111] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2583.990385] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2583.990416] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2584.009705] done.
+[ 2584.010498] PM: suspend exit 2013-06-20 14:17:56.275501093 UTC
+[ 2584.010529] suspend: exit suspend, ret = -16 (2013-06-20 14:17:56.275562134 UTC)
+[ 2584.011627] suspend: enter suspend
+[ 2584.011688] PM: suspend entry 2013-06-20 14:17:56.276691387 UTC
+[ 2584.011994] Freezing user space processes ... 
+[ 2584.022096] PM: Syncing filesystems...
+[ 2584.039676] (elapsed 0.02 seconds) done.
+[ 2584.064153] sync done.
+[ 2584.288783] Freezing remaining freezable tasks ... 
+[ 2584.289760] active wake lock smd_sns_dsps, time left 189
+[ 2584.289790] 
+[ 2584.289790] Freezing of tasks  aborted
+[ 2584.290034] 
+[ 2584.290065] Restarting kernel threads ... done.
+[ 2584.290736] Restarting tasks ... 
+[ 2584.298916] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2584.298977] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2584.322661] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2584.322691] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2584.326170] done.
+[ 2584.327818] PM: suspend exit 2013-06-20 14:17:56.592821266 UTC
+[ 2584.327849] suspend: exit suspend, ret = -16 (2013-06-20 14:17:56.592882306 UTC)
+[ 2584.327879] suspend: too many immediate wakeups, back off
+[ 2584.327971] active wake lock suspend_backoff, time left 1000
+[ 2584.328002] suspend: abort suspend
+[ 2594.319059] wake lock suspend_backoff, expired
+[ 2594.319334] suspend: enter suspend
+[ 2594.319395] PM: suspend entry 2013-06-20 14:18:06.584397414 UTC
+[ 2594.319456] PM: Syncing filesystems...
+[ 2594.335632] Freezing user space processes ... (elapsed 0.04 seconds) done.
+[ 2594.380405] sync done.
+[ 2594.628810] Freezing remaining freezable tasks ... 
+[ 2594.629543] active wake lock smd_sns_dsps, time left 182
+[ 2594.629573] 
+[ 2594.629604] Freezing of tasks  aborted
+[ 2594.630031] 
+[ 2594.630031] Restarting kernel threads ... done.
+[ 2594.630703] Restarting tasks ... 
+[ 2594.639462] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2594.639492] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2594.639798] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2594.639828] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2594.648923] done.
+[ 2594.652647] PM: suspend exit 2013-06-20 14:18:06.917618839 UTC
+[ 2594.652677] suspend: exit suspend, ret = -16 (2013-06-20 14:18:06.917679879 UTC)
+[ 2594.653715] suspend: enter suspend
+[ 2594.653776] PM: suspend entry 2013-06-20 14:18:06.918778613 UTC
+[ 2594.654081] Freezing user space processes ... 
+[ 2594.663756] active wake lock smd_sns_dsps
+[ 2594.663787] 
+[ 2594.663817] Freezing of user space  aborted
+[ 2594.664031] 
+[ 2594.664061] Restarting tasks ... 
+[ 2594.674164] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2594.674194] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2594.674835] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2594.674866] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2594.677887] done.
+[ 2594.678650] PM: suspend exit 2013-06-20 14:18:06.943652717 UTC
+[ 2594.678803] suspend: exit suspend, ret = -16 (2013-06-20 14:18:06.943805319 UTC)
+[ 2594.678864] PM: Syncing filesystems...
+[ 2594.689210] active wake lock mmc0_detect
+[ 2594.689241] suspend: abort suspend
+[ 2594.689332] suspend: enter suspend
+[ 2594.689393] PM: suspend entry 2013-06-20 14:18:06.954395888 UTC
+[ 2594.689821] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[ 2594.735449] sync done.
+[ 2594.735510] PM: Syncing filesystems...
+[ 2594.763588] sync done.
+[ 2594.958827] Freezing remaining freezable tasks ... 
+[ 2594.959804] active wake lock smd_sns_dsps, time left 189
+[ 2594.959834] 
+[ 2594.959834] Freezing of tasks  aborted
+[ 2594.960262] 
+[ 2594.960292] Restarting kernel threads ... done.
+[ 2594.960933] Restarting tasks ... 
+[ 2594.969662] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2594.969723] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2594.969998] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2594.970028] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2594.983579] done.
+[ 2594.984312] PM: suspend exit 2013-06-20 14:18:07.249314245 UTC
+[ 2594.984342] suspend: exit suspend, ret = -16 (2013-06-20 14:18:07.249344765 UTC)
+[ 2594.985380] suspend: enter suspend
+[ 2594.985441] PM: suspend entry 2013-06-20 14:18:07.250443499 UTC
+[ 2594.985746] Freezing user space processes ... 
+[ 2594.995421] PM: Syncing filesystems...
+[ 2595.009644] (elapsed 0.02 seconds) done.
+[ 2595.037631] sync done.
+[ 2595.258812] Freezing remaining freezable tasks ... 
+[ 2595.259758] active wake lock smd_sns_dsps, time left 179
+[ 2595.259789] 
+[ 2595.259819] Freezing of tasks  aborted
+[ 2595.260124] 
+[ 2595.260124] Restarting kernel threads ... done.
+[ 2595.260765] Restarting tasks ... 
+[ 2595.269006] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2595.269036] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2595.269525] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2595.269555] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2595.282923] done.
+[ 2595.283655] PM: suspend exit 2013-06-20 14:18:07.548658059 UTC
+[ 2595.283717] suspend: exit suspend, ret = -16 (2013-06-20 14:18:07.548719100 UTC)
+[ 2595.284754] suspend: enter suspend
+[ 2595.284785] PM: suspend entry 2013-06-20 14:18:07.549817833 UTC
+[ 2595.285578] Freezing user space processes ... 
+[ 2595.295162] PM: Syncing filesystems...
+[ 2595.309628] (elapsed 0.02 seconds) done.
+[ 2595.334869] sync done.
+[ 2595.558827] Freezing remaining freezable tasks ... 
+[ 2595.559804] active wake lock smd_sns_dsps, time left 190
+[ 2595.559834] 
+[ 2595.559834] Freezing of tasks  aborted
+[ 2595.560262] 
+[ 2595.560292] Restarting kernel threads ... done.
+[ 2595.560933] Restarting tasks ... 
+[ 2595.569723] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2595.569753] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2595.570059] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2595.570089] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2595.583091] done.
+[ 2595.583793] PM: suspend exit 2013-06-20 14:18:07.848795402 UTC
+[ 2595.583854] suspend: exit suspend, ret = -16 (2013-06-20 14:18:07.848856442 UTC)
+[ 2595.584892] suspend: enter suspend
+[ 2595.584922] PM: suspend entry 2013-06-20 14:18:07.849955176 UTC
+[ 2595.585258] Freezing user space processes ... 
+[ 2595.594780] PM: Syncing filesystems...
+[ 2595.609644] (elapsed 0.02 seconds) done.
+[ 2595.637051] sync done.
+[ 2595.858812] Freezing remaining freezable tasks ... 
+[ 2595.859789] active wake lock smd_sns_dsps, time left 180
+[ 2595.859819] 
+[ 2595.859819] Freezing of tasks  aborted
+[ 2595.860063] 
+[ 2595.860094] Restarting kernel threads ... done.
+[ 2595.860735] Restarting tasks ... 
+[ 2595.868975] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2595.869006] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2595.869494] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2595.869525] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2595.881916] done.
+[ 2595.883930] PM: suspend exit 2013-06-20 14:18:08.148932742 UTC
+[ 2595.883961] suspend: exit suspend, ret = -16 (2013-06-20 14:18:08.148963262 UTC)
+[ 2595.884998] suspend: enter suspend
+[ 2595.885059] PM: suspend entry 2013-06-20 14:18:08.150061995 UTC
+[ 2595.885365] Freezing user space processes ... 
+[ 2595.894948] PM: Syncing filesystems...
+[ 2595.909598] (elapsed 0.02 seconds) done.
+[ 2595.935082] sync done.
+[ 2596.158797] Freezing remaining freezable tasks ... 
+[ 2596.159773] active wake lock smd_sns_dsps, time left 190
+[ 2596.159804] 
+[ 2596.159804] Freezing of tasks  aborted
+[ 2596.160048] 
+[ 2596.160078] Restarting kernel threads ... done.
+[ 2596.160719] Restarting tasks ... 
+[ 2596.168441] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2596.168472] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2596.169326] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2596.169357] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2596.185807] done.
+[ 2596.186540] PM: suspend exit 2013-06-20 14:18:08.451542232 UTC
+[ 2596.186601] suspend: exit suspend, ret = -16 (2013-06-20 14:18:08.451603273 UTC)
+[ 2596.187638] suspend: enter suspend
+[ 2596.187669] PM: suspend entry 2013-06-20 14:18:08.452702007 UTC
+[ 2596.188462] Freezing user space processes ... 
+[ 2596.198259] PM: Syncing filesystems...
+[ 2596.209521] (elapsed 0.02 seconds) done.
+[ 2596.240256] sync done.
+[ 2596.458873] Freezing remaining freezable tasks ... 
+[ 2596.459850] active wake lock smd_sns_dsps, time left 180
+[ 2596.459880] 
+[ 2596.459911] Freezing of tasks  aborted
+[ 2596.460124] 
+[ 2596.460155] Restarting kernel threads ... done.
+[ 2596.460796] Restarting tasks ... 
+[ 2596.468487] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2596.468517] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2596.468975] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2596.469006] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2596.484724] done.
+[ 2596.485487] PM: suspend exit 2013-06-20 14:18:08.750489281 UTC
+[ 2596.485517] suspend: exit suspend, ret = -16 (2013-06-20 14:18:08.750519801 UTC)
+[ 2596.486585] suspend: enter suspend
+[ 2596.486616] PM: suspend entry 2013-06-20 14:18:08.751618534 UTC
+[ 2596.486921] Freezing user space processes ... 
+[ 2596.496444] PM: Syncing filesystems...
+[ 2596.509659] (elapsed 0.02 seconds) done.
+[ 2596.538256] sync done.
+[ 2596.758858] Freezing remaining freezable tasks ... 
+[ 2596.759834] active wake lock smd_sns_dsps, time left 191
+[ 2596.759865] 
+[ 2596.759895] Freezing of tasks  aborted
+[ 2596.760109] 
+[ 2596.760140] Restarting kernel threads ... done.
+[ 2596.760780] Restarting tasks ... 
+[ 2596.768380] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2596.768411] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2596.768990] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2596.769021] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2596.788218] done.
+[ 2596.790568] PM: suspend exit 2013-06-20 14:18:09.055570922 UTC
+[ 2596.790629] suspend: exit suspend, ret = -16 (2013-06-20 14:18:09.055631962 UTC)
+[ 2596.791728] suspend: enter suspend
+[ 2596.791759] PM: suspend entry 2013-06-20 14:18:09.056761216 UTC
+[ 2596.792094] Freezing user space processes ... 
+[ 2596.801952] PM: Syncing filesystems...
+[ 2596.819685] (elapsed 0.02 seconds) done.
+[ 2596.844010] sync done.
+[ 2597.068823] Freezing remaining freezable tasks ... 
+[ 2597.069769] active wake lock smd_sns_dsps, time left 180
+[ 2597.069799] 
+[ 2597.069830] Freezing of tasks  aborted
+[ 2597.070257] 
+[ 2597.070257] Restarting kernel threads ... done.
+[ 2597.070928] Restarting tasks ... 
+[ 2597.080878] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2597.080909] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2597.081214] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2597.081244] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2597.105142] done.
+[ 2597.106759] PM: suspend exit 2013-06-20 14:18:09.371761979 UTC
+[ 2597.106820] suspend: exit suspend, ret = -16 (2013-06-20 14:18:09.371823020 UTC)
+[ 2597.106851] suspend: too many immediate wakeups, back off
+[ 2597.108011] active wake lock suspend_backoff, time left 1000
+[ 2597.108041] suspend: abort suspend
+[ 2602.198839] adjust_soc: ibat_ua = 113400, vbat_uv = 3944858, soc = 99, batt_temp=274
+[ 2607.098794] wake lock suspend_backoff, expired
+[ 2607.099068] suspend: enter suspend
+[ 2607.099129] PM: suspend entry 2013-06-20 14:18:19.364131886 UTC
+[ 2607.099221] PM: Syncing filesystems...
+[ 2607.135784] Freezing user space processes ... 
+[ 2607.148939] active wake lock smd_sns_dsps, time left 199
+[ 2607.148939] 
+[ 2607.148969] Freezing of user space  aborted
+[ 2607.149030] 
+[ 2607.149030] Restarting tasks ... 
+[ 2607.151075] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2607.151075] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2607.151197] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2607.151197] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2607.154402] done.
+[ 2607.155561] PM: suspend exit 2013-06-20 14:18:19.420564054 UTC
+[ 2607.155561] suspend: exit suspend, ret = -16 (2013-06-20 14:18:19.420594574 UTC)
+[ 2607.155592] suspend: enter suspend
+[ 2607.155592] PM: suspend entry 2013-06-20 14:18:19.420625094 UTC
+[ 2607.155684] Freezing user space processes ... 
+[ 2607.163436] sync done.
+[ 2607.163466] PM: Syncing filesystems...
+[ 2607.169021] (elapsed 0.01 seconds) done.
+[ 2607.172287] sync done.
+[ 2607.418708] Freezing remaining freezable tasks ... 
+[ 2607.418983] active wake lock smd_sns_dsps, time left 192
+[ 2607.418983] 
+[ 2607.418983] Freezing of tasks  aborted
+[ 2607.419105] 
+[ 2607.419105] Restarting kernel threads ... done.
+[ 2607.419349] Restarting tasks ... 
+[ 2607.422065] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2607.422065] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2607.422157] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2607.422157] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2607.425606] done.
+[ 2607.427559] PM: suspend exit 2013-06-20 14:18:19.692592133 UTC
+[ 2607.427559] suspend: exit suspend, ret = -16 (2013-06-20 14:18:19.692592133 UTC)
+[ 2607.427590] suspend: enter suspend
+[ 2607.427590] PM: suspend entry 2013-06-20 14:18:19.692622653 UTC
+[ 2607.427681] Freezing user space processes ... 
+[ 2607.430672] PM: Syncing filesystems...
+[ 2607.439065] (elapsed 0.01 seconds) done.
+[ 2607.446695] sync done.
+[ 2607.688722] Freezing remaining freezable tasks ... 
+[ 2607.689027] active wake lock smd_sns_dsps, time left 185
+[ 2607.689027] 
+[ 2607.689027] Freezing of tasks  aborted
+[ 2607.689088] 
+[ 2607.689088] Restarting kernel threads ... done.
+[ 2607.689271] Restarting tasks ... 
+[ 2607.692079] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2607.692110] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2607.692232] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2607.692232] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2607.696199] done.
+[ 2607.696413] PM: suspend exit 2013-06-20 14:18:19.961446091 UTC
+[ 2607.696444] suspend: exit suspend, ret = -16 (2013-06-20 14:18:19.961446091 UTC)
+[ 2607.696718] suspend: enter suspend
+[ 2607.696749] PM: suspend entry 2013-06-20 14:18:19.961781816 UTC
+[ 2607.696840] Freezing user space processes ... 
+[ 2607.699709] PM: Syncing filesystems...
+[ 2607.708987] (elapsed 0.01 seconds) done.
+[ 2607.717075] sync done.
+[ 2607.958736] Freezing remaining freezable tasks ... 
+[ 2607.959010] active wake lock smd_sns_dsps, time left 199
+[ 2607.959041] 
+[ 2607.959041] Freezing of tasks  aborted
+[ 2607.959163] 
+[ 2607.959163] Restarting kernel threads ... done.
+[ 2607.959346] Restarting tasks ... 
+[ 2607.962093] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2607.962123] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2607.962184] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2607.962184] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2607.966122] done.
+[ 2607.966366] PM: suspend exit 2013-06-20 14:18:20.231368266 UTC
+[ 2607.966366] suspend: exit suspend, ret = -16 (2013-06-20 14:18:20.231398786 UTC)
+[ 2607.966671] suspend: enter suspend
+[ 2607.966671] PM: suspend entry 2013-06-20 14:18:20.231703990 UTC
+[ 2607.966762] Freezing user space processes ... 
+[ 2607.969753] PM: Syncing filesystems...
+[ 2607.979032] (elapsed 0.01 seconds) done.
+[ 2607.984220] sync done.
+[ 2608.228719] Freezing remaining freezable tasks ... 
+[ 2608.228993] active wake lock smd_sns_dsps, time left 192
+[ 2608.229024] 
+[ 2608.229024] Freezing of tasks  aborted
+[ 2608.229085] 
+[ 2608.229085] Restarting kernel threads ... done.
+[ 2608.229268] Restarting tasks ... 
+[ 2608.232076] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2608.232076] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2608.232198] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2608.232229] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2608.236624] done.
+[ 2608.236837] PM: suspend exit 2013-06-20 14:18:20.501839804 UTC
+[ 2608.236837] suspend: exit suspend, ret = -16 (2013-06-20 14:18:20.501870325 UTC)
+[ 2608.237142] suspend: enter suspend
+[ 2608.237173] PM: suspend entry 2013-06-20 14:18:20.502206049 UTC
+[ 2608.237265] Freezing user space processes ... 
+[ 2608.240225] [WLAN][955:E :HDD] wlan_hdd_get_station_stats: SME interrupt while retrieving statistics
+[ 2608.240378] PM: Syncing filesystems...
+[ 2608.256370] sync done.
+[ 2608.308865] (elapsed 0.07 seconds) done.
+[ 2608.308865] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2608.328917] Suspending console(s) (use no_console_suspend to debug)
+[ 2608.331969] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2608.333068] hsd_suspend: hsd_suspend
+[ 2608.340729] PM: suspend of devices complete after 10.804 msecs
+[ 2608.341186] PM: late suspend of devices complete after 0.427 msecs
+[ 2608.342316] power_suspend_late return 0
+[ 2608.342346] PM: noirq suspend of devices complete after 1.129 msecs
+[ 2608.342346] Disabling non-boot CPUs ...
+[ 2608.342804] msm_pm_enter
+[ 2608.342804] msm_pm_enter: power collapse
+[ 2608.342804] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2608.342804] msm_pm_enter: return
+[ 2608.343842] PM: noirq resume of devices complete after 0.946 msecs
+[ 2608.344757] wakeup wake lock: smd_sns_dsps
+[ 2608.345368] PM: early resume of devices complete after 0.427 msecs
+[ 2608.346405] hsd_resume: hsd_resume
+[ 2608.347413] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2608.395909] PM: resume of devices complete after 50.522 msecs
+[ 2608.396856] Restarting tasks ... 
+[ 2608.399969] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2608.399969] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2608.400091] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2608.400121] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2608.406714] done.
+[ 2608.407141] PM: suspend exit 2013-06-20 14:18:20.987486744 UTC
+[ 2608.407171] suspend: exit suspend, ret = 0 (2013-06-20 14:18:20.987517238 UTC)
+[ 2609.339843] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2609.339843] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2609.340149] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2609.340179] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2609.340179] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2610.353608] suspend: enter suspend
+[ 2610.353639] PM: suspend entry 2013-06-20 14:18:22.933378181 UTC
+[ 2610.353730] PM: Syncing filesystems...
+[ 2610.365816] Freezing user space processes ... 
+[ 2610.449900] sync done.
+[ 2610.461376] (elapsed 0.09 seconds) done.
+[ 2610.461437] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2610.481366] Suspending console(s) (use no_console_suspend to debug)
+[ 2610.492934] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2610.496566] hsd_suspend: hsd_suspend
+[ 2610.507583] PM: suspend of devices complete after 22.889 msecs
+[ 2610.509171] PM: late suspend of devices complete after 1.556 msecs
+[ 2610.513016] power_suspend_late return 0
+[ 2610.513047] PM: noirq suspend of devices complete after 3.814 msecs
+[ 2610.513077] Disabling non-boot CPUs ...
+[ 2610.513932] msm_pm_enter
+[ 2610.513932] msm_pm_enter: power collapse
+[ 2610.513932] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2610.513932] msm_pm_enter: return
+[ 2610.517197] PM: noirq resume of devices complete after 2.655 msecs
+[ 2610.519364] wakeup wake lock: smd_sns_dsps
+[ 2610.521531] PM: early resume of devices complete after 1.525 msecs
+[ 2610.525072] hsd_resume: hsd_resume
+[ 2610.527513] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2610.581015] PM: resume of devices complete after 59.384 msecs
+[ 2610.584403] Restarting tasks ... 
+[ 2610.594414] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2610.594444] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2610.594933] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2610.594963] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2610.615046] done.
+[ 2610.615839] PM: suspend exit 2013-06-20 14:18:23.195474697 UTC
+[ 2610.615870] suspend: exit suspend, ret = 0 (2013-06-20 14:18:23.195505198 UTC)
+[ 2610.615900] active wake lock msm_hsic_host
+[ 2610.615931] suspend: abort suspend
+[ 2611.519883] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2611.519914] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2611.520066] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2611.520066] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2611.520097] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2612.363344] suspend: enter suspend
+[ 2612.363405] PM: suspend entry 2013-06-20 14:18:24.942480475 UTC
+[ 2612.363466] PM: Syncing filesystems...
+[ 2612.376498] Freezing user space processes ... 
+[ 2612.488295] sync done.
+[ 2612.490736] (elapsed 0.11 seconds) done.
+[ 2612.490797] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[ 2612.512131] Suspending console(s) (use no_console_suspend to debug)
+[ 2612.522172] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2612.525957] hsd_suspend: hsd_suspend
+[ 2612.537036] PM: suspend of devices complete after 21.576 msecs
+[ 2612.538623] PM: late suspend of devices complete after 1.525 msecs
+[ 2612.542407] active wake lock smd_sns_dsps, time left 198
+[ 2612.542407] power_suspend_late return -11
+[ 2612.542468] dpm_run_callback(): power_suspend_late+0x0/0x68 returns -11
+[ 2612.542499] PM: Device power.0 failed to suspend noirq: error -11
+[ 2612.544360] PM: noirq resume of devices complete after 1.831 msecs
+[ 2612.547779] PM: early resume of devices complete after 1.525 msecs
+[ 2612.547809] PM: Some devices failed to power down
+[ 2612.551136] hsd_resume: hsd_resume
+[ 2612.553272] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2612.611566] PM: resume of devices complete after 63.723 msecs
+[ 2612.616022] Restarting tasks ... 
+[ 2612.624965] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2612.624995] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2612.625301] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2612.625331] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2612.650449] done.
+[ 2612.651243] PM: suspend exit 2013-06-20 14:18:25.230300425 UTC
+[ 2612.651304] suspend: exit suspend, ret = -11 (2013-06-20 14:18:25.230361463 UTC)
+[ 2612.651334] active wake lock msm_hsic_host
+[ 2612.651365] suspend: abort suspend
+[ 2613.551411] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2613.551441] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2613.552326] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2613.552357] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2613.552387] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2614.362429] suspend: enter suspend
+[ 2614.362490] PM: suspend entry 2013-06-20 14:18:26.941518655 UTC
+[ 2614.362581] PM: Syncing filesystems...
+[ 2614.374026] Freezing user space processes ... 
+[ 2614.467632] sync done.
+[ 2614.470745] (elapsed 0.09 seconds) done.
+[ 2614.470776] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[ 2614.492018] Suspending console(s) (use no_console_suspend to debug)
+[ 2614.503555] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2614.507522] hsd_suspend: hsd_suspend
+[ 2614.517991] PM: suspend of devices complete after 22.615 msecs
+[ 2614.519547] PM: late suspend of devices complete after 1.556 msecs
+[ 2614.523362] power_suspend_late return 0
+[ 2614.523424] PM: noirq suspend of devices complete after 3.815 msecs
+[ 2614.523424] Disabling non-boot CPUs ...
+[ 2614.524187] msm_pm_enter
+[ 2614.524187] msm_pm_enter: power collapse
+[ 2614.524187] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2614.524187] msm_pm_enter: return
+[ 2614.527452] PM: noirq resume of devices complete after 2.655 msecs
+[ 2614.529497] wakeup wake lock: smd_sns_dsps
+[ 2614.531664] PM: early resume of devices complete after 1.648 msecs
+[ 2614.535082] hsd_resume: hsd_resume
+[ 2614.537463] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2614.592186] PM: resume of devices complete after 60.476 msecs
+[ 2614.595604] Restarting tasks ... 
+[ 2614.605096] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2614.605127] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2614.605401] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2614.605462] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2614.626827] done.
+[ 2614.627620] PM: suspend exit 2013-06-20 14:18:27.206573743 UTC
+[ 2614.627681] suspend: exit suspend, ret = 0 (2013-06-20 14:18:27.206634734 UTC)
+[ 2614.627712] active wake lock msm_hsic_host
+[ 2614.627742] suspend: abort suspend
+[ 2615.531664] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2615.531695] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2615.532458] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2615.532488] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2615.532519] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
+[ 2616.352998] suspend: enter suspend
+[ 2616.353028] PM: suspend entry 2013-06-20 14:18:28.931403696 UTC
+[ 2616.353120] PM: Syncing filesystems...
+[ 2616.382206] Freezing user space processes ... 
+[ 2616.395970] sync done.
+[ 2616.403143] (elapsed 0.02 seconds) done.
+[ 2616.403143] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[ 2616.420906] Suspending console(s) (use no_console_suspend to debug)
+[ 2616.423927] msm_fb_ext_suspend: Turning off HPD circuitry
+[ 2616.424995] hsd_suspend: hsd_suspend
+[ 2616.432747] PM: suspend of devices complete after 10.803 msecs
+[ 2616.433205] PM: late suspend of devices complete after 0.427 msecs
+[ 2616.434304] power_suspend_late return 0
+[ 2616.434335] PM: noirq suspend of devices complete after 1.129 msecs
+[ 2616.434335] Disabling non-boot CPUs ...
+[ 2616.434792] msm_pm_enter
+[ 2616.434792] msm_pm_enter: power collapse
+[ 2616.434792] msm_mpm_irqs_detectable: cannot monitor 000000,00000000,00000000,00000000,00000000,00000020,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000
+[ 2616.434792] msm_pm_enter: return
+[ 2616.435861] PM: noirq resume of devices complete after 0.946 msecs
+[ 2616.436837] wakeup wake lock: smd_sns_dsps
+[ 2616.437417] PM: early resume of devices complete after 0.457 msecs
+[ 2616.438699] hsd_resume: hsd_resume
+[ 2616.439645] msm_fb_ext_resume: Turning on HPD circuitry
+[ 2616.468945] FPR: retry count: 0
+[ 2616.499282] FPR: retry count: 1
+[ 2616.531572] FPR: retry count: 2
+[ 2616.538562] retry count(3) reached max, resume in tight loop
+[ 2616.580924] PM: resume of devices complete after 143.378 msecs
+[ 2616.581901] Restarting tasks ... 
+[ 2616.585014] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2616.585014] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2616.585166] QSEECOM: qseecom_receive_req: Interrupted: exiting wait_rcv_req loop
+[ 2616.585166] QSEECOM: qseecom_ioctl: failed qseecom_receive_req: -512
+[ 2616.591606] done.
+[ 2616.591850] PM: suspend exit 2013-06-20 14:18:29.170144081 UTC
+[ 2616.591850] suspend: exit suspend, ret = 0 (2013-06-20 14:18:29.170144081 UTC)
+[ 2616.591881] suspend: too many immediate wakeups, back off
+[ 2617.084724] [WLAN][0:E :HDD] hdd_hard_start_xmit:Queue is Filling up.Inform TL again about pending packets
+[ 2617.180527] [WLAN][0:E :HDD] hdd_hard_start_xmit:Queue is Filling up.Inform TL again about pending packets
+[ 2617.432107] hdmi_msm hdmi_msm.1: HDMI HPD: event detected
+[ 2617.432137] hdmi_msm hdmi_msm.1: HDMI HPD: QDSP OFF
+[ 2617.432503] hdmi_msm hdmi_msm.1: hdmi_audio state switched to 0: hdmi_msm_hpd_state_work
+[ 2617.432534] hdmi_msm hdmi_msm.1: Hdmi state switched to 0: hdmi_msm_hpd_state_work
+[ 2617.432534] hdmi_msm hdmi_msm.1: HDMI HPD: DISCONNECTED: send OFFLINE
