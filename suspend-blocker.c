@@ -7,15 +7,16 @@
 
 #define APP_NAME			"suspend-blocker"
 
-#define STATE_UNDEFINED			0x00000000
-#define	STATE_ENTER_SUSPEND		0x00000001
-#define STATE_SUSPEND_TIME		0x00000002
-#define STATE_ACTIVE_WAKELOCK		0x00000004
-#define STATE_SUSPEND_SUCCESS		0x00000008
-#define STATE_FREEZE_ABORTED		0x00000010
-#define STATE_LATE_HAS_WAKELOCK		0x00000020
-#define STATE_DEEP_SUSPEND_START	0x00000040
-#define STATE_DEEP_SUSPEND_END		0x00000080
+#define STATE_UNDEFINED                 0x00000000
+#define STATE_ENTER_SUSPEND             0x00000001
+#define STATE_EXIT_SUSPEND              0x00000002
+#define STATE_ACTIVE_WAKELOCK           0x00000004
+#define STATE_SUSPEND_SUCCESS           0x00000008
+#define STATE_FREEZE_ABORTED            0x00000010
+#define STATE_LATE_HAS_WAKELOCK         0x00000020
+#define STATE_DEEP_SUSPEND_START        0x00000040
+#define STATE_DEEP_SUSPEND_END          0x00000080
+#define STATE_RESUME_CAUSE              0x00000100
 
 #define OPT_WAKELOCK_BLOCKERS		0x00000001
 #define OPT_VERBOSE			0x00000002
@@ -23,13 +24,7 @@
 #define HASH_SIZE			1997
 
 typedef struct { 
-	double		seconds_since_1900;
-	int		day;
-	int		month;
-	int		year;
-	int		hour;
-	int 		minute;
-	double		second;
+	double	whence;
 } timestamp;
 
 typedef struct {
@@ -99,68 +94,82 @@ static void wakelock_increment(const char *name)
 	exit(EXIT_FAILURE);
 }
 
-
-static void parse_timestamp(const char *ptr, timestamp *ts)
+static void parse_timestamp(const char *line, timestamp *ts)
 {
-	struct tm tm;
+	char *ptr1, *ptr2;
 
-	sscanf(ptr, "%d-%d-%d %d:%d:%lf",
-		&ts->year, &ts->month, &ts->day,
-		&ts->hour, &ts->minute, &ts->second);
+	ptr1 = strstr(line, "[");
+	ptr2 = strstr(line, "]");
 
-	tm.tm_year = ts->year - 1900;
-	tm.tm_mon  = ts->month;
-	tm.tm_mday = ts->day;
-	tm.tm_hour = ts->hour;
-	tm.tm_min  = ts->minute;
-	tm.tm_sec  = (int)ts->second;
-
-	ts->seconds_since_1900 = mktime(&tm) + (ts->second - tm.tm_sec);
+	if (ptr1 && ptr2 && ptr2 > ptr1) {
+		sscanf(ptr1 + 1, "%lf", &ts->whence);
+	} else {
+		ts->whence = 0.0;
+	}
 }
 
 static void suspend_blocker(FILE *fp)
 {
 	char buf[4096];
 	char wakelock[4096];
+	char resume_cause[4096];
 	int state = STATE_UNDEFINED;
 	timestamp suspend_start, suspend_exit;
 	int suspend_succeeded = 0;
 	int suspend_failed = 0;
 	int suspend_count;
 	double suspend_total = 0.0;
+	double suspend_duration;
 	int i;
 
 	while (fgets(buf, sizeof(buf), fp) != NULL) {
 		char *ptr;
+		size_t len = strlen(buf);
+
+		if (buf[len - 1] == '\n')
+			buf[len - 1] = '\0';
 
 		if (strstr(buf, "suspend: enter suspend")) {
 			state = STATE_ENTER_SUSPEND;
 			continue;
 		}
 
-		ptr = strstr(buf, "PM: suspend entry");
+		/* Nexus 7 */
+		ptr = strstr(buf, "Resume caused by");
 		if (ptr) {
-			parse_timestamp(ptr + 18, &suspend_start);
-			state |= STATE_SUSPEND_TIME;
-			continue;
+			state |= STATE_RESUME_CAUSE;
+			strcpy(resume_cause, ptr + 17);
 		}
 
+		/* Nexus 4 */
 		ptr = strstr(buf, "PM: suspend exit");
 		if (ptr) {
-			parse_timestamp(ptr + 17, &suspend_exit);
+			state &= ~STATE_ENTER_SUSPEND;
+			state |= STATE_EXIT_SUSPEND;
+			parse_timestamp(buf, &suspend_exit);
+			suspend_duration = suspend_exit.whence - suspend_start.whence;
+		}
+		/* Nexus 7 */
+		ptr = strstr(buf, "Suspended for");
+		if (ptr) {
+			state &= ~STATE_ENTER_SUSPEND;
+			state |= STATE_EXIT_SUSPEND;
+			/* We can actually get the duration from the kernel message */
+			sscanf(ptr + 14, "%lf", &suspend_duration);
+		}
 
+		if (state & STATE_EXIT_SUSPEND) {
 			if (opt_flags & OPT_VERBOSE) {
-				printf("%4.4d/%2.2d/%2.2d %2.2d:%2.2d:%08.5f: %f ", 
-					suspend_start.year, suspend_start.month, suspend_start.day,
-					suspend_start.hour, suspend_start.minute, suspend_start.second,
-					suspend_exit.seconds_since_1900 - suspend_start.seconds_since_1900);
+				 printf("%12.6f: %f ", suspend_start.whence, suspend_duration);
 			}
 			if (state & STATE_SUSPEND_SUCCESS) {
 				if (opt_flags & OPT_VERBOSE) {
 					printf("Successful Suspend. ");
+					if (state & STATE_RESUME_CAUSE)
+						printf("Resume cause: %s.", resume_cause);
 				}
 				suspend_succeeded++;
-				suspend_total += (suspend_exit.seconds_since_1900 - suspend_start.seconds_since_1900);
+				suspend_total += suspend_duration;
 			} else 
 				suspend_failed++;
 
@@ -183,6 +192,7 @@ static void suspend_blocker(FILE *fp)
 			sscanf(ptr + 17, "%[^,^\n]", wakelock);
 			if (opt_flags & OPT_WAKELOCK_BLOCKERS) {
 				wakelock_increment(wakelock);
+printf("Going to suspend <%s>\n", buf);
 			}
 			state |= STATE_ACTIVE_WAKELOCK;
 			continue;
@@ -195,18 +205,18 @@ static void suspend_blocker(FILE *fp)
 		}
 
 		if (strstr(buf, "Freezing of user space  aborted")) {
-			state |= STATE_FREEZE_ABORTED;
+			state |= STATE_FREEZE_ABORTED | STATE_EXIT_SUSPEND;
 			continue;
 		}
 
 		if (strstr(buf, "Freezing of tasks  aborted")) {
-			state |= STATE_FREEZE_ABORTED;
+			state |= STATE_FREEZE_ABORTED | STATE_EXIT_SUSPEND;
 			continue;
 		}
 
 		if (strstr(buf, "power_suspend_late return -11")) {
 			/* See power_suspend_late, has_wake_lock() true, so return -EAGAIN */
-			state |= STATE_LATE_HAS_WAKELOCK;
+			state |= STATE_LATE_HAS_WAKELOCK | STATE_EXIT_SUSPEND;
 			continue;
 		}
 	}
@@ -214,10 +224,11 @@ static void suspend_blocker(FILE *fp)
 	suspend_count = suspend_failed + suspend_succeeded;
 	
 	if (opt_flags & OPT_WAKELOCK_BLOCKERS) {
+		printf("Suspend blocking wakelocks:\n");
 		qsort(wakelocks, HASH_SIZE, sizeof(wakelock_info), wakelock_cmp);
 		for (i = 0; i < HASH_SIZE; i++) {
 			if (wakelocks[i].name) {
-				printf("%-28.28s %8d\n", wakelocks[i].name, wakelocks[i].count);
+				printf("  %-28.28s %8d\n", wakelocks[i].name, wakelocks[i].count);
 				free(wakelocks[i].name);
 			}
 		}
