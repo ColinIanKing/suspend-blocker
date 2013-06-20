@@ -1,3 +1,11 @@
+suspend-blocker (0.01.01) saucy; urgency=low
+
+  * Add some example kernel logs for simple testing
+  * Makefile: bump version
+  * suspend-blocker.c: Rework to handle nexus 7 and kernel time stamp
+
+ -- Colin King <colin.king@canonical.com>  Thu, 20 Jun 2013 16:18:23 +0100
+
 suspend-blocker (0.01.00) saucy; urgency=low
 
   * Initial version 
