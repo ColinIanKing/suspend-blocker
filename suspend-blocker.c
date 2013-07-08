@@ -120,6 +120,8 @@ static void suspend_blocker(FILE *fp)
 	int suspend_count;
 	double suspend_total = 0.0;
 	double suspend_duration;
+	double suspend_min;
+	double suspend_max;
 	int i;
 
 	if (opt_flags & OPT_VERBOSE) {
@@ -172,6 +174,14 @@ static void suspend_blocker(FILE *fp)
 					printf("Successful Suspend. ");
 					if (state & STATE_RESUME_CAUSE)
 						printf("Resume cause: %s.", resume_cause);
+				}
+				if (suspend_succeeded == 0)
+					suspend_max = suspend_min = suspend_duration;
+				else {
+					if (suspend_max < suspend_duration)
+						suspend_max = suspend_duration;
+					if (suspend_min > suspend_duration)
+						suspend_min = suspend_duration;
 				}
 				suspend_succeeded++;
 				suspend_total += suspend_duration;
@@ -245,8 +255,9 @@ static void suspend_blocker(FILE *fp)
 	printf("%d suspends succeeded (%.2f%%).\n",
 		suspend_succeeded,
 		suspend_count == 0 ? 0.0 : 100.0 * (double)suspend_succeeded / (double)suspend_count);
-	printf("%f seconds average suspend duration.\n",
-		suspend_succeeded == 0 ? 0.0 : suspend_total / (double)suspend_succeeded);
+	printf("%f seconds average suspend duration (min %f, max %f).\n",
+		suspend_succeeded == 0 ? 0.0 : suspend_total / (double)suspend_succeeded,
+		suspend_min, suspend_max);
 }
 
 void show_help(char * const argv[])
