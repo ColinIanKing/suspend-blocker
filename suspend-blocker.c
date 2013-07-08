@@ -122,6 +122,10 @@ static void suspend_blocker(FILE *fp)
 	double suspend_duration;
 	int i;
 
+	if (opt_flags & OPT_VERBOSE) {
+		printf("  When        Duration\n");
+	}
+
 	while (fgets(buf, sizeof(buf), fp) != NULL) {
 		char *ptr;
 		size_t len = strlen(buf);
@@ -131,9 +135,19 @@ static void suspend_blocker(FILE *fp)
 
 		if (strstr(buf, "suspend: enter suspend")) {
 			state = STATE_ENTER_SUSPEND;
+			parse_timestamp(buf, &suspend_start);
 			continue;
 		}
-
+		if (strstr(buf, "PM: Entering mem sleep")) {
+			state = STATE_ENTER_SUSPEND;
+			parse_timestamp(buf, &suspend_start);
+			continue;
+		}
+		if (strstr(buf, "PM: Preparing system for mem sleep")) {
+			state = STATE_ENTER_SUSPEND;
+			parse_timestamp(buf, &suspend_start);
+			continue;
+		}
 		/* Nexus 7 */
 		ptr = strstr(buf, "Resume caused by");
 		if (ptr) {
@@ -141,26 +155,17 @@ static void suspend_blocker(FILE *fp)
 			strcpy(resume_cause, ptr + 17);
 		}
 
-		/* Nexus 4 */
-		ptr = strstr(buf, "PM: suspend exit");
+		ptr = strstr(buf, "suspend: exit suspend");
 		if (ptr) {
 			state &= ~STATE_ENTER_SUSPEND;
 			state |= STATE_EXIT_SUSPEND;
 			parse_timestamp(buf, &suspend_exit);
 			suspend_duration = suspend_exit.whence - suspend_start.whence;
 		}
-		/* Nexus 7 */
-		ptr = strstr(buf, "Suspended for");
-		if (ptr) {
-			state &= ~STATE_ENTER_SUSPEND;
-			state |= STATE_EXIT_SUSPEND;
-			/* We can actually get the duration from the kernel message */
-			sscanf(ptr + 14, "%lf", &suspend_duration);
-		}
 
 		if (state & STATE_EXIT_SUSPEND) {
 			if (opt_flags & OPT_VERBOSE) {
-				 printf("%12.6f: %f ", suspend_start.whence, suspend_duration);
+				printf("%12.6f: %f ", suspend_start.whence, suspend_duration);
 			}
 			if (state & STATE_SUSPEND_SUCCESS) {
 				if (opt_flags & OPT_VERBOSE) {
@@ -204,18 +209,18 @@ static void suspend_blocker(FILE *fp)
 		}
 
 		if (strstr(buf, "Freezing of user space  aborted")) {
-			state |= STATE_FREEZE_ABORTED | STATE_EXIT_SUSPEND;
+			state |= STATE_FREEZE_ABORTED;
 			continue;
 		}
 
 		if (strstr(buf, "Freezing of tasks  aborted")) {
-			state |= STATE_FREEZE_ABORTED | STATE_EXIT_SUSPEND;
+			state |= STATE_FREEZE_ABORTED;
 			continue;
 		}
 
 		if (strstr(buf, "power_suspend_late return -11")) {
 			/* See power_suspend_late, has_wake_lock() true, so return -EAGAIN */
-			state |= STATE_LATE_HAS_WAKELOCK | STATE_EXIT_SUSPEND;
+			state |= STATE_LATE_HAS_WAKELOCK;
 			continue;
 		}
 	}
