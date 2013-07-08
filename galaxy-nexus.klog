@@ -1,0 +1,2235 @@
+[  341.071258] active wake lock event2-19
+[  341.071289] active wake lock musb_autosuspend_wake_lock
+[  341.071289] active wake lock nfc, time left 49
+[  341.071319] active wake lock wlan_rx_wake, time left 123
+[  342.268737] PM: Syncing filesystems ... done.
+[  342.273193] PM: Preparing system for mem sleep
+[  342.285308] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  342.308410] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  342.331817] PM: Entering mem sleep
+[  342.336853] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  342.337005] PVR: SysSystemPrePowerState: Entering state D3
+[  342.337005] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  342.337036] PVR: DisableSystemClocks: Disabling System Clocks
+[  342.338684] PM: suspend of devices complete after 6.076 msecs
+[  342.339385] PM: late suspend of devices complete after 0.702 msecs
+[  342.339385] Disabling non-boot CPUs ...
+[  342.339935] CPU1: shutdown
+[  342.340362] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  342.340362] Resume caused by IRQ 177, nfc_irq
+[  342.340362] Successfully put all powerdomains to target state
+[  342.340423] Suspended for 6.449 seconds
+[  342.340515] Enabling non-boot CPUs ...
+[  342.393554] CPU1: Booted secondary processor
+[  342.393798] Switched to NOHz mode on CPU #1
+[  342.394287] CPU1 is up
+[  342.396301] PM: early resume of devices complete after 2.015 msecs
+[  342.396697] wakeup wake lock: nfc
+[  342.468658] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  342.468688] PVR: SysSystemPostPowerState: Entering state D0
+[  342.468719] PVR: EnableSystemClocks: Enabling System Clocks
+[  342.468750] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  342.489562] PM: resume of devices complete after 92.667 msecs
+[  342.490264] PM: Finishing wakeup.
+[  342.490264] Restarting tasks ... 
+[  342.490631] hub 1-0:1.0: activate --> -22
+[  342.513305] done.
+[  342.514282] suspend: exit suspend, ret = 0 (2013-07-08 13:57:56.470527973 UTC)
+[  342.514282] active wake lock nfc, time left 49
+[  342.514312] active wake lock wlan_rx_wake, time left 122
+[  342.534851] max17040 4-0036: online = 1 vcell = 4105000 soc = 95 status = 2 health = 1 temp = 330 charger status = 0
+[  343.483245] PM: Syncing filesystems ... done.
+[  343.488464] PM: Preparing system for mem sleep
+[  343.503906] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  343.526641] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  343.549591] PM: Entering mem sleep
+[  343.555389] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  343.555541] PVR: SysSystemPrePowerState: Entering state D3
+[  343.555541] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  343.555572] PVR: DisableSystemClocks: Disabling System Clocks
+[  343.557434] PM: suspend of devices complete after 6.961 msecs
+[  343.558258] PM: late suspend of devices complete after 0.793 msecs
+[  343.558258] Disabling non-boot CPUs ...
+[  343.574523] CPU1: shutdown
+[  343.575012] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  343.575012] Resume caused by IRQ 177, nfc_irq
+[  343.575012] Successfully put all powerdomains to target state
+[  343.575042] Suspended for 19.450 seconds
+[  343.575103] Enabling non-boot CPUs ...
+[  343.599212] CPU1: Booted secondary processor
+[  343.600067] CPU1 is up
+[  343.601043] PM: early resume of devices complete after 0.946 msecs
+[  343.601226] wakeup wake lock: nfc
+[  343.604156] Switched to NOHz mode on CPU #1
+[  343.692474] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  343.692535] PVR: SysSystemPostPowerState: Entering state D0
+[  343.692565] PVR: EnableSystemClocks: Enabling System Clocks
+[  343.692626] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  343.715576] PM: resume of devices complete after 114.314 msecs
+[  343.716339] PM: Finishing wakeup.
+[  343.716339] Restarting tasks ... 
+[  343.716796] hub 1-0:1.0: activate --> -22
+[  343.730377] done.
+[  343.738983] suspend: exit suspend, ret = 0 (2013-07-08 13:58:17.146555342 UTC)
+[  343.739013] active wake lock nfc, time left 46
+[  343.739013] active wake lock wlan_rx_wake, time left 122
+[  344.708557] PM: Syncing filesystems ... done.
+[  344.712280] PM: Preparing system for mem sleep
+[  344.737731] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  344.760406] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  344.785034] PM: Entering mem sleep
+[  344.791870] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  344.792022] PVR: SysSystemPrePowerState: Entering state D3
+[  344.792053] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  344.792083] PVR: DisableSystemClocks: Disabling System Clocks
+[  344.794097] PM: suspend of devices complete after 7.969 msecs
+[  344.795013] PM: late suspend of devices complete after 0.885 msecs
+[  344.795043] Disabling non-boot CPUs ...
+[  344.795776] CPU1: shutdown
+[  344.796386] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  344.796386] Resume caused by IRQ 177, nfc_irq
+[  344.796386] Successfully put all powerdomains to target state
+[  344.796417] Suspended for 0.315 seconds
+[  344.796569] Enabling non-boot CPUs ...
+[  344.822326] gic_timer_retrigger: lost localtimer interrupt
+[  344.822357] CPU1: Booted secondary processor
+[  344.823516] CPU1 is up
+[  344.824615] PM: early resume of devices complete after 1.038 msecs
+[  344.824829] wakeup wake lock: nfc
+[  344.830139] Switched to NOHz mode on CPU #1
+[  344.910583] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  344.910644] PVR: SysSystemPostPowerState: Entering state D0
+[  344.910675] PVR: EnableSystemClocks: Enabling System Clocks
+[  344.910705] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  344.933715] PM: resume of devices complete after 108.788 msecs
+[  344.934509] PM: Finishing wakeup.
+[  344.934509] Restarting tasks ... 
+[  344.934967] hub 1-0:1.0: activate --> -22
+[  344.942230] done.
+[  344.959350] suspend: exit suspend, ret = 0 (2013-07-08 13:58:18.683237281 UTC)
+[  344.959350] active wake lock musb_autosuspend_wake_lock
+[  344.959381] active wake lock nfc, time left 47
+[  344.959381] active wake lock wlan_rx_wake, time left 122
+[  345.933502] PM: Syncing filesystems ... done.
+[  345.939483] PM: Preparing system for mem sleep
+[  345.957702] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  345.978668] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  346.002044] PM: Entering mem sleep
+[  346.008972] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  346.009124] PVR: SysSystemPrePowerState: Entering state D3
+[  346.009155] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  346.009185] PVR: DisableSystemClocks: Disabling System Clocks
+[  346.011230] PM: suspend of devices complete after 8.060 msecs
+[  346.012145] PM: late suspend of devices complete after 0.915 msecs
+[  346.012176] Disabling non-boot CPUs ...
+[  346.012908] CPU1: shutdown
+[  346.013519] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  346.013519] Resume caused by IRQ 177, nfc_irq
+[  346.013519] Successfully put all powerdomains to target state
+[  346.013549] Suspended for 26.941 seconds
+[  346.013671] Enabling non-boot CPUs ...
+[  346.053527] CPU1: Booted secondary processor
+[  346.054687] CPU1 is up
+[  346.056396] Switched to NOHz mode on CPU #1
+[  346.056762] PM: early resume of devices complete after 2.045 msecs
+[  346.057159] wakeup wake lock: nfc
+[  346.144348] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  346.144378] PVR: SysSystemPostPowerState: Entering state D0
+[  346.144439] PVR: EnableSystemClocks: Enabling System Clocks
+[  346.144470] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  346.167388] PM: resume of devices complete after 110.040 msecs
+[  346.168090] PM: Finishing wakeup.
+[  346.168090] Restarting tasks ... 
+[  346.168548] hub 1-0:1.0: activate --> -22
+[  346.188507] done.
+[  346.191497] suspend: exit suspend, ret = 0 (2013-07-08 13:58:46.857895096 UTC)
+[  346.191528] active wake lock musb_autosuspend_wake_lock
+[  346.191528] active wake lock nfc, time left 47
+[  346.191528] active wake lock wlan_rx_wake, time left 122
+[  346.212951] max17040 4-0036: online = 1 vcell = 4105000 soc = 95 status = 2 health = 1 temp = 320 charger status = 0
+[  347.347229] PM: Syncing filesystems ... done.
+[  347.350952] PM: Preparing system for mem sleep
+[  347.376586] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  347.399688] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  347.422698] PM: Entering mem sleep
+[  347.427947] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  347.428070] PVR: SysSystemPrePowerState: Entering state D3
+[  347.428100] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  347.428131] PVR: DisableSystemClocks: Disabling System Clocks
+[  347.429809] PM: suspend of devices complete after 6.350 msecs
+[  347.430511] PM: late suspend of devices complete after 0.702 msecs
+[  347.430511] Disabling non-boot CPUs ...
+[  347.446685] CPU1: shutdown
+[  347.447143] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  347.447143] Resume caused by IRQ 177, nfc_irq
+[  347.447143] Successfully put all powerdomains to target state
+[  347.447174] Suspended for 0.410 seconds
+[  347.447265] Enabling non-boot CPUs ...
+[  347.470428] CPU1: Booted secondary processor
+[  347.471160] CPU1 is up
+[  347.473205] PM: early resume of devices complete after 2.015 msecs
+[  347.473602] wakeup wake lock: nfc
+[  347.477325] Switched to NOHz mode on CPU #1
+[  347.557800] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  347.557830] PVR: SysSystemPostPowerState: Entering state D0
+[  347.557891] PVR: EnableSystemClocks: Enabling System Clocks
+[  347.557922] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  347.580932] PM: resume of devices complete after 107.139 msecs
+[  347.581695] PM: Finishing wakeup.
+[  347.581726] Restarting tasks ... 
+[  347.582061] hub 1-0:1.0: activate --> -22
+[  347.590728] done.
+[  347.605957] suspend: exit suspend, ret = 0 (2013-07-08 13:58:48.683614513 UTC)
+[  347.605987] active wake lock musb_autosuspend_wake_lock
+[  347.605987] active wake lock nfc, time left 47
+[  347.605987] active wake lock wlan_rx_wake, time left 122
+[  348.573089] PM: Syncing filesystems ... done.
+[  348.578460] PM: Preparing system for mem sleep
+[  348.594787] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  348.617431] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  348.642456] PM: Entering mem sleep
+[  348.652862] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  348.653106] PVR: SysSystemPrePowerState: Entering state D3
+[  348.653167] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  348.653228] PVR: DisableSystemClocks: Disabling System Clocks
+[  348.656280] PM: suspend of devices complete after 11.633 msecs
+[  348.657775] PM: late suspend of devices complete after 1.373 msecs
+[  348.657806] Disabling non-boot CPUs ...
+[  348.666992] CPU1: shutdown
+[  348.668090] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  348.668090] Resume caused by IRQ 177, nfc_irq
+[  348.668090] Successfully put all powerdomains to target state
+[  348.668182] Suspended for 26.736 seconds
+[  348.668365] Enabling non-boot CPUs ...
+[  348.697113] CPU1: Booted secondary processor
+[  348.699279] CPU1 is up
+[  348.700744] PM: early resume of devices complete after 1.404 msecs
+[  348.701141] wakeup wake lock: nfc
+[  348.703338] Switched to NOHz mode on CPU #1
+[  348.791503] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  348.791564] PVR: SysSystemPostPowerState: Entering state D0
+[  348.791595] PVR: EnableSystemClocks: Enabling System Clocks
+[  348.791625] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  348.814636] PM: resume of devices complete after 113.337 msecs
+[  348.815307] PM: Finishing wakeup.
+[  348.815338] Restarting tasks ... 
+[  348.815765] hub 1-0:1.0: activate --> -22
+[  348.831695] done.
+[  348.839569] suspend: exit suspend, ret = 0 (2013-07-08 13:59:16.654171451 UTC)
+[  348.839569] active wake lock musb_autosuspend_wake_lock
+[  348.839599] active wake lock nfc, time left 46
+[  348.839599] active wake lock wlan_rx_wake, time left 122
+[  349.879211] PM: Syncing filesystems ... done.
+[  349.887817] PM: Preparing system for mem sleep
+[  349.899871] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  349.922393] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  349.945861] PM: Entering mem sleep
+[  349.956207] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  349.956481] PVR: SysSystemPrePowerState: Entering state D3
+[  349.956512] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  349.956573] PVR: DisableSystemClocks: Disabling System Clocks
+[  349.959625] PM: suspend of devices complete after 11.571 msecs
+[  349.961120] PM: late suspend of devices complete after 1.373 msecs
+[  349.961120] Disabling non-boot CPUs ...
+[  349.976348] CPU1: shutdown
+[  349.977539] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  349.977539] Resume caused by IRQ 177, nfc_irq
+[  349.977539] Successfully put all powerdomains to target state
+[  349.977630] Suspended for 0.739 seconds
+[  349.977783] Enabling non-boot CPUs ...
+[  349.998260] CPU1: Booted secondary processor
+[  349.999664] Switched to NOHz mode on CPU #1
+[  350.000518] CPU1 is up
+[  350.002410] PM: early resume of devices complete after 1.893 msecs
+[  350.002593] wakeup wake lock: nfc
+[  350.088897] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  350.088958] PVR: SysSystemPostPowerState: Entering state D0
+[  350.088989] PVR: EnableSystemClocks: Enabling System Clocks
+[  350.089019] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  350.110992] PM: resume of devices complete after 108.361 msecs
+[  350.111785] PM: Finishing wakeup.
+[  350.111785] Restarting tasks ... 
+[  350.112213] hub 1-0:1.0: activate --> -22
+[  350.117797] done.
+[  350.133087] suspend: exit suspend, ret = 0 (2013-07-08 13:59:18.687807704 UTC)
+[  350.133087] active wake lock musb_autosuspend_wake_lock
+[  350.133117] active wake lock nfc, time left 47
+[  350.133117] active wake lock wlan_rx_wake, time left 122
+[  351.110656] PM: Syncing filesystems ... done.
+[  351.115692] PM: Preparing system for mem sleep
+[  351.132812] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  351.155364] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  351.179321] PM: Entering mem sleep
+[  351.186340] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  351.186553] PVR: SysSystemPrePowerState: Entering state D3
+[  351.186553] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  351.186584] PVR: DisableSystemClocks: Disabling System Clocks
+[  351.188690] PM: suspend of devices complete after 8.274 msecs
+[  351.189605] PM: late suspend of devices complete after 0.885 msecs
+[  351.189636] Disabling non-boot CPUs ...
+[  351.190399] CPU1: shutdown
+[  351.191009] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  351.191009] Resume caused by IRQ 177, nfc_irq
+[  351.191009] Successfully put all powerdomains to target state
+[  351.191070] Suspended for 17.214 seconds
+[  351.191192] Enabling non-boot CPUs ...
+[  351.240203] CPU1: Booted secondary processor
+[  351.241241] Switched to NOHz mode on CPU #1
+[  351.241394] CPU1 is up
+[  351.243377] PM: early resume of devices complete after 1.984 msecs
+[  351.243774] wakeup wake lock: nfc
+[  351.329467] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  351.329498] PVR: SysSystemPostPowerState: Entering state D0
+[  351.329528] PVR: EnableSystemClocks: Enabling System Clocks
+[  351.329559] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  351.352569] PM: resume of devices complete after 108.605 msecs
+[  351.353240] PM: Finishing wakeup.
+[  351.353271] Restarting tasks ... 
+[  351.353607] hub 1-0:1.0: activate --> -22
+[  351.376098] done.
+[  351.378021] suspend: exit suspend, ret = 0 (2013-07-08 13:59:37.148207948 UTC)
+[  351.378051] active wake lock musb_autosuspend_wake_lock
+[  351.378051] active wake lock nfc, time left 47
+[  351.378051] active wake lock wlan_rx_wake, time left 122
+[  351.398040] max17040 4-0036: online = 1 vcell = 4105000 soc = 95 status = 2 health = 1 temp = 320 charger status = 0
+[  352.346588] PM: Syncing filesystems ... done.
+[  352.351684] PM: Preparing system for mem sleep
+[  352.366638] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  352.389739] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  352.413146] PM: Entering mem sleep
+[  352.420104] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  352.420257] PVR: SysSystemPrePowerState: Entering state D3
+[  352.420288] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  352.420349] PVR: DisableSystemClocks: Disabling System Clocks
+[  352.422454] PM: suspend of devices complete after 8.182 msecs
+[  352.423370] PM: late suspend of devices complete after 0.915 msecs
+[  352.423400] Disabling non-boot CPUs ...
+[  352.441589] CPU1: shutdown
+[  352.442199] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  352.442199] Resume caused by IRQ 177, nfc_irq
+[  352.442199] Successfully put all powerdomains to target state
+[  352.442260] Suspended for 10.423 seconds
+[  352.442321] Enabling non-boot CPUs ...
+[  352.457214] CPU1: Booted secondary processor
+[  352.458465] CPU1 is up
+[  352.459472] Switched to NOHz mode on CPU #1
+[  352.459533] PM: early resume of devices complete after 1.068 msecs
+[  352.459747] wakeup wake lock: nfc
+[  352.533172] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  352.533203] PVR: SysSystemPostPowerState: Entering state D0
+[  352.533233] PVR: EnableSystemClocks: Enabling System Clocks
+[  352.533233] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  352.555175] PM: resume of devices complete after 95.323 msecs
+[  352.555969] PM: Finishing wakeup.
+[  352.555969] Restarting tasks ... 
+[  352.556396] hub 1-0:1.0: activate --> -22
+[  352.574859] done.
+[  352.576049] suspend: exit suspend, ret = 0 (2013-07-08 13:59:48.770663600 UTC)
+[  352.576080] active wake lock event2-19
+[  352.576080] active wake lock musb_autosuspend_wake_lock
+[  352.576110] active wake lock nfc, time left 50
+[  352.576110] active wake lock wlan_rx_wake, time left 123
+[  353.547241] PM: Syncing filesystems ... done.
+[  353.552337] PM: Preparing system for mem sleep
+[  353.569244] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  353.592346] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  353.615753] PM: Entering mem sleep
+[  353.622650] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  353.622802] PVR: SysSystemPrePowerState: Entering state D3
+[  353.622833] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  353.622863] PVR: DisableSystemClocks: Disabling System Clocks
+[  353.624969] PM: suspend of devices complete after 8.121 msecs
+[  353.625915] PM: late suspend of devices complete after 0.915 msecs
+[  353.625946] Disabling non-boot CPUs ...
+[  353.636016] CPU1: shutdown
+[  353.636627] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  353.636627] Resume caused by IRQ 177, nfc_irq
+[  353.636627] Successfully put all powerdomains to target state
+[  353.636688] Suspended for 28.809 seconds
+[  353.636749] Enabling non-boot CPUs ...
+[  353.654388] CPU1: Booted secondary processor
+[  353.655517] CPU1 is up
+[  353.656585] PM: early resume of devices complete after 1.068 msecs
+[  353.657073] wakeup wake lock: nfc
+[  353.662017] Switched to NOHz mode on CPU #1
+[  353.727935] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  353.727966] PVR: SysSystemPostPowerState: Entering state D0
+[  353.727996] PVR: EnableSystemClocks: Enabling System Clocks
+[  353.727996] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  353.749969] PM: resume of devices complete after 93.186 msecs
+[  353.750762] PM: Finishing wakeup.
+[  353.750762] Restarting tasks ... 
+[  353.751220] hub 1-0:1.0: activate --> -22
+[  353.773132] done.
+[  353.780029] suspend: exit suspend, ret = 0 (2013-07-08 14:00:18.784327091 UTC)
+[  353.780059] active wake lock nfc, time left 48
+[  353.780059] active wake lock wlan_rx_wake, time left 121
+[  354.743133] PM: Syncing filesystems ... done.
+[  354.748077] PM: Preparing system for mem sleep
+[  354.764099] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  354.787048] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  354.810821] PM: Entering mem sleep
+[  354.821411] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  354.821624] PVR: SysSystemPrePowerState: Entering state D3
+[  354.821655] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  354.821716] PVR: DisableSystemClocks: Disabling System Clocks
+[  354.824798] PM: suspend of devices complete after 11.785 msecs
+[  354.826293] PM: late suspend of devices complete after 1.373 msecs
+[  354.826324] Disabling non-boot CPUs ...
+[  354.838623] CPU1: shutdown
+[  354.839782] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  354.839782] Resume caused by IRQ 177, nfc_irq
+[  354.839782] Successfully put all powerdomains to target state
+[  354.839874] Suspended for 3.099 seconds
+[  354.840026] Enabling non-boot CPUs ...
+[  354.870727] CPU1: Booted secondary processor
+[  354.872528] Switched to NOHz mode on CPU #1
+[  354.873016] CPU1 is up
+[  354.874481] PM: early resume of devices complete after 1.465 msecs
+[  354.874877] wakeup wake lock: nfc
+[  354.947357] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  354.947418] PVR: SysSystemPostPowerState: Entering state D0
+[  354.947448] PVR: EnableSystemClocks: Enabling System Clocks
+[  354.947479] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  354.968170] PM: resume of devices complete after 93.094 msecs
+[  354.968963] PM: Finishing wakeup.
+[  354.968963] Restarting tasks ... 
+[  354.969421] hub 1-0:1.0: activate --> -22
+[  354.990814] done.
+[  354.995605] suspend: exit suspend, ret = 0 (2013-07-08 14:00:23.099754159 UTC)
+[  354.995635] active wake lock wlan_wake
+[  354.995635] active wake lock nfc, time left 49
+[  354.995635] active wake lock wlan_rx_wake, time left 122
+[  355.961914] PM: Syncing filesystems ... done.
+[  355.967193] PM: Preparing system for mem sleep
+[  355.982452] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  356.005279] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  356.028717] PM: Entering mem sleep
+[  356.035675] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  356.035827] PVR: SysSystemPrePowerState: Entering state D3
+[  356.035858] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  356.035888] PVR: DisableSystemClocks: Disabling System Clocks
+[  356.037963] PM: suspend of devices complete after 8.152 msecs
+[  356.038879] PM: late suspend of devices complete after 0.885 msecs
+[  356.038909] Disabling non-boot CPUs ...
+[  356.055297] CPU1: shutdown
+[  356.055938] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  356.055938] Resume caused by IRQ 177, nfc_irq
+[  356.055938] Successfully put all powerdomains to target state
+[  356.055969] Suspended for 3.081 seconds
+[  356.056060] Enabling non-boot CPUs ...
+[  356.209259] CPU1: Booted secondary processor
+[  356.210357] CPU1 is up
+[  356.212432] PM: early resume of devices complete after 2.015 msecs
+[  356.212829] wakeup wake lock: nfc
+[  356.215576] Switched to NOHz mode on CPU #1
+[  356.290405] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  356.290466] PVR: SysSystemPostPowerState: Entering state D0
+[  356.290496] PVR: EnableSystemClocks: Enabling System Clocks
+[  356.290527] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  356.311187] PM: resume of devices complete after 98.163 msecs
+[  356.311981] PM: Finishing wakeup.
+[  356.312011] Restarting tasks ... 
+[  356.312408] hub 1-0:1.0: activate --> -22
+[  356.333312] done.
+[  356.334259] suspend: exit suspend, ret = 0 (2013-07-08 14:00:27.520772587 UTC)
+[  356.334289] active wake lock nfc, time left 48
+[  356.334289] active wake lock wlan_rx_wake, time left 122
+[  356.356781] max17040 4-0036: online = 1 vcell = 4092500 soc = 95 status = 2 health = 1 temp = 320 charger status = 0
+[  357.309478] PM: Syncing filesystems ... done.
+[  357.314331] PM: Preparing system for mem sleep
+[  357.325408] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  357.347900] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  357.371765] PM: Entering mem sleep
+[  357.377471] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  357.377593] PVR: SysSystemPrePowerState: Entering state D3
+[  357.377624] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  357.377655] PVR: DisableSystemClocks: Disabling System Clocks
+[  357.379486] PM: suspend of devices complete after 6.808 msecs
+[  357.380310] PM: late suspend of devices complete after 0.763 msecs
+[  357.380310] Disabling non-boot CPUs ...
+[  357.396545] CPU1: shutdown
+[  357.397033] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  357.397033] Resume caused by IRQ 177, nfc_irq
+[  357.397033] Successfully put all powerdomains to target state
+[  357.397094] Suspended for 20.061 seconds
+[  357.397155] Enabling non-boot CPUs ...
+[  357.418945] CPU1: Booted secondary processor
+[  357.419860] CPU1 is up
+[  357.420837] PM: early resume of devices complete after 0.977 msecs
+[  357.421264] wakeup wake lock: nfc
+[  357.427612] Switched to NOHz mode on CPU #1
+[  357.506469] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  357.506500] PVR: SysSystemPostPowerState: Entering state D0
+[  357.506530] PVR: EnableSystemClocks: Enabling System Clocks
+[  357.506591] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  357.529479] PM: resume of devices complete after 108.513 msecs
+[  357.530242] PM: Finishing wakeup.
+[  357.530273] Restarting tasks ... 
+[  357.530700] hub 1-0:1.0: activate --> -22
+[  357.557159] done.
+[  357.558105] suspend: exit suspend, ret = 0 (2013-07-08 14:00:48.806937436 UTC)
+[  357.558135] active wake lock nfc, time left 47
+[  357.558135] active wake lock wlan_rx_wake, time left 122
+[  359.006591] PM: Syncing filesystems ... done.
+[  359.011566] PM: Preparing system for mem sleep
+[  359.027709] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  359.050811] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  359.074218] PM: Entering mem sleep
+[  359.081237] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  359.081420] PVR: SysSystemPrePowerState: Entering state D3
+[  359.081451] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  359.081481] PVR: DisableSystemClocks: Disabling System Clocks
+[  359.083557] PM: suspend of devices complete after 8.182 msecs
+[  359.084472] PM: late suspend of devices complete after 0.915 msecs
+[  359.084503] Disabling non-boot CPUs ...
+[  359.108673] CPU1: shutdown
+[  359.109313] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  359.109313] Resume caused by IRQ 177, nfc_irq
+[  359.109313] Successfully put all powerdomains to target state
+[  359.109375] Suspended for 27.368 seconds
+[  359.109466] Enabling non-boot CPUs ...
+[  359.136596] CPU1: Booted secondary processor
+[  359.137725] CPU1 is up
+[  359.139801] PM: early resume of devices complete after 2.015 msecs
+[  359.140197] wakeup wake lock: nfc
+[  359.143981] Switched to NOHz mode on CPU #1
+[  359.211090] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  359.211151] PVR: SysSystemPostPowerState: Entering state D0
+[  359.211181] PVR: EnableSystemClocks: Enabling System Clocks
+[  359.211212] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  359.231964] PM: resume of devices complete after 91.537 msecs
+[  359.232727] PM: Finishing wakeup.
+[  359.232757] Restarting tasks ... 
+[  359.233245] hub 1-0:1.0: activate --> -22
+[  359.255950] done.
+[  359.256896] suspend: exit suspend, ret = 0 (2013-07-08 14:01:17.874894935 UTC)
+[  359.256896] active wake lock nfc, time left 49
+[  359.256927] active wake lock wlan_rx_wake, time left 122
+[  359.274383] max17040 4-0036: online = 1 vcell = 4105000 soc = 95 status = 2 health = 1 temp = 320 charger status = 0
+[  360.223327] PM: Syncing filesystems ... done.
+[  360.228485] PM: Preparing system for mem sleep
+[  360.246063] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  360.268920] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  360.291900] PM: Entering mem sleep
+[  360.297088] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  360.297210] PVR: SysSystemPrePowerState: Entering state D3
+[  360.297241] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  360.297241] PVR: DisableSystemClocks: Disabling System Clocks
+[  360.298919] PM: suspend of devices complete after 6.259 msecs
+[  360.299682] PM: late suspend of devices complete after 0.732 msecs
+[  360.299682] Disabling non-boot CPUs ...
+[  360.308013] CPU1: shutdown
+[  360.308471] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  360.308471] Resume caused by IRQ 177, nfc_irq
+[  360.308471] Successfully put all powerdomains to target state
+[  360.308502] Suspended for 29.829 seconds
+[  360.308563] Enabling non-boot CPUs ...
+[  360.346374] CPU1: Booted secondary processor
+[  360.346466] Switched to NOHz mode on CPU #1
+[  360.347137] CPU1 is up
+[  360.348052] PM: early resume of devices complete after 0.915 msecs
+[  360.348419] wakeup wake lock: nfc
+[  360.419830] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  360.419830] PVR: SysSystemPostPowerState: Entering state D0
+[  360.419860] PVR: EnableSystemClocks: Enabling System Clocks
+[  360.419860] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  360.442230] PM: resume of devices complete after 94.010 msecs
+[  360.442993] PM: Finishing wakeup.
+[  360.443023] Restarting tasks ... 
+[  360.443450] hub 1-0:1.0: activate --> -22
+[  360.464599] done.
+[  360.473693] suspend: exit suspend, ret = 0 (2013-07-08 14:01:48.921584857 UTC)
+[  360.473693] active wake lock nfc, time left 48
+[  360.473724] active wake lock wlan_rx_wake, time left 121
+[  361.438018] PM: Syncing filesystems ... done.
+[  361.447875] PM: Preparing system for mem sleep
+[  361.464202] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  361.487091] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  361.510498] PM: Entering mem sleep
+[  361.515686] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  361.515808] PVR: SysSystemPrePowerState: Entering state D3
+[  361.515838] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  361.515838] PVR: DisableSystemClocks: Disabling System Clocks
+[  361.517517] PM: suspend of devices complete after 6.259 msecs
+[  361.518249] PM: late suspend of devices complete after 0.732 msecs
+[  361.518249] Disabling non-boot CPUs ...
+[  361.518768] CPU1: shutdown
+[  361.519226] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  361.519226] Resume caused by IRQ 177, nfc_irq
+[  361.519226] Successfully put all powerdomains to target state
+[  361.519256] Suspended for 18.039 seconds
+[  361.519378] Enabling non-boot CPUs ...
+[  361.541320] CPU1: Booted secondary processor
+[  361.542053] CPU1 is up
+[  361.542999] PM: early resume of devices complete after 0.946 msecs
+[  361.543365] wakeup wake lock: nfc
+[  361.549041] Switched to NOHz mode on CPU #1
+[  361.629516] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  361.629577] PVR: SysSystemPostPowerState: Entering state D0
+[  361.629608] PVR: EnableSystemClocks: Enabling System Clocks
+[  361.629669] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  361.652618] PM: resume of devices complete after 109.490 msecs
+[  361.653381] PM: Finishing wakeup.
+[  361.653411] Restarting tasks ... 
+[  361.653839] hub 1-0:1.0: activate --> -22
+[  361.675628] done.
+[  361.677307] suspend: exit suspend, ret = 0 (2013-07-08 14:02:08.165289688 UTC)
+[  361.677337] active wake lock musb_autosuspend_wake_lock
+[  361.677337] active wake lock nfc, time left 47
+[  361.677337] active wake lock wlan_rx_wake, time left 122
+[  361.698120] max17040 4-0036: online = 1 vcell = 4106250 soc = 95 status = 2 health = 1 temp = 320 charger status = 0
+[  362.653198] PM: Syncing filesystems ... done.
+[  362.658050] PM: Preparing system for mem sleep
+[  362.674377] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  362.697448] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  362.720397] PM: Entering mem sleep
+[  362.725494] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  362.725646] PVR: SysSystemPrePowerState: Entering state D3
+[  362.725646] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  362.725677] PVR: DisableSystemClocks: Disabling System Clocks
+[  362.727325] PM: suspend of devices complete after 6.167 msecs
+[  362.728057] PM: late suspend of devices complete after 0.732 msecs
+[  362.728057] Disabling non-boot CPUs ...
+[  362.728576] CPU1: shutdown
+[  362.729003] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  362.729003] Resume caused by IRQ 177, nfc_irq
+[  362.729003] Successfully put all powerdomains to target state
+[  362.729034] Suspended for 9.543 seconds
+[  362.729156] Enabling non-boot CPUs ...
+[  362.779357] CPU1: Booted secondary processor
+[  362.780090] CPU1 is up
+[  362.782135] PM: early resume of devices complete after 2.015 msecs
+[  362.782531] wakeup wake lock: nfc
+[  362.782867] Switched to NOHz mode on CPU #1
+[  362.871154] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  362.871185] PVR: SysSystemPostPowerState: Entering state D0
+[  362.871215] PVR: EnableSystemClocks: Enabling System Clocks
+[  362.871276] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  362.894195] PM: resume of devices complete after 111.475 msecs
+[  362.894958] PM: Finishing wakeup.
+[  362.894989] Restarting tasks ... 
+[  362.895416] hub 1-0:1.0: activate --> -22
+[  362.903503] done.
+[  362.932861] suspend: exit suspend, ret = 0 (2013-07-08 14:02:18.964898145 UTC)
+[  362.932861] active wake lock musb_autosuspend_wake_lock
+[  362.932891] active wake lock nfc, time left 44
+[  362.932891] active wake lock wlan_rx_wake, time left 120
+[  363.896301] PM: Syncing filesystems ... done.
+[  363.901733] PM: Preparing system for mem sleep
+[  363.915954] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  363.938934] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  363.962493] PM: Entering mem sleep
+[  363.968414] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  363.968566] PVR: SysSystemPrePowerState: Entering state D3
+[  363.968566] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  363.968597] PVR: DisableSystemClocks: Disabling System Clocks
+[  363.970458] PM: suspend of devices complete after 7.053 msecs
+[  363.971252] PM: late suspend of devices complete after 0.763 msecs
+[  363.971282] Disabling non-boot CPUs ...
+[  363.971862] CPU1: shutdown
+[  363.972412] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  363.972412] Resume caused by IRQ 177, nfc_irq
+[  363.972412] Successfully put all powerdomains to target state
+[  363.972442] Suspended for 8.995 seconds
+[  363.972564] Enabling non-boot CPUs ...
+[  363.997894] CPU1: Booted secondary processor
+[  363.998809] CPU1 is up
+[  364.000823] PM: early resume of devices complete after 1.954 msecs
+[  364.001098] Switched to NOHz mode on CPU #1
+[  364.001220] wakeup wake lock: nfc
+[  364.089385] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  364.089447] PVR: SysSystemPostPowerState: Entering state D0
+[  364.089477] PVR: EnableSystemClocks: Enabling System Clocks
+[  364.089508] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  364.112365] PM: resume of devices complete after 110.895 msecs
+[  364.113098] PM: Finishing wakeup.
+[  364.113128] Restarting tasks ... 
+[  364.113555] hub 1-0:1.0: activate --> -22
+[  364.127929] done.
+[  364.134643] suspend: exit suspend, ret = 0 (2013-07-08 14:02:29.162978232 UTC)
+[  364.134643] active wake lock musb_autosuspend_wake_lock
+[  364.134674] active wake lock nfc, time left 47
+[  364.134674] active wake lock wlan_rx_wake, time left 122
+[  365.106109] PM: Syncing filesystems ... done.
+[  365.112762] PM: Preparing system for mem sleep
+[  365.126464] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  365.148986] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  365.172973] PM: Entering mem sleep
+[  365.179901] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  365.180053] PVR: SysSystemPrePowerState: Entering state D3
+[  365.180084] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  365.180114] PVR: DisableSystemClocks: Disabling System Clocks
+[  365.183563] PM: suspend of devices complete after 9.495 msecs
+[  365.185028] PM: late suspend of devices complete after 1.343 msecs
+[  365.185028] Disabling non-boot CPUs ...
+[  365.209930] CPU1: shutdown
+[  365.211029] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  365.211029] Resume caused by IRQ 177, nfc_irq
+[  365.211029] Successfully put all powerdomains to target state
+[  365.211120] Suspended for 18.528 seconds
+[  365.211273] Enabling non-boot CPUs ...
+[  365.234649] CPU1: Booted secondary processor
+[  365.234954] Switched to NOHz mode on CPU #1
+[  365.236877] CPU1 is up
+[  365.238372] PM: early resume of devices complete after 1.404 msecs
+[  365.238769] wakeup wake lock: nfc
+[  365.309844] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  365.309875] PVR: SysSystemPostPowerState: Entering state D0
+[  365.309906] PVR: EnableSystemClocks: Enabling System Clocks
+[  365.309967] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  365.330688] PM: resume of devices complete after 91.690 msecs
+[  365.331451] PM: Finishing wakeup.
+[  365.331451] Restarting tasks ... 
+[  365.331878] hub 1-0:1.0: activate --> -22
+[  365.352630] done.
+[  365.360015] suspend: exit suspend, ret = 0 (2013-07-08 14:02:48.917497144 UTC)
+[  365.360046] active wake lock nfc, time left 48
+[  365.360046] active wake lock wlan_rx_wake, time left 121
+[  366.712890] PM: Syncing filesystems ... done.
+[  366.718017] PM: Preparing system for mem sleep
+[  366.735107] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  366.757629] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  366.781616] PM: Entering mem sleep
+[  366.788574] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  366.788726] PVR: SysSystemPrePowerState: Entering state D3
+[  366.788757] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  366.788818] PVR: DisableSystemClocks: Disabling System Clocks
+[  366.790893] PM: suspend of devices complete after 8.182 msecs
+[  366.791839] PM: late suspend of devices complete after 0.915 msecs
+[  366.791870] Disabling non-boot CPUs ...
+[  366.816040] CPU1: shutdown
+[  366.816619] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  366.816619] Resume caused by IRQ 177, nfc_irq
+[  366.816619] Successfully put all powerdomains to target state
+[  366.816650] Suspended for 7.913 seconds
+[  366.816741] Enabling non-boot CPUs ...
+[  366.861236] CPU1: Booted secondary processor
+[  366.862365] CPU1 is up
+[  366.863616] PM: early resume of devices complete after 1.251 msecs
+[  366.863800] wakeup wake lock: nfc
+[  366.866882] Switched to NOHz mode on CPU #1
+[  366.933990] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  366.934020] PVR: SysSystemPostPowerState: Entering state D0
+[  366.934051] PVR: EnableSystemClocks: Enabling System Clocks
+[  366.934112] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  366.954864] PM: resume of devices complete after 90.987 msecs
+[  366.955627] PM: Finishing wakeup.
+[  366.955657] Restarting tasks ... 
+[  366.956024] hub 1-0:1.0: activate --> -22
+[  366.977722] done.
+[  366.980682] suspend: exit suspend, ret = 0 (2013-07-08 14:02:58.452731284 UTC)
+[  366.980712] active wake lock musb_autosuspend_wake_lock
+[  366.980712] active wake lock nfc, time left 49
+[  366.980712] active wake lock wlan_rx_wake, time left 122
+[  367.000305] max17040 4-0036: online = 1 vcell = 4103750 soc = 95 status = 2 health = 1 temp = 320 charger status = 0
+[  367.956298] PM: Syncing filesystems ... done.
+[  367.965667] PM: Preparing system for mem sleep
+[  367.976745] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  367.999786] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  368.023193] PM: Entering mem sleep
+[  368.030059] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  368.030242] PVR: SysSystemPrePowerState: Entering state D3
+[  368.030273] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  368.030303] PVR: DisableSystemClocks: Disabling System Clocks
+[  368.032348] PM: suspend of devices complete after 8.060 msecs
+[  368.033294] PM: late suspend of devices complete after 0.915 msecs
+[  368.033325] Disabling non-boot CPUs ...
+[  368.043518] CPU1: shutdown
+[  368.044097] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  368.044097] Resume caused by IRQ 177, nfc_irq
+[  368.044097] Successfully put all powerdomains to target state
+[  368.044128] Suspended for 19.253 seconds
+[  368.044219] Enabling non-boot CPUs ...
+[  368.071166] CPU1: Booted secondary processor
+[  368.072326] CPU1 is up
+[  368.074401] PM: early resume of devices complete after 2.045 msecs
+[  368.074768] wakeup wake lock: nfc
+[  368.077301] Switched to NOHz mode on CPU #1
+[  368.152221] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  368.152252] PVR: SysSystemPostPowerState: Entering state D0
+[  368.152313] PVR: EnableSystemClocks: Enabling System Clocks
+[  368.152343] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  368.173065] PM: resume of devices complete after 98.040 msecs
+[  368.173828] PM: Finishing wakeup.
+[  368.173828] Restarting tasks ... 
+[  368.174194] hub 1-0:1.0: activate --> -22
+[  368.185821] done.
+[  368.195373] suspend: exit suspend, ret = 0 (2013-07-08 14:03:18.921874985 UTC)
+[  368.195404] active wake lock musb_autosuspend_wake_lock
+[  368.195404] active wake lock nfc, time left 48
+[  368.195404] active wake lock wlan_rx_wake, time left 122
+[  369.160705] PM: Syncing filesystems ... done.
+[  369.165832] PM: Preparing system for mem sleep
+[  369.179229] Freezing user space processes ... (elapsed 0.05 seconds) done.
+[  369.233489] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  369.256927] PM: Entering mem sleep
+[  369.262176] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  369.262298] PVR: SysSystemPrePowerState: Entering state D3
+[  369.262329] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  369.262359] PVR: DisableSystemClocks: Disabling System Clocks
+[  369.264099] PM: suspend of devices complete after 6.411 msecs
+[  369.264831] PM: late suspend of devices complete after 0.732 msecs
+[  369.264831] Disabling non-boot CPUs ...
+[  369.265350] CPU1: shutdown
+[  369.265777] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  369.265777] Resume caused by IRQ 177, nfc_irq
+[  369.265777] Successfully put all powerdomains to target state
+[  369.265838] Suspended for 28.575 seconds
+[  369.265930] Enabling non-boot CPUs ...
+[  369.295532] CPU1: Booted secondary processor
+[  369.296264] CPU1 is up
+[  369.298339] PM: early resume of devices complete after 2.045 msecs
+[  369.298736] wakeup wake lock: nfc
+[  369.303283] Switched to NOHz mode on CPU #1
+[  369.383697] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  369.383758] PVR: SysSystemPostPowerState: Entering state D0
+[  369.383789] PVR: EnableSystemClocks: Enabling System Clocks
+[  369.383850] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  369.406799] PM: resume of devices complete after 107.872 msecs
+[  369.407562] PM: Finishing wakeup.
+[  369.407592] Restarting tasks ... 
+[  369.408111] hub 1-0:1.0: activate --> -22
+[  369.428833] done.
+[  369.436248] suspend: exit suspend, ret = 0 (2013-07-08 14:03:48.738840603 UTC)
+[  369.436248] active wake lock musb_autosuspend_wake_lock
+[  369.436279] active wake lock nfc, time left 46
+[  369.436279] active wake lock wlan_rx_wake, time left 121
+[  369.458557] max17040 4-0036: online = 1 vcell = 4098750 soc = 95 status = 2 health = 1 temp = 320 charger status = 0
+[  370.563751] PM: Syncing filesystems ... done.
+[  370.567657] PM: Preparing system for mem sleep
+[  370.584686] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  370.608215] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  370.631622] PM: Entering mem sleep
+[  370.641693] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  370.641937] PVR: SysSystemPrePowerState: Entering state D3
+[  370.641967] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  370.642028] PVR: DisableSystemClocks: Disabling System Clocks
+[  370.644958] PM: suspend of devices complete after 11.205 msecs
+[  370.646453] PM: late suspend of devices complete after 1.435 msecs
+[  370.646484] Disabling non-boot CPUs ...
+[  370.647766] CPU1: shutdown
+[  370.648895] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  370.648895] Resume caused by IRQ 177, nfc_irq
+[  370.648895] Successfully put all powerdomains to target state
+[  370.648986] Suspended for 28.931 seconds
+[  370.649200] Enabling non-boot CPUs ...
+[  370.667663] CPU1: Booted secondary processor
+[  370.669921] Switched to NOHz mode on CPU #1
+[  370.670013] CPU1 is up
+[  370.671417] PM: early resume of devices complete after 1.404 msecs
+[  370.671813] wakeup wake lock: nfc
+[  370.758209] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  370.758270] PVR: SysSystemPostPowerState: Entering state D0
+[  370.758300] PVR: EnableSystemClocks: Enabling System Clocks
+[  370.758361] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  370.781250] PM: resume of devices complete after 109.246 msecs
+[  370.782012] PM: Finishing wakeup.
+[  370.782043] Restarting tasks ... 
+[  370.782440] hub 1-0:1.0: activate --> -22
+[  370.800811] done.
+[  370.805786] suspend: exit suspend, ret = 0 (2013-07-08 14:04:19.040703266 UTC)
+[  370.805786] active wake lock musb_autosuspend_wake_lock
+[  370.805786] active wake lock nfc, time left 47
+[  370.805816] active wake lock wlan_rx_wake, time left 122
+[  371.775329] PM: Syncing filesystems ... done.
+[  371.783782] PM: Preparing system for mem sleep
+[  371.795318] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  371.818328] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  371.841796] PM: Entering mem sleep
+[  371.847564] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  371.847686] PVR: SysSystemPrePowerState: Entering state D3
+[  371.847717] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  371.847747] PVR: DisableSystemClocks: Disabling System Clocks
+[  371.849609] PM: suspend of devices complete after 6.900 msecs
+[  371.850433] PM: late suspend of devices complete after 0.763 msecs
+[  371.850433] Disabling non-boot CPUs ...
+[  371.851043] CPU1: shutdown
+[  371.851501] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  371.851501] Resume caused by IRQ 177, nfc_irq
+[  371.851501] Successfully put all powerdomains to target state
+[  371.851562] Suspended for 14.870 seconds
+[  371.851654] Enabling non-boot CPUs ...
+[  371.880187] CPU1: Booted secondary processor
+[  371.880249] Switched to NOHz mode on CPU #1
+[  371.881134] CPU1 is up
+[  371.883148] PM: early resume of devices complete after 2.015 msecs
+[  371.883544] wakeup wake lock: nfc
+[  371.968353] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  371.968383] PVR: SysSystemPostPowerState: Entering state D0
+[  371.968444] PVR: EnableSystemClocks: Enabling System Clocks
+[  371.968475] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  371.991729] PM: resume of devices complete after 107.994 msecs
+[  371.992492] PM: Finishing wakeup.
+[  371.992492] Restarting tasks ... 
+[  371.992919] hub 1-0:1.0: activate --> -22
+[  372.016021] done.
+[  372.017395] suspend: exit suspend, ret = 0 (2013-07-08 14:04:35.123370817 UTC)
+[  372.017395] active wake lock nfc, time left 47
+[  372.017395] active wake lock wlan_rx_wake, time left 123
+[  373.556304] PM: Syncing filesystems ... done.
+[  373.561584] PM: Preparing system for mem sleep
+[  373.575775] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  373.598754] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  373.621673] PM: Entering mem sleep
+[  373.628479] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  373.628662] PVR: SysSystemPrePowerState: Entering state D3
+[  373.628662] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  373.628692] PVR: DisableSystemClocks: Disabling System Clocks
+[  373.630798] PM: suspend of devices complete after 7.999 msecs
+[  373.631713] PM: late suspend of devices complete after 0.915 msecs
+[  373.631744] Disabling non-boot CPUs ...
+[  373.648101] CPU1: shutdown
+[  373.648681] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  373.648681] Resume caused by IRQ 177, nfc_irq
+[  373.648681] Successfully put all powerdomains to target state
+[  373.648712] Suspended for 2.196 seconds
+[  373.648803] Enabling non-boot CPUs ...
+[  373.668243] CPU1: Booted secondary processor
+[  373.668579] Switched to NOHz mode on CPU #1
+[  373.669494] CPU1 is up
+[  373.671508] PM: early resume of devices complete after 2.015 msecs
+[  373.671905] wakeup wake lock: nfc
+[  373.743438] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  373.743499] PVR: SysSystemPostPowerState: Entering state D0
+[  373.743530] PVR: EnableSystemClocks: Enabling System Clocks
+[  373.743560] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  373.764282] PM: resume of devices complete after 92.117 msecs
+[  373.765014] PM: Finishing wakeup.
+[  373.765045] Restarting tasks ... 
+[  373.765472] hub 1-0:1.0: activate --> -22
+[  373.779846] done.
+[  373.788818] suspend: exit suspend, ret = 0 (2013-07-08 14:04:39.092121466 UTC)
+[  373.788818] active wake lock nfc, time left 49
+[  373.788848] active wake lock wlan_rx_wake, time left 122
+[  373.809722] max17040 4-0036: online = 1 vcell = 4105000 soc = 95 status = 2 health = 1 temp = 320 charger status = 0
+[  374.766204] PM: Syncing filesystems ... done.
+[  374.770172] PM: Preparing system for mem sleep
+[  374.785980] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  374.809112] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  374.832061] PM: Entering mem sleep
+[  374.837188] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  374.837310] PVR: SysSystemPrePowerState: Entering state D3
+[  374.837341] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  374.837341] PVR: DisableSystemClocks: Disabling System Clocks
+[  374.839019] PM: suspend of devices complete after 6.167 msecs
+[  374.839752] PM: late suspend of devices complete after 0.732 msecs
+[  374.839752] Disabling non-boot CPUs ...
+[  374.840301] CPU1: shutdown
+[  374.840789] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  374.840789] Resume caused by IRQ 177, nfc_irq
+[  374.840789] Successfully put all powerdomains to target state
+[  374.840820] Suspended for 8.741 seconds
+[  374.840942] Enabling non-boot CPUs ...
+[  374.885192] CPU1: Booted secondary processor
+[  374.885925] CPU1 is up
+[  374.886688] Switched to NOHz mode on CPU #1
+[  374.888000] PM: early resume of devices complete after 2.045 msecs
+[  374.888397] wakeup wake lock: nfc
+[  374.961669] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  374.961700] PVR: SysSystemPostPowerState: Entering state D0
+[  374.961730] PVR: EnableSystemClocks: Enabling System Clocks
+[  374.961791] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  374.982421] PM: resume of devices complete after 93.796 msecs
+[  374.983215] PM: Finishing wakeup.
+[  374.983215] Restarting tasks ... 
+[  374.983612] hub 1-0:1.0: activate --> -22
+[  375.010955] done.
+[  375.012176] suspend: exit suspend, ret = 0 (2013-07-08 14:04:49.057821033 UTC)
+[  375.012176] active wake lock nfc, time left 48
+[  375.012207] active wake lock wlan_rx_wake, time left 121
+[  375.973602] PM: Syncing filesystems ... done.
+[  375.977447] PM: Preparing system for mem sleep
+[  375.988647] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  376.011444] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  376.035095] PM: Entering mem sleep
+[  376.040130] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  376.040283] PVR: SysSystemPrePowerState: Entering state D3
+[  376.040283] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  376.040313] PVR: DisableSystemClocks: Disabling System Clocks
+[  376.041961] PM: suspend of devices complete after 6.076 msecs
+[  376.042663] PM: late suspend of devices complete after 0.702 msecs
+[  376.042663] Disabling non-boot CPUs ...
+[  376.056152] CPU1: shutdown
+[  376.056640] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  376.056640] Resume caused by IRQ 177, nfc_irq
+[  376.056640] Successfully put all powerdomains to target state
+[  376.056701] Suspended for 16.703 seconds
+[  376.056762] Enabling non-boot CPUs ...
+[  376.099700] CPU1: Booted secondary processor
+[  376.100433] CPU1 is up
+[  376.102508] PM: early resume of devices complete after 2.015 msecs
+[  376.102874] wakeup wake lock: nfc
+[  376.104888] Switched to NOHz mode on CPU #1
+[  376.193145] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  376.193206] PVR: SysSystemPostPowerState: Entering state D0
+[  376.193237] PVR: EnableSystemClocks: Enabling System Clocks
+[  376.193267] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  376.216247] PM: resume of devices complete after 113.154 msecs
+[  376.217010] PM: Finishing wakeup.
+[  376.217010] Restarting tasks ... 
+[  376.217468] hub 1-0:1.0: activate --> -22
+[  376.238922] done.
+[  376.240142] suspend: exit suspend, ret = 0 (2013-07-08 14:05:06.989434751 UTC)
+[  376.240173] active wake lock musb_autosuspend_wake_lock
+[  376.240173] active wake lock nfc, time left 46
+[  376.240173] active wake lock wlan_rx_wake, time left 122
+[  378.731628] PM: Syncing filesystems ... done.
+[  378.736602] PM: Preparing system for mem sleep
+[  378.752929] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  378.776031] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  378.798950] PM: Entering mem sleep
+[  378.805755] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  378.805938] PVR: SysSystemPrePowerState: Entering state D3
+[  378.805969] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  378.805999] PVR: DisableSystemClocks: Disabling System Clocks
+[  378.807983] PM: suspend of devices complete after 7.908 msecs
+[  378.808898] active wake lock wlan_rx_wake, time left 127
+[  378.808929] pm_noirq_op(): platform_pm_suspend_noirq+0x0/0x48 returns -11
+[  378.808929] PM: Device power.0 failed to suspend late: error -11
+[  378.810150] PM: early resume of devices complete after 1.221 msecs
+[  378.810394] PM: Some devices failed to power down
+[  378.881225] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  378.881286] PVR: SysSystemPostPowerState: Entering state D0
+[  378.881317] PVR: EnableSystemClocks: Enabling System Clocks
+[  378.881347] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  378.902374] PM: resume of devices complete after 91.903 msecs
+[  378.903106] PM: Finishing wakeup.
+[  378.903106] Restarting tasks ... done.
+[  378.934295] suspend: exit suspend, ret = -11 (2013-07-08 14:05:09.684934659 UTC)
+[  378.934356] active wake lock mmc0_detect
+[  378.934356] active wake lock wlan_wake
+[  378.934356] active wake lock musb_autosuspend_wake_lock
+[  378.934356] active wake lock wlan_rx_wake, time left 126
+[  379.091918] hub 1-0:1.0: activate --> -22
+[  398.371429] max17040 4-0036: online = 1 vcell = 4036250 soc = 95 status = 2 health = 1 temp = 320 charger status = 0
+[  405.396911] PM: Syncing filesystems ... done.
+[  405.401306] PM: Preparing system for mem sleep
+[  405.411407] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  405.434051] Freezing remaining freezable tasks ... 
+[  405.434173] active wake lock wlan_rx_wake, time left 126
+[  405.434173] 
+[  405.434204] Freezing of tasks  aborted
+[  405.434417] 
+[  405.434417] Restarting tasks ... done.
+[  405.438507] suspend: exit suspend, ret = -16 (2013-07-08 14:05:36.202398190 UTC)
+[  405.438537] active wake lock wlan_rx_wake, time left 126
+[  417.012451] PM: Syncing filesystems ... done.
+[  417.017669] PM: Preparing system for mem sleep
+[  417.030731] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  417.053802] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  417.077239] PM: Entering mem sleep
+[  417.084228] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  417.084411] PVR: SysSystemPrePowerState: Entering state D3
+[  417.084442] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  417.084472] PVR: DisableSystemClocks: Disabling System Clocks
+[  417.086547] PM: suspend of devices complete after 8.182 msecs
+[  417.087463] PM: late suspend of devices complete after 0.915 msecs
+[  417.087493] Disabling non-boot CPUs ...
+[  417.111694] CPU1: shutdown
+[  417.112426] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  417.112426] Resume caused by IRQ 177, nfc_irq
+[  417.112426] Successfully put all powerdomains to target state
+[  417.112487] Suspended for 0.519 seconds
+[  417.112579] Enabling non-boot CPUs ...
+[  417.149841] CPU1: Booted secondary processor
+[  417.151062] CPU1 is up
+[  417.153137] PM: early resume of devices complete after 2.015 msecs
+[  417.153503] wakeup wake lock: nfc
+[  417.154693] Switched to NOHz mode on CPU #1
+[  417.242980] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  417.243011] PVR: SysSystemPostPowerState: Entering state D0
+[  417.243041] PVR: EnableSystemClocks: Enabling System Clocks
+[  417.243103] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  417.266082] PM: resume of devices complete after 112.330 msecs
+[  417.266845] PM: Finishing wakeup.
+[  417.266845] Restarting tasks ... 
+[  417.267395] hub 1-0:1.0: activate --> -22
+[  417.274475] done.
+[  417.289154] suspend: exit suspend, ret = 0 (2013-07-08 14:05:48.577921880 UTC)
+[  417.289184] active wake lock nfc, time left 46
+[  417.289184] active wake lock wlan_rx_wake, time left 126
+[  438.161651] PM: Syncing filesystems ... done.
+[  438.173645] PM: Preparing system for mem sleep
+[  438.184661] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  438.207427] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  438.230163] PM: Entering mem sleep
+[  438.235412] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  438.235534] PVR: SysSystemPrePowerState: Entering state D3
+[  438.235565] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  438.235565] PVR: DisableSystemClocks: Disabling System Clocks
+[  438.237274] PM: suspend of devices complete after 6.320 msecs
+[  438.238006] PM: late suspend of devices complete after 0.732 msecs
+[  438.238006] Disabling non-boot CPUs ...
+[  438.238525] CPU1: shutdown
+[  438.239013] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  438.239013] Resume caused by IRQ 177, nfc_irq
+[  438.239013] Successfully put all powerdomains to target state
+[  438.239044] Suspended for 9.492 seconds
+[  438.239135] Enabling non-boot CPUs ...
+[  438.269256] CPU1: Booted secondary processor
+[  438.269989] CPU1 is up
+[  438.270935] PM: early resume of devices complete after 0.915 msecs
+[  438.271270] wakeup wake lock: nfc
+[  438.276916] Switched to NOHz mode on CPU #1
+[  438.342468] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  438.342498] PVR: SysSystemPostPowerState: Entering state D0
+[  438.342498] PVR: EnableSystemClocks: Enabling System Clocks
+[  438.342529] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  438.364837] PM: resume of devices complete after 93.735 msecs
+[  438.365600] PM: Finishing wakeup.
+[  438.365631] Restarting tasks ... 
+[  438.366149] hub 1-0:1.0: activate --> -22
+[  438.382720] done.
+[  438.394775] suspend: exit suspend, ret = 0 (2013-07-08 14:06:19.186191956 UTC)
+[  438.394775] active wake lock nfc, time left 48
+[  438.394805] active wake lock wlan_rx_wake, time left 121
+[  438.418273] max17040 4-0036: online = 1 vcell = 4090000 soc = 94 status = 2 health = 1 temp = 340 charger status = 0
+[  444.021453] PM: Syncing filesystems ... done.
+[  444.090789] PM: Preparing system for mem sleep
+[  444.103057] Freezing user space processes ... 
+[  444.103729] active wake lock wlan_rx_wake, time left 112
+[  444.103729] 
+[  444.103729] Freezing of user space  aborted
+[  444.104003] 
+[  444.104003] Restarting tasks ... done.
+[  444.107177] suspend: exit suspend, ret = -16 (2013-07-08 14:06:24.901481034 UTC)
+[  444.107208] active wake lock wlan_rx_wake, time left 112
+[  446.863677] PM: Syncing filesystems ... done.
+[  446.905609] PM: Preparing system for mem sleep
+[  446.921905] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  446.945037] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  446.968536] PM: Entering mem sleep
+[  446.975341] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  446.975494] PVR: SysSystemPrePowerState: Entering state D3
+[  446.975494] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  446.975524] PVR: DisableSystemClocks: Disabling System Clocks
+[  446.977600] PM: suspend of devices complete after 7.938 msecs
+[  446.978515] PM: late suspend of devices complete after 0.915 msecs
+[  446.978546] Disabling non-boot CPUs ...
+[  446.979278] CPU1: shutdown
+[  446.980041] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  446.980041] Resume caused by IRQ 177, nfc_irq
+[  446.980041] Successfully put all powerdomains to target state
+[  446.980072] Suspended for 13.274 seconds
+[  446.980194] Enabling non-boot CPUs ...
+[  447.005767] CPU1: Booted secondary processor
+[  447.006927] CPU1 is up
+[  447.007019] Switched to NOHz mode on CPU #1
+[  447.008026] PM: early resume of devices complete after 1.068 msecs
+[  447.008239] wakeup wake lock: nfc
+[  447.082000] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  447.082031] PVR: SysSystemPostPowerState: Entering state D0
+[  447.082061] PVR: EnableSystemClocks: Enabling System Clocks
+[  447.082122] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  447.102844] PM: resume of devices complete after 94.499 msecs
+[  447.103607] PM: Finishing wakeup.
+[  447.103637] Restarting tasks ... 
+[  447.104156] hub 1-0:1.0: activate --> -22
+[  447.121185] done.
+[  447.130187] suspend: exit suspend, ret = 0 (2013-07-08 14:06:41.200142129 UTC)
+[  447.130187] active wake lock nfc, time left 49
+[  447.130218] active wake lock wlan_rx_wake, time left 122
+[  454.370513] PM: Syncing filesystems ... done.
+[  454.460662] PM: Preparing system for mem sleep
+[  454.473114] Freezing user space processes ... (elapsed 0.63 seconds) done.
+[  455.105133] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  455.128021] PM: Entering mem sleep
+[  455.536102] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  455.536132] PVR: SysSystemPrePowerState: Entering state D3
+[  455.536193] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  455.536254] PVR: DisableSystemClocks: Disabling System Clocks
+[  455.539306] PM: suspend of devices complete after 410.636 msecs
+[  455.540802] PM: late suspend of devices complete after 1.373 msecs
+[  455.540802] Disabling non-boot CPUs ...
+[  455.565643] CPU1: shutdown
+[  455.567016] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  455.567016] Resume caused by IRQ 177, nfc_irq
+[  455.567016] Successfully put all powerdomains to target state
+[  455.567108] Suspended for 25.719 seconds
+[  455.567291] Enabling non-boot CPUs ...
+[  455.586456] CPU1: Booted secondary processor
+[  455.588623] CPU1 is up
+[  455.588745] Switched to NOHz mode on CPU #1
+[  455.590148] PM: early resume of devices complete after 1.435 msecs
+[  455.590545] wakeup wake lock: nfc
+[  455.663482] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  455.663513] PVR: SysSystemPostPowerState: Entering state D0
+[  455.663574] PVR: EnableSystemClocks: Enabling System Clocks
+[  455.663604] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  455.684448] PM: resume of devices complete after 93.705 msecs
+[  455.685119] PM: Finishing wakeup.
+[  455.685150] Restarting tasks ... 
+[  455.685668] hub 1-0:1.0: activate --> -22
+[  455.707458] done.
+[  455.708984] suspend: exit suspend, ret = 0 (2013-07-08 14:07:15.502923937 UTC)
+[  455.709014] active wake lock max17040-battery
+[  455.709045] active wake lock nfc, time left 49
+[  455.709045] active wake lock wlan_rx_wake, time left 122
+[  455.734191] max17040 4-0036: online = 1 vcell = 4090000 soc = 94 status = 2 health = 1 temp = 330 charger status = 0
+[  457.150573] PM: Syncing filesystems ... done.
+[  457.163818] PM: Preparing system for mem sleep
+[  457.174987] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  457.197937] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  457.220855] PM: Entering mem sleep
+[  457.227844] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  457.227996] PVR: SysSystemPrePowerState: Entering state D3
+[  457.228027] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  457.228057] PVR: DisableSystemClocks: Disabling System Clocks
+[  457.230133] PM: suspend of devices complete after 8.182 msecs
+[  457.231048] PM: late suspend of devices complete after 0.915 msecs
+[  457.231079] Disabling non-boot CPUs ...
+[  457.231781] CPU1: shutdown
+[  457.232543] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  457.232543] Resume caused by IRQ 177, nfc_irq
+[  457.232543] Successfully put all powerdomains to target state
+[  457.232604] Suspended for 2.121 seconds
+[  457.232727] Enabling non-boot CPUs ...
+[  457.273529] CPU1: Booted secondary processor
+[  457.274688] CPU1 is up
+[  457.275482] Switched to NOHz mode on CPU #1
+[  457.276763] PM: early resume of devices complete after 2.076 msecs
+[  457.277160] wakeup wake lock: nfc
+[  457.350433] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  457.350494] PVR: SysSystemPostPowerState: Entering state D0
+[  457.350524] PVR: EnableSystemClocks: Enabling System Clocks
+[  457.350555] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  457.371276] PM: resume of devices complete after 93.919 msecs
+[  457.372039] PM: Finishing wakeup.
+[  457.372070] Restarting tasks ... 
+[  457.372589] hub 1-0:1.0: activate --> -22
+[  457.377380] done.
+[  457.396148] suspend: exit suspend, ret = 0 (2013-07-08 14:07:19.312544323 UTC)
+[  457.396179] active wake lock nfc, time left 49
+[  457.396179] active wake lock wlan_rx_wake, time left 122
+[  458.374389] PM: Syncing filesystems ... done.
+[  458.385559] PM: Preparing system for mem sleep
+[  458.400726] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  458.423828] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  458.447326] PM: Entering mem sleep
+[  458.452362] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  458.452514] PVR: SysSystemPrePowerState: Entering state D3
+[  458.452514] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  458.452545] PVR: DisableSystemClocks: Disabling System Clocks
+[  458.454193] PM: suspend of devices complete after 6.076 msecs
+[  458.454895] PM: late suspend of devices complete after 0.702 msecs
+[  458.454895] Disabling non-boot CPUs ...
+[  458.455413] CPU1: shutdown
+[  458.455932] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  458.455932] Resume caused by IRQ 177, nfc_irq
+[  458.455932] Successfully put all powerdomains to target state
+[  458.455993] Suspended for 28.780 seconds
+[  458.456085] Enabling non-boot CPUs ...
+[  458.482208] CPU1: Booted secondary processor
+[  458.482940] CPU1 is up
+[  458.484924] PM: early resume of devices complete after 1.984 msecs
+[  458.485321] wakeup wake lock: nfc
+[  458.485961] Switched to NOHz mode on CPU #1
+[  458.560791] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  458.560821] PVR: SysSystemPostPowerState: Entering state D0
+[  458.560852] PVR: EnableSystemClocks: Enabling System Clocks
+[  458.560913] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  458.581665] PM: resume of devices complete after 96.147 msecs
+[  458.582366] PM: Finishing wakeup.
+[  458.582366] Restarting tasks ... 
+[  458.582885] hub 1-0:1.0: activate --> -22
+[  458.606231] done.
+[  458.611358] suspend: exit suspend, ret = 0 (2013-07-08 14:07:49.308238533 UTC)
+[  458.611389] active wake lock nfc, time left 47
+[  458.611389] active wake lock wlan_rx_wake, time left 121
+[  459.767028] PM: Syncing filesystems ... done.
+[  459.776977] PM: Preparing system for mem sleep
+[  459.791198] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  459.813476] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  459.837341] PM: Entering mem sleep
+[  459.842407] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  459.842559] PVR: SysSystemPrePowerState: Entering state D3
+[  459.842590] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  459.842590] PVR: DisableSystemClocks: Disabling System Clocks
+[  459.844268] PM: suspend of devices complete after 6.167 msecs
+[  459.845001] PM: late suspend of devices complete after 0.702 msecs
+[  459.845001] Disabling non-boot CPUs ...
+[  459.845520] CPU1: shutdown
+[  459.846008] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  459.846008] Resume caused by IRQ 177, nfc_irq
+[  459.846008] Successfully put all powerdomains to target state
+[  459.846038] Suspended for 11.410 seconds
+[  459.846160] Enabling non-boot CPUs ...
+[  459.872985] CPU1: Booted secondary processor
+[  459.873718] CPU1 is up
+[  459.875701] PM: early resume of devices complete after 1.984 msecs
+[  459.875915] Switched to NOHz mode on CPU #1
+[  459.876159] wakeup wake lock: nfc
+[  459.964111] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  459.964141] PVR: SysSystemPostPowerState: Entering state D0
+[  459.964172] PVR: EnableSystemClocks: Enabling System Clocks
+[  459.964202] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  459.987243] PM: resume of devices complete after 110.895 msecs
+[  459.987915] PM: Finishing wakeup.
+[  459.987945] Restarting tasks ... 
+[  459.988464] hub 1-0:1.0: activate --> -22
+[  459.995849] done.
+[  460.012573] suspend: exit suspend, ret = 0 (2013-07-08 14:08:02.120676180 UTC)
+[  460.012603] active wake lock nfc, time left 47
+[  460.012603] active wake lock wlan_rx_wake, time left 122
+[  460.989868] PM: Syncing filesystems ... done.
+[  461.000854] PM: Preparing system for mem sleep
+[  461.016815] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  461.039459] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  461.063323] PM: Entering mem sleep
+[  461.068389] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  461.068542] PVR: SysSystemPrePowerState: Entering state D3
+[  461.068572] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  461.068572] PVR: DisableSystemClocks: Disabling System Clocks
+[  461.070220] PM: suspend of devices complete after 6.106 msecs
+[  461.070953] PM: late suspend of devices complete after 0.732 msecs
+[  461.070953] Disabling non-boot CPUs ...
+[  461.071472] CPU1: shutdown
+[  461.071929] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  461.071929] Resume caused by IRQ 177, nfc_irq
+[  461.071929] Successfully put all powerdomains to target state
+[  461.071990] Suspended for 2.870 seconds
+[  461.072082] Enabling non-boot CPUs ...
+[  461.142669] CPU1: Booted secondary processor
+[  461.143371] CPU1 is up
+[  461.145385] PM: early resume of devices complete after 2.015 msecs
+[  461.145782] wakeup wake lock: nfc
+[  461.148773] Switched to NOHz mode on CPU #1
+[  461.223571] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  461.223602] PVR: SysSystemPostPowerState: Entering state D0
+[  461.223632] PVR: EnableSystemClocks: Enabling System Clocks
+[  461.223693] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  461.244415] PM: resume of devices complete after 98.437 msecs
+[  461.245086] PM: Finishing wakeup.
+[  461.245117] Restarting tasks ... 
+[  461.245635] hub 1-0:1.0: activate --> -22
+[  461.268280] done.
+[  461.269287] suspend: exit suspend, ret = 0 (2013-07-08 14:08:06.248593320 UTC)
+[  461.269287] active wake lock nfc, time left 48
+[  461.269287] active wake lock wlan_rx_wake, time left 122
+[  461.290130] max17040 4-0036: online = 1 vcell = 4087500 soc = 94 status = 2 health = 1 temp = 330 charger status = 0
+[  462.237518] PM: Syncing filesystems ... done.
+[  462.247558] PM: Preparing system for mem sleep
+[  462.258361] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  462.281036] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  462.304931] PM: Entering mem sleep
+[  462.310089] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  462.310211] PVR: SysSystemPrePowerState: Entering state D3
+[  462.310241] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  462.310241] PVR: DisableSystemClocks: Disabling System Clocks
+[  462.311950] PM: suspend of devices complete after 6.198 msecs
+[  462.312683] PM: late suspend of devices complete after 0.732 msecs
+[  462.312683] Disabling non-boot CPUs ...
+[  462.313201] CPU1: shutdown
+[  462.313720] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  462.313720] Resume caused by IRQ 177, nfc_irq
+[  462.313720] Successfully put all powerdomains to target state
+[  462.313751] Suspended for 11.864 seconds
+[  462.313873] Enabling non-boot CPUs ...
+[  462.424987] CPU1: Booted secondary processor
+[  462.425659] CPU1 is up
+[  462.427703] PM: early resume of devices complete after 1.984 msecs
+[  462.428588] wakeup wake lock: nfc
+[  462.429412] Switched to NOHz mode on CPU #1
+[  462.504241] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  462.504272] PVR: SysSystemPostPowerState: Entering state D0
+[  462.504333] PVR: EnableSystemClocks: Enabling System Clocks
+[  462.504364] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  462.525115] PM: resume of devices complete after 97.002 msecs
+[  462.525848] PM: Finishing wakeup.
+[  462.525878] Restarting tasks ... 
+[  462.526397] hub 1-0:1.0: activate --> -22
+[  462.547546] done.
+[  462.550140] suspend: exit suspend, ret = 0 (2013-07-08 14:08:19.394588967 UTC)
+[  462.550170] active wake lock nfc, time left 48
+[  462.550170] active wake lock wlan_rx_wake, time left 122
+[  463.527679] PM: Syncing filesystems ... done.
+[  463.541381] PM: Preparing system for mem sleep
+[  463.554809] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  463.577911] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  463.601287] PM: Entering mem sleep
+[  463.608123] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  463.608276] PVR: SysSystemPrePowerState: Entering state D3
+[  463.608306] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  463.608337] PVR: DisableSystemClocks: Disabling System Clocks
+[  463.610382] PM: suspend of devices complete after 7.999 msecs
+[  463.611297] PM: late suspend of devices complete after 0.885 msecs
+[  463.611328] Disabling non-boot CPUs ...
+[  463.612060] CPU1: shutdown
+[  463.612731] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  463.612731] Resume caused by IRQ 177, nfc_irq
+[  463.612731] Successfully put all powerdomains to target state
+[  463.612762] Suspended for 26.553 seconds
+[  463.612884] Enabling non-boot CPUs ...
+[  463.660522] CPU1: Booted secondary processor
+[  463.661682] CPU1 is up
+[  463.663574] Switched to NOHz mode on CPU #1
+[  463.663696] PM: early resume of devices complete after 2.015 msecs
+[  463.664093] wakeup wake lock: nfc
+[  463.738037] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  463.738098] PVR: SysSystemPostPowerState: Entering state D0
+[  463.738128] PVR: EnableSystemClocks: Enabling System Clocks
+[  463.738159] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  463.758880] PM: resume of devices complete after 94.590 msecs
+[  463.759552] PM: Finishing wakeup.
+[  463.759582] Restarting tasks ... 
+[  463.760101] hub 1-0:1.0: activate --> -22
+[  463.766418] done.
+[  463.782928] suspend: exit suspend, ret = 0 (2013-07-08 14:08:47.181155047 UTC)
+[  463.782958] active wake lock nfc, time left 49
+[  463.782958] active wake lock wlan_rx_wake, time left 122
+[  464.784606] PM: Syncing filesystems ... done.
+[  464.794433] PM: Preparing system for mem sleep
+[  464.811920] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  464.834991] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  464.858917] PM: Entering mem sleep
+[  464.869384] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  464.869628] PVR: SysSystemPrePowerState: Entering state D3
+[  464.869689] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  464.869720] PVR: DisableSystemClocks: Disabling System Clocks
+[  464.872772] PM: suspend of devices complete after 11.724 msecs
+[  464.874298] PM: late suspend of devices complete after 1.496 msecs
+[  464.874298] Disabling non-boot CPUs ...
+[  464.895690] CPU1: shutdown
+[  464.896820] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  464.896820] Resume caused by IRQ 177, nfc_irq
+[  464.896820] Successfully put all powerdomains to target state
+[  464.896911] Suspended for 0.972 seconds
+[  464.897125] Enabling non-boot CPUs ...
+[  464.920623] CPU1: Booted secondary processor
+[  464.922882] CPU1 is up
+[  464.924743] PM: early resume of devices complete after 1.831 msecs
+[  464.924926] wakeup wake lock: nfc
+[  464.928192] Switched to NOHz mode on CPU #1
+[  465.009765] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  465.009826] PVR: SysSystemPostPowerState: Entering state D0
+[  465.009857] PVR: EnableSystemClocks: Enabling System Clocks
+[  465.009887] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  465.031799] PM: resume of devices complete after 106.834 msecs
+[  465.032562] PM: Finishing wakeup.
+[  465.032592] Restarting tasks ... 
+[  465.033111] hub 1-0:1.0: activate --> -22
+[  465.054748] done.
+[  465.059326] suspend: exit suspend, ret = 0 (2013-07-08 14:08:49.430541986 UTC)
+[  465.059356] active wake lock nfc, time left 47
+[  465.059356] active wake lock wlan_rx_wake, time left 122
+[  466.036804] PM: Syncing filesystems ... done.
+[  466.046600] PM: Preparing system for mem sleep
+[  466.061248] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  466.084442] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  466.107818] PM: Entering mem sleep
+[  466.113006] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  466.113128] PVR: SysSystemPrePowerState: Entering state D3
+[  466.113159] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  466.113159] PVR: DisableSystemClocks: Disabling System Clocks
+[  466.114868] PM: suspend of devices complete after 6.259 msecs
+[  466.115600] PM: late suspend of devices complete after 0.732 msecs
+[  466.115600] Disabling non-boot CPUs ...
+[  466.116088] CPU1: shutdown
+[  466.116577] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  466.116577] Resume caused by IRQ 177, nfc_irq
+[  466.116577] Successfully put all powerdomains to target state
+[  466.116638] Suspended for 5.841 seconds
+[  466.116729] Enabling non-boot CPUs ...
+[  466.149932] CPU1: Booted secondary processor
+[  466.150634] CPU1 is up
+[  466.152648] PM: early resume of devices complete after 2.015 msecs
+[  466.153045] wakeup wake lock: nfc
+[  466.154296] Switched to NOHz mode on CPU #1
+[  466.229095] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  466.229156] PVR: SysSystemPostPowerState: Entering state D0
+[  466.229187] PVR: EnableSystemClocks: Enabling System Clocks
+[  466.229217] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  466.249969] PM: resume of devices complete after 96.728 msecs
+[  466.250640] PM: Finishing wakeup.
+[  466.250671] Restarting tasks ... 
+[  466.251159] hub 1-0:1.0: activate --> -22
+[  466.275115] done.
+[  466.276275] suspend: exit suspend, ret = 0 (2013-07-08 14:08:56.489866216 UTC)
+[  466.276275] active wake lock nfc, time left 48
+[  466.276275] active wake lock wlan_rx_wake, time left 122
+[  466.293975] max17040 4-0036: online = 1 vcell = 4097500 soc = 94 status = 2 health = 1 temp = 320 charger status = 0
+[  467.246551] PM: Syncing filesystems ... done.
+[  467.261138] PM: Preparing system for mem sleep
+[  467.271881] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  467.294433] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  467.318389] PM: Entering mem sleep
+[  467.325225] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  467.325378] PVR: SysSystemPrePowerState: Entering state D3
+[  467.325408] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  467.325439] PVR: DisableSystemClocks: Disabling System Clocks
+[  467.327545] PM: suspend of devices complete after 8.060 msecs
+[  467.328491] PM: late suspend of devices complete after 0.915 msecs
+[  467.328521] Disabling non-boot CPUs ...
+[  467.329284] CPU1: shutdown
+[  467.329986] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  467.329986] Resume caused by IRQ 177, nfc_irq
+[  467.329986] Successfully put all powerdomains to target state
+[  467.330047] Suspended for 21.725 seconds
+[  467.330169] Enabling non-boot CPUs ...
+[  467.352355] CPU1: Booted secondary processor
+[  467.353485] CPU1 is up
+[  467.354553] PM: early resume of devices complete after 1.068 msecs
+[  467.354766] wakeup wake lock: nfc
+[  467.356811] Switched to NOHz mode on CPU #1
+[  467.445129] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  467.445190] PVR: SysSystemPostPowerState: Entering state D0
+[  467.445220] PVR: EnableSystemClocks: Enabling System Clocks
+[  467.445251] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  467.468231] PM: resume of devices complete after 113.398 msecs
+[  467.469024] PM: Finishing wakeup.
+[  467.469055] Restarting tasks ... 
+[  467.469573] hub 1-0:1.0: activate --> -22
+[  467.492034] done.
+[  467.493652] suspend: exit suspend, ret = 0 (2013-07-08 14:09:19.433620650 UTC)
+[  467.493682] active wake lock nfc, time left 46
+[  467.493682] active wake lock wlan_rx_wake, time left 122
+[  468.469940] PM: Syncing filesystems ... done.
+[  468.480438] PM: Preparing system for mem sleep
+[  468.497863] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  468.520935] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  468.543853] PM: Entering mem sleep
+[  468.550811] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  468.550964] PVR: SysSystemPrePowerState: Entering state D3
+[  468.550994] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  468.551025] PVR: DisableSystemClocks: Disabling System Clocks
+[  468.553100] PM: suspend of devices complete after 8.152 msecs
+[  468.554046] PM: late suspend of devices complete after 0.915 msecs
+[  468.554077] Disabling non-boot CPUs ...
+[  468.554779] CPU1: shutdown
+[  468.555480] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  468.555480] Resume caused by IRQ 177, nfc_irq
+[  468.555480] Successfully put all powerdomains to target state
+[  468.555541] Suspended for 26.421 seconds
+[  468.555664] Enabling non-boot CPUs ...
+[  468.589355] CPU1: Booted secondary processor
+[  468.590545] CPU1 is up
+[  468.590606] Switched to NOHz mode on CPU #1
+[  468.592620] PM: early resume of devices complete after 2.045 msecs
+[  468.593017] wakeup wake lock: nfc
+[  468.665527] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  468.665588] PVR: SysSystemPostPowerState: Entering state D0
+[  468.665618] PVR: EnableSystemClocks: Enabling System Clocks
+[  468.665679] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  468.686431] PM: resume of devices complete after 93.155 msecs
+[  468.687194] PM: Finishing wakeup.
+[  468.687225] Restarting tasks ... 
+[  468.687744] hub 1-0:1.0: activate --> -22
+[  468.713043] done.
+[  468.713989] suspend: exit suspend, ret = 0 (2013-07-08 14:09:47.075984948 UTC)
+[  468.714019] active wake lock nfc, time left 49
+[  468.714019] active wake lock wlan_rx_wake, time left 122
+[  468.731719] max17040 4-0036: online = 1 vcell = 4095000 soc = 94 status = 2 health = 1 temp = 320 charger status = 0
+[  469.859802] PM: Syncing filesystems ... done.
+[  469.872985] PM: Preparing system for mem sleep
+[  469.887756] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  469.910858] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  469.934356] PM: Entering mem sleep
+[  469.941253] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  469.941406] PVR: SysSystemPrePowerState: Entering state D3
+[  469.941436] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  469.941467] PVR: DisableSystemClocks: Disabling System Clocks
+[  469.943572] PM: suspend of devices complete after 8.121 msecs
+[  469.944488] PM: late suspend of devices complete after 0.885 msecs
+[  469.944519] Disabling non-boot CPUs ...
+[  469.945251] CPU1: shutdown
+[  469.945922] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  469.945922] Resume caused by IRQ 177, nfc_irq
+[  469.945922] Successfully put all powerdomains to target state
+[  469.945953] Suspended for 0.966 seconds
+[  469.946075] Enabling non-boot CPUs ...
+[  469.989105] CPU1: Booted secondary processor
+[  469.990295] CPU1 is up
+[  469.992309] PM: early resume of devices complete after 2.015 msecs
+[  469.992706] wakeup wake lock: nfc
+[  469.996215] Switched to NOHz mode on CPU #1
+[  470.071136] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  470.071166] PVR: SysSystemPostPowerState: Entering state D0
+[  470.071197] PVR: EnableSystemClocks: Enabling System Clocks
+[  470.071258] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  470.091979] PM: resume of devices complete after 99.048 msecs
+[  470.092742] PM: Finishing wakeup.
+[  470.092773] Restarting tasks ... 
+[  470.093322] hub 1-0:1.0: activate --> -22
+[  470.100036] done.
+[  470.116180] suspend: exit suspend, ret = 0 (2013-07-08 14:09:49.445063707 UTC)
+[  470.116180] active wake lock nfc, time left 48
+[  470.116210] active wake lock wlan_rx_wake, time left 122
+[  471.102142] PM: Syncing filesystems ... done.
+[  471.116455] PM: Preparing system for mem sleep
+[  471.129394] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  471.152465] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  471.175903] PM: Entering mem sleep
+[  471.182769] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  471.182922] PVR: SysSystemPrePowerState: Entering state D3
+[  471.182952] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  471.182983] PVR: DisableSystemClocks: Disabling System Clocks
+[  471.185119] PM: suspend of devices complete after 8.121 msecs
+[  471.186035] PM: late suspend of devices complete after 0.885 msecs
+[  471.186065] Disabling non-boot CPUs ...
+[  471.186828] CPU1: shutdown
+[  471.187530] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  471.187530] Resume caused by IRQ 177, nfc_irq
+[  471.187530] Successfully put all powerdomains to target state
+[  471.187561] Suspended for 28.761 seconds
+[  471.187683] Enabling non-boot CPUs ...
+[  471.239715] CPU1: Booted secondary processor
+[  471.240844] CPU1 is up
+[  471.242858] PM: early resume of devices complete after 2.015 msecs
+[  471.243255] wakeup wake lock: nfc
+[  471.245666] Switched to NOHz mode on CPU #1
+[  471.320495] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  471.320556] PVR: SysSystemPostPowerState: Entering state D0
+[  471.320587] PVR: EnableSystemClocks: Enabling System Clocks
+[  471.320617] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  471.341400] PM: resume of devices complete after 97.949 msecs
+[  471.342071] PM: Finishing wakeup.
+[  471.342102] Restarting tasks ... 
+[  471.342620] hub 1-0:1.0: activate --> -22
+[  471.366302] done.
+[  471.376312] suspend: exit suspend, ret = 0 (2013-07-08 14:10:19.467605342 UTC)
+[  471.376342] active wake lock nfc, time left 47
+[  471.376342] active wake lock wlan_rx_wake, time left 121
+[  472.485626] PM: Syncing filesystems ... done.
+[  472.499145] PM: Preparing system for mem sleep
+[  472.511474] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  472.534606] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  472.558013] PM: Entering mem sleep
+[  472.563110] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  472.563232] PVR: SysSystemPrePowerState: Entering state D3
+[  472.563262] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  472.563262] PVR: DisableSystemClocks: Disabling System Clocks
+[  472.564941] PM: suspend of devices complete after 6.167 msecs
+[  472.565673] PM: late suspend of devices complete after 0.732 msecs
+[  472.565673] Disabling non-boot CPUs ...
+[  472.566162] CPU1: shutdown
+[  472.566650] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  472.566650] Resume caused by IRQ 177, nfc_irq
+[  472.566650] Successfully put all powerdomains to target state
+[  472.566711] Suspended for 16.539 seconds
+[  472.566802] Enabling non-boot CPUs ...
+[  472.592437] CPU1: Booted secondary processor
+[  472.593170] CPU1 is up
+[  472.594116] PM: early resume of devices complete after 0.946 msecs
+[  472.594482] wakeup wake lock: nfc
+[  472.596557] Switched to NOHz mode on CPU #1
+[  472.663665] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  472.663726] PVR: SysSystemPostPowerState: Entering state D0
+[  472.663757] PVR: EnableSystemClocks: Enabling System Clocks
+[  472.663787] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  472.684570] PM: resume of devices complete after 90.316 msecs
+[  472.685333] PM: Finishing wakeup.
+[  472.685333] Restarting tasks ... 
+[  472.685882] hub 1-0:1.0: activate --> -22
+[  472.704650] done.
+[  472.709350] suspend: exit suspend, ret = 0 (2013-07-08 14:10:37.340769402 UTC)
+[  472.709381] active wake lock nfc, time left 49
+[  472.709381] active wake lock wlan_rx_wake, time left 122
+[  472.738281] max17040 4-0036: online = 1 vcell = 4097500 soc = 94 status = 2 health = 1 temp = 320 charger status = 0
+[  473.680023] PM: Syncing filesystems ... done.
+[  473.690948] PM: Preparing system for mem sleep
+[  473.706329] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  473.729370] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  473.752746] PM: Entering mem sleep
+[  473.757812] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  473.757965] PVR: SysSystemPrePowerState: Entering state D3
+[  473.757965] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  473.757995] PVR: DisableSystemClocks: Disabling System Clocks
+[  473.759643] PM: suspend of devices complete after 6.106 msecs
+[  473.760375] PM: late suspend of devices complete after 0.732 msecs
+[  473.760375] Disabling non-boot CPUs ...
+[  473.776062] CPU1: shutdown
+[  473.776489] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  473.776489] Resume caused by IRQ 177, nfc_irq
+[  473.776489] Successfully put all powerdomains to target state
+[  473.776519] Suspended for 10.977 seconds
+[  473.776611] Enabling non-boot CPUs ...
+[  473.806549] CPU1: Booted secondary processor
+[  473.806915] Switched to NOHz mode on CPU #1
+[  473.807281] CPU1 is up
+[  473.809356] PM: early resume of devices complete after 2.015 msecs
+[  473.809753] wakeup wake lock: nfc
+[  473.881866] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  473.881896] PVR: SysSystemPostPowerState: Entering state D0
+[  473.881958] PVR: EnableSystemClocks: Enabling System Clocks
+[  473.881988] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  473.902679] PM: resume of devices complete after 92.728 msecs
+[  473.903442] PM: Finishing wakeup.
+[  473.903472] Restarting tasks ... 
+[  473.903991] hub 1-0:1.0: activate --> -22
+[  473.924682] done.
+[  473.931152] suspend: exit suspend, ret = 0 (2013-07-08 14:10:49.540232804 UTC)
+[  473.931152] active wake lock nfc, time left 49
+[  473.931152] active wake lock wlan_rx_wake, time left 122
+[  474.895904] PM: Syncing filesystems ... done.
+[  474.905670] PM: Preparing system for mem sleep
+[  474.916717] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  474.939270] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  474.962677] PM: Entering mem sleep
+[  474.968475] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  474.968627] PVR: SysSystemPrePowerState: Entering state D3
+[  474.968627] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  474.968658] PVR: DisableSystemClocks: Disabling System Clocks
+[  474.970520] PM: suspend of devices complete after 6.930 msecs
+[  474.971343] PM: late suspend of devices complete after 0.824 msecs
+[  474.971343] Disabling non-boot CPUs ...
+[  474.971984] CPU1: shutdown
+[  474.972534] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  474.972534] Resume caused by IRQ 177, nfc_irq
+[  474.972534] Successfully put all powerdomains to target state
+[  474.972564] Suspended for 2.489 seconds
+[  474.972686] Enabling non-boot CPUs ...
+[  474.998626] CPU1: Booted secondary processor
+[  474.999572] CPU1 is up
+[  475.001556] PM: early resume of devices complete after 1.984 msecs
+[  475.001708] Switched to NOHz mode on CPU #1
+[  475.001983] wakeup wake lock: nfc
+[  475.089996] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  475.090057] PVR: SysSystemPostPowerState: Entering state D0
+[  475.090087] PVR: EnableSystemClocks: Enabling System Clocks
+[  475.090118] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  475.113098] PM: resume of devices complete after 110.895 msecs
+[  475.113891] PM: Finishing wakeup.
+[  475.113891] Restarting tasks ... 
+[  475.114440] hub 1-0:1.0: activate --> -22
+[  475.136474] done.
+[  475.138122] suspend: exit suspend, ret = 0 (2013-07-08 14:10:53.237247401 UTC)
+[  475.138122] active wake lock nfc, time left 47
+[  475.138122] active wake lock wlan_rx_wake, time left 122
+[  476.114501] PM: Syncing filesystems ... done.
+[  476.125488] PM: Preparing system for mem sleep
+[  476.142608] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  476.165710] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  476.189086] PM: Entering mem sleep
+[  476.194244] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  476.194396] PVR: SysSystemPrePowerState: Entering state D3
+[  476.194396] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  476.194427] PVR: DisableSystemClocks: Disabling System Clocks
+[  476.196136] PM: suspend of devices complete after 6.228 msecs
+[  476.196868] PM: late suspend of devices complete after 0.732 msecs
+[  476.196868] Disabling non-boot CPUs ...
+[  476.197357] CPU1: shutdown
+[  476.197845] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  476.197845] Resume caused by IRQ 177, nfc_irq
+[  476.197845] Successfully put all powerdomains to target state
+[  476.197906] Suspended for 25.094 seconds
+[  476.197998] Enabling non-boot CPUs ...
+[  476.262054] CPU1: Booted secondary processor
+[  476.262817] CPU1 is up
+[  476.264862] PM: early resume of devices complete after 2.015 msecs
+[  476.265258] wakeup wake lock: nfc
+[  476.266723] Switched to NOHz mode on CPU #1
+[  476.341613] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  476.341674] PVR: SysSystemPostPowerState: Entering state D0
+[  476.341705] PVR: EnableSystemClocks: Enabling System Clocks
+[  476.341766] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  476.362518] PM: resume of devices complete after 97.063 msecs
+[  476.363281] PM: Finishing wakeup.
+[  476.363281] Restarting tasks ... 
+[  476.363830] hub 1-0:1.0: activate --> -22
+[  476.376434] done.
+[  476.389801] suspend: exit suspend, ret = 0 (2013-07-08 14:11:19.584186696 UTC)
+[  476.389831] active wake lock nfc, time left 48
+[  476.389831] active wake lock wlan_rx_wake, time left 122
+[  477.841033] PM: Syncing filesystems ... done.
+[  477.861877] PM: Preparing system for mem sleep
+[  477.876098] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  477.899230] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  477.922637] PM: Entering mem sleep
+[  477.927703] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  477.927856] PVR: SysSystemPrePowerState: Entering state D3
+[  477.927856] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  477.927886] PVR: DisableSystemClocks: Disabling System Clocks
+[  477.929565] PM: suspend of devices complete after 6.137 msecs
+[  477.930267] PM: late suspend of devices complete after 0.702 msecs
+[  477.930267] Disabling non-boot CPUs ...
+[  477.930816] CPU1: shutdown
+[  477.931274] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  477.931274] Resume caused by IRQ 177, nfc_irq
+[  477.931274] Successfully put all powerdomains to target state
+[  477.931304] Suspended for 6.250 seconds
+[  477.931427] Enabling non-boot CPUs ...
+[  477.959533] CPU1: Booted secondary processor
+[  477.960296] CPU1 is up
+[  477.961181] Switched to NOHz mode on CPU #1
+[  477.961700] PM: early resume of devices complete after 1.404 msecs
+[  477.961944] wakeup wake lock: nfc
+[  478.034912] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  478.034942] PVR: SysSystemPostPowerState: Entering state D0
+[  478.034942] PVR: EnableSystemClocks: Enabling System Clocks
+[  478.034973] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  478.056945] PM: resume of devices complete after 94.926 msecs
+[  478.057739] PM: Finishing wakeup.
+[  478.057769] Restarting tasks ... 
+[  478.058166] hub 1-0:1.0: activate --> -22
+[  478.077087] done.
+[  478.079315] suspend: exit suspend, ret = 0 (2013-07-08 14:11:27.525064392 UTC)
+[  478.079315] active wake lock musb_autosuspend_wake_lock
+[  478.079345] active wake lock nfc, time left 49
+[  478.079345] active wake lock wlan_rx_wake, time left 122
+[  478.102416] max17040 4-0036: online = 1 vcell = 4097500 soc = 94 status = 2 health = 1 temp = 320 charger status = 0
+[  479.059936] PM: Syncing filesystems ... done.
+[  479.073974] PM: Preparing system for mem sleep
+[  479.086608] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  479.109680] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  479.133117] PM: Entering mem sleep
+[  479.139953] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  479.140106] PVR: SysSystemPrePowerState: Entering state D3
+[  479.140136] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  479.140167] PVR: DisableSystemClocks: Disabling System Clocks
+[  479.142211] PM: suspend of devices complete after 7.999 msecs
+[  479.143157] PM: late suspend of devices complete after 0.915 msecs
+[  479.143188] Disabling non-boot CPUs ...
+[  479.143920] CPU1: shutdown
+[  479.144500] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  479.144500] Resume caused by IRQ 177, nfc_irq
+[  479.144500] Successfully put all powerdomains to target state
+[  479.144561] Suspended for 13.430 seconds
+[  479.144683] Enabling non-boot CPUs ...
+[  479.184906] CPU1: Booted secondary processor
+[  479.186096] CPU1 is up
+[  479.187194] Switched to NOHz mode on CPU #1
+[  479.188201] PM: early resume of devices complete after 2.076 msecs
+[  479.188598] wakeup wake lock: nfc
+[  479.275451] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  479.275512] PVR: SysSystemPostPowerState: Entering state D0
+[  479.275543] PVR: EnableSystemClocks: Enabling System Clocks
+[  479.275573] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  479.298614] PM: resume of devices complete after 109.826 msecs
+[  479.299377] PM: Finishing wakeup.
+[  479.299377] Restarting tasks ... 
+[  479.299865] hub 1-0:1.0: activate --> -22
+[  479.321929] done.
+[  479.323150] suspend: exit suspend, ret = 0 (2013-07-08 14:11:42.199850124 UTC)
+[  479.323181] active wake lock nfc, time left 47
+[  479.323181] active wake lock wlan_rx_wake, time left 128
+[  486.805755] PM: Syncing filesystems ... done.
+[  486.816497] PM: Preparing system for mem sleep
+[  486.832641] Freezing user space processes ... 
+[  486.834136] active wake lock wlan_rx_wake, time left 123
+[  486.834167] 
+[  486.834167] Freezing of user space  aborted
+[  486.834411] 
+[  486.834411] Restarting tasks ... done.
+[  486.836853] suspend: exit suspend, ret = -16 (2013-07-08 14:11:49.717309367 UTC)
+[  486.836883] active wake lock wlan_rx_wake, time left 123
+[  492.338287] PM: Syncing filesystems ... done.
+[  492.351593] PM: Preparing system for mem sleep
+[  492.368927] Freezing user space processes ... 
+[  492.370422] active wake lock wlan_rx_wake, time left 123
+[  492.370422] 
+[  492.370452] Freezing of user space  aborted
+[  492.370635] 
+[  492.370666] Restarting tasks ... done.
+[  492.374511] suspend: exit suspend, ret = -16 (2013-07-08 14:11:55.257736888 UTC)
+[  495.314880] PM: Syncing filesystems ... done.
+[  495.325439] PM: Preparing system for mem sleep
+[  495.336425] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  495.358886] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  495.382843] PM: Entering mem sleep
+[  495.389831] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  495.389984] PVR: SysSystemPrePowerState: Entering state D3
+[  495.390045] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  495.390075] PVR: DisableSystemClocks: Disabling System Clocks
+[  495.392181] PM: suspend of devices complete after 8.243 msecs
+[  495.393096] PM: late suspend of devices complete after 0.915 msecs
+[  495.393127] Disabling non-boot CPUs ...
+[  495.401733] CPU1: shutdown
+[  495.402496] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  495.402496] Resume caused by IRQ 177, nfc_irq
+[  495.402496] Successfully put all powerdomains to target state
+[  495.402557] Suspended for 0.331 seconds
+[  495.402648] Enabling non-boot CPUs ...
+[  495.443328] CPU1: Booted secondary processor
+[  495.444488] CPU1 is up
+[  495.444763] Switched to NOHz mode on CPU #1
+[  495.446563] PM: early resume of devices complete after 2.045 msecs
+[  495.446929] wakeup wake lock: nfc
+[  495.519683] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  495.519744] PVR: SysSystemPostPowerState: Entering state D0
+[  495.519775] PVR: EnableSystemClocks: Enabling System Clocks
+[  495.519805] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  495.540985] PM: resume of devices complete after 93.796 msecs
+[  495.541717] PM: Finishing wakeup.
+[  495.541748] Restarting tasks ... 
+[  495.542114] hub 1-0:1.0: activate --> -22
+[  495.549957] done.
+[  495.569885] suspend: exit suspend, ret = 0 (2013-07-08 14:11:58.785732228 UTC)
+[  495.569915] active wake lock nfc, time left 48
+[  495.569915] active wake lock wlan_rx_wake, time left 126
+[  496.582092] PM: Syncing filesystems ... done.
+[  496.595428] PM: Preparing system for mem sleep
+[  496.609436] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  496.632202] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  496.655670] PM: Entering mem sleep
+[  496.661376] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  496.661529] PVR: SysSystemPrePowerState: Entering state D3
+[  496.661560] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  496.661590] PVR: DisableSystemClocks: Disabling System Clocks
+[  496.663421] PM: suspend of devices complete after 6.839 msecs
+[  496.664215] PM: late suspend of devices complete after 0.793 msecs
+[  496.664245] Disabling non-boot CPUs ...
+[  496.680480] CPU1: shutdown
+[  496.680938] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  496.680938] Resume caused by IRQ 177, nfc_irq
+[  496.680938] Successfully put all powerdomains to target state
+[  496.680999] Suspended for 5.070 seconds
+[  496.681060] Enabling non-boot CPUs ...
+[  496.699645] CPU1: Booted secondary processor
+[  496.700561] CPU1 is up
+[  496.702514] PM: early resume of devices complete after 1.954 msecs
+[  496.702636] Switched to NOHz mode on CPU #1
+[  496.703002] wakeup wake lock: nfc
+[  496.776885] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  496.776916] PVR: SysSystemPostPowerState: Entering state D0
+[  496.776947] PVR: EnableSystemClocks: Enabling System Clocks
+[  496.777008] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  496.797851] PM: resume of devices complete after 94.590 msecs
+[  496.798614] PM: Finishing wakeup.
+[  496.798614] Restarting tasks ... 
+[  496.799041] hub 1-0:1.0: activate --> -22
+[  496.820343] done.
+[  496.823059] suspend: exit suspend, ret = 0 (2013-07-08 14:12:05.109692533 UTC)
+[  496.823089] active wake lock nfc, time left 49
+[  496.823089] active wake lock wlan_rx_wake, time left 126
+[  498.498901] PM: Syncing filesystems ... done.
+[  498.508880] PM: Preparing system for mem sleep
+[  498.522613] Freezing user space processes ... 
+[  498.523254] active wake lock wlan_rx_wake, time left 124
+[  498.523254] 
+[  498.523254] Freezing of user space  aborted
+[  498.523498] 
+[  498.523498] Restarting tasks ... done.
+[  498.529663] suspend: exit suspend, ret = -16 (2013-07-08 14:12:06.817149840 UTC)
+[  501.677734] PM: Syncing filesystems ... done.
+[  501.687408] PM: Preparing system for mem sleep
+[  501.700256] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  501.723449] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  501.746826] PM: Entering mem sleep
+[  501.751892] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  501.752044] PVR: SysSystemPrePowerState: Entering state D3
+[  501.752044] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  501.752075] PVR: DisableSystemClocks: Disabling System Clocks
+[  501.753723] PM: suspend of devices complete after 6.106 msecs
+[  501.754425] PM: late suspend of devices complete after 0.702 msecs
+[  501.754425] Disabling non-boot CPUs ...
+[  501.754913] CPU1: shutdown
+[  501.755462] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  501.755462] Resume caused by IRQ 177, nfc_irq
+[  501.755462] Successfully put all powerdomains to target state
+[  501.755523] Suspended for 0.250 seconds
+[  501.755615] Enabling non-boot CPUs ...
+[  501.784240] CPU1: Booted secondary processor
+[  501.784973] CPU1 is up
+[  501.785400] Switched to NOHz mode on CPU #1
+[  501.787048] PM: early resume of devices complete after 2.015 msecs
+[  501.787414] wakeup wake lock: nfc
+[  501.860321] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  501.860382] PVR: SysSystemPostPowerState: Entering state D0
+[  501.860412] PVR: EnableSystemClocks: Enabling System Clocks
+[  501.860443] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  501.881164] PM: resume of devices complete after 93.522 msecs
+[  501.881927] PM: Finishing wakeup.
+[  501.881958] Restarting tasks ... 
+[  501.882385] hub 1-0:1.0: activate --> -22
+[  501.899169] done.
+[  501.904937] suspend: exit suspend, ret = 0 (2013-07-08 14:12:10.444356240 UTC)
+[  501.904937] active wake lock musb_autosuspend_wake_lock
+[  501.904968] active wake lock nfc, time left 49
+[  501.904968] active wake lock wlan_rx_wake, time left 122
+[  503.152160] PM: Syncing filesystems ... done.
+[  503.164794] PM: Preparing system for mem sleep
+[  503.176330] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  503.198852] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  503.222686] PM: Entering mem sleep
+[  503.229675] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  503.229827] PVR: SysSystemPrePowerState: Entering state D3
+[  503.229858] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  503.229888] PVR: DisableSystemClocks: Disabling System Clocks
+[  503.231994] PM: suspend of devices complete after 8.213 msecs
+[  503.232940] PM: late suspend of devices complete after 0.915 msecs
+[  503.232971] Disabling non-boot CPUs ...
+[  503.244567] CPU1: shutdown
+[  503.245330] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  503.245330] Resume caused by IRQ 177, nfc_irq
+[  503.245330] Successfully put all powerdomains to target state
+[  503.245361] Suspended for 0.455 seconds
+[  503.245452] Enabling non-boot CPUs ...
+[  503.269409] CPU1: Booted secondary processor
+[  503.270538] CPU1 is up
+[  503.272644] PM: early resume of devices complete after 2.015 msecs
+[  503.273010] wakeup wake lock: nfc
+[  503.276916] Switched to NOHz mode on CPU #1
+[  503.343994] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  503.344055] PVR: SysSystemPostPowerState: Entering state D0
+[  503.344085] PVR: EnableSystemClocks: Enabling System Clocks
+[  503.344116] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  503.364898] PM: resume of devices complete after 91.659 msecs
+[  503.365661] PM: Finishing wakeup.
+[  503.365661] Restarting tasks ... 
+[  503.366119] hub 1-0:1.0: activate --> -22
+[  503.389404] done.
+[  503.390319] suspend: exit suspend, ret = 0 (2013-07-08 14:12:12.386352586 UTC)
+[  503.390350] active wake lock nfc, time left 49
+[  503.390350] active wake lock wlan_rx_wake, time left 128
+[  504.408386] PM: Syncing filesystems ... done.
+[  504.421295] PM: Preparing system for mem sleep
+[  504.433349] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  504.456054] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  504.479888] PM: Entering mem sleep
+[  504.484985] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  504.485137] PVR: SysSystemPrePowerState: Entering state D3
+[  504.485137] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  504.485168] PVR: DisableSystemClocks: Disabling System Clocks
+[  504.486816] PM: suspend of devices complete after 6.106 msecs
+[  504.487518] PM: late suspend of devices complete after 0.702 msecs
+[  504.487518] Disabling non-boot CPUs ...
+[  504.510162] CPU1: shutdown
+[  504.510650] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  504.510650] Resume caused by IRQ 177, nfc_irq
+[  504.510650] Successfully put all powerdomains to target state
+[  504.510711] Suspended for 5.390 seconds
+[  504.510803] Enabling non-boot CPUs ...
+[  504.531951] CPU1: Booted secondary processor
+[  504.532684] CPU1 is up
+[  504.534759] PM: early resume of devices complete after 2.015 msecs
+[  504.535095] Switched to NOHz mode on CPU #1
+[  504.535125] wakeup wake lock: nfc
+[  504.622375] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  504.622406] PVR: SysSystemPostPowerState: Entering state D0
+[  504.622436] PVR: EnableSystemClocks: Enabling System Clocks
+[  504.622497] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  504.645477] PM: resume of devices complete after 110.101 msecs
+[  504.646240] PM: Finishing wakeup.
+[  504.646270] Restarting tasks ... 
+[  504.646636] hub 1-0:1.0: activate --> -22
+[  504.661712] done.
+[  504.669219] suspend: exit suspend, ret = 0 (2013-07-08 14:12:19.056395076 UTC)
+[  504.669219] active wake lock musb_autosuspend_wake_lock
+[  504.669219] active wake lock nfc, time left 46
+[  504.669250] active wake lock wlan_rx_wake, time left 126
+[  504.688018] max17040 4-0036: online = 1 vcell = 4092500 soc = 94 status = 2 health = 1 temp = 320 charger status = 0
+[  508.102081] PM: Syncing filesystems ... done.
+[  508.115814] PM: Preparing system for mem sleep
+[  508.127014] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  508.150085] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  508.173492] PM: Entering mem sleep
+[  508.180450] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  508.180603] PVR: SysSystemPrePowerState: Entering state D3
+[  508.180633] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  508.180664] PVR: DisableSystemClocks: Disabling System Clocks
+[  508.182708] PM: suspend of devices complete after 8.121 msecs
+[  508.183624] PM: late suspend of devices complete after 0.885 msecs
+[  508.183654] Disabling non-boot CPUs ...
+[  508.184356] CPU1: shutdown
+[  508.185119] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  508.185119] Resume caused by IRQ 177, nfc_irq
+[  508.185119] Successfully put all powerdomains to target state
+[  508.185180] Suspended for 0.524 seconds
+[  508.185302] Enabling non-boot CPUs ...
+[  508.236083] CPU1: Booted secondary processor
+[  508.237243] CPU1 is up
+[  508.239318] PM: early resume of devices complete after 2.015 msecs
+[  508.239685] wakeup wake lock: nfc
+[  508.243286] Switched to NOHz mode on CPU #1
+[  508.318206] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  508.318237] PVR: SysSystemPostPowerState: Entering state D0
+[  508.318267] PVR: EnableSystemClocks: Enabling System Clocks
+[  508.318328] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  508.339050] PM: resume of devices complete after 99.109 msecs
+[  508.339813] PM: Finishing wakeup.
+[  508.339813] Restarting tasks ... 
+[  508.340240] hub 1-0:1.0: activate --> -22
+[  508.346771] done.
+[  508.355621] suspend: exit suspend, ret = 0 (2013-07-08 14:12:23.268748480 UTC)
+[  508.355651] active wake lock musb_autosuspend_wake_lock
+[  508.355682] active wake lock nfc, time left 49
+[  508.355712] active wake lock wlan_rx_wake, time left 125
+[  512.880279] PM: Syncing filesystems ... done.
+[  512.892211] PM: Preparing system for mem sleep
+[  512.907531] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  512.930633] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  512.953582] PM: Entering mem sleep
+[  512.959472] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  512.959655] PVR: SysSystemPrePowerState: Entering state D3
+[  512.959686] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  512.959686] PVR: DisableSystemClocks: Disabling System Clocks
+[  512.961578] PM: suspend of devices complete after 7.080 msecs
+[  512.962402] PM: late suspend of devices complete after 0.793 msecs
+[  512.962402] Disabling non-boot CPUs ...
+[  512.963012] CPU1: shutdown
+[  512.963592] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  512.963592] Resume caused by IRQ 177, nfc_irq
+[  512.963592] Successfully put all powerdomains to target state
+[  512.963623] Suspended for 2.389 seconds
+[  512.963745] Enabling non-boot CPUs ...
+[  512.991180] CPU1: Booted secondary processor
+[  512.992095] CPU1 is up
+[  512.992675] Switched to NOHz mode on CPU #1
+[  512.994079] PM: early resume of devices complete after 1.983 msecs
+[  512.994476] wakeup wake lock: nfc
+[  513.067626] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  513.067687] PVR: SysSystemPostPowerState: Entering state D0
+[  513.067718] PVR: EnableSystemClocks: Enabling System Clocks
+[  513.067749] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  513.089233] PM: resume of devices complete after 94.512 msecs
+[  513.089996] PM: Finishing wakeup.
+[  513.090026] Restarting tasks ... 
+[  513.090454] hub 1-0:1.0: activate --> -22
+[  513.097076] done.
+[  513.099304] suspend: exit suspend, ret = 0 (2013-07-08 14:12:30.402540538 UTC)
+[  513.099334] active wake lock musb_autosuspend_wake_lock
+[  513.099365] active wake lock nfc, time left 51
+[  513.099365] active wake lock wlan_rx_wake, time left 127
+[  522.824493] PM: Syncing filesystems ... done.
+[  522.835510] PM: Preparing system for mem sleep
+[  522.853027] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  522.876068] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  522.899475] PM: Entering mem sleep
+[  522.905151] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  522.905303] PVR: SysSystemPrePowerState: Entering state D3
+[  522.905334] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  522.905364] PVR: DisableSystemClocks: Disabling System Clocks
+[  522.907623] PM: suspend of devices complete after 7.232 msecs
+[  522.908538] PM: late suspend of devices complete after 0.915 msecs
+[  522.908569] Disabling non-boot CPUs ...
+[  522.924926] CPU1: shutdown
+[  522.925598] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  522.925598]    PD_CORE curr=ON prev=ON logic=ON
+[  522.925598]    PD_L4_PER curr=ON prev=ON logic=ON
+[  522.925598]          HSMMC5 mode=ENABLED idlest=ON
+[  522.925598] Powerdomain (core_pwrdm) didn't enter target state 1 Vs achieved state 3. current state 3
+[  522.925598] Powerdomain (l4per_pwrdm) didn't enter target state 1 Vs achieved state 3. current state 3
+[  522.925598] Could not enter target state in pm_suspend
+[  522.925659] Suspended for 7.314 seconds
+[  522.925720] Enabling non-boot CPUs ...
+[  522.956298] CPU1: Booted secondary processor
+[  522.957427] CPU1 is up
+[  522.959503] PM: early resume of devices complete after 2.014 msecs
+[  522.961547] Switched to NOHz mode on CPU #1
+[  523.047821] wakeup wake lock: wlan_wake
+[  523.049804] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  523.049865] PVR: SysSystemPostPowerState: Entering state D0
+[  523.049896] PVR: EnableSystemClocks: Enabling System Clocks
+[  523.049926] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  523.072967] PM: resume of devices complete after 113.006 msecs
+[  523.073699] PM: Finishing wakeup.
+[  523.073730] Restarting tasks ... done.
+[  523.091918] suspend: exit suspend, ret = 0 (2013-07-08 14:12:47.709638921 UTC)
+[  523.091979] active wake lock musb_autosuspend_wake_lock
+[  523.092010] active wake lock wlan_rx_wake, time left 128
+[  523.270904] hub 1-0:1.0: activate --> -22
+[  526.041748] PM: Syncing filesystems ... done.
+[  526.052825] PM: Preparing system for mem sleep
+[  526.064270] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  526.087615] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  526.110046] PM: Entering mem sleep
+[  526.115203] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  526.115325] PVR: SysSystemPrePowerState: Entering state D3
+[  526.115356] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  526.115356] PVR: DisableSystemClocks: Disabling System Clocks
+[  526.117004] PM: suspend of devices complete after 6.195 msecs
+[  526.117706] PM: late suspend of devices complete after 0.701 msecs
+[  526.117706] Disabling non-boot CPUs ...
+[  526.118255] CPU1: shutdown
+[  526.118743] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  526.118743] Resume caused by IRQ 177, nfc_irq
+[  526.118743] Successfully put all powerdomains to target state
+[  526.118774] Suspended for 1.341 seconds
+[  526.118896] Enabling non-boot CPUs ...
+[  526.141357] CPU1: Booted secondary processor
+[  526.142089] CPU1 is up
+[  526.143066] PM: early resume of devices complete after 0.915 msecs
+[  526.143402] wakeup wake lock: nfc
+[  526.149047] Switched to NOHz mode on CPU #1
+[  526.229553] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  526.229583] PVR: SysSystemPostPowerState: Entering state D0
+[  526.229644] PVR: EnableSystemClocks: Enabling System Clocks
+[  526.229675] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  526.252746] PM: resume of devices complete after 109.527 msecs
+[  526.253509] PM: Finishing wakeup.
+[  526.253540] Restarting tasks ... 
+[  526.254058] hub 1-0:1.0: activate --> -22
+[  526.262603] done.
+[  526.280822] suspend: exit suspend, ret = 0 (2013-07-08 14:12:52.240248047 UTC)
+[  526.280853] active wake lock nfc, time left 47
+[  526.280853] active wake lock wlan_rx_wake, time left 128
+[  527.415435] PM: Syncing filesystems ... done.
+[  527.425598] PM: Preparing system for mem sleep
+[  527.438995] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  527.462066] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  527.485931] PM: Entering mem sleep
+[  527.496490] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  527.496704] PVR: SysSystemPrePowerState: Entering state D3
+[  527.496734] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  527.496795] PVR: DisableSystemClocks: Disabling System Clocks
+[  527.499877] PM: suspend of devices complete after 11.810 msecs
+[  527.501403] PM: late suspend of devices complete after 1.403 msecs
+[  527.501434] Disabling non-boot CPUs ...
+[  527.502685] CPU1: shutdown
+[  527.503906] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  527.503906] Resume caused by IRQ 177, nfc_irq
+[  527.503906] Successfully put all powerdomains to target state
+[  527.503997] Suspended for 0.051 seconds
+[  527.504211] Enabling non-boot CPUs ...
+[  527.520782] CPU1: Booted secondary processor
+[  527.523071] CPU1 is up
+[  527.524230] Switched to NOHz mode on CPU #1
+[  527.524963] PM: early resume of devices complete after 1.892 msecs
+[  527.525146] wakeup wake lock: nfc
+[  527.597595] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  527.597625] PVR: SysSystemPostPowerState: Entering state D0
+[  527.597625] PVR: EnableSystemClocks: Enabling System Clocks
+[  527.597656] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  527.619995] PM: resume of devices complete after 94.726 msecs
+[  527.620758] PM: Finishing wakeup.
+[  527.620758] Restarting tasks ... 
+[  527.621276] hub 1-0:1.0: activate --> -22
+[  527.634765] done.
+[  527.647003] suspend: exit suspend, ret = 0 (2013-07-08 14:12:53.657728508 UTC)
+[  527.647003] active wake lock nfc, time left 49
+[  527.647033] active wake lock wlan_rx_wake, time left 127
+[  528.661621] PM: Syncing filesystems ... done.
+[  528.675048] PM: Preparing system for mem sleep
+[  528.689208] Freezing user space processes ... (elapsed 0.02 seconds) done.
+[  528.712341] Freezing remaining freezable tasks ... (elapsed 0.02 seconds) done.
+[  528.735778] PM: Entering mem sleep
+[  528.742645] PVR: PVRSRVDriverSuspend(pDevice=c78c5400)
+[  528.742797] PVR: SysSystemPrePowerState: Entering state D3
+[  528.742828] PVR: Uninstalling device LISR on IRQ 53 with cookie c7a1ed00
+[  528.742858] PVR: DisableSystemClocks: Disabling System Clocks
+[  528.744903] PM: suspend of devices complete after 8.026 msecs
+[  528.745849] PM: late suspend of devices complete after 0.915 msecs
+[  528.745880] Disabling non-boot CPUs ...
+[  528.746612] CPU1: shutdown
+[  528.747283] Resume caused by IRQ 162, bcmsdh_sdmmc
+[  528.747283] Resume caused by IRQ 177, nfc_irq
+[  528.747283] Successfully put all powerdomains to target state
+[  528.747314] Suspended for 0.085 seconds
+[  528.747436] Enabling non-boot CPUs ...
+[  528.777526] CPU1: Booted secondary processor
+[  528.778686] CPU1 is up
+[  528.780761] PM: early resume of devices complete after 2.044 msecs
+[  528.781158] wakeup wake lock: nfc
+[  528.782165] Switched to NOHz mode on CPU #1
+[  528.857025] PVR: PVRSRVDriverResume(pDevice=c78c5400)
+[  528.857055] PVR: SysSystemPostPowerState: Entering state D0
+[  528.857116] PVR: EnableSystemClocks: Enabling System Clocks
+[  528.857147] PVR: Installing device LISR SGX ISR on IRQ 53 with cookie c7a1ed00
+[  528.877929] PM: resume of devices complete after 96.527 msecs
+[  528.878692] PM: Finishing wakeup.
+[  528.878723] Restarting tasks ... 
+[  528.879394] hub 1-0:1.0: activate --> -22
+[  528.904266] done.
+[  528.908386] suspend: exit suspend, ret = 0 (2013-07-08 14:12:55.004041978 UTC)
+[  528.908386] active wake lock nfc, time left 47
+[  528.908386] active wake lock wlan_rx_wake, time left 128
+[  531.917236] PM: Syncing filesystems ... done.
+[  531.936584] PM: Preparing system for mem sleep
+[  531.947326] Freezing user space processes ... 
+[  531.948059] active wake lock wlan_rx_wake, time left 121
+[  531.948059] 
+[  531.948059] Freezing of user space  aborted
+[  531.948333] 
+[  531.948333] Restarting tasks ... done.
+[  531.951507] suspend: exit suspend, ret = -16 (2013-07-08 14:12:58.047163317 UTC)
