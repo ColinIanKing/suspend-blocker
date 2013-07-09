@@ -1,3 +1,13 @@
+suspend-blocker (0.01.03) saucy; urgency=low
+
+  * Makefile: bump version
+  * Add some tests to check for regressions
+  * Add galaxy nexus reference log
+  * Add min/max stats
+  * Simplify state detection for more machines
+
+ -- Colin King <colin.king@canonical.com>  Tue, 9 Jul 2013 11:42:41 +0100
+
 suspend-blocker (0.01.02) saucy; urgency=low
 
   * Makefile: bump version
