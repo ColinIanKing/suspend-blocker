@@ -1,3 +1,11 @@
+suspend-blocker (0.01.05) saucy; urgency=low
+
+  * Makefile: bump version
+  * Update man page
+  * suspend-blocker.c: add in the -h help info for new options
+
+ -- Colin King <colin.king@canonical.com>  Thu, 11 Jul 2013 17:16:23 +0100
+
 suspend-blocker (0.01.04) saucy; urgency=low
 
   * Makefile: bump version, add -Wextra
