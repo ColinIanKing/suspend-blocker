@@ -384,6 +384,8 @@ void show_help(char * const argv[])
 	printf("usage: %s [options] [kernel_log]\n", argv[0]);
 	printf("\t-b list blocking wakelock names and count.\n");
 	printf("\t-h this help.\n");
+	printf("\t-H histogram of times between suspend and suspend duration.\n");
+	printf("\t-r list causes of resume.\n");
 	printf("\t-v verbose information.\n");
 }
 
