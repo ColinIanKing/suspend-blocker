@@ -106,11 +106,18 @@ static void counter_increment(const char *name, counter_info counter[])
 static void counter_dump(counter_info counter[])
 {
 	int i;
+	int total = 0;
+
+	for (i = 0; i < HASH_SIZE; i++) {
+		if (counter[i].name)
+			total += counter[i].count;
+	}
 
 	qsort(counter, HASH_SIZE, sizeof(counter_info), counter_info_cmp);
 	for (i = 0; i < HASH_SIZE; i++) {
 		if (counter[i].name) {
-			printf("  %-28.28s %8d\n", counter[i].name, counter[i].count);
+			printf("  %-28.28s %8d  %5.2f%%\n", counter[i].name, counter[i].count,
+				100.0 * (double)counter[i].count / (double)total);
 			free(counter[i].name);
 		}
 	}
@@ -124,12 +131,18 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	double range1, range2;
 	int max = -1;
 	int min = MAX_INTERVALS;
+	time_delta_info *tdi = info, *next;
+	int total = 0;
 
 	memset(histogram, 0, sizeof(histogram));
 
-	while (info) {
-		double d = info->delta;
-		time_delta_info *next = info->next;
+	for (tdi = info; tdi; tdi = tdi->next) {
+		total++;
+	}
+
+	for (tdi = info; tdi; ) {
+		double d = tdi->delta;
+		next = tdi->next;
 		
 		for (i = 0; i < MAX_INTERVALS && d > 0.125; i++)
 			d = d / 2.0;
@@ -140,8 +153,8 @@ static void histogram_dump(time_delta_info *info, const char *message)
 		if (i < min)
 			min = i;
 
-		free(info);
-		info = next;
+		free(tdi);
+		tdi = next;
 	}
 
 	printf("%s\n", message);
@@ -150,10 +163,11 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	} else {
 		for (range1 = 0.0, range2 = 0.125, i = 0; i < MAX_INTERVALS; i++) {
 			if (i >= min && i <= max) {
+				double pc = 100.0 * (double) histogram[i] / (double)total;
 				if (i == MAX_INTERVALS - 1)
-					printf("  %8.3f -           %d\n", range1, histogram[i]);
+					printf("  %8.3f -          seconds    %6d  %5.2f%%\n", range1, histogram[i], pc);
 				else
-					printf("  %8.3f - %8.3f  %d\n", range1, range2 - 0.001, histogram[i]);
+					printf("  %8.3f - %8.3f seconds    %6d  %5.2f%%\n", range1, range2 - 0.001, histogram[i], pc);
 			}
 		
 			range1 = range2;
