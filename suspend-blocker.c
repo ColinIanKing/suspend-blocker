@@ -20,8 +20,11 @@
 
 #define OPT_WAKELOCK_BLOCKERS		0x00000001
 #define OPT_VERBOSE			0x00000002
+#define OPT_HISTOGRAM			0x00000004
+#define OPT_RESUME_CAUSES		0x00000008
 
 #define HASH_SIZE			1997
+#define MAX_INTERVALS			14
 
 typedef struct { 
 	double	whence;
@@ -30,16 +33,22 @@ typedef struct {
 typedef struct {
 	char *name;
 	int  count;
-} wakelock_info;
+} counter_info;
+
+typedef struct time_delta_info {
+	double delta;
+	struct time_delta_info *next;
+} time_delta_info;
 
 static int opt_flags;
 
-static wakelock_info wakelocks[HASH_SIZE];
+static counter_info wakelocks[HASH_SIZE];
+static counter_info resume_causes[HASH_SIZE];
 
-static int wakelock_cmp(const void *p1, const void *p2)
+static int counter_info_cmp(const void *p1, const void *p2)
 {
-	wakelock_info *w1 = (wakelock_info *)p1;
-	wakelock_info *w2 = (wakelock_info *)p2;
+	counter_info *w1 = (counter_info *)p1;
+	counter_info *w2 = (counter_info *)p2;
 	int diff = w2->count - w1->count;
 
 	if ((diff == 0) && (w1->count | w2->count))
@@ -68,30 +77,86 @@ static unsigned long hash_pjw(const char *str)
   	return h % HASH_SIZE;
 }
 
-static void wakelock_increment(const char *name)
+static void counter_increment(const char *name, counter_info counter[])
 {
 	unsigned long i = hash_pjw(name);
 	unsigned long j = 0;
 
 	for (j = 0; j < HASH_SIZE; j++) {
-		if (wakelocks[i].name == NULL) {
-			wakelocks[i].name = strdup(name);
-			if (wakelocks[i].name == NULL) {
+		if (counter[i].name == NULL) {
+			counter[i].name = strdup(name);
+			if (counter[i].name == NULL) {
 				fprintf(stderr, "Out of memory!\n");
 				exit(EXIT_FAILURE);
 			}
-			wakelocks[i].count++;
+			counter[i].count++;
 			return;
 		}
-		if (strcmp(wakelocks[i].name, name) == 0) {
-			wakelocks[i].count++;
+		if (strcmp(counter[i].name, name) == 0) {
+			counter[i].count++;
 			return;
 		}
 		i = (i + 1) % HASH_SIZE;
 	}
 
-	fprintf(stderr, "Wakelock hash table full!\n");
+	fprintf(stderr, "Hash table full!\n");
 	exit(EXIT_FAILURE);
+}
+
+static void counter_dump(counter_info counter[])
+{
+	int i;
+
+	qsort(counter, HASH_SIZE, sizeof(counter_info), counter_info_cmp);
+	for (i = 0; i < HASH_SIZE; i++) {
+		if (counter[i].name) {
+			printf("  %-28.28s %8d\n", counter[i].name, counter[i].count);
+			free(counter[i].name);
+		}
+	}
+	printf("\n");
+}
+
+static void histogram_dump(time_delta_info *info, const char *message)
+{
+	int histogram[MAX_INTERVALS];
+	int i;
+	double range1, range2;
+	int max = -1;
+	int min = MAX_INTERVALS;
+
+	memset(histogram, 0, sizeof(histogram));
+
+	for (; info; info = info->next) {
+		double d = info->delta;
+		
+		for (i = 0; i < MAX_INTERVALS && d > 0.125; i++)
+			d = d / 2.0;
+
+		histogram[i]++;
+		if (i > max)
+			max = i;
+		if (i < min)
+			min = i;
+	}
+
+	printf("%s\n", message);
+	if (max == -1) {
+		printf("  No values.\n");
+	} else {
+		for (range1 = 0.0, range2 = 0.125, i = 0; i < MAX_INTERVALS; i++) {
+			if (i >= min && i <= max) {
+				if (i == MAX_INTERVALS - 1)
+					printf("  %8.3f -           %d\n", range1, histogram[i]);
+				else
+					printf("  %8.3f - %8.3f  %d\n", range1, range2 - 0.001, histogram[i]);
+			}
+		
+			range1 = range2;
+			range2 = range2 + range2;
+		}
+	}
+	printf("\n");
 }
 
 static void parse_timestamp(const char *line, timestamp *ts)
@@ -115,6 +180,7 @@ static void suspend_blocker(FILE *fp)
 	char *resume_cause = NULL;
 	int state = STATE_UNDEFINED;
 	timestamp suspend_start, suspend_exit;
+	timestamp last_suspend;
 	int suspend_succeeded = 0;
 	int suspend_failed = 0;
 	int suspend_count;
@@ -122,7 +188,11 @@ static void suspend_blocker(FILE *fp)
 	double suspend_duration;
 	double suspend_min;
 	double suspend_max;
-	int i;
+	double interval_max = 0.0;
+	time_delta_info *suspend_interval_list = NULL;
+	time_delta_info *suspend_duration_list = NULL;
+
+	last_suspend.whence = -1.0;
 
 	if (opt_flags & OPT_VERBOSE) {
 		printf("  When        Duration\n");
@@ -166,6 +236,8 @@ static void suspend_blocker(FILE *fp)
 					resume_cause = malloc(len + 1);
 					strcpy(resume_cause, cause);
 				}
+				if (opt_flags & OPT_RESUME_CAUSES)
+					counter_increment(cause, resume_causes);
 			}
 		}
 
@@ -182,6 +254,9 @@ static void suspend_blocker(FILE *fp)
 				printf("%12.6f: %f ", suspend_start.whence, suspend_duration);
 			}
 			if (state & STATE_SUSPEND_SUCCESS) {
+				time_delta_info *new_sd;
+				time_delta_info *new_ri;
+
 				if (opt_flags & OPT_VERBOSE) {
 					printf("Successful Suspend. ");
 					if (resume_cause && (state & STATE_RESUME_CAUSE)) {
@@ -200,6 +275,27 @@ static void suspend_blocker(FILE *fp)
 				}
 				suspend_succeeded++;
 				suspend_total += suspend_duration;
+
+				if (last_suspend.whence > 0.0) {
+					new_ri = malloc(sizeof(time_delta_info));
+					if (new_ri) {
+						new_ri->delta = suspend_start.whence - last_suspend.whence;
+						new_ri->next = suspend_interval_list;
+						suspend_interval_list = new_ri;
+						if (interval_max < new_ri->delta)
+							interval_max = new_ri->delta;
+					}
+				}
+
+				new_sd = malloc(sizeof(time_delta_info));
+				if (new_sd) {
+					new_sd->delta = suspend_duration;
+					new_sd->next = suspend_duration_list;
+					suspend_duration_list = new_sd;
+				}
+
+				last_suspend = suspend_exit;
+
 			} else 
 				suspend_failed++;
 
@@ -220,9 +316,8 @@ static void suspend_blocker(FILE *fp)
 		ptr = strstr(buf, "active wake lock");
 		if (ptr && (state & STATE_ENTER_SUSPEND)) {
 			sscanf(ptr + 17, "%[^,^\n]", wakelock);
-			if (opt_flags & OPT_WAKELOCK_BLOCKERS) {
-				wakelock_increment(wakelock);
-			}
+			if (opt_flags & OPT_WAKELOCK_BLOCKERS)
+				counter_increment(wakelock, wakelocks);
 			state |= STATE_ACTIVE_WAKELOCK;
 			continue;
 		}
@@ -254,25 +349,31 @@ static void suspend_blocker(FILE *fp)
 	
 	if (opt_flags & OPT_WAKELOCK_BLOCKERS) {
 		printf("Suspend blocking wakelocks:\n");
-		qsort(wakelocks, HASH_SIZE, sizeof(wakelock_info), wakelock_cmp);
-		for (i = 0; i < HASH_SIZE; i++) {
-			if (wakelocks[i].name) {
-				printf("  %-28.28s %8d\n", wakelocks[i].name, wakelocks[i].count);
-				free(wakelocks[i].name);
-			}
-		}
-		printf("\n");
+		counter_dump(wakelocks);
 	}
 
-	printf("%d suspends aborted (%.2f%%).\n",
+	if (opt_flags & OPT_RESUME_CAUSES) {
+		printf("Resume wakeup causes:\n");
+		counter_dump(resume_causes);
+	}
+
+	if (opt_flags & OPT_HISTOGRAM) {
+		histogram_dump(suspend_interval_list, "Period of time between each successful suspend:");
+		histogram_dump(suspend_duration_list, "Duration of successful suspends:");
+	}
+
+	printf("Stats:\n");
+
+	printf("  %d suspends aborted (%.2f%%).\n",
 		suspend_failed,
 		suspend_count == 0 ? 0.0 : 100.0 * (double)suspend_failed / (double)suspend_count);
-	printf("%d suspends succeeded (%.2f%%).\n",
+	printf("  %d suspends succeeded (%.2f%%).\n",
 		suspend_succeeded,
 		suspend_count == 0 ? 0.0 : 100.0 * (double)suspend_succeeded / (double)suspend_count);
-	printf("%f seconds average suspend duration (min %f, max %f).\n",
+	printf("  %f seconds average suspend duration (min %f, max %f).\n",
 		suspend_succeeded == 0 ? 0.0 : suspend_total / (double)suspend_succeeded,
 		suspend_min, suspend_max);
+
 
 	free(resume_cause);
 }
@@ -286,18 +387,25 @@ void show_help(char * const argv[])
 	printf("\t-v verbose information.\n");
 }
 
+
 int main(int argc, char **argv)
 {
 	for (;;) {
-		int c = getopt(argc, argv, "bhv");	
+		int c = getopt(argc, argv, "bhHrv");	
 		if (c == -1)
 			break;
 		switch (c) {
 		case 'b':
 			opt_flags |= OPT_WAKELOCK_BLOCKERS;
 			break;
+		case 'r':
+			opt_flags |= OPT_RESUME_CAUSES;
+			break;
 		case 'v':
 			opt_flags |= OPT_VERBOSE;
+			break;
+		case 'H':
+			opt_flags |= OPT_HISTOGRAM;
 			break;
 		case 'h':
 			show_help(argv);
