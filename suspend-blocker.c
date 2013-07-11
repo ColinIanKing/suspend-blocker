@@ -127,8 +127,9 @@ static void histogram_dump(time_delta_info *info, const char *message)
 
 	memset(histogram, 0, sizeof(histogram));
 
-	for (; info; info = info->next) {
+	while (info) {
 		double d = info->delta;
+		time_delta_info *next = info->next;
 		
 		for (i = 0; i < MAX_INTERVALS && d > 0.125; i++)
 			d = d / 2.0;
@@ -138,6 +139,9 @@ static void histogram_dump(time_delta_info *info, const char *message)
 			max = i;
 		if (i < min)
 			min = i;
+
+		free(info);
+		info = next;
 	}
 
 	printf("%s\n", message);
@@ -276,22 +280,24 @@ static void suspend_blocker(FILE *fp)
 				suspend_succeeded++;
 				suspend_total += suspend_duration;
 
-				if (last_suspend.whence > 0.0) {
-					new_ri = malloc(sizeof(time_delta_info));
-					if (new_ri) {
-						new_ri->delta = suspend_start.whence - last_suspend.whence;
-						new_ri->next = suspend_interval_list;
-						suspend_interval_list = new_ri;
-						if (interval_max < new_ri->delta)
-							interval_max = new_ri->delta;
+				if (opt_flags & OPT_HISTOGRAM) {
+					if (last_suspend.whence > 0.0) {
+						new_ri = malloc(sizeof(time_delta_info));
+						if (new_ri) {
+							new_ri->delta = suspend_start.whence - last_suspend.whence;
+							new_ri->next = suspend_interval_list;
+							suspend_interval_list = new_ri;
+							if (interval_max < new_ri->delta)
+								interval_max = new_ri->delta;
+						}
 					}
-				}
-
-				new_sd = malloc(sizeof(time_delta_info));
-				if (new_sd) {
-					new_sd->delta = suspend_duration;
-					new_sd->next = suspend_duration_list;
-					suspend_duration_list = new_sd;
+	
+					new_sd = malloc(sizeof(time_delta_info));
+					if (new_sd) {
+						new_sd->delta = suspend_duration;
+						new_sd->next = suspend_duration_list;
+						suspend_duration_list = new_sd;
+					}
 				}
 
 				last_suspend = suspend_exit;
