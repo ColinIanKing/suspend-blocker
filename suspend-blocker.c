@@ -228,7 +228,7 @@ static void suspend_blocker(FILE *fp)
 				char *cause = ptr + 17;
 				size_t len = strlen(cause);
 				if (resume_cause) {
-					resume_cause = realloc(resume_cause, strlen(resume_cause) + 2 + len);
+					resume_cause = realloc(resume_cause, strlen(resume_cause) + 3 + len);
 					if (resume_cause)
 						strcat(resume_cause, "; ");
 						strcat(resume_cause, cause);
