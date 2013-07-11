@@ -42,8 +42,14 @@ verbose mode, display information on when a suspend was initiated and
 if it succeeded or failed and any wakelocks that caused it to fail.
 .TP
 .B \-b
-display wakelock names that blocked suspend and the number of times that
+show wakelock names that blocked suspend and the number of times that
 suspend got blocked by this wakelock.
+.TP
+.B \-H
+show histogram of times between suspends and suspend durations.
+.TP
+.B \-r
+show reasons why suspend was resumed.
 .SH AUTHOR
 suspend-blocker was written by Colin King <colin.king@canonical.com>
 .PP
