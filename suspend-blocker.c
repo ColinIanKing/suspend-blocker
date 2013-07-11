@@ -112,7 +112,7 @@ static void suspend_blocker(FILE *fp)
 {
 	char buf[4096];
 	char wakelock[4096];
-	char resume_cause[4096];
+	char *resume_cause = NULL;
 	int state = STATE_UNDEFINED;
 	timestamp suspend_start, suspend_exit;
 	int suspend_succeeded = 0;
@@ -154,7 +154,19 @@ static void suspend_blocker(FILE *fp)
 		ptr = strstr(buf, "Resume caused by");
 		if (ptr) {
 			state |= STATE_RESUME_CAUSE;
-			strcpy(resume_cause, ptr + 17);
+			if (state & STATE_RESUME_CAUSE) {
+				char *cause = ptr + 17;
+				size_t len = strlen(cause);
+				if (resume_cause) {
+					resume_cause = realloc(resume_cause, strlen(resume_cause) + 2 + len);
+					if (resume_cause)
+						strcat(resume_cause, "; ");
+						strcat(resume_cause, cause);
+				} else {
+					resume_cause = malloc(len + 1);
+					strcpy(resume_cause, cause);
+				}
+			}
 		}
 
 		ptr = strstr(buf, "suspend: exit suspend");
@@ -172,8 +184,11 @@ static void suspend_blocker(FILE *fp)
 			if (state & STATE_SUSPEND_SUCCESS) {
 				if (opt_flags & OPT_VERBOSE) {
 					printf("Successful Suspend. ");
-					if (state & STATE_RESUME_CAUSE)
+					if (resume_cause && (state & STATE_RESUME_CAUSE)) {
 						printf("Resume cause: %s.", resume_cause);
+						free(resume_cause);
+						resume_cause = NULL;
+					}
 				}
 				if (suspend_succeeded == 0)
 					suspend_max = suspend_min = suspend_duration;
@@ -258,6 +273,8 @@ static void suspend_blocker(FILE *fp)
 	printf("%f seconds average suspend duration (min %f, max %f).\n",
 		suspend_succeeded == 0 ? 0.0 : suspend_total / (double)suspend_succeeded,
 		suspend_min, suspend_max);
+
+	free(resume_cause);
 }
 
 void show_help(char * const argv[])
