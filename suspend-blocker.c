@@ -178,7 +178,7 @@ static void histogram_dump(time_delta_info *info, const char *message)
 			range2 = range2 + range2;
 		}
 		if (accurate != total) {
-			printf("  NOTE: %5.2f%% of the samples were inaccurate estimates.\n",
+			printf("NOTE: %5.2f%% of the samples were inaccurate estimates.\n",
 				100.0 * (double)(total-accurate) / (double)total);
 		}
 	}
