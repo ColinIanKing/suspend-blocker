@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
@@ -26,7 +27,7 @@
 #define HASH_SIZE			1997
 #define MAX_INTERVALS			14
 
-typedef struct { 
+typedef struct {
 	double	whence;
 } timestamp;
 
@@ -37,6 +38,7 @@ typedef struct {
 
 typedef struct time_delta_info {
 	double delta;
+	bool   accurate;
 	struct time_delta_info *next;
 } time_delta_info;
 
@@ -133,17 +135,20 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	int min = MAX_INTERVALS;
 	time_delta_info *tdi = info, *next;
 	int total = 0;
+	int accurate = 0;
 
 	memset(histogram, 0, sizeof(histogram));
 
 	for (tdi = info; tdi; tdi = tdi->next) {
 		total++;
+		if (tdi->accurate)
+			accurate++;
 	}
 
 	for (tdi = info; tdi; ) {
 		double d = tdi->delta;
 		next = tdi->next;
-		
+
 		for (i = 0; i < MAX_INTERVALS && d > 0.125; i++)
 			d = d / 2.0;
 
@@ -169,9 +174,12 @@ static void histogram_dump(time_delta_info *info, const char *message)
 				else
 					printf("  %8.3f - %8.3f seconds    %6d  %5.2f%%\n", range1, range2 - 0.001, histogram[i], pc);
 			}
-		
 			range1 = range2;
 			range2 = range2 + range2;
+		}
+		if (accurate != total) {
+			printf("  NOTE: %5.2f%% of the samples were inaccurate estimates.\n",
+				100.0 * (double)(total-accurate) / (double)total);
 		}
 	}
 	printf("\n");
@@ -204,11 +212,14 @@ static void suspend_blocker(FILE *fp)
 	int suspend_count;
 	double suspend_total = 0.0;
 	double suspend_duration;
+	double suspend_duration_parsed = -1.0;
+	bool suspend_duration_accurate;
 	double suspend_min;
 	double suspend_max;
 	double interval_max = 0.0;
 	time_delta_info *suspend_interval_list = NULL;
 	time_delta_info *suspend_duration_list = NULL;
+	bool needs_config_suspend_time = true;
 
 	last_suspend.whence = -1.0;
 
@@ -226,16 +237,19 @@ static void suspend_blocker(FILE *fp)
 		if (strstr(buf, "suspend: enter suspend")) {
 			state = STATE_ENTER_SUSPEND;
 			parse_timestamp(buf, &suspend_start);
+			suspend_duration_parsed = -1.0;
 			continue;
 		}
 		if (strstr(buf, "PM: Entering mem sleep")) {
 			state = STATE_ENTER_SUSPEND;
 			parse_timestamp(buf, &suspend_start);
+			suspend_duration_parsed = -1.0;
 			continue;
 		}
 		if (strstr(buf, "PM: Preparing system for mem sleep")) {
 			state = STATE_ENTER_SUSPEND;
 			parse_timestamp(buf, &suspend_start);
+			suspend_duration_parsed = -1.0;
 			continue;
 		}
 		/* Nexus 7 */
@@ -258,6 +272,11 @@ static void suspend_blocker(FILE *fp)
 					counter_increment(cause, resume_causes);
 			}
 		}
+		ptr = strstr(buf, "Suspended for");
+		if (ptr) {
+			suspend_duration_parsed = atof(ptr + 14);
+			needs_config_suspend_time = false;
+		}
 
 		ptr = strstr(buf, "suspend: exit suspend");
 		if (ptr) {
@@ -265,6 +284,12 @@ static void suspend_blocker(FILE *fp)
 			state |= STATE_EXIT_SUSPEND;
 			parse_timestamp(buf, &suspend_exit);
 			suspend_duration = suspend_exit.whence - suspend_start.whence;
+			if (suspend_duration_parsed > 0.0) {
+				suspend_duration_accurate = true;
+				suspend_duration = suspend_duration_parsed;
+			} else {
+				suspend_duration_accurate = false;
+			}
 		}
 
 		if (state & STATE_EXIT_SUSPEND) {
@@ -272,8 +297,7 @@ static void suspend_blocker(FILE *fp)
 				printf("%12.6f: %f ", suspend_start.whence, suspend_duration);
 			}
 			if (state & STATE_SUSPEND_SUCCESS) {
-				time_delta_info *new_sd;
-				time_delta_info *new_ri;
+				time_delta_info *new_info;
 
 				if (opt_flags & OPT_VERBOSE) {
 					printf("Successful Suspend. ");
@@ -296,31 +320,33 @@ static void suspend_blocker(FILE *fp)
 
 				if (opt_flags & OPT_HISTOGRAM) {
 					if (last_suspend.whence > 0.0) {
-						new_ri = malloc(sizeof(time_delta_info));
-						if (new_ri) {
-							new_ri->delta = suspend_start.whence - last_suspend.whence;
-							new_ri->next = suspend_interval_list;
-							suspend_interval_list = new_ri;
-							if (interval_max < new_ri->delta)
-								interval_max = new_ri->delta;
+						new_info = malloc(sizeof(time_delta_info));
+						if (new_info) {
+							new_info->delta = suspend_start.whence - last_suspend.whence;
+							new_info->accurate = suspend_duration_accurate;
+							new_info->next = suspend_interval_list;
+							suspend_interval_list = new_info;
+							if (interval_max < new_info->delta)
+								interval_max = new_info->delta;
 						}
 					}
-	
-					new_sd = malloc(sizeof(time_delta_info));
-					if (new_sd) {
-						new_sd->delta = suspend_duration;
-						new_sd->next = suspend_duration_list;
-						suspend_duration_list = new_sd;
+
+					new_info = malloc(sizeof(time_delta_info));
+					if (new_info) {
+						new_info->delta = suspend_duration;
+						new_info->accurate = true;
+						new_info->next = suspend_duration_list;
+						suspend_duration_list = new_info;
 					}
 				}
 
 				last_suspend = suspend_exit;
 
-			} else 
+			} else
 				suspend_failed++;
 
 			if (opt_flags & OPT_VERBOSE) {
-				if (state & STATE_ACTIVE_WAKELOCK) 
+				if (state & STATE_ACTIVE_WAKELOCK)
 					printf("Failed on wakelock %s ", wakelock);
 				if (state & STATE_FREEZE_ABORTED)
 					printf("(Aborted in Freezer).");
@@ -366,7 +392,7 @@ static void suspend_blocker(FILE *fp)
 	}
 
 	suspend_count = suspend_failed + suspend_succeeded;
-	
+
 	if (opt_flags & OPT_WAKELOCK_BLOCKERS) {
 		printf("Suspend blocking wakelocks:\n");
 		counter_dump(wakelocks);
@@ -394,6 +420,10 @@ static void suspend_blocker(FILE *fp)
 		suspend_succeeded == 0 ? 0.0 : suspend_total / (double)suspend_succeeded,
 		suspend_min, suspend_max);
 
+	if (needs_config_suspend_time) {
+		printf("\nNOTE: suspend times are very dubious, enable kernel config setting\n");
+		printf("      CONFIG_SUSPEND_TIME=y for accurate suspend times.\n");
+	}
 
 	free(resume_cause);
 }
@@ -413,7 +443,7 @@ void show_help(char * const argv[])
 int main(int argc, char **argv)
 {
 	for (;;) {
-		int c = getopt(argc, argv, "bhHrv");	
+		int c = getopt(argc, argv, "bhHrv");
 		if (c == -1)
 			break;
 		switch (c) {
@@ -434,11 +464,11 @@ int main(int argc, char **argv)
 			exit(EXIT_SUCCESS);
 		}
 	}
-	
+
 	if (optind == argc) {
 		printf("stdin:\n");
 		suspend_blocker(stdin);
-	} 
+	}
 	while (optind < argc) {
 		FILE *fp;
 
