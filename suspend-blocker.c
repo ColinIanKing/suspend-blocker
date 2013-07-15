@@ -420,7 +420,7 @@ static void suspend_blocker(FILE *fp)
 		suspend_succeeded == 0 ? 0.0 : suspend_total / (double)suspend_succeeded,
 		suspend_min, suspend_max);
 
-	if (needs_config_suspend_time) {
+	if ((suspend_count > 0) && needs_config_suspend_time) {
 		printf("\nNOTE: suspend times are very dubious, enable kernel config setting\n");
 		printf("      CONFIG_SUSPEND_TIME=y for accurate suspend times.\n");
 	}
