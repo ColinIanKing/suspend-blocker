@@ -5,6 +5,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+#include <float.h>
 
 #define APP_NAME			"suspend-blocker"
 
@@ -29,6 +30,9 @@
 
 typedef struct {
 	double	whence;
+	bool	whence_valid;
+	double	pm_whence;
+	bool	pm_whence_valid;
 } timestamp;
 
 typedef struct {
@@ -44,8 +48,13 @@ typedef struct time_delta_info {
 
 static int opt_flags;
 
-static counter_info wakelocks[HASH_SIZE];
-static counter_info resume_causes[HASH_SIZE];
+static inline void timestamp_init(timestamp *ts)
+{
+	ts->whence = -1.0;
+	ts->whence_valid = false;
+	ts->pm_whence = -1.0;
+	ts->pm_whence_valid = false;
+}
 
 static int counter_info_cmp(const void *p1, const void *p2)
 {
@@ -185,6 +194,35 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	printf("\n");
 }
 
+/*
+ *  Parse PM time stamps of the form:
+ *  	PM: suspend entry 2013-06-20 14:16:08.865677626 UTC
+ */
+static void parse_pm_timestamp(const char *ptr, timestamp *ts)
+{
+	struct tm tm;
+	double sec;
+
+	memset(&tm, 0, sizeof(tm));
+
+	sscanf(ptr, "%d-%d-%d %d:%d:%lf",
+		&tm.tm_year, &tm.tm_mon, &tm.tm_mday,
+		&tm.tm_hour, &tm.tm_min, &sec);
+
+	tm.tm_year -= 1900;
+	tm.tm_mon -= 1;
+	tm.tm_sec = (int)sec;
+
+	ts->pm_whence = sec - (double)tm.tm_sec + (double)mktime(&tm);
+	ts->pm_whence_valid = true;
+}
+
+/*
+ *  Parse kernel timestamp, this is not accurate at all, but
+ *  it is better than nothing (marginally better). It is of the
+ *  form:
+ *	[ 2476.670867] suspend: enter suspend
+ */
 static void parse_timestamp(const char *line, timestamp *ts)
 {
 	char *ptr1, *ptr2;
@@ -194,8 +232,10 @@ static void parse_timestamp(const char *line, timestamp *ts)
 
 	if (ptr1 && ptr2 && ptr2 > ptr1) {
 		sscanf(ptr1 + 1, "%lf", &ts->whence);
+		ts->whence_valid = true;
 	} else {
 		ts->whence = 0.0;
+		ts->whence_valid = false;
 	}
 }
 
@@ -206,26 +246,33 @@ static void suspend_blocker(FILE *fp)
 	char *resume_cause = NULL;
 	int state = STATE_UNDEFINED;
 	timestamp suspend_start, suspend_exit;
-	timestamp last_suspend;
+	double last_suspend;
 	int suspend_succeeded = 0;
 	int suspend_failed = 0;
 	int suspend_count;
 	double suspend_total = 0.0;
-	double suspend_duration;
 	double suspend_duration_parsed = -1.0;
-	bool suspend_duration_accurate;
-	double suspend_min;
-	double suspend_max;
+	double suspend_min = DBL_MAX;
+	double suspend_max = DBL_MIN;
 	double interval_max = 0.0;
 	time_delta_info *suspend_interval_list = NULL;
 	time_delta_info *suspend_duration_list = NULL;
 	bool needs_config_suspend_time = true;
 
-	last_suspend.whence = -1.0;
+	counter_info wakelocks[HASH_SIZE];
+	counter_info resume_causes[HASH_SIZE];
+
+	memset(wakelocks, 0, sizeof(wakelocks));
+	memset(resume_causes, 0, sizeof(resume_causes));
+
+	last_suspend = -1.0;
 
 	if (opt_flags & OPT_VERBOSE) {
 		printf("  When        Duration\n");
 	}
+	
+	timestamp_init(&suspend_start);
+	timestamp_init(&suspend_exit);
 
 	while (fgets(buf, sizeof(buf), fp) != NULL) {
 		char *ptr;
@@ -233,6 +280,15 @@ static void suspend_blocker(FILE *fp)
 
 		if (buf[len - 1] == '\n')
 			buf[len - 1] = '\0';
+
+		ptr = strstr(buf, "PM: suspend entry");
+		if (ptr) {
+			parse_pm_timestamp(ptr + 18, &suspend_start);
+		}
+		ptr = strstr(buf, "PM: suspend exit");
+		if (ptr) {
+			parse_pm_timestamp(ptr + 17, &suspend_exit);
+		}
 
 		if (strstr(buf, "suspend: enter suspend")) {
 			state = STATE_ENTER_SUSPEND;
@@ -252,26 +308,27 @@ static void suspend_blocker(FILE *fp)
 			suspend_duration_parsed = -1.0;
 			continue;
 		}
-		/* Nexus 7 */
+
 		ptr = strstr(buf, "Resume caused by");
 		if (ptr) {
+			char *cause = ptr + 17;
+			size_t len = strlen(cause);
+
 			state |= STATE_RESUME_CAUSE;
-			if (state & STATE_RESUME_CAUSE) {
-				char *cause = ptr + 17;
-				size_t len = strlen(cause);
-				if (resume_cause) {
-					resume_cause = realloc(resume_cause, strlen(resume_cause) + 3 + len);
-					if (resume_cause)
-						strcat(resume_cause, "; ");
-						strcat(resume_cause, cause);
-				} else {
-					resume_cause = malloc(len + 1);
-					strcpy(resume_cause, cause);
-				}
-				if (opt_flags & OPT_RESUME_CAUSES)
-					counter_increment(cause, resume_causes);
+			if (resume_cause) {
+				resume_cause = realloc(resume_cause, strlen(resume_cause) + 3 + len);
+				if (resume_cause)
+					strcat(resume_cause, "; ");
+					strcat(resume_cause, cause);
+			} else {
+				resume_cause = malloc(len + 1);
+				strcpy(resume_cause, cause);
 			}
+			if (opt_flags & OPT_RESUME_CAUSES)
+				counter_increment(cause, resume_causes);
 		}
+
+		/* In this form, we have a pretty good idea what the suspend duration is */
 		ptr = strstr(buf, "Suspended for");
 		if (ptr) {
 			suspend_duration_parsed = atof(ptr + 14);
@@ -283,19 +340,38 @@ static void suspend_blocker(FILE *fp)
 			state &= ~STATE_ENTER_SUSPEND;
 			state |= STATE_EXIT_SUSPEND;
 			parse_timestamp(buf, &suspend_exit);
-			suspend_duration = suspend_exit.whence - suspend_start.whence;
-			if (suspend_duration_parsed > 0.0) {
-				suspend_duration_accurate = true;
-				suspend_duration = suspend_duration_parsed;
-			} else {
-				suspend_duration_accurate = false;
-			}
 		}
 
 		if (state & STATE_EXIT_SUSPEND) {
-			if (opt_flags & OPT_VERBOSE) {
-				printf("%12.6f: %f ", suspend_start.whence, suspend_duration);
+			double s_start = 0.0, s_exit = 0.0, s_duration = 0.0;
+			bool s_duration_accurate = false;
+			
+			/*  1st, check least inaccurate way of measuring suspend */
+			if (suspend_start.whence_valid && suspend_exit.whence_valid) {
+				s_start    = suspend_start.whence;
+				s_exit     = suspend_exit.whence;
+				s_duration = s_exit - s_start;
 			}
+			/*  2nd, if we have suspend_duration_parsed, then use this */
+			if (suspend_duration_parsed > 0.0) {
+				s_duration = suspend_duration_parsed;
+				suspend_duration_parsed = -1.0;
+				s_duration_accurate = true;
+			}
+			/*  3rd, most accurate estimate should always be considered */
+			if (suspend_start.pm_whence_valid && suspend_exit.pm_whence_valid) {
+				s_start = suspend_start.pm_whence;
+				s_exit  = suspend_exit.pm_whence;
+				s_duration = s_exit - s_start;
+				s_duration_accurate = true;
+			}
+
+			timestamp_init(&suspend_start);
+			timestamp_init(&suspend_exit);
+				
+			if (opt_flags & OPT_VERBOSE)
+				printf("%12.6f: %f ", suspend_start.whence, s_duration);
+
 			if (state & STATE_SUSPEND_SUCCESS) {
 				time_delta_info *new_info;
 
@@ -307,41 +383,42 @@ static void suspend_blocker(FILE *fp)
 						resume_cause = NULL;
 					}
 				}
-				if (suspend_succeeded == 0)
-					suspend_max = suspend_min = suspend_duration;
-				else {
-					if (suspend_max < suspend_duration)
-						suspend_max = suspend_duration;
-					if (suspend_min > suspend_duration)
-						suspend_min = suspend_duration;
-				}
+
+				if (suspend_max < s_duration)
+					suspend_max = s_duration;
+				if (suspend_min > s_duration)
+					suspend_min = s_duration;
+
 				suspend_succeeded++;
-				suspend_total += suspend_duration;
+				suspend_total += s_duration;
 
 				if (opt_flags & OPT_HISTOGRAM) {
-					if (last_suspend.whence > 0.0) {
+					if (last_suspend > 0.0) {
 						new_info = malloc(sizeof(time_delta_info));
-						if (new_info) {
-							new_info->delta = suspend_start.whence - last_suspend.whence;
-							new_info->accurate = suspend_duration_accurate;
-							new_info->next = suspend_interval_list;
-							suspend_interval_list = new_info;
-							if (interval_max < new_info->delta)
-								interval_max = new_info->delta;
+						if (new_info == NULL) {
+							fprintf(stderr, "Out of memory!\n");
+							exit(EXIT_FAILURE);
 						}
+						new_info->delta = s_start - last_suspend;
+						new_info->accurate = true;
+						new_info->next = suspend_interval_list;
+						suspend_interval_list = new_info;
+						if (interval_max < new_info->delta)
+							interval_max = new_info->delta;
 					}
 
 					new_info = malloc(sizeof(time_delta_info));
-					if (new_info) {
-						new_info->delta = suspend_duration;
-						new_info->accurate = true;
-						new_info->next = suspend_duration_list;
-						suspend_duration_list = new_info;
+					if (new_info == NULL) {
+						fprintf(stderr, "Out of memory!\n");
+						exit(EXIT_FAILURE);
 					}
+					new_info->delta = s_duration;
+					new_info->accurate = s_duration_accurate;
+					new_info->next = suspend_duration_list;
+					suspend_duration_list = new_info;
 				}
 
-				last_suspend = suspend_exit;
-
+				last_suspend = s_start;
 			} else
 				suspend_failed++;
 
