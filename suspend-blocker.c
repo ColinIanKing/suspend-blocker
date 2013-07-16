@@ -211,7 +211,7 @@ static void parse_pm_timestamp(const char *ptr, timestamp *ts)
 		&tm.tm_year, &tm.tm_mon, &tm.tm_mday,
 		&tm.tm_hour, &tm.tm_min, &sec);
 
-	sprintf(ts->whence_text, "%2.2d:%2.2d:%08.5f", 
+	sprintf(ts->whence_text, "%2.2d:%2.2d:%08.5f",
 		tm.tm_hour, tm.tm_min, sec);
 
 	tm.tm_year -= 1900;
@@ -276,7 +276,7 @@ static void suspend_blocker(FILE *fp)
 
 	if (opt_flags & OPT_VERBOSE)
 		printf("       When         Duration\n");
-	
+
 	timestamp_init(&suspend_start);
 	timestamp_init(&suspend_exit);
 
@@ -351,7 +351,7 @@ static void suspend_blocker(FILE *fp)
 		if (state & STATE_EXIT_SUSPEND) {
 			double s_start = 0.0, s_exit = 0.0, s_duration = 0.0;
 			bool s_duration_accurate = false;
-			
+
 			/*  1st, check least inaccurate way of measuring suspend */
 			if (suspend_start.whence_valid && suspend_exit.whence_valid) {
 				s_start    = suspend_start.whence;
@@ -374,7 +374,7 @@ static void suspend_blocker(FILE *fp)
 
 			timestamp_init(&suspend_start);
 			timestamp_init(&suspend_exit);
-				
+
 			if (opt_flags & OPT_VERBOSE)
 				printf("  %s %11.5f ", suspend_start.whence_text, s_duration);
 
