@@ -25,14 +25,15 @@
 #define OPT_HISTOGRAM			0x00000004
 #define OPT_RESUME_CAUSES		0x00000008
 
-#define HASH_SIZE			1997
-#define MAX_INTERVALS			14
+#define HASH_SIZE			(1997)
+#define MAX_INTERVALS			(14)
 
 typedef struct {
 	double	whence;
 	bool	whence_valid;
 	double	pm_whence;
 	bool	pm_whence_valid;
+	char	whence_text[32];
 } timestamp;
 
 typedef struct {
@@ -54,6 +55,7 @@ static inline void timestamp_init(timestamp *ts)
 	ts->whence_valid = false;
 	ts->pm_whence = -1.0;
 	ts->pm_whence_valid = false;
+	ts->whence_text[0] = '\0';
 }
 
 static int counter_info_cmp(const void *p1, const void *p2)
@@ -209,6 +211,9 @@ static void parse_pm_timestamp(const char *ptr, timestamp *ts)
 		&tm.tm_year, &tm.tm_mon, &tm.tm_mday,
 		&tm.tm_hour, &tm.tm_min, &sec);
 
+	sprintf(ts->whence_text, "%2.2d:%2.2d:%08.5f", 
+		tm.tm_hour, tm.tm_min, sec);
+
 	tm.tm_year -= 1900;
 	tm.tm_mon -= 1;
 	tm.tm_sec = (int)sec;
@@ -237,6 +242,8 @@ static void parse_timestamp(const char *line, timestamp *ts)
 		ts->whence = 0.0;
 		ts->whence_valid = false;
 	}
+
+	sprintf(ts->whence_text, "%12.6f  ", ts->whence);
 }
 
 static void suspend_blocker(FILE *fp)
@@ -267,9 +274,8 @@ static void suspend_blocker(FILE *fp)
 
 	last_suspend = -1.0;
 
-	if (opt_flags & OPT_VERBOSE) {
-		printf("  When        Duration\n");
-	}
+	if (opt_flags & OPT_VERBOSE)
+		printf("       When         Duration\n");
 	
 	timestamp_init(&suspend_start);
 	timestamp_init(&suspend_exit);
@@ -370,7 +376,7 @@ static void suspend_blocker(FILE *fp)
 			timestamp_init(&suspend_exit);
 				
 			if (opt_flags & OPT_VERBOSE)
-				printf("%12.6f: %f ", suspend_start.whence, s_duration);
+				printf("  %s %11.5f ", suspend_start.whence_text, s_duration);
 
 			if (state & STATE_SUSPEND_SUCCESS) {
 				time_delta_info *new_info;
@@ -467,6 +473,9 @@ static void suspend_blocker(FILE *fp)
 			continue;
 		}
 	}
+
+	if (opt_flags & OPT_VERBOSE)
+		putchar('\n');
 
 	suspend_count = suspend_failed + suspend_succeeded;
 
