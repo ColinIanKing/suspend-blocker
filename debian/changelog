@@ -1,3 +1,12 @@
+suspend-blocker (0.01.09) saucy; urgency=low
+
+  * Makefile: bump version
+  * suspend-blocker.c: clean up some while space formatting
+  * suspend-blocker.c: print the whence time either as time or dmesg secs
+  * suspend-blocker.c: cater for systems with dodgy suspend time info
+
+ -- Colin King <colin.king@canonical.com>  Tue, 16 Jul 2013 16:23:12 +0100
+
 suspend-blocker (0.01.08) saucy; urgency=low
 
   * Makefile: bump version
