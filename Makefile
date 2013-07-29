@@ -1,6 +1,6 @@
-VERSION=0.01.09
+VERSION=0.01.10
 
-CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -g
+CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"'
 
 BINDIR=/usr/bin
 MANDIR=/usr/share/man/man8
