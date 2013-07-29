@@ -259,8 +259,8 @@ static void suspend_blocker(FILE *fp)
 	int suspend_count;
 	double suspend_total = 0.0;
 	double suspend_duration_parsed = -1.0;
-	double suspend_min = DBL_MAX;
-	double suspend_max = DBL_MIN;
+	double suspend_min = 0.0;
+	double suspend_max = 0.0;
 	double interval_max = 0.0;
 	time_delta_info *suspend_interval_list = NULL;
 	time_delta_info *suspend_duration_list = NULL;
@@ -390,11 +390,16 @@ static void suspend_blocker(FILE *fp)
 					}
 				}
 
-				if (suspend_max < s_duration)
-					suspend_max = s_duration;
-				if (suspend_min > s_duration)
+				if (suspend_min == 0.0 && suspend_max == 0.0) {
 					suspend_min = s_duration;
-
+					suspend_max = s_duration;
+				} else {
+					if (suspend_max < s_duration)
+						suspend_max = s_duration;
+					if (suspend_min > s_duration)
+						suspend_min = s_duration;
+				}
+	
 				suspend_succeeded++;
 				suspend_total += s_duration;
 
