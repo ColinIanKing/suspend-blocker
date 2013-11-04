@@ -1,106 +1,124 @@
 stdin:
-  When        Duration
- 2476.670867: 0.298459 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2476.970364: 0.307035 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2477.277429: 0.311644 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2477.590111: 0.296444 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2477.887593: 0.305020 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2478.193651: 0.315397 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2478.509109: 0.024691 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2478.544696: 0.294308 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2488.834304: 0.152724 Successful Suspend. 
- 2490.345429: 0.203113 Successful Suspend. 
- 2492.356447: 0.269983 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
- 2494.346100: 0.365848 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2494.712009: 0.308561 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2495.020631: 0.297360 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2495.319029: 0.299588 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2495.619654: 0.304349 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2495.925041: 0.315794 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2496.240896: 0.299466 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2506.535723: 0.056493 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2506.592552: 0.270472 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2506.863329: 0.271540 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2507.135174: 0.117381 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
- 2508.455851: 0.277095 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2508.733251: 0.270105 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2509.003356: 0.269495 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2509.273156: 0.269770 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2509.543231: 0.269800 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2509.813337: 0.269433 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2520.075690: 0.146436 Successful Suspend. 
- 2521.427590: 0.363345 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2521.790996: 0.302121 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2522.094154: 0.331085 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2522.425301: 0.308011 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2522.734350: 0.068579 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2522.802990: 0.299497 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2523.103524: 0.205158 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
- 2524.487776: 0.362460 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2524.850297: 0.310758 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2535.156782: 0.128155 Successful Suspend. 
- 2536.487806: 0.263238 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
- 2538.349335: 0.362491 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2538.711887: 0.310026 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2539.022950: 0.300840 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2539.323820: 0.296017 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2539.620906: 0.304105 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2539.926048: 0.316619 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2540.242728: 0.024569 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2540.278009: 0.321349 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2550.597619: 0.138165 Successful Suspend. 
- 2552.348725: 0.384648 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2552.733434: 0.311705 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2553.046176: 0.321197 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2553.367464: 0.308439 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2553.676941: 0.022677 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2553.709903: 0.294400 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2554.004364: 0.206134 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
- 2555.389744: 0.305875 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2555.711032: 0.303281 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2566.008667: 0.323333 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2566.333037: 0.297513 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2566.631588: 0.304776 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2566.937432: 0.301877 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2567.239370: 0.306669 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2567.547077: 0.313658 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2567.860796: 0.302487 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2568.164321: 0.296292 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2568.461650: 0.303251 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2568.765938: 0.317992 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2579.078375: 0.135938 Successful Suspend. 
- 2580.419715: 0.363406 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2580.783152: 0.311460 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2581.095650: 0.130780 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
- 2582.430428: 0.363437 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2582.793956: 0.309233 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2583.104226: 0.302030 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2583.407294: 0.297146 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2583.705478: 0.305051 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2584.011627: 0.316222 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2594.319334: 0.333343 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2594.653715: 0.025088 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2594.689332: 0.295010 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2594.985380: 0.298337 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2595.284754: 0.299100 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2595.584892: 0.299069 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2595.884998: 0.301603 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2596.187638: 0.297879 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2596.486585: 0.304044 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2596.791728: 0.315092 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2607.099068: 0.056493 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2607.155592: 0.271967 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2607.427590: 0.268854 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2607.696718: 0.269648 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2607.966671: 0.270166 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
- 2608.237142: 0.170029 Successful Suspend. 
- 2610.353608: 0.262262 Successful Suspend. 
- 2612.363344: 0.287960 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
- 2614.362429: 0.265252 Successful Suspend. 
- 2616.352998: 0.238852 Successful Suspend. 
-Suspend blocking wakelocks:
-  smd_sns_dsps                       88
+       When         Duration
+       0.29834 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30691 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31152 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29632 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30493 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31528 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.02463 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29419 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.26629 Successful Suspend. 
+       0.20298 Successful Suspend. 
+       0.26988 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
+       0.36572 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30847 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29724 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29950 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30423 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31570 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29937 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.05643 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.27044 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.27148 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.11735 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
+       0.27706 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.27007 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.26946 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.26974 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.26980 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.26940 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.14638 Successful Suspend. 
+       0.36317 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30203 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.33098 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30788 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.06846 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29940 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.20503 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
+       0.36234 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31067 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.12809 Successful Suspend. 
+       0.52370 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
+       0.36237 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30989 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30071 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29592 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30401 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31652 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.02445 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.32135 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.13807 Successful Suspend. 
+       0.38450 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31163 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.32110 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30837 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.02258 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29427 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.20601 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
+       0.30575 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30319 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.32321 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29739 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30468 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30179 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30655 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31357 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30240 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29620 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30316 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31787 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.13584 Successful Suspend. 
+       0.36323 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31134 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.13074 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
+       0.36337 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30917 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30191 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29702 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30499 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31613 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.33322 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.02487 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29492 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29821 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29898 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29898 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30148 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.29779 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.30395 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.31500 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.05643 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.27197 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.26882 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.26959 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.27014 Failed on wakelock smd_sns_dsps (Aborted in Freezer).
+       0.48528 Successful Suspend. 
+       0.26210 Successful Suspend. 
+       0.28782 Failed on wakelock smd_sns_dsps (Wakelock during power_suspend_late)
+       0.26506 Successful Suspend. 
+       0.23874 Successful Suspend. 
 
-88 suspends aborted (89.80%).
-10 suspends succeeded (10.20%).
-0.184093 seconds average suspend duration (min 0.128155, max 0.265252).
+Suspend blocking wakelocks:
+  smd_sns_dsps                       88  100.00%
+
+Suspends:
+  88 suspends aborted (89.80%).
+  10 suspends succeeded (10.20%).
+  total time: 2.268820 seconds (1.77%).
+  minimum: 0.128086 seconds.
+  maximum: 0.485281 seconds.
+  mean: 0.226882 seconds.
+  mode: 0 seconds.
+  median: 0 seconds.
+
+Time between successful suspends:
+  total time: 126.171706 seconds (98.23%).
+  minimum: 1.357916 seconds.
+  maximum: 29.526556 seconds.
+  mean: 14.019078 seconds.
+  mode: 1 seconds.
+  median: 14 seconds.
+
+NOTE: suspend times are very dubious, enable kernel config setting
+      CONFIG_SUSPEND_TIME=y for accurate suspend times.
