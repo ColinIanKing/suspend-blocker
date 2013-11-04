@@ -1,6 +1,7 @@
 VERSION=0.01.10
 
 CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"'
+LDFLAGS += -ljson
 
 BINDIR=/usr/bin
 MANDIR=/usr/share/man/man8

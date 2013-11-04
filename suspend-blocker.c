@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdarg.h>
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
 #include <float.h>
+#include <json/json.h>
 
 #define APP_NAME			"suspend-blocker"
 
@@ -24,6 +26,7 @@
 #define OPT_VERBOSE			0x00000002
 #define OPT_HISTOGRAM			0x00000004
 #define OPT_RESUME_CAUSES		0x00000008
+#define OPT_QUIET			0x00000010
 
 #define HASH_SIZE			(1997)
 #define MAX_INTERVALS			(14)
@@ -49,6 +52,99 @@ typedef struct time_delta_info {
 
 static int opt_flags;
 
+/*
+ *  print
+ *	printf that can be supressed when OPT_QUIET is set
+ */
+static int print(const char *format, ...)
+{
+	va_list ap;
+	int ret;
+
+	va_start(ap, format);
+	if (opt_flags & OPT_QUIET)
+		ret = 0;
+	else
+		ret = vprintf(format, ap);
+	va_end(ap);
+
+	return ret;
+}
+
+/*
+ *  json_null
+ *	report error if json object is null
+ */
+void json_null(json_object *obj, char *name)
+{
+	if (obj == NULL)
+		fprintf(stderr, "Cannot allocate json %s.\n", name);
+}
+
+/*
+ *  json_array()
+ *	create new json array
+ */
+static json_object *json_array(void)
+{
+	json_object *obj = json_object_new_array();
+
+	json_null(obj, "array");
+	return obj;
+}
+
+/*
+ *  json_int()
+ *	create new json object from an integer
+ */
+static json_object *json_int(const int i)
+{
+	json_object *obj = json_object_new_int(i);
+
+	json_null(obj, "integer");
+	return obj;
+}
+
+/*
+ *  json_double()
+ *	create new json object from a double
+ */
+static json_object *json_double(const double d)
+{
+	json_object *obj = json_object_new_double(d);
+
+	json_null(obj, "double");
+	return obj;
+}
+
+/*
+ *  json_str()
+ *	create new json object from a C string
+ */
+static json_object *json_str(const char *str)
+{
+	json_object *obj = json_object_new_string(str);
+
+	json_null(obj, "string");
+	return obj;
+}
+
+/*
+ *  json_obj()
+ *	create new json
+ */
+static json_object *json_obj(void)
+{
+	json_object *obj = json_object_new_object();
+
+	json_null(obj, "object");
+	return obj;
+}
+
+/*
+ *  timestamp_init()
+ *	initialize a timestamp
+ */
 static inline void timestamp_init(timestamp *ts)
 {
 	ts->whence = -1.0;
@@ -90,6 +186,10 @@ static unsigned long hash_pjw(const char *str)
   	return h % HASH_SIZE;
 }
 
+/*
+ *  counter_increment()
+ *	increment a hashed counter
+ */
 static void counter_increment(const char *name, counter_info counter[])
 {
 	unsigned long i = hash_pjw(name);
@@ -116,27 +216,155 @@ static void counter_increment(const char *name, counter_info counter[])
 	exit(EXIT_FAILURE);
 }
 
-static void counter_dump(counter_info counter[])
+/*
+ *  counter_dump()
+ *	output counters
+ */
+static void counter_dump(counter_info counter[], const char *label, json_object *json_results)
 {
 	int i;
 	int total = 0;
 
-	for (i = 0; i < HASH_SIZE; i++) {
+	for (i = 0; i < HASH_SIZE; i++)
 		if (counter[i].name)
 			total += counter[i].count;
-	}
 
 	qsort(counter, HASH_SIZE, sizeof(counter_info), counter_info_cmp);
+
 	for (i = 0; i < HASH_SIZE; i++) {
-		if (counter[i].name) {
-			printf("  %-28.28s %8d  %5.2f%%\n", counter[i].name, counter[i].count,
+		if (counter[i].name)
+			print("  %-28.28s %8d  %5.2f%%\n", counter[i].name, counter[i].count,
 				100.0 * (double)counter[i].count / (double)total);
-			free(counter[i].name);
-		}
 	}
-	printf("\n");
+	print("\n");
+
+	if (json_results) {
+		json_object *array;
+
+		if ((array = json_array()) == NULL)
+			return;
+
+		for (i = 0; i < HASH_SIZE; i++) {
+			if (counter[i].name) {
+				json_object *result, *obj;
+
+				if ((result = json_obj()) == NULL) {
+					break;
+				}
+				json_object_array_add(array, result);
+
+				if ((obj = json_str(counter[i].name)) == NULL)
+					break;
+				json_object_object_add(result, "name", obj);
+
+				if ((obj = json_int(counter[i].count)) == NULL)
+					break;
+				json_object_object_add(result, "count", obj);
+
+				if ((obj = json_double((double)counter[i].count / (double)total)) == NULL)
+					break;
+				json_object_object_add(result, "percent", obj);
+			}
+		}
+
+		json_object_object_add(json_results, label, array);
+	}
+
+	for (i = 0; i < HASH_SIZE; i++)
+		if (counter[i].name)
+			free(counter[i].name);
 }
 
+int int_cmp(const void *v1, const void *v2)
+{
+	int *i1 = (int*)v1;
+	int *i2 = (int*)v2;
+
+	return *i1 - *i2;
+}
+
+/*
+ *  time_calc_stats()
+ *
+ */
+static int time_calc_stats(
+	time_delta_info *info,
+	int *mode,
+	int *median,
+	double *mean,
+	double *min,
+	double *max,
+	double *sum)
+{
+	time_delta_info *tdi;
+	int total;
+	int *deltas;
+	int i;
+	int count = 0, max_count = 0, delta = -1;
+
+	*mode = 0;
+	*median = 0;
+	*mean = 0.0;
+	*min = 0.0;
+	*max = 0.0;
+	*sum = 0.0;
+
+	for (total = 0, tdi = info; tdi; tdi = tdi->next) {
+		if (total == 0) {
+			*min = tdi->delta;
+			*max = tdi->delta;
+		} else {
+			if (*min > tdi->delta)
+				*min = tdi->delta;
+			if (*max < tdi->delta)
+				*max = tdi->delta;
+		}
+		*sum += tdi->delta;
+		total++;
+	}
+
+	if (total == 0)
+		return 0;
+
+	*mean = *sum / (double)total;
+
+	deltas = calloc(total, sizeof(int));
+	if (deltas == NULL) {
+		fprintf(stderr, "Cannot allocate array for mode calculation.\n");
+		return -1;
+	}
+
+	for (i = 0, tdi = info; tdi; i++, tdi = tdi->next)
+		deltas[i] = (int)tdi->delta;
+
+	qsort(deltas, total, sizeof(int), int_cmp);
+
+	for (i = 0; i < total; i++) {
+		if (delta != deltas[i]) {
+			delta = deltas[i];
+			count = 1;
+		} else {
+			count++;
+		}
+
+		if (count >= max_count) {
+			max_count = count;
+			*mode = delta;
+		}
+
+	}
+
+	*median = deltas[total / 2];
+
+	free(deltas);
+
+	return 0;
+}
+
+/*
+ *  histogram_dump()
+ *	dump out a histogram of durations
+ */
 static void histogram_dump(time_delta_info *info, const char *message)
 {
 	int histogram[MAX_INTERVALS];
@@ -173,27 +401,27 @@ static void histogram_dump(time_delta_info *info, const char *message)
 		tdi = next;
 	}
 
-	printf("%s\n", message);
+	print("%s\n", message);
 	if (max == -1) {
-		printf("  No values.\n");
+		print("  No values.\n");
 	} else {
 		for (range1 = 0.0, range2 = 0.125, i = 0; i < MAX_INTERVALS; i++) {
 			if (i >= min && i <= max) {
 				double pc = 100.0 * (double) histogram[i] / (double)total;
 				if (i == MAX_INTERVALS - 1)
-					printf("  %8.3f -          seconds    %6d  %5.2f%%\n", range1, histogram[i], pc);
+					print("  %8.3f -          seconds    %6d  %5.2f%%\n", range1, histogram[i], pc);
 				else
-					printf("  %8.3f - %8.3f seconds    %6d  %5.2f%%\n", range1, range2 - 0.001, histogram[i], pc);
+					print("  %8.3f - %8.3f seconds    %6d  %5.2f%%\n", range1, range2 - 0.001, histogram[i], pc);
 			}
 			range1 = range2;
 			range2 = range2 + range2;
 		}
 		if (accurate != total) {
-			printf("NOTE: %5.2f%% of the samples were inaccurate estimates.\n",
+			print("NOTE: %5.2f%% of the samples were inaccurate estimates.\n",
 				100.0 * (double)(total-accurate) / (double)total);
 		}
 	}
-	printf("\n");
+	print("\n");
 }
 
 /*
@@ -246,36 +474,55 @@ static void parse_timestamp(const char *line, timestamp *ts)
 	sprintf(ts->whence_text, "%12.6f  ", ts->whence);
 }
 
-static void suspend_blocker(FILE *fp)
+/*
+ *  suspend_blocker()
+ *	parse a kernel log looking for suspend/resume and wakelocks
+ */
+static void suspend_blocker(FILE *fp, const char *filename, json_object *json_results)
 {
 	char buf[4096];
 	char wakelock[4096];
 	char *resume_cause = NULL;
 	int state = STATE_UNDEFINED;
 	timestamp suspend_start, suspend_exit;
-	double last_suspend;
+	double last_exit;
 	int suspend_succeeded = 0;
 	int suspend_failed = 0;
 	int suspend_count;
-	double suspend_total = 0.0;
+	int interval_mode, interval_median;
+	int suspend_mode, suspend_median;
+	double interval_mean, interval_min, interval_max, interval_sum, interval_percent;
+	double suspend_mean, suspend_min, suspend_max, suspend_sum, suspend_percent;
+	double total_percent;
+	double percent_succeeded, percent_failed;
 	double suspend_duration_parsed = -1.0;
-	double suspend_min = 0.0;
-	double suspend_max = 0.0;
-	double interval_max = 0.0;
 	time_delta_info *suspend_interval_list = NULL;
 	time_delta_info *suspend_duration_list = NULL;
 	bool needs_config_suspend_time = true;
+	json_object *result;
 
 	counter_info wakelocks[HASH_SIZE];
 	counter_info resume_causes[HASH_SIZE];
 
+	if (json_results) {
+		json_object *obj;
+
+		if ((result = json_obj()) == NULL)
+			goto out;
+		json_object_array_add(json_results, result);
+
+		if ((obj = json_str(filename)) == NULL)
+			goto out;
+		json_object_object_add(result, "kernel-log", obj);
+	}
+
 	memset(wakelocks, 0, sizeof(wakelocks));
 	memset(resume_causes, 0, sizeof(resume_causes));
 
-	last_suspend = -1.0;
+	last_exit = -1.0;
 
 	if (opt_flags & OPT_VERBOSE)
-		printf("       When         Duration\n");
+		print("       When         Duration\n");
 
 	timestamp_init(&suspend_start);
 	timestamp_init(&suspend_exit);
@@ -376,72 +623,59 @@ static void suspend_blocker(FILE *fp)
 			timestamp_init(&suspend_exit);
 
 			if (opt_flags & OPT_VERBOSE)
-				printf("  %s %11.5f ", suspend_start.whence_text, s_duration);
+				print("  %s %11.5f ", suspend_start.whence_text, s_duration);
 
 			if (state & STATE_SUSPEND_SUCCESS) {
 				time_delta_info *new_info;
 
 				if (opt_flags & OPT_VERBOSE) {
-					printf("Successful Suspend. ");
+					print("Successful Suspend. ");
 					if (resume_cause && (state & STATE_RESUME_CAUSE)) {
-						printf("Resume cause: %s.", resume_cause);
+						print("Resume cause: %s.", resume_cause);
 						free(resume_cause);
 						resume_cause = NULL;
 					}
 				}
 
-				if (suspend_min == 0.0 && suspend_max == 0.0) {
-					suspend_min = s_duration;
-					suspend_max = s_duration;
-				} else {
-					if (suspend_max < s_duration)
-						suspend_max = s_duration;
-					if (suspend_min > s_duration)
-						suspend_min = s_duration;
-				}
-	
 				suspend_succeeded++;
-				suspend_total += s_duration;
 
-				if (opt_flags & OPT_HISTOGRAM) {
-					if (last_suspend > 0.0) {
-						new_info = malloc(sizeof(time_delta_info));
-						if (new_info == NULL) {
-							fprintf(stderr, "Out of memory!\n");
-							exit(EXIT_FAILURE);
-						}
-						new_info->delta = s_start - last_suspend;
-						new_info->accurate = true;
-						new_info->next = suspend_interval_list;
-						suspend_interval_list = new_info;
-						if (interval_max < new_info->delta)
-							interval_max = new_info->delta;
-					}
-
+				if (last_exit > 0.0) {
 					new_info = malloc(sizeof(time_delta_info));
 					if (new_info == NULL) {
 						fprintf(stderr, "Out of memory!\n");
 						exit(EXIT_FAILURE);
 					}
-					new_info->delta = s_duration;
-					new_info->accurate = s_duration_accurate;
-					new_info->next = suspend_duration_list;
-					suspend_duration_list = new_info;
+					new_info->delta = s_start - last_exit;
+					new_info->accurate = true;
+					new_info->next = suspend_interval_list;
+					suspend_interval_list = new_info;
+					if (interval_max < new_info->delta)
+						interval_max = new_info->delta;
 				}
 
-				last_suspend = s_start;
+				new_info = malloc(sizeof(time_delta_info));
+				if (new_info == NULL) {
+					fprintf(stderr, "Out of memory!\n");
+					exit(EXIT_FAILURE);
+				}
+				new_info->delta = s_duration;
+				new_info->accurate = s_duration_accurate;
+				new_info->next = suspend_duration_list;
+				suspend_duration_list = new_info;
+
+				last_exit = s_exit;
 			} else
 				suspend_failed++;
 
 			if (opt_flags & OPT_VERBOSE) {
 				if (state & STATE_ACTIVE_WAKELOCK)
-					printf("Failed on wakelock %s ", wakelock);
+					print("Failed on wakelock %s ", wakelock);
 				if (state & STATE_FREEZE_ABORTED)
-					printf("(Aborted in Freezer).");
+					print("(Aborted in Freezer).");
 				if (state & STATE_LATE_HAS_WAKELOCK)
-					printf("(Wakelock during power_suspend_late)");
+					print("(Wakelock during power_suspend_late)");
 
-				printf("\n");
+				print("\n");
 			}
 			state = STATE_UNDEFINED;
 			continue;
@@ -485,38 +719,167 @@ static void suspend_blocker(FILE *fp)
 	suspend_count = suspend_failed + suspend_succeeded;
 
 	if (opt_flags & OPT_WAKELOCK_BLOCKERS) {
-		printf("Suspend blocking wakelocks:\n");
-		counter_dump(wakelocks);
+		print("Suspend blocking wakelocks:\n");
+		counter_dump(wakelocks, "suspend-blocking-wakelocks", result);
 	}
 
 	if (opt_flags & OPT_RESUME_CAUSES) {
-		printf("Resume wakeup causes:\n");
-		counter_dump(resume_causes);
+		print("Resume wakeup causes:\n");
+		counter_dump(resume_causes, "resume-wakeups", result);
 	}
 
+	time_calc_stats(suspend_interval_list, &interval_mode, &interval_median,
+		&interval_mean, &interval_min, &interval_max, &interval_sum);
+	time_calc_stats(suspend_duration_list, &suspend_mode, &suspend_median,
+		&suspend_mean, &suspend_min, &suspend_max, &suspend_sum);
+
 	if (opt_flags & OPT_HISTOGRAM) {
-		histogram_dump(suspend_interval_list, "Period of time between each successful suspend:");
+		histogram_dump(suspend_interval_list, "Time between successful suspends:");
 		histogram_dump(suspend_duration_list, "Duration of successful suspends:");
 	}
 
-	printf("Stats:\n");
+	print("Suspends:\n");
+	percent_failed = (suspend_count == 0) ?
+		0.0 : 100.0 * (double)suspend_failed / (double)suspend_count;
+	percent_succeeded = (suspend_count == 0) ?
+		0.0 : 100.0 * (double)suspend_succeeded / (double)suspend_count;
+	total_percent = interval_sum + suspend_sum;
+	suspend_percent = total_percent == 0.0 ?
+		0.0 : 100.0 * suspend_sum / total_percent;
+	interval_percent = total_percent == 0.0 ?
+		0.0 : 100.0 * interval_sum / total_percent;
 
-	printf("  %d suspends aborted (%.2f%%).\n",
-		suspend_failed,
-		suspend_count == 0 ? 0.0 : 100.0 * (double)suspend_failed / (double)suspend_count);
-	printf("  %d suspends succeeded (%.2f%%).\n",
-		suspend_succeeded,
-		suspend_count == 0 ? 0.0 : 100.0 * (double)suspend_succeeded / (double)suspend_count);
-	printf("  %f seconds average suspend duration (min %f, max %f).\n",
-		suspend_succeeded == 0 ? 0.0 : suspend_total / (double)suspend_succeeded,
-		suspend_min, suspend_max);
+	print("  %d suspends aborted (%.2f%%).\n", suspend_failed, percent_failed);
+	print("  %d suspends succeeded (%.2f%%).\n", suspend_succeeded, percent_succeeded);
+	print("  total time: %f seconds (%.2f%%).\n", suspend_sum, suspend_percent);
+	print("  minimum: %f seconds.\n", suspend_min);
+	print("  maximum: %f seconds.\n", suspend_max);
+	print("  mean: %f seconds.\n", suspend_mean);
+	print("  mode: %d seconds.\n", suspend_mode);
+	print("  median: %d seconds.\n", suspend_median);
+
+	print("\nTime between successful suspends:\n");
+	print("  total time: %f seconds (%.2f%%).\n", interval_sum, interval_percent);
+	print("  minimum: %f seconds.\n", interval_min);
+	print("  maximum: %f seconds.\n", interval_max);
+	print("  mean: %f seconds.\n", interval_mean);
+	print("  mode: %d seconds.\n", interval_mode);
+	print("  median: %d seconds.\n", interval_median);
 
 	if ((suspend_count > 0) && needs_config_suspend_time) {
-		printf("\nNOTE: suspend times are very dubious, enable kernel config setting\n");
-		printf("      CONFIG_SUSPEND_TIME=y for accurate suspend times.\n");
+		print("\nNOTE: suspend times are very dubious, enable kernel config setting\n");
+		print("      CONFIG_SUSPEND_TIME=y for accurate suspend times.\n");
 	}
 
+	if (json_results) {
+		json_object *obj;
+
+		/* suspend stats */
+		if ((obj = json_int(suspend_count)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspends-attempted", obj);
+		if ((obj = json_int(suspend_failed)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspends-aborted", obj);
+		if ((obj = json_int(suspend_succeeded)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspends-succeeded", obj);
+
+		if ((obj = json_double(percent_failed)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspends-aborted-percent", obj);
+		if ((obj = json_double(percent_succeeded)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspends-succeeded-percent", obj);
+
+		if ((obj = json_double(suspend_sum)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspends-total-time-seconds", obj);
+		if ((obj = json_double(suspend_percent)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspends-total-time-percent", obj);
+
+		if ((obj = json_double(suspend_min)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspend-minimum-duration-seconds", obj);
+		if ((obj = json_double(suspend_max)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspend-maximum-duration-seconds", obj);
+		if ((obj = json_double(suspend_mean)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspend-mean-duration-seconds", obj);
+		if ((obj = json_int(suspend_mode)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspend-mode-duration-seconds", obj);
+		if ((obj = json_int(suspend_median)) == NULL)
+			goto out;
+		json_object_object_add(result, "suspend-median-duration-seconds", obj);
+
+		
+		/* Awake (between suspend) stats */
+		if ((obj = json_double(interval_sum)) == NULL)
+			goto out;
+		json_object_object_add(result, "awake-total-time-seconds", obj);
+		if ((obj = json_double(interval_percent)) == NULL)
+			goto out;
+		json_object_object_add(result, "awake-total-time-percent", obj);
+
+		if ((obj = json_double(interval_min)) == NULL)
+			goto out;
+		json_object_object_add(result, "awake-minimum-duration-seconds", obj);
+		if ((obj = json_double(interval_max)) == NULL)
+			goto out;
+		json_object_object_add(result, "awake-maximum-duration-seconds", obj);
+		if ((obj = json_double(interval_mean)) == NULL)
+			goto out;
+		json_object_object_add(result, "awake-mean-duration-seconds", obj);
+		if ((obj = json_int(interval_mode)) == NULL)
+			goto out;
+		json_object_object_add(result, "awake-mode-duration-seconds", obj);
+		if ((obj = json_int(interval_median)) == NULL)
+			goto out;
+		json_object_object_add(result, "awake-median-duration-seconds", obj);
+	}
+
+out:
 	free(resume_cause);
+}
+
+
+/*
+ *  json_write()
+ *	dump out collected JSON data
+ */
+static int json_write(json_object *obj, const char *filename)
+{
+	const char *str;
+	FILE *fp;
+
+	if (obj == NULL) {
+		fprintf(stderr, "Cannot create JSON log, no JSON data.\n");
+		return -1;
+	}
+
+#ifdef JSON_C_TO_STRING_PRETTY
+	str = json_object_to_json_string_ext(
+		obj, JSON_C_TO_STRING_PRETTY);
+#else
+	str = json_object_to_json_string(obj);
+#endif
+	if (str == NULL) {
+		fprintf(stderr, "Cannot turn JSON object to text for JSON output.\n");
+		return -1;
+	}
+	if ((fp = fopen(filename, "w")) == NULL) {
+		fprintf(stderr, "Cannot create JSON log file %s.\n", filename);
+		return -1;
+	}
+
+	fprintf(fp, "%s", str);
+	(void)fclose(fp);
+	json_object_put(obj);
+
+	return 0;
 }
 
 void show_help(char * const argv[])
@@ -533,8 +896,11 @@ void show_help(char * const argv[])
 
 int main(int argc, char **argv)
 {
+	char *opt_json_file = NULL;
+	json_object *json_results = NULL;
+
 	for (;;) {
-		int c = getopt(argc, argv, "bhHrv");
+		int c = getopt(argc, argv, "bhHrvo:q");
 		if (c == -1)
 			break;
 		switch (c) {
@@ -553,24 +919,40 @@ int main(int argc, char **argv)
 		case 'h':
 			show_help(argv);
 			exit(EXIT_SUCCESS);
+		case 'o':
+			opt_json_file = optarg;
+			break;
+		case 'q':
+			opt_flags |= OPT_QUIET;
+			opt_flags &= ~OPT_VERBOSE;
+			break;
 		}
 	}
 
+	if (opt_json_file) {
+		if ((json_results = json_array()) == NULL)
+			exit(EXIT_FAILURE);
+	}
+
 	if (optind == argc) {
-		printf("stdin:\n");
-		suspend_blocker(stdin);
+		print("stdin:\n");
+		suspend_blocker(stdin, "stdin", json_results);
 	}
 	while (optind < argc) {
 		FILE *fp;
 
-		printf("%s:\n", argv[optind]);
+		print("%s:\n", argv[optind]);
 		if ((fp = fopen(argv[optind], "r")) == NULL) {
 			fprintf(stderr, "Cannot open %s.\n", argv[optind]);
 			exit(EXIT_FAILURE);
 		}
-		suspend_blocker(fp);
+		suspend_blocker(fp, argv[optind], json_results);
 		fclose(fp);
 		optind++;
 	}
+
+	if (opt_json_file)
+		json_write(json_results, opt_json_file);
+
 	exit(EXIT_SUCCESS);
 }
