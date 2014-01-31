@@ -1,6 +1,26 @@
+/*
+ * Copyright (C) 2013-2014 Canonical
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdlib.h>
+#include <stdint.h>
+#include <unistd.h>
 #include <stdbool.h>
 #include <stdarg.h>
 #include <string.h>
@@ -27,30 +47,56 @@
 #define OPT_HISTOGRAM			0x00000004
 #define OPT_RESUME_CAUSES		0x00000008
 #define OPT_QUIET			0x00000010
+#define OPT_PROC_WAKELOCK		0x00000020
 
 #define HASH_SIZE			(1997)
 #define MAX_INTERVALS			(14)
 
+#define WAKELOCK_START			(0)
+#define WAKELOCK_END			(1)
+
+#define WAKELOCK_NAME_SZ		(128)
+#define NS				(1000000000.0)
+
+typedef struct {
+	uint64_t	count;		/* unlock count  */
+	uint64_t	expire_count;	/* expire count */
+	uint64_t	wakeup_count;	/* wakeup count,
+					   wakelock suspend, wait for wakelock */
+	uint64_t	active_since;	/* no-op */
+	uint64_t	total_time;	/* total time wakelock is active */
+	uint64_t	sleep_time;	/* time preventing kernel from sleeping */
+	uint64_t	max_time;	/* max time locked? */
+	uint64_t	last_change;	/* when lock was last locked/unlocked */
+} wakelock_stats;
+
+typedef struct {
+	char 		*name;		/* name of wakelock */
+	wakelock_stats	stats[2];	/* wakelock strat + end stats */
+} wakelock_info;
+
 typedef struct {
 	double	whence;
-	bool	whence_valid;
-	double	pm_whence;
-	bool	pm_whence_valid;
-	char	whence_text[32];
+	bool	whence_valid;		/* whence time is valid or not? */
+	double	pm_whence;		/* when we got a PM event */
+	bool	pm_whence_valid;	/* is the above valid or not? */
+	char	whence_text[32];	/* event text */
 } timestamp;
 
 typedef struct {
-	char *name;
-	int  count;
+	char *name;			/* name of counter */
+	int  count;			/* number of times detected */
 } counter_info;
 
 typedef struct time_delta_info {
 	double delta;
-	bool   accurate;
+	bool   accurate;		/* accurate or not? */
 	struct time_delta_info *next;
 } time_delta_info;
 
 static int opt_flags;
+static double opt_wakelock_duration;
+static wakelock_info *wakelocks[HASH_SIZE];
 
 /*
  *  print
@@ -62,13 +108,196 @@ static int print(const char *format, ...)
 	int ret;
 
 	va_start(ap, format);
-	if (opt_flags & OPT_QUIET)
-		ret = 0;
-	else
-		ret = vprintf(format, ap);
+	ret = (opt_flags & OPT_QUIET) ? 0 : vprintf(format, ap);
 	va_end(ap);
 
 	return ret;
+}
+
+/*
+ *  hash_pjw()
+ *	Hash a string, from Aho, Sethi, Ullman, Compiling Techniques.
+ */
+static unsigned long hash_pjw(const char *str)
+{
+  	unsigned long h = 0, g;
+
+	while (*str) {
+		h = (h << 4) + (*str);
+		if (0 != (g = h & 0xf0000000)) {
+			h = h ^ (g >> 24);
+			h = h ^ g;
+		}
+		str++;
+	}
+
+  	return h % HASH_SIZE;
+}
+
+/*
+ *  wakelock_new()
+ *	create a new wakelock, nstat denotes start or end wakelock event 
+ *	collection time
+ */
+static void wakelock_new(const char *name, wakelock_stats *wakelock, int nstat)
+{
+	unsigned long h = hash_pjw(name);
+	int i;
+
+	for (i = 0; i < HASH_SIZE; i++) {
+		if (wakelocks[h] == NULL) {
+			wakelocks[h] = calloc(1, sizeof(*wakelocks[h]));
+			if (!wakelocks[h]) {
+				fprintf(stderr, "Out of memory\n");
+				exit(EXIT_FAILURE);
+			}
+			wakelocks[h]->name = strdup(name);
+			if (!wakelocks[h]->name) {
+				fprintf(stderr, "Out of memory\n");
+				exit(EXIT_FAILURE);
+			}
+			memcpy(&wakelocks[h]->stats[nstat], wakelock, sizeof(*wakelock));
+			return;
+		}
+		h = (h + 1) % HASH_SIZE;
+	}
+}
+
+/*
+ *  wakelock_update()
+ *	update wakelock stats
+ */
+static void wakelock_update(const char *name, wakelock_stats *wakelock, int nstat)
+{
+	unsigned long h = hash_pjw(name);
+	int i;
+
+	for (i = 0; i < HASH_SIZE; i++) {
+		if (wakelocks[h] &&
+		    !strcmp(name, wakelocks[h]->name)) {
+			memcpy(&wakelocks[h]->stats[nstat], wakelock, sizeof(*wakelock));
+			return;
+		}
+		h = (h + 1) % HASH_SIZE;
+	}
+
+	wakelock_new(name, wakelock, nstat);
+}
+
+/*
+ *  wakelock_free()
+ *	free up wakelock hash table
+ */
+static void wakelock_free(void)
+{
+	int i;
+
+	for (i = 0; i < HASH_SIZE; i++) {
+		if (wakelocks[i]) {
+			free(wakelocks[i]);
+			wakelocks[i] = NULL;
+		}
+	}
+}
+
+/*
+ *  wakelock_read()
+ *	read wakelock status, nstat indicates start or end epoc
+ */
+static int wakelock_read(const int nstat)
+{
+	FILE *fp;
+	char buf[4096];
+	int line;
+
+	if ((fp = fopen("/proc/wakelocks", "r")) == NULL)
+		return 1;
+
+	for (line = 0; fgets(buf, sizeof(buf), fp) != NULL; line++) {
+		wakelock_stats wakelock;
+		char name[WAKELOCK_NAME_SZ];
+
+		if (!line)
+			continue;	/* skip header */
+
+		memset(&wakelock, 0, sizeof(wakelock));
+		if (sscanf(buf, "\"%[^\"]\" %" PRIu64 " %" PRIu64 " %" PRIu64
+		    " %" PRIu64 " %" PRIu64 " %" PRIu64
+		    " %" PRIu64 " %" PRIu64,
+		    name,
+		    &wakelock.count, &wakelock.expire_count,
+		    &wakelock.wakeup_count, &wakelock.active_since,
+		    &wakelock.total_time, &wakelock.sleep_time,
+		    &wakelock.max_time, &wakelock.last_change) == 9)
+			wakelock_update(name, &wakelock, nstat);
+	}
+	fclose(fp);
+
+	return 0;
+}
+
+/*
+ *  Calculate wakelock delta between start and end epoc
+ */
+#define WL_DELTA(i, f)					\
+	((double)(wakelocks[i]->stats[WAKELOCK_END].f -	\
+	wakelocks[i]->stats[WAKELOCK_START].f)) 
+	        
+/*
+ *  wakelock_sort()
+ *	qsort comparitor to sort wakelock hack by wakelock name
+ */
+int wakelock_sort(const void *p1, const void *p2)
+{
+	wakelock_info **w1 = (wakelock_info **)p1;
+	wakelock_info **w2 = (wakelock_info **)p2;
+	
+	if (!*w1 && !*w2)
+		return 0;
+	if (!*w2)
+		return -1;
+	if (!*w1)
+		return 1;
+
+	return strcmp((*w1)->name, (*w2)->name);
+}
+
+/*
+ *  wakelock_check()
+ *	check wakelock activity
+ */
+void wakelock_check(double duration)
+{
+	int i;
+	qsort(wakelocks, HASH_SIZE, sizeof(wakelock_info *), wakelock_sort);
+
+	/* since we're sorted, if entry 0 is empty then we have no wakelocks */
+	if (!wakelocks[0]) {
+		print("No wakelock data.\n");
+		return;
+	}
+
+	print("%-32s %-8s %-8s %-8s %-8s %-8s\n",
+		"Wakelock", "Count", "Expire", "Wakeup", "Total", "Sleep");
+	print("%-32s %-8s %-8s %-8s %-8s %-8s\n",
+		"Name", "", "count", "count", "time %", "time %");
+	for (i = 0; i < HASH_SIZE; i++) {
+		if (wakelocks[i]) {
+			double	d_count = WL_DELTA(i, count),
+				d_expire_count = WL_DELTA(i, expire_count),
+				d_wakeup_count = WL_DELTA(i, wakeup_count),
+				d_total_time = WL_DELTA(i, total_time),
+				d_sleep_time = WL_DELTA(i, sleep_time);
+			
+			/* dump out stats if non-zero */
+			if (d_count + d_expire_count + d_wakeup_count + d_total_time + d_sleep_time > 0.0)
+				print("%-32.32s %8.2f %8.2f %8.2f %8.2f %8.2f\n",
+					wakelocks[i]->name,
+					d_count, d_expire_count, d_wakeup_count,
+					(100.0 * d_total_time / NS) / duration,
+					(100.0 * d_sleep_time / NS) / duration);
+		}
+	}
 }
 
 /*
@@ -167,26 +396,6 @@ static int counter_info_cmp(const void *p1, const void *p2)
 }
 
 /*
- *  hash_pjw()
- *	Hash a string, from Aho, Sethi, Ullman, Compiling Techniques.
- */
-static unsigned long hash_pjw(const char *str)
-{
-  	unsigned long h = 0, g;
-
-	while (*str) {
-		h = (h << 4) + (*str);
-		if (0 != (g = h & 0xf0000000)) {
-			h = h ^ (g >> 24);
-			h = h ^ g;
-		}
-		str++;
-	}
-
-  	return h % HASH_SIZE;
-}
-
-/*
  *  counter_increment()
  *	increment a hashed counter
  */
@@ -197,7 +406,6 @@ static void counter_increment(const char *name, counter_info counter[])
 
 	for (j = 0; j < HASH_SIZE; j++) {
 		if (counter[i].name == NULL) {
-			counter[i].name = strdup(name);
 			if (counter[i].name == NULL) {
 				fprintf(stderr, "Out of memory!\n");
 				exit(EXIT_FAILURE);
@@ -331,7 +539,7 @@ static int time_calc_stats(
 	deltas = calloc(total, sizeof(int));
 	if (deltas == NULL) {
 		fprintf(stderr, "Cannot allocate array for mode calculation.\n");
-		return -1;
+		return 1;
 	}
 
 	for (i = 0, tdi = info; tdi; i++, tdi = tdi->next)
@@ -569,13 +777,23 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 
 			state |= STATE_RESUME_CAUSE;
 			if (resume_cause) {
-				resume_cause = realloc(resume_cause, strlen(resume_cause) + 3 + len);
-				if (resume_cause)
+				char *tmp = realloc(resume_cause, strlen(resume_cause) + 3 + len);
+				if (tmp) {
+					resume_cause = tmp;
 					strcat(resume_cause, "; ");
 					strcat(resume_cause, cause);
+				} else {
+					fprintf(stderr, "Out of memory\n");
+					exit(EXIT_FAILURE);
+				}
 			} else {
 				resume_cause = malloc(len + 1);
-				strcpy(resume_cause, cause);
+				if (resume_cause) 
+					strcpy(resume_cause, cause);
+				else {
+					fprintf(stderr, "Out of memory\n");
+					exit(EXIT_FAILURE);
+				}
 			}
 			if (opt_flags & OPT_RESUME_CAUSES)
 				counter_increment(cause, resume_causes);
@@ -641,7 +859,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 
 				if (last_exit > 0.0) {
 					new_info = malloc(sizeof(time_delta_info));
-					if (new_info == NULL) {
+					if (!new_info) {
 						fprintf(stderr, "Out of memory!\n");
 						exit(EXIT_FAILURE);
 					}
@@ -654,7 +872,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 				}
 
 				new_info = malloc(sizeof(time_delta_info));
-				if (new_info == NULL) {
+				if (!new_info) {
 					fprintf(stderr, "Out of memory!\n");
 					exit(EXIT_FAILURE);
 				}
@@ -900,7 +1118,7 @@ int main(int argc, char **argv)
 	json_object *json_results = NULL;
 
 	for (;;) {
-		int c = getopt(argc, argv, "bhHrvo:q");
+		int c = getopt(argc, argv, "bhHrvo:qw:");
 		if (c == -1)
 			break;
 		switch (c) {
@@ -926,6 +1144,10 @@ int main(int argc, char **argv)
 			opt_flags |= OPT_QUIET;
 			opt_flags &= ~OPT_VERBOSE;
 			break;
+		case 'w':
+			opt_flags |= OPT_PROC_WAKELOCK;
+			opt_wakelock_duration = atof(optarg);
+			break;
 		}
 	}
 
@@ -934,21 +1156,35 @@ int main(int argc, char **argv)
 			exit(EXIT_FAILURE);
 	}
 
-	if (optind == argc) {
-		print("stdin:\n");
-		suspend_blocker(stdin, "stdin", json_results);
-	}
-	while (optind < argc) {
-		FILE *fp;
+	if (opt_flags & OPT_PROC_WAKELOCK) {
+		struct timeval tv;
 
-		print("%s:\n", argv[optind]);
-		if ((fp = fopen(argv[optind], "r")) == NULL) {
-			fprintf(stderr, "Cannot open %s.\n", argv[optind]);
-			exit(EXIT_FAILURE);
+		wakelock_read(WAKELOCK_START);
+		tv.tv_sec = (long)opt_wakelock_duration;
+		tv.tv_usec = (long)((opt_wakelock_duration - tv.tv_sec) * 1000000.0);
+		select(0, NULL, NULL, NULL, &tv);
+
+		wakelock_read(WAKELOCK_END);
+		wakelock_check(opt_wakelock_duration);
+		wakelock_free();
+	}
+	else {
+		if (optind == argc) {
+			print("stdin:\n");
+			suspend_blocker(stdin, "stdin", json_results);
 		}
-		suspend_blocker(fp, argv[optind], json_results);
-		fclose(fp);
-		optind++;
+		while (optind < argc) {
+			FILE *fp;
+	
+			print("%s:\n", argv[optind]);
+			if ((fp = fopen(argv[optind], "r")) == NULL) {
+				fprintf(stderr, "Cannot open %s.\n", argv[optind]);
+				exit(EXIT_FAILURE);
+			}
+			suspend_blocker(fp, argv[optind], json_results);
+			fclose(fp);
+			optind++;
+		}
 	}
 
 	if (opt_json_file)
