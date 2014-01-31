@@ -1109,6 +1109,7 @@ void show_help(char * const argv[])
 	printf("\t-H histogram of times between suspend and suspend duration.\n");
 	printf("\t-r list causes of resume.\n");
 	printf("\t-v verbose information.\n");
+	printf("\t-w profile wakelocks.\n");
 }
 
 

@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH SUSPEND-BLOCKER 8 "June 13, 2012"
+.TH SUSPEND-BLOCKER 8 "Jan 31, 2014"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -56,6 +56,9 @@ show reasons why suspend was resumed.
 .TP
 .B \-q
 run quietly, no output.
+.TP
+.B \-w
+profile by wakelock activity and not kernel log messages.
 .SH AUTHOR
 suspend-blocker was written by Colin King <colin.king@canonical.com>
 .PP
