@@ -57,6 +57,15 @@
 #define WAKELOCK_NAME_SZ		(128)
 #define NS				(1000000000.0)
 
+/*
+ *  Calculate wakelock delta between start and end epoc
+ */
+#define WL_DELTA(i, f)					\
+	((double)(wakelocks[i]->stats[WAKELOCK_END].f -	\
+	 (double)wakelocks[i]->stats[WAKELOCK_START].f)) 
+
+#define NO_NEG(v) ((v) < 0.0 ? 0.0 : (v))
+	        
 typedef struct {
 	uint64_t	count;		/* unlock count  */
 	uint64_t	expire_count;	/* expire count */
@@ -236,13 +245,6 @@ static int wakelock_read(const int nstat)
 }
 
 /*
- *  Calculate wakelock delta between start and end epoc
- */
-#define WL_DELTA(i, f)					\
-	((double)(wakelocks[i]->stats[WAKELOCK_END].f -	\
-	 (double)wakelocks[i]->stats[WAKELOCK_START].f)) 
-	        
-/*
  *  wakelock_sort()
  *	qsort comparitor to sort wakelock hack by wakelock name
  */
@@ -374,6 +376,9 @@ void wakelock_check(double duration, json_object *json_results)
 				d_wakeup_count = WL_DELTA(i, wakeup_count),
 				d_total_time = (100.0 * WL_DELTA(i, total_time) / NS) / duration,
 				d_sleep_time = (100.0 * WL_DELTA(i, sleep_time) / NS) / duration;
+
+			d_total_time = NO_NEG(d_total_time);
+			d_sleep_time = NO_NEG(d_sleep_time);
 			
 			/* dump out stats if non-zero */
 			if (d_count + d_expire_count + d_wakeup_count + d_total_time + d_sleep_time > 0.0) {
