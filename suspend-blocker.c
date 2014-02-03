@@ -23,9 +23,11 @@
 #include <stdbool.h>
 #include <stdarg.h>
 #include <string.h>
+#include <errno.h>
 #include <unistd.h>
 #include <time.h>
 #include <float.h>
+#include <sys/time.h>
 #include <json/json.h>
 
 #define APP_NAME			"suspend-blocker"
@@ -105,6 +107,15 @@ typedef struct time_delta_info {
 static int opt_flags;
 static double opt_wakelock_duration;
 static wakelock_info *wakelocks[HASH_SIZE];
+
+/*
+ *  timeval_to_double()
+ *	convert timeval to seconds as a double
+ */
+double timeval_to_double(const struct timeval *tv)
+{
+	return (double)tv->tv_sec + ((double)tv->tv_usec / 1000000.0);
+}
 
 /*
  *  print
@@ -1211,15 +1222,29 @@ int main(int argc, char **argv)
 	}
 
 	if (opt_flags & OPT_PROC_WAKELOCK) {
-		struct timeval tv;
+		struct timeval tv, tv_start, tv_now;
+		int ret;
+		double duration;
 
-		wakelock_read(WAKELOCK_START);
-		tv.tv_sec = (long)opt_wakelock_duration;
-		tv.tv_usec = (long)((opt_wakelock_duration - tv.tv_sec) * 1000000.0);
-		select(0, NULL, NULL, NULL, &tv);
+		gettimeofday(&tv_start, NULL);
+
+		do {
+			wakelock_read(WAKELOCK_START);
+			tv.tv_sec = (long)opt_wakelock_duration;
+			tv.tv_usec = (long)((opt_wakelock_duration - tv.tv_sec) * 1000000.0);
+			ret = select(0, NULL, NULL, NULL, &tv);
+			if (ret < 0) {
+				if (errno != EINTR) {
+					fprintf(stderr, "Select failed: %s\n", strerror(errno));
+					exit(EXIT_FAILURE);
+				}
+			}
+			gettimeofday(&tv_now, NULL);
+			duration = timeval_to_double(&tv_now) - timeval_to_double(&tv_start);
+		} while (duration < opt_wakelock_duration);
 
 		wakelock_read(WAKELOCK_END);
-		wakelock_check(opt_wakelock_duration, json_results);
+		wakelock_check(duration, json_results);
 		wakelock_free();
 	}
 	else {
