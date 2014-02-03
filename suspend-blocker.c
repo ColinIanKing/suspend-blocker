@@ -20,7 +20,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <unistd.h>
 #include <stdbool.h>
 #include <stdarg.h>
 #include <string.h>
@@ -241,7 +240,7 @@ static int wakelock_read(const int nstat)
  */
 #define WL_DELTA(i, f)					\
 	((double)(wakelocks[i]->stats[WAKELOCK_END].f -	\
-	wakelocks[i]->stats[WAKELOCK_START].f)) 
+	 (double)wakelocks[i]->stats[WAKELOCK_START].f)) 
 	        
 /*
  *  wakelock_sort()
@@ -260,44 +259,6 @@ int wakelock_sort(const void *p1, const void *p2)
 		return 1;
 
 	return strcmp((*w1)->name, (*w2)->name);
-}
-
-/*
- *  wakelock_check()
- *	check wakelock activity
- */
-void wakelock_check(double duration)
-{
-	int i;
-	qsort(wakelocks, HASH_SIZE, sizeof(wakelock_info *), wakelock_sort);
-
-	/* since we're sorted, if entry 0 is empty then we have no wakelocks */
-	if (!wakelocks[0]) {
-		print("No wakelock data.\n");
-		return;
-	}
-
-	print("%-32s %-8s %-8s %-8s %-8s %-8s\n",
-		"Wakelock", "Count", "Expire", "Wakeup", "Total", "Sleep");
-	print("%-32s %-8s %-8s %-8s %-8s %-8s\n",
-		"Name", "", "count", "count", "time %", "time %");
-	for (i = 0; i < HASH_SIZE; i++) {
-		if (wakelocks[i]) {
-			double	d_count = WL_DELTA(i, count),
-				d_expire_count = WL_DELTA(i, expire_count),
-				d_wakeup_count = WL_DELTA(i, wakeup_count),
-				d_total_time = WL_DELTA(i, total_time),
-				d_sleep_time = WL_DELTA(i, sleep_time);
-			
-			/* dump out stats if non-zero */
-			if (d_count + d_expire_count + d_wakeup_count + d_total_time + d_sleep_time > 0.0)
-				print("%-32.32s %8.2f %8.2f %8.2f %8.2f %8.2f\n",
-					wakelocks[i]->name,
-					d_count, d_expire_count, d_wakeup_count,
-					(100.0 * d_total_time / NS) / duration,
-					(100.0 * d_sleep_time / NS) / duration);
-		}
-	}
 }
 
 /*
@@ -369,6 +330,88 @@ static json_object *json_obj(void)
 	json_null(obj, "object");
 	return obj;
 }
+
+/*
+ *  wakelock_check()
+ *	check wakelock activity
+ */
+void wakelock_check(double duration, json_object *json_results)
+{
+	int i;
+	json_object *results, *obj, *array, *wl_item;
+
+	if (json_results) {
+		if ((results = json_obj()) == NULL)
+			goto out;
+		json_object_object_add(json_results, "wakelock-data", results);
+
+		if ((obj = json_double(duration)) == NULL)
+			goto out;
+		json_object_object_add(results, "duration-seconds", obj);
+	}
+	
+	qsort(wakelocks, HASH_SIZE, sizeof(wakelock_info *), wakelock_sort);
+	/* since we're sorted, if entry 0 is empty then we have no wakelocks */
+	if (!wakelocks[0]) {
+		print("No wakelock data.\n");
+		return;
+	}
+
+	if (json_results) {
+		if ((array = json_array()) == NULL)
+			goto out;
+		json_object_object_add(results, "wakelocks", array);
+	}
+
+	print("%-32s %-8s %-8s %-8s %-8s %-8s\n",
+		"Wakelock", "Count", "Expire", "Wakeup", "Total", "Sleep");
+	print("%-32s %-8s %-8s %-8s %-8s %-8s\n",
+		"Name", "", "count", "count", "time %", "time %");
+	for (i = 0; i < HASH_SIZE; i++) {
+		if (wakelocks[i]) {
+			double	d_count = WL_DELTA(i, count),
+				d_expire_count = WL_DELTA(i, expire_count),
+				d_wakeup_count = WL_DELTA(i, wakeup_count),
+				d_total_time = (100.0 * WL_DELTA(i, total_time) / NS) / duration,
+				d_sleep_time = (100.0 * WL_DELTA(i, sleep_time) / NS) / duration;
+			
+			/* dump out stats if non-zero */
+			if (d_count + d_expire_count + d_wakeup_count + d_total_time + d_sleep_time > 0.0) {
+				print("%-32.32s %8.2f %8.2f %8.2f %8.2f %8.2f\n",
+					wakelocks[i]->name,
+					d_count, d_expire_count, d_wakeup_count,
+					d_total_time, d_sleep_time);
+
+				if (json_results) {
+					if ((wl_item = json_obj()) == NULL)
+						goto out;
+					json_object_array_add(array, wl_item);
+					if ((obj = json_str(wakelocks[i]->name)) == NULL)
+						goto out;
+					json_object_object_add(wl_item, "wakelock", obj);
+					if ((obj = json_double(d_count / duration)) == NULL)
+						goto out;
+					json_object_object_add(wl_item, "count_per_second", obj);
+					if ((obj = json_double(d_expire_count / duration)) == NULL)
+						goto out;
+					json_object_object_add(wl_item, "expire_count_per_second", obj);
+					if ((obj = json_double(d_wakeup_count / duration)) == NULL)
+						goto out;
+					json_object_object_add(wl_item, "wakeup_count_per_second", obj);
+					if ((obj = json_double(d_total_time)) == NULL)
+						goto out;
+					json_object_object_add(wl_item, "total_time_percent", obj);
+					if ((obj = json_double(d_sleep_time)) == NULL)
+						goto out;
+					json_object_object_add(wl_item, "sleep_time_percent", obj);
+				}
+			}
+		}
+	}
+out:
+	return;
+}
+
 
 /*
  *  timestamp_init()
@@ -715,9 +758,13 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	if (json_results) {
 		json_object *obj;
 
+		if ((obj = json_array()) == NULL)
+			goto out;
+		json_object_object_add(json_results, "wakelock-stats-from-klog", obj);
+
 		if ((result = json_obj()) == NULL)
 			goto out;
-		json_object_array_add(json_results, result);
+		json_object_array_add(obj, result);
 
 		if ((obj = json_str(filename)) == NULL)
 			goto out;
@@ -1154,7 +1201,7 @@ int main(int argc, char **argv)
 	}
 
 	if (opt_json_file) {
-		if ((json_results = json_array()) == NULL)
+		if ((json_results = json_obj()) == NULL)
 			exit(EXIT_FAILURE);
 	}
 
@@ -1167,7 +1214,7 @@ int main(int argc, char **argv)
 		select(0, NULL, NULL, NULL, &tv);
 
 		wakelock_read(WAKELOCK_END);
-		wakelock_check(opt_wakelock_duration);
+		wakelock_check(opt_wakelock_duration, json_results);
 		wakelock_free();
 	}
 	else {
