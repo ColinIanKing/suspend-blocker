@@ -57,7 +57,7 @@
 #define WAKELOCK_END			(1)
 
 #define WAKELOCK_NAME_SZ		(128)
-#define NS				(1000000000.0)
+#define MS				(1000.0)
 
 /*
  *  Calculate wakelock delta between start and end epoc
@@ -69,15 +69,17 @@
 #define NO_NEG(v) ((v) < 0.0 ? 0.0 : (v))
 	        
 typedef struct {
-	uint64_t	count;		/* unlock count  */
+	uint64_t	active_count;	/* active count (not used in this tool) */
+	uint64_t	count;		/* unlock count */
 	uint64_t	expire_count;	/* expire count */
 	uint64_t	wakeup_count;	/* wakeup count,
 					   wakelock suspend, wait for wakelock */
-	uint64_t	active_since;	/* no-op */
-	uint64_t	total_time;	/* total time wakelock is active */
-	uint64_t	sleep_time;	/* time preventing kernel from sleeping */
-	uint64_t	max_time;	/* max time locked? */
-	uint64_t	last_change;	/* when lock was last locked/unlocked */
+	double		active_since;	/* no-op */
+	double		total_time;	/* total time wakelock is active */
+	double		sleep_time;	/* time preventing kernel from sleeping */
+	double		max_time;	/* max time locked? */
+	double		prevent_time;	/* prevent suspend time */
+	double		last_change;	/* when lock was last locked/unlocked */
 } wakelock_stats;
 
 typedef struct {
@@ -220,10 +222,56 @@ static void wakelock_free(void)
 }
 
 /*
- *  wakelock_read()
- *	read wakelock status, nstat indicates start or end epoc
+ *  wakelock_read_sys()
+ *	read wakelock status, nstat indicates start or end epoc, from
+ *	/sys interface
  */
-static int wakelock_read(const int nstat)
+static int wakelock_read_sys(const int nstat)
+{
+	FILE *fp;
+	char buf[4096];
+	int line;
+
+	if ((fp = fopen("/sys/kernel/debug/wakeup_sources", "r")) == NULL)
+		return 1;
+
+	for (line = 0; fgets(buf, sizeof(buf), fp) != NULL; line++) {
+		wakelock_stats wakelock;
+		char name[WAKELOCK_NAME_SZ];
+
+		if (!line)
+			continue;	/* skip header */
+
+		memset(&wakelock, 0, sizeof(wakelock));
+		if (sscanf(buf, "%s"
+		    " %" PRIu64 " %" PRIu64 " %" PRIu64
+		    " %" PRIu64 " %lg %lg %lg %lg %lg"
+		    ,
+		    name,
+		    &wakelock.active_count,
+		    &wakelock.count,			/* aka event_count */
+		    &wakelock.wakeup_count,
+		    &wakelock.expire_count,
+
+		    &wakelock.active_since,
+		    &wakelock.total_time,
+		    &wakelock.max_time,
+		    &wakelock.last_change,
+		    &wakelock.prevent_time		/* aka prevent_suspend_time */
+		    ) == 10)
+			wakelock_update(name, &wakelock, nstat);
+	}
+	fclose(fp);
+
+	return 0;
+}
+
+/*
+ *  wakelock_read_proc()
+ *	read wakelock status, nstat indicates start or end epoc, from
+ *	/proc interface
+ */
+static int wakelock_read_proc(const int nstat)
 {
 	FILE *fp;
 	char buf[4096];
@@ -241,18 +289,37 @@ static int wakelock_read(const int nstat)
 
 		memset(&wakelock, 0, sizeof(wakelock));
 		if (sscanf(buf, "\"%[^\"]\" %" PRIu64 " %" PRIu64 " %" PRIu64
-		    " %" PRIu64 " %" PRIu64 " %" PRIu64
-		    " %" PRIu64 " %" PRIu64,
+		    " %lg %lg %lg %lg %lg",
 		    name,
 		    &wakelock.count, &wakelock.expire_count,
 		    &wakelock.wakeup_count, &wakelock.active_since,
 		    &wakelock.total_time, &wakelock.sleep_time,
-		    &wakelock.max_time, &wakelock.last_change) == 9)
+		    &wakelock.max_time, &wakelock.last_change) == 9) {
+			wakelock.total_time /= 1000000.0;
+			wakelock.sleep_time /= 1000000.0;
+			wakelock.max_time /= 1000000.0;
+			wakelock.last_change /= 1000000.0;
 			wakelock_update(name, &wakelock, nstat);
+		}
 	}
 	fclose(fp);
 
 	return 0;
+}
+
+/*
+ *  wakelock_read()
+ *	read wakelock status, nstat indicates start or end epoc
+ */
+static int wakelock_read(const int nstat)
+{
+	int ret;
+
+	ret = wakelock_read_proc(nstat);
+	if (ret)
+		ret = wakelock_read_sys(nstat);
+	
+	return ret;
 }
 
 /*
@@ -348,7 +415,7 @@ static json_object *json_obj(void)
  *  wakelock_check()
  *	check wakelock activity
  */
-void wakelock_check(double duration, json_object *json_results)
+void wakelock_check(double request_duration, double duration, json_object *json_results)
 {
 	int i;
 	json_object *results, *obj, *array, *wl_item;
@@ -376,27 +443,31 @@ void wakelock_check(double duration, json_object *json_results)
 		json_object_object_add(results, "wakelocks", array);
 	}
 
-	print("%-32s %-8s %-8s %-8s %-8s %-8s\n",
-		"Wakelock", "Count", "Expire", "Wakeup", "Total", "Sleep");
-	print("%-32s %-8s %-8s %-8s %-8s %-8s\n",
-		"Name", "", "count", "count", "time %", "time %");
+	print("%-32s %-8s %-8s %-8s %-8s %-8s %-8s %-8s\n",
+		"Wakelock", "Active", "Count", "Expire", "Wakeup", "Total", "Sleep", "Prevent");
+	print("%-32s %-8s %-8s %-8s %-8s %-8s %-8s %-8s\n",
+		"Name", "count", "", "count", "count", "time %", "time %", "time %");
 	for (i = 0; i < HASH_SIZE; i++) {
 		if (wakelocks[i]) {
 			double	d_count = WL_DELTA(i, count),
+				d_active_count = WL_DELTA(i, active_count),
 				d_expire_count = WL_DELTA(i, expire_count),
 				d_wakeup_count = WL_DELTA(i, wakeup_count),
-				d_total_time = (100.0 * WL_DELTA(i, total_time) / NS) / duration,
-				d_sleep_time = (100.0 * WL_DELTA(i, sleep_time) / NS) / duration;
+				d_total_time = (100.0 * WL_DELTA(i, total_time) / MS) / duration,
+				d_sleep_time = (100.0 * WL_DELTA(i, sleep_time) / MS) / duration,
+				d_prevent_time = (100.0 * WL_DELTA(i, prevent_time) / MS) / duration;
 
 			d_total_time = NO_NEG(d_total_time);
 			d_sleep_time = NO_NEG(d_sleep_time);
-			
+			d_prevent_time = NO_NEG(d_prevent_time);
+		
 			/* dump out stats if non-zero */
-			if (d_count + d_expire_count + d_wakeup_count + d_total_time + d_sleep_time > 0.0) {
-				print("%-32.32s %8.2f %8.2f %8.2f %8.2f %8.2f\n",
+			if (d_active_count + d_count + d_expire_count + d_wakeup_count + d_total_time + d_sleep_time + d_prevent_time > 0.0) {
+				print("%-32.32s %8.2f %8.2f %8.2f %8.2f %8.2f %8.2f %8.2f\n",
 					wakelocks[i]->name,
+					d_active_count,
 					d_count, d_expire_count, d_wakeup_count,
-					d_total_time, d_sleep_time);
+					d_total_time, d_sleep_time, d_prevent_time);
 
 				if (json_results) {
 					if ((wl_item = json_obj()) == NULL)
@@ -405,6 +476,9 @@ void wakelock_check(double duration, json_object *json_results)
 					if ((obj = json_str(wakelocks[i]->name)) == NULL)
 						goto out;
 					json_object_object_add(wl_item, "wakelock", obj);
+					if ((obj = json_double(d_active_count / duration)) == NULL)
+						goto out;
+					json_object_object_add(wl_item, "active_count_per_second", obj);
 					if ((obj = json_double(d_count / duration)) == NULL)
 						goto out;
 					json_object_object_add(wl_item, "count_per_second", obj);
@@ -420,10 +494,16 @@ void wakelock_check(double duration, json_object *json_results)
 					if ((obj = json_double(d_sleep_time)) == NULL)
 						goto out;
 					json_object_object_add(wl_item, "sleep_time_percent", obj);
+					if ((obj = json_double(d_prevent_time)) == NULL)
+						goto out;
+					json_object_object_add(wl_item, "prevent_time_percent", obj);
 				}
 			}
 		}
 	}
+	printf("Requested test duration: %.2f seconds, actual duration: %.2f seconds\n",
+		request_duration, duration);
+		
 out:
 	return;
 }
@@ -1244,7 +1324,7 @@ int main(int argc, char **argv)
 		} while (duration < opt_wakelock_duration);
 
 		wakelock_read(WAKELOCK_END);
-		wakelock_check(duration, json_results);
+		wakelock_check(opt_wakelock_duration, duration, json_results);
 		wakelock_free();
 	}
 	else {
