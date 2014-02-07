@@ -1,3 +1,12 @@
+suspend-blocker (0.01.14) trusty; urgency=low
+
+  * Makefile: bump version again
+  * Add example python script to parse json output and pass/fail the results
+  * ensure each suspend kernel log parse is an individual json results object
+  * Add example script to show how to use the tool
+
+ -- Colin King <colin.king@canonical.com>  Fri, 7 Feb 2014 17:28:01 +0000
+
 suspend-blocker (0.01.13) trusty; urgency=low
 
   * Makefile: bump version
