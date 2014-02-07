@@ -545,6 +545,7 @@ static void counter_increment(const char *name, counter_info counter[])
 
 	for (j = 0; j < HASH_SIZE; j++) {
 		if (counter[i].name == NULL) {
+			counter[i].name = strdup(name);
 			if (counter[i].name == NULL) {
 				fprintf(stderr, "Out of memory!\n");
 				exit(EXIT_FAILURE);
@@ -949,8 +950,8 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 			needs_config_suspend_time = false;
 		}
 
-		ptr = strstr(buf, "suspend: exit suspend");
-		if (ptr) {
+		if (strstr(buf, "suspend: exit suspend") ||
+                    strstr(buf, "PM: suspend exit")) {
 			state &= ~STATE_ENTER_SUSPEND;
 			state |= STATE_EXIT_SUSPEND;
 			parse_timestamp(buf, &suspend_exit);
