@@ -1,3 +1,13 @@
+suspend-blocker (0.01.13) trusty; urgency=low
+
+  * Makefile: bump version
+  * Update copyright
+  * Cater for suspend wakeups for Nexus 10, fix counter bug
+  * Add in support for newer /sys wakelock interface
+  * Update debian standards version
+
+ -- Colin King <colin.king@canonical.com>  Fri, 7 Feb 2014 14:38:00 +0000
+
 suspend-blocker (0.01.12) trusty; urgency=low
 
   * Makefile: bump version
