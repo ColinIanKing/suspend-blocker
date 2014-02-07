@@ -847,21 +847,15 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	time_delta_info *suspend_interval_list = NULL;
 	time_delta_info *suspend_duration_list = NULL;
 	bool needs_config_suspend_time = true;
-	json_object *result;
+	json_object *result, *obj;
 
 	counter_info wakelocks[HASH_SIZE];
 	counter_info resume_causes[HASH_SIZE];
 
 	if (json_results) {
-		json_object *obj;
-
-		if ((obj = json_array()) == NULL)
-			goto out;
-		json_object_object_add(json_results, "wakelock-stats-from-klog", obj);
-
 		if ((result = json_obj()) == NULL)
 			goto out;
-		json_object_array_add(obj, result);
+		json_object_array_add(json_results, result);
 
 		if ((obj = json_str(filename)) == NULL)
 			goto out;
@@ -1329,10 +1323,20 @@ int main(int argc, char **argv)
 		wakelock_free();
 	}
 	else {
+		json_object *obj;
+
 		if (optind == argc) {
 			print("stdin:\n");
 			suspend_blocker(stdin, "stdin", json_results);
 		}
+
+		if (json_results) {
+			if ((obj = json_array()) == NULL)
+				exit(EXIT_FAILURE);
+		}
+
+		json_object_object_add(json_results, "wakelock-stats-from-klog", obj);
+
 		while (optind < argc) {
 			FILE *fp;
 	
@@ -1341,7 +1345,7 @@ int main(int argc, char **argv)
 				fprintf(stderr, "Cannot open %s.\n", argv[optind]);
 				exit(EXIT_FAILURE);
 			}
-			suspend_blocker(fp, argv[optind], json_results);
+			suspend_blocker(fp, argv[optind], obj);
 			fclose(fp);
 			optind++;
 		}
