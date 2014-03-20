@@ -738,7 +738,7 @@ static void histogram_dump(time_delta_info *info, const char *message)
 		double d = tdi->delta;
 		next = tdi->next;
 
-		for (i = 0; i < MAX_INTERVALS && d > 0.125; i++)
+		for (i = 0; (i < MAX_INTERVALS - 1) && (d > 0.125); i++)
 			d = d / 2.0;
 
 		histogram[i]++;
