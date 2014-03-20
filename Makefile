@@ -13,8 +13,11 @@ suspend-blocker.8.gz: suspend-blocker.8
 	gzip -c $< > $@
 
 dist:
-	git archive --format=tar --prefix="suspend-blocker-$(VERSION)/" V$(VERSION) | \
-		gzip > suspend-blocker-$(VERSION).tar.gz
+	rm -rf suspend-blocker-$(VERSION)
+	mkdir suspend-blocker-$(VERSION)
+	cp -rp Makefile suspend-blocker.c suspend-blocker.8 COPYING suspend-blocker-$(VERSION)
+	tar -zcf suspend-blocker-$(VERSION).tar.gz suspend-blocker-$(VERSION)
+	rm -rf suspend-blocker-$(VERSION)
 
 clean:
 	rm -f suspend-blocker suspend-blocker.o suspend-blocker.8.gz
