@@ -1,3 +1,14 @@
+suspend-blocker (0.01.15) trusty; urgency=low
+
+  * Makefile: bump version
+  * Fix out of bounds array indexing error found by Coverity Scan
+  * Fix json errors found by Coverity Scan
+  * Reduce variable scopes
+  * Makefile: Fix make dist, use plain old tar to omit debian contents
+  * Add COPYING file
+
+ -- Colin King <colin.king@canonical.com>  Thu, 20 Feb 2014 15:57:22 +0000
+
 suspend-blocker (0.01.14) trusty; urgency=low
 
   * Makefile: bump version again
