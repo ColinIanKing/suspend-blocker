@@ -175,6 +175,7 @@ static void wakelock_new(const char *name, wakelock_stats *wakelock, int nstat)
 			}
 			wakelocks[h]->name = strdup(name);
 			if (!wakelocks[h]->name) {
+				free(wakelocks[h]);
 				fprintf(stderr, "Out of memory\n");
 				exit(EXIT_FAILURE);
 			}
@@ -848,7 +849,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	time_delta_info *suspend_interval_list = NULL;
 	time_delta_info *suspend_duration_list = NULL;
 	bool needs_config_suspend_time = true;
-	json_object *result, *obj;
+	json_object *result = NULL, *obj;
 
 	counter_info wakelocks[HASH_SIZE];
 	counter_info resume_causes[HASH_SIZE];
@@ -1324,7 +1325,7 @@ int main(int argc, char **argv)
 		wakelock_free();
 	}
 	else {
-		json_object *obj;
+		json_object *obj = NULL;
 
 		if (optind == argc) {
 			print("stdin:\n");
@@ -1334,9 +1335,8 @@ int main(int argc, char **argv)
 		if (json_results) {
 			if ((obj = json_array()) == NULL)
 				exit(EXIT_FAILURE);
+			json_object_object_add(json_results, "wakelock-stats-from-klog", obj);
 		}
-
-		json_object_object_add(json_results, "wakelock-stats-from-klog", obj);
 
 		while (optind < argc) {
 			FILE *fp;
