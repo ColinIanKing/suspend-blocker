@@ -141,9 +141,10 @@ static int print(const char *format, ...)
  */
 static unsigned long hash_pjw(const char *str)
 {
-  	unsigned long h = 0, g;
+  	unsigned long h = 0;
 
 	while (*str) {
+		unsigned long g;
 		h = (h << 4) + (*str);
 		if (0 != (g = h & 0xf0000000)) {
 			h = h ^ (g >> 24);
