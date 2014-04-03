@@ -1,3 +1,10 @@
+suspend-blocker (0.01.16) trusty; urgency=low
+
+  * Makefile: bump version
+  * Allow suspend-blocker to be interrupted and dump stats immediately
+
+ -- Colin King <colin.king@canonical.com>  Thu, 3 Mar 2014 14:28:41 +0100
+
 suspend-blocker (0.01.15) trusty; urgency=low
 
   * Makefile: bump version
