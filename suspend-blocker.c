@@ -27,6 +27,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <float.h>
+#include <signal.h>
 #include <sys/time.h>
 #include <json/json.h>
 
@@ -109,6 +110,7 @@ typedef struct time_delta_info {
 static int opt_flags;
 static double opt_wakelock_duration;
 static wakelock_info *wakelocks[HASH_SIZE];
+static bool keep_running = true;
 
 /*
  *  timeval_to_double()
@@ -1253,6 +1255,11 @@ void show_help(char * const argv[])
 	printf("\t-w profile wakelocks.\n");
 }
 
+void sighandler(int dummy)
+{
+	(void)dummy;
+	keep_running = false;
+}
 
 int main(int argc, char **argv)
 {
@@ -1303,6 +1310,10 @@ int main(int argc, char **argv)
 		int ret;
 		double duration;
 
+		signal(SIGINT, sighandler);
+		signal(SIGUSR1, sighandler);
+		signal(SIGUSR2, sighandler);
+
 		gettimeofday(&tv_start, NULL);
 
 		do {
@@ -1311,20 +1322,25 @@ int main(int argc, char **argv)
 			tv.tv_usec = (long)((opt_wakelock_duration - tv.tv_sec) * 1000000.0);
 			ret = select(0, NULL, NULL, NULL, &tv);
 			if (ret < 0) {
-				if (errno != EINTR) {
+				if (errno == EINTR) {
+					fprintf(stderr, "Interrupted by a signal\n");
+					gettimeofday(&tv_now, NULL);
+					duration = timeval_to_double(&tv_now) - timeval_to_double(&tv_start);
+					break;
+				}
+				if (errno) {
 					fprintf(stderr, "Select failed: %s\n", strerror(errno));
 					exit(EXIT_FAILURE);
 				}
 			}
 			gettimeofday(&tv_now, NULL);
 			duration = timeval_to_double(&tv_now) - timeval_to_double(&tv_start);
-		} while (duration < opt_wakelock_duration);
+		} while (keep_running && (duration < opt_wakelock_duration));
 
 		wakelock_read(WAKELOCK_END);
 		wakelock_check(opt_wakelock_duration, duration, json_results);
 		wakelock_free();
-	}
-	else {
+	} else {
 		json_object *obj = NULL;
 
 		if (optind == argc) {
