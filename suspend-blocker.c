@@ -1343,15 +1343,16 @@ int main(int argc, char **argv)
 	} else {
 		json_object *obj = NULL;
 
-		if (optind == argc) {
-			print("stdin:\n");
-			suspend_blocker(stdin, "stdin", json_results);
-		}
 
 		if (json_results) {
 			if ((obj = json_array()) == NULL)
 				exit(EXIT_FAILURE);
 			json_object_object_add(json_results, "wakelock-stats-from-klog", obj);
+		}
+
+		if (optind == argc) {
+			print("stdin:\n");
+			suspend_blocker(stdin, "stdin", obj);
 		}
 
 		while (optind < argc) {
