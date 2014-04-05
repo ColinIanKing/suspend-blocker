@@ -1,3 +1,10 @@
+suspend-blocker (0.01.17) trusty; urgency=low
+
+  * Makefile: bump version
+  * fix json output when taking data from stdin
+
+ -- Colin King <colin.king@canonical.com>  Sat, 5 Apr 2014 10:37:28 +0100
+
 suspend-blocker (0.01.16) trusty; urgency=low
 
   * Makefile: bump version
