@@ -1,6 +1,6 @@
-VERSION=0.01.16
+VERSION=0.01.17
 
-CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"'
+CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -g
 LDFLAGS += -ljson
 
 BINDIR=/usr/bin
