@@ -533,7 +533,7 @@ static int counter_info_cmp(const void *p1, const void *p2)
 	int diff = w2->count - w1->count;
 
 	if ((diff == 0) && (w1->count | w2->count))
-		return strcmp(w1->name, w1->name);
+		return strcmp(w1->name, w2->name);
 	else
 		return diff;
 }
