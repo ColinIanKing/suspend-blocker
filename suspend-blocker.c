@@ -782,12 +782,18 @@ static void parse_pm_timestamp(const char *ptr, timestamp *ts)
 {
 	struct tm tm;
 	double sec;
+	int n;
 
 	memset(&tm, 0, sizeof(tm));
 
-	sscanf(ptr, "%d-%d-%d %d:%d:%lf",
+	n = sscanf(ptr, "%d-%d-%d %d:%d:%lf",
 		&tm.tm_year, &tm.tm_mon, &tm.tm_mday,
 		&tm.tm_hour, &tm.tm_min, &sec);
+	if (n != 6) {
+		ts->pm_whence = -1.0;
+		ts->pm_whence_valid = false;
+		return;
+	}
 
 	sprintf(ts->whence_text, "%2.2d:%2.2d:%08.5f",
 		tm.tm_hour, tm.tm_min, sec);
@@ -813,12 +819,15 @@ static void parse_timestamp(const char *line, timestamp *ts)
 	ptr1 = strstr(line, "[");
 	ptr2 = strstr(line, "]");
 
+	ts->whence_valid = false;
+	ts->whence = -1.0;
+
 	if (ptr1 && ptr2 && ptr2 > ptr1) {
-		sscanf(ptr1 + 1, "%lf", &ts->whence);
-		ts->whence_valid = true;
-	} else {
-		ts->whence = 0.0;
-		ts->whence_valid = false;
+		int n = sscanf(ptr1 + 1, "%lf", &ts->whence);
+		if (n == 1)
+			ts->whence_valid = true;
+		else
+			ts->whence = -1.0;
 	}
 
 	sprintf(ts->whence_text, "%12.6f  ", ts->whence);
@@ -894,6 +903,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	while (fgets(buf, sizeof(buf), fp) != NULL) {
 		char *ptr, *cause;
 		size_t len = strlen(buf);
+		bool valid = false;
 
 		if (buf[len - 1] == '\n')
 			buf[len - 1] = '\0';
@@ -1004,12 +1014,14 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 				s_start    = suspend_start.whence;
 				s_exit     = suspend_exit.whence;
 				s_duration = s_exit - s_start;
+				valid = true;
 			}
 			/*  2nd, if we have suspend_duration_parsed, then use this */
 			if (suspend_duration_parsed > 0.0) {
 				s_duration = suspend_duration_parsed;
 				suspend_duration_parsed = -1.0;
 				s_duration_accurate = true;
+				valid = true;
 			}
 			/*  3rd, most accurate estimate should always be considered */
 			if (suspend_start.pm_whence_valid && suspend_exit.pm_whence_valid) {
@@ -1017,6 +1029,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 				s_exit  = suspend_exit.pm_whence;
 				s_duration = s_exit - s_start;
 				s_duration_accurate = true;
+				valid = true;
 			}
 
 			timestamp_init(&suspend_start);
@@ -1041,7 +1054,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 
 				suspend_succeeded++;
 
-				if (last_exit > 0.0) {
+				if (valid && last_exit > 0.0) {
 					new_info = malloc(sizeof(time_delta_info));
 					if (!new_info) {
 						fprintf(stderr, "Out of memory!\n");
