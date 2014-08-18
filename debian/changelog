@@ -1,3 +1,10 @@
+suspend-blocker (0.01.21) utopic; urgency=low
+
+  * Makefile: bump version
+  * Fix mixed pm and non-pm timestamps where one set is not valid
+
+ -- Colin King <colin.king@canonical.com>  Mon, 18 Aug 2014 21:04:01 +0100
+
 suspend-blocker (0.01.20) utopic; urgency=low
 
   * Makefile: bump version
