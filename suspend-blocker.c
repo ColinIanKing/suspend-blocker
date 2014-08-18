@@ -726,7 +726,7 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	double range1, range2;
 	int max = -1;
 	int min = MAX_INTERVALS;
-	time_delta_info *tdi = info, *next;
+	time_delta_info *tdi = info;
 	int total = 0;
 	int accurate = 0;
 
@@ -738,9 +738,8 @@ static void histogram_dump(time_delta_info *info, const char *message)
 			accurate++;
 	}
 
-	for (tdi = info; tdi; ) {
+	for (tdi = info; tdi; tdi = tdi->next) {
 		double d = tdi->delta;
-		next = tdi->next;
 
 		for (i = 0; (i < MAX_INTERVALS - 1) && (d > 0.125); i++)
 			d = d / 2.0;
@@ -750,9 +749,6 @@ static void histogram_dump(time_delta_info *info, const char *message)
 			max = i;
 		if (i < min)
 			min = i;
-
-		free(tdi);
-		tdi = next;
 	}
 
 	print("%s\n", message);
