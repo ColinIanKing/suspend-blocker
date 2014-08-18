@@ -878,7 +878,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	timestamp_init(&suspend_exit);
 
 	while (fgets(buf, sizeof(buf), fp) != NULL) {
-		char *ptr;
+		char *ptr, *cause;
 		size_t len = strlen(buf);
 
 		if (buf[len - 1] == '\n')
@@ -913,8 +913,20 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 		}
 
 		ptr = strstr(buf, "Resume caused by");
+		if (ptr)
+			cause = ptr + 17;
+		else {
+			ptr = strstr(buf, "wake up by");
+			if (ptr) {
+				char *ws;
+
+				cause = ptr + 11;
+				ws = strchr(cause, ' ');
+				if (ws)
+					*ws = '\0';
+			}
+		}
 		if (ptr) {
-			char *cause = ptr + 17;
 			size_t len = strlen(cause);
 
 			state |= STATE_RESUME_CAUSE;
