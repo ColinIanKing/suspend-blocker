@@ -1,3 +1,14 @@
+suspend-blocker (0.01.19) utopic; urgency=low
+
+  * Makefile: bump version
+  * Fix leak on multiple suspend_fail_cause strdups
+  * Free lists
+  * Update tests
+  * Enable for new phone support with older 3.4.x kernel
+  * Add more device support
+
+ -- Colin King <colin.king@canonical.com>  Mon, 18 Aug 2014 17:05:01 +0100
+
 suspend-blocker (0.01.18) utopic; urgency=low
 
   * Makefile: bump version
