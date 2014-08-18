@@ -43,6 +43,8 @@
 #define STATE_DEEP_SUSPEND_START        0x00000040
 #define STATE_DEEP_SUSPEND_END          0x00000080
 #define STATE_RESUME_CAUSE              0x00000100
+#define STATE_FREEZE_TASKS_REFUSE	0x00000200
+#define STATE_SUSPEND_FAIL_CAUSE	0x00000400
 
 #define OPT_WAKELOCK_BLOCKERS		0x00000001
 #define OPT_VERBOSE			0x00000002
@@ -835,6 +837,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	char buf[4096];
 	char wakelock[4096];
 	char *resume_cause = NULL;
+	char *suspend_fail_cause = NULL;
 	int state = STATE_UNDEFINED;
 	timestamp suspend_start, suspend_exit;
 	double last_exit;
@@ -855,6 +858,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 
 	counter_info wakelocks[HASH_SIZE];
 	counter_info resume_causes[HASH_SIZE];
+	counter_info suspend_fail_causes[HASH_SIZE];
 
 	if (json_results) {
 		if ((result = json_obj()) == NULL)
@@ -868,11 +872,12 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 
 	memset(wakelocks, 0, sizeof(wakelocks));
 	memset(resume_causes, 0, sizeof(resume_causes));
+	memset(suspend_fail_causes, 0, sizeof(suspend_fail_causes));
 
 	last_exit = -1.0;
 
 	if (opt_flags & OPT_VERBOSE)
-		print("       When         Duration\n");
+		print("       When         Duration (Seconds)\n");
 
 	timestamp_init(&suspend_start);
 	timestamp_init(&suspend_exit);
@@ -886,7 +891,10 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 
 		ptr = strstr(buf, "PM: suspend entry");
 		if (ptr) {
+			state = STATE_ENTER_SUSPEND;
 			parse_pm_timestamp(ptr + 18, &suspend_start);
+			suspend_duration_parsed = -1.0;
+			continue;
 		}
 		ptr = strstr(buf, "PM: suspend exit");
 		if (ptr) {
@@ -909,6 +917,12 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 			state = STATE_ENTER_SUSPEND;
 			parse_timestamp(buf, &suspend_start);
 			suspend_duration_parsed = -1.0;
+			continue;
+		}
+		if (strstr(buf, "PM: Some devices failed to suspend")) {
+			state |= STATE_SUSPEND_FAIL_CAUSE;
+			suspend_fail_cause = strdup("devices failed to suspend");
+			counter_increment(suspend_fail_cause, suspend_fail_causes);
 			continue;
 		}
 
@@ -962,9 +976,11 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 
 		if (strstr(buf, "suspend: exit suspend") ||
                     strstr(buf, "PM: suspend exit")) {
-			state &= ~STATE_ENTER_SUSPEND;
-			state |= STATE_EXIT_SUSPEND;
-			parse_timestamp(buf, &suspend_exit);
+			if (state & STATE_ENTER_SUSPEND) {
+				state &= ~STATE_ENTER_SUSPEND;
+				state |= STATE_EXIT_SUSPEND;
+				parse_timestamp(buf, &suspend_exit);
+			}
 		}
 
 		if (state & STATE_EXIT_SUSPEND) {
@@ -995,15 +1011,17 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 			timestamp_init(&suspend_exit);
 
 			if (opt_flags & OPT_VERBOSE)
-				print("  %s %11.5f ", suspend_start.whence_text, s_duration);
+				print("%-15s %11.5f ",
+					*suspend_start.whence_text ? suspend_start.whence_text : "<unknown>",
+					s_duration);
 
 			if (state & STATE_SUSPEND_SUCCESS) {
 				time_delta_info *new_info;
 
 				if (opt_flags & OPT_VERBOSE) {
-					print("Successful Suspend. ");
+					print("Successful suspend");
 					if (resume_cause && (state & STATE_RESUME_CAUSE)) {
-						print("Resume cause: %s.", resume_cause);
+						print(", resume cause: %s", resume_cause);
 						free(resume_cause);
 						resume_cause = NULL;
 					}
@@ -1036,19 +1054,38 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 				suspend_duration_list = new_info;
 
 				last_exit = s_exit;
-			} else
+			} else {
 				suspend_failed++;
+				if (opt_flags & OPT_VERBOSE) {
+					if (resume_cause && (state & STATE_RESUME_CAUSE)) {
+						print("Suspend aborted, resume cause: %s\n", resume_cause);
+						free(resume_cause);
+						resume_cause = NULL;
+						state = STATE_UNDEFINED;
+						continue;
+					}
+					if (suspend_fail_cause && (state & STATE_SUSPEND_FAIL_CAUSE)) {
+						print("Suspend aborted, %s\n", suspend_fail_cause);
+						free(suspend_fail_cause);
+						suspend_fail_cause = NULL;
+						state = STATE_UNDEFINED;
+						continue;
+					}
+					if (state & STATE_ACTIVE_WAKELOCK)
+						print("Failed on wakelock %s, ", wakelock);
+					if (state & STATE_FREEZE_ABORTED) {
+						if (state & STATE_FREEZE_TASKS_REFUSE)
+							print("Suspend aborted in freezer, tasks refused to freeze");
+						else 
+							print("Suspend aborted in freezer");
+					}
+					if (state & STATE_LATE_HAS_WAKELOCK)
+						print("Wakelock during power_suspend_late");
+				}
 
-			if (opt_flags & OPT_VERBOSE) {
-				if (state & STATE_ACTIVE_WAKELOCK)
-					print("Failed on wakelock %s ", wakelock);
-				if (state & STATE_FREEZE_ABORTED)
-					print("(Aborted in Freezer).");
-				if (state & STATE_LATE_HAS_WAKELOCK)
-					print("(Wakelock during power_suspend_late)");
-
-				print("\n");
 			}
+			if (opt_flags & OPT_VERBOSE)
+				print("\n");
 			state = STATE_UNDEFINED;
 			continue;
 		}
@@ -1068,18 +1105,25 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 			continue;
 		}
 
-		if (strstr(buf, "Freezing of user space  aborted")) {
+		if (strstr(buf, "Freezing of user space  aborted") ||
+		    strstr(buf, "Freezing of user space aborted")) {
 			state |= STATE_FREEZE_ABORTED;
+			counter_increment("user space freezer abort", suspend_fail_causes);
 			continue;
 		}
 
-		if (strstr(buf, "Freezing of tasks  aborted")) {
+		if (strstr(buf, "Freezing of tasks  aborted") ||
+                    strstr(buf, "Freezing of tasks aborted")) {
 			state |= STATE_FREEZE_ABORTED;
+			counter_increment("tasks freezer abort", suspend_fail_causes);
+			if (strstr(buf, "tasks refusing to freeze"))
+				state |= STATE_FREEZE_TASKS_REFUSE;
 			continue;
 		}
 
 		if (strstr(buf, "power_suspend_late return -11")) {
 			/* See power_suspend_late, has_wake_lock() true, so return -EAGAIN */
+			counter_increment("late suspend wakelock", suspend_fail_causes);
 			state |= STATE_LATE_HAS_WAKELOCK;
 			continue;
 		}
@@ -1098,6 +1142,8 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	if (opt_flags & OPT_RESUME_CAUSES) {
 		print("Resume wakeup causes:\n");
 		counter_dump(resume_causes, "resume-wakeups", result);
+		print("Suspend failure causes:\n");
+		counter_dump(suspend_fail_causes, "suspend-failures", result);
 	}
 
 	time_calc_stats(suspend_interval_list, &interval_mode, &interval_median,
