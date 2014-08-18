@@ -934,8 +934,11 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 		}
 		if (strstr(buf, "PM: Some devices failed to suspend")) {
 			state |= STATE_SUSPEND_FAIL_CAUSE;
-			suspend_fail_cause = strdup("devices failed to suspend");
-			counter_increment(suspend_fail_cause, suspend_fail_causes);
+			/* Pick first failure cause up, ignore rest */
+			if (!suspend_fail_cause) {
+				suspend_fail_cause = strdup("devices failed to suspend");
+				counter_increment(suspend_fail_cause, suspend_fail_causes);
+			}
 			continue;
 		}
 
