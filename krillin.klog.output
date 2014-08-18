@@ -1,0 +1,90 @@
+stdin:
+       When         Duration (Seconds)
+<unknown>           0.05940 Suspend aborted in freezer, tasks refused to freeze
+<unknown>           0.06255 Suspend aborted in freezer, tasks refused to freeze
+<unknown>           0.03941 Suspend aborted in freezer, tasks refused to freeze
+<unknown>           0.54157 Suspend aborted, devices failed to suspend
+<unknown>           1.11648 Successful suspend, resume cause: CONN
+<unknown>          77.95841 Successful suspend, resume cause: CONN
+<unknown>         125.94274 Successful suspend, resume cause: CONN
+<unknown>           8.95003 Successful suspend, resume cause: EINT
+<unknown>           0.06828 Suspend aborted in freezer, tasks refused to freeze
+<unknown>           0.47900 Successful suspend, resume cause: CONN
+<unknown>           0.94780 Successful suspend, resume cause: CONN
+<unknown>          12.95398 Successful suspend, resume cause: CONN
+<unknown>          39.95242 Successful suspend, resume cause: CCIF_MD
+<unknown>          25.50527 Successful suspend, resume cause: CONN
+<unknown>         125.93411 Successful suspend, resume cause: CONN
+<unknown>         125.93615 Successful suspend, resume cause: CONN
+<unknown>         108.94903 Successful suspend, resume cause: CONN
+<unknown>           1.93885 Successful suspend, resume cause: CONN
+<unknown>           0.03320 Suspend aborted in freezer, tasks refused to freeze
+<unknown>          14.75663 Successful suspend, resume cause: CONN
+<unknown>           0.03699 Suspend aborted in freezer, tasks refused to freeze
+<unknown>         125.91330 Successful suspend, resume cause: CONN
+<unknown>          13.94451 Successful suspend, resume cause: EINT
+<unknown>         111.54566 Successful suspend, resume cause: CONN
+<unknown>           0.03530 Suspend aborted in freezer, tasks refused to freeze
+<unknown>         125.90882 Successful suspend, resume cause: CONN
+<unknown>         125.94536 Successful suspend, resume cause: CONN
+<unknown>           0.03471 Suspend aborted in freezer, tasks refused to freeze
+<unknown>         235.90498 Successful suspend, resume cause: EINT
+<unknown>          15.54141 Successful suspend, resume cause: CONN
+<unknown>           0.13939 Successful suspend, resume cause: CONN
+<unknown>           0.03294 Suspend aborted in freezer, tasks refused to freeze
+<unknown>          76.70187 Successful suspend, resume cause: CONN
+<unknown>           1.93648 Successful suspend, resume cause: CONN
+<unknown>          46.93630 Successful suspend, resume cause: CONN
+<unknown>           2.94008 Successful suspend, resume cause: CONN
+<unknown>           0.03434 Suspend aborted in freezer, tasks refused to freeze
+<unknown>         122.77214 Successful suspend, resume cause: CONN
+<unknown>         125.95921 Successful suspend, resume cause: CONN
+<unknown>          88.92930 Successful suspend, resume cause: CONN
+<unknown>           0.03849 Suspend aborted in freezer, tasks refused to freeze
+<unknown>           1.89330 Successful suspend, resume cause: CONN
+<unknown>          34.93864 Successful suspend, resume cause: CONN
+<unknown>          79.94834 Successful suspend, resume cause: EINT
+<unknown>           0.03832 Suspend aborted in freezer, tasks refused to freeze
+<unknown>          45.50503 Successful suspend, resume cause: CONN
+<unknown>         125.94643 Successful suspend, resume cause: CONN
+<unknown>         125.93678 Successful suspend, resume cause: CONN
+<unknown>         125.94213 Successful suspend, resume cause: CONN
+<unknown>          20.93781 Successful suspend, resume cause: CONN
+<unknown>           0.03265 Suspend aborted in freezer, tasks refused to freeze
+<unknown>           0.01817 Suspend aborted in freezer, tasks refused to freeze
+<unknown>         104.66530 Successful suspend, resume cause: CONN
+<unknown>          49.91185 Successful suspend, resume cause: EINT
+<unknown>          16.53546 Successful suspend, resume cause: CONN
+<unknown>          58.95575 Successful suspend, resume cause: CONN
+<unknown>         125.94892 Successful suspend, resume cause: CONN
+<unknown>         125.94394 Successful suspend, resume cause: CONN
+<unknown>           0.94291 Successful suspend, resume cause: EINT
+
+Suspend blocking wakelocks:
+
+Resume wakeup causes:
+  CONN                               37  84.09%
+  EINT                                6  13.64%
+  CCIF_MD                             1   2.27%
+
+Suspend failure causes:
+  tasks freezer abort                14  93.33%
+  devices failed to suspend           1   6.67%
+
+Suspends:
+  15 suspends aborted (25.42%).
+  44 suspends succeeded (74.58%).
+  total time: 2936.292301 seconds (98.60%).
+  minimum: 0.139391 seconds.
+  maximum: 235.904976 seconds.
+  mean: 66.733916 seconds.
+  mode: 125 seconds.
+  median: 58 seconds.
+
+Time between successful suspends:
+  total time: 41.821832 seconds (1.40%).
+  minimum: 0.037172 seconds.
+  maximum: 36.521519 seconds.
+  mean: 0.972601 seconds.
+  mode: 0 seconds.
+  median: 0 seconds.
