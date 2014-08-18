@@ -829,6 +829,19 @@ static void parse_timestamp(const char *line, timestamp *ts)
 }
 
 /*
+ *  free_time_delta_info_list()
+ *	free list
+ */
+static void free_time_delta_info_list(time_delta_info *list)
+{
+	while (list) {
+		time_delta_info *next = list->next;
+		free(list);
+		list = next;
+	}
+}
+
+/*
  *  suspend_blocker()
  *	parse a kernel log looking for suspend/resume and wakelocks
  */
@@ -1261,6 +1274,9 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 
 out:
 	free(resume_cause);
+	free(suspend_fail_cause);
+	free_time_delta_info_list(suspend_interval_list);
+	free_time_delta_info_list(suspend_duration_list);
 }
 
 
