@@ -55,7 +55,7 @@
 #define OPT_PROC_WAKELOCK		0x00000020
 
 #define HASH_SIZE			(1997)
-#define MAX_INTERVALS			(14)
+#define MAX_INTERVALS			(20)
 
 #define WAKELOCK_START			(0)
 #define WAKELOCK_END			(1)
@@ -579,6 +579,7 @@ static void counter_dump(counter_info counter[], const char *label, json_object 
 {
 	int i;
 	int total = 0;
+	bool none = true;
 
 	for (i = 0; i < HASH_SIZE; i++)
 		if (counter[i].name)
@@ -587,10 +588,14 @@ static void counter_dump(counter_info counter[], const char *label, json_object 
 	qsort(counter, HASH_SIZE, sizeof(counter_info), counter_info_cmp);
 
 	for (i = 0; i < HASH_SIZE; i++) {
-		if (counter[i].name)
+		if (counter[i].name) {
 			print("  %-28.28s %8d  %5.2f%%\n", counter[i].name, counter[i].count,
 				100.0 * (double)counter[i].count / (double)total);
+			none = false;
+		}
 	}
+	if (none)
+		printf("  None\n");
 	print("\n");
 
 	if (json_results) {
@@ -736,8 +741,9 @@ static int time_calc_stats(
 static void histogram_dump(time_delta_info *info, const char *message)
 {
 	int histogram[MAX_INTERVALS];
+	double sum[MAX_INTERVALS];
 	int i;
-	double range1, range2;
+	double range1, range2, delta_sum = 0.0;
 	int max = -1;
 	int min = MAX_INTERVALS;
 	time_delta_info *tdi = info;
@@ -745,6 +751,8 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	int accurate = 0;
 
 	memset(histogram, 0, sizeof(histogram));
+	for (i = 0; i < MAX_INTERVALS; i++)
+		sum[i] = 0.0;
 
 	for (tdi = info; tdi; tdi = tdi->next) {
 		total++;
@@ -759,6 +767,8 @@ static void histogram_dump(time_delta_info *info, const char *message)
 			d = d / 2.0;
 
 		histogram[i]++;
+		sum[i] += tdi->delta;
+		delta_sum += tdi->delta;
 		if (i > max)
 			max = i;
 		if (i < min)
@@ -769,13 +779,14 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	if (max == -1) {
 		print("  No values.\n");
 	} else {
+		printf("   Interval (seconds)          Frequency    Cumulative Time (Seconds)\n");
 		for (range1 = 0.0, range2 = 0.125, i = 0; i < MAX_INTERVALS; i++) {
 			if (i >= min && i <= max) {
 				double pc = 100.0 * (double) histogram[i] / (double)total;
 				if (i == MAX_INTERVALS - 1)
-					print("  %8.3f -          seconds    %6d  %5.2f%%\n", range1, histogram[i], pc);
+					print("  %8.3f -              %6d  %5.2f%%  %9.2f  %5.2f%%\n", range1, histogram[i], pc, sum[i], 100.0 * sum[i] / delta_sum);
 				else
-					print("  %8.3f - %8.3f seconds    %6d  %5.2f%%\n", range1, range2 - 0.001, histogram[i], pc);
+					print("  %8.3f - %8.3f     %6d  %5.2f%%  %9.2f  %5.2f%%\n", range1, range2 - 0.001, histogram[i], pc, sum[i], 100.0 * sum[i] / delta_sum);
 			}
 			range1 = range2;
 			range2 = range2 + range2;
