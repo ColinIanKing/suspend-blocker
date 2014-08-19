@@ -792,6 +792,7 @@ static void parse_pm_timestamp(const char *ptr, timestamp *ts)
 	if (n != 6) {
 		ts->pm_whence = -1.0;
 		ts->pm_whence_valid = false;
+		*ts->whence_text = '\0';
 		return;
 	}
 
@@ -824,13 +825,15 @@ static void parse_timestamp(const char *line, timestamp *ts)
 
 	if (ptr1 && ptr2 && ptr2 > ptr1) {
 		int n = sscanf(ptr1 + 1, "%lf", &ts->whence);
-		if (n == 1)
+		if (n == 1) {
 			ts->whence_valid = true;
-		else
+			sprintf(ts->whence_text, "%12.6f  ", ts->whence);
+		} else {
 			ts->whence = -1.0;
+			*ts->whence_text = '\0';
+		}
 	}
 
-	sprintf(ts->whence_text, "%12.6f  ", ts->whence);
 }
 
 /*
@@ -1032,13 +1035,13 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 				valid = true;
 			}
 
-			timestamp_init(&suspend_start);
-			timestamp_init(&suspend_exit);
-
 			if (opt_flags & OPT_VERBOSE)
 				print("%-15s %11.5f ",
 					*suspend_start.whence_text ? suspend_start.whence_text : "<unknown>",
 					s_duration);
+
+			timestamp_init(&suspend_start);
+			timestamp_init(&suspend_exit);
 
 			if (state & STATE_SUSPEND_SUCCESS) {
 				time_delta_info *new_info;
