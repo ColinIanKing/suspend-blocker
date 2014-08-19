@@ -30,6 +30,7 @@
 #include <signal.h>
 #include <sys/time.h>
 #include <json/json.h>
+#include <math.h>
 
 #define APP_NAME			"suspend-blocker"
 
@@ -629,12 +630,18 @@ static void counter_dump(counter_info counter[], const char *label, json_object 
 			free(counter[i].name);
 }
 
-int int_cmp(const void *v1, const void *v2)
+int double_cmp(const void *v1, const void *v2)
 {
-	int *i1 = (int*)v1;
-	int *i2 = (int*)v2;
+	double *i1 = (double *)v1;
+	double *i2 = (double *)v2;
+	double d = *i1 - *i2;
 
-	return *i1 - *i2;
+
+	if (d < 0.0)
+		return -1;
+	if (d > 0.0)
+		return 1;
+	return 0;
 }
 
 /*
@@ -643,8 +650,8 @@ int int_cmp(const void *v1, const void *v2)
  */
 static int time_calc_stats(
 	time_delta_info *info,
-	int *mode,
-	int *median,
+	double *mode,
+	double *median,
 	double *mean,
 	double *min,
 	double *max,
@@ -652,12 +659,12 @@ static int time_calc_stats(
 {
 	time_delta_info *tdi;
 	int total;
-	int *deltas;
+	double *deltas;
 	int i;
 	int count = 0, max_count = 0, delta = -1;
 
-	*mode = 0;
-	*median = 0;
+	*mode = 0.0;
+	*median = 0.0;
 	*mean = 0.0;
 	*min = 0.0;
 	*max = 0.0;
@@ -682,20 +689,21 @@ static int time_calc_stats(
 
 	*mean = *sum / (double)total;
 
-	deltas = calloc(total, sizeof(int));
+	deltas = calloc(total, sizeof(double));
 	if (deltas == NULL) {
 		fprintf(stderr, "Cannot allocate array for mode calculation.\n");
 		return 1;
 	}
 
 	for (i = 0, tdi = info; tdi; i++, tdi = tdi->next)
-		deltas[i] = (int)tdi->delta;
+		deltas[i] = tdi->delta;
 
-	qsort(deltas, total, sizeof(int), int_cmp);
+	qsort(deltas, total, sizeof(double), double_cmp);
 
+	/* Calculate mode to nearest 1/2 second */
 	for (i = 0; i < total; i++) {
-		if (delta != deltas[i]) {
-			delta = deltas[i];
+		if (delta != (int)rint(2.0 * deltas[i])) {
+			delta = (int)rint(2.0 * deltas[i]);
 			count = 1;
 		} else {
 			count++;
@@ -703,12 +711,18 @@ static int time_calc_stats(
 
 		if (count >= max_count) {
 			max_count = count;
-			*mode = delta;
+			*mode = delta / 2.0;
 		}
 
 	}
 
-	*median = deltas[total / 2];
+	/* Calculate median */
+	if (total % 2 == 1) {
+		*median = deltas[total / 2];
+	} else {
+		*median = (deltas[total / 2] +
+			  deltas[(total / 2) - 1]) / 2.0;
+	}
 
 	free(deltas);
 
@@ -865,8 +879,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	int suspend_succeeded = 0;
 	int suspend_failed = 0;
 	int suspend_count;
-	int interval_mode, interval_median;
-	int suspend_mode, suspend_median;
+	double interval_mode, interval_median, suspend_mode, suspend_median;
 	double interval_mean, interval_min, interval_max, interval_sum, interval_percent;
 	double suspend_mean, suspend_min, suspend_max, suspend_sum, suspend_percent;
 	double total_percent;
@@ -1201,16 +1214,16 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	print("  minimum: %f seconds.\n", suspend_min);
 	print("  maximum: %f seconds.\n", suspend_max);
 	print("  mean: %f seconds.\n", suspend_mean);
-	print("  mode: %d seconds.\n", suspend_mode);
-	print("  median: %d seconds.\n", suspend_median);
+	print("  mode: %f seconds.\n", suspend_mode);
+	print("  median: %f seconds.\n", suspend_median);
 
 	print("\nTime between successful suspends:\n");
 	print("  total time: %f seconds (%.2f%%).\n", interval_sum, interval_percent);
 	print("  minimum: %f seconds.\n", interval_min);
 	print("  maximum: %f seconds.\n", interval_max);
 	print("  mean: %f seconds.\n", interval_mean);
-	print("  mode: %d seconds.\n", interval_mode);
-	print("  median: %d seconds.\n", interval_median);
+	print("  mode: %f seconds.\n", interval_mode);
+	print("  median: %f seconds.\n", interval_median);
 
 	if ((suspend_count > 0) && needs_config_suspend_time) {
 		print("\nNOTE: suspend times are very dubious, enable kernel config setting\n");
@@ -1254,10 +1267,10 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 		if ((obj = json_double(suspend_mean)) == NULL)
 			goto out;
 		json_object_object_add(result, "suspend-mean-duration-seconds", obj);
-		if ((obj = json_int(suspend_mode)) == NULL)
+		if ((obj = json_double(suspend_mode)) == NULL)
 			goto out;
 		json_object_object_add(result, "suspend-mode-duration-seconds", obj);
-		if ((obj = json_int(suspend_median)) == NULL)
+		if ((obj = json_double(suspend_median)) == NULL)
 			goto out;
 		json_object_object_add(result, "suspend-median-duration-seconds", obj);
 
@@ -1279,10 +1292,10 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 		if ((obj = json_double(interval_mean)) == NULL)
 			goto out;
 		json_object_object_add(result, "awake-mean-duration-seconds", obj);
-		if ((obj = json_int(interval_mode)) == NULL)
+		if ((obj = json_double(interval_mode)) == NULL)
 			goto out;
 		json_object_object_add(result, "awake-mode-duration-seconds", obj);
-		if ((obj = json_int(interval_median)) == NULL)
+		if ((obj = json_double(interval_median)) == NULL)
 			goto out;
 		json_object_object_add(result, "awake-median-duration-seconds", obj);
 	}
