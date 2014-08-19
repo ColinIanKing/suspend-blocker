@@ -53,9 +53,10 @@
 #define OPT_RESUME_CAUSES		0x00000008
 #define OPT_QUIET			0x00000010
 #define OPT_PROC_WAKELOCK		0x00000020
+#define OPT_HISTOGRAM_DECADES		0x00000040
 
 #define HASH_SIZE			(1997)
-#define MAX_INTERVALS			(20)
+#define MAX_INTERVALS			(30)
 
 #define WAKELOCK_START			(0)
 #define WAKELOCK_END			(1)
@@ -743,7 +744,7 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	int histogram[MAX_INTERVALS];
 	double sum[MAX_INTERVALS];
 	int i;
-	double range1, range2, delta_sum = 0.0;
+	double delta_sum = 0.0;
 	int max = -1;
 	int min = MAX_INTERVALS;
 	time_delta_info *tdi = info;
@@ -763,8 +764,12 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	for (tdi = info; tdi; tdi = tdi->next) {
 		double d = tdi->delta;
 
-		for (i = 0; (i < MAX_INTERVALS - 1) && (d > 0.125); i++)
-			d = d / 2.0;
+		for (i = 0; (i < MAX_INTERVALS - 1) && (d > 0.125); i++) {
+			if (opt_flags & OPT_HISTOGRAM_DECADES)
+				d = d - 10.0;
+			else
+				d = d / 2.0;
+		}
 
 		histogram[i]++;
 		sum[i] += tdi->delta;
@@ -779,8 +784,15 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	if (max == -1) {
 		print("  No values.\n");
 	} else {
+		double range1 = 0.0, range2;
+
+		if (opt_flags & OPT_HISTOGRAM_DECADES) 
+			range2 = 10.0;
+		else
+			range2 = 0.125;
+
 		printf("   Interval (seconds)          Frequency    Cumulative Time (Seconds)\n");
-		for (range1 = 0.0, range2 = 0.125, i = 0; i < MAX_INTERVALS; i++) {
+		for (range1 = 0.0, i = 0; i < MAX_INTERVALS; i++) {
 			if (i >= min && i <= max) {
 				double pc = 100.0 * (double) histogram[i] / (double)total;
 				if (i == MAX_INTERVALS - 1)
@@ -789,7 +801,10 @@ static void histogram_dump(time_delta_info *info, const char *message)
 					print("  %8.3f - %8.3f     %6d  %5.2f%%  %9.2f  %5.2f%%\n", range1, range2 - 0.001, histogram[i], pc, sum[i], 100.0 * sum[i] / delta_sum);
 			}
 			range1 = range2;
-			range2 = range2 + range2;
+			if (opt_flags & OPT_HISTOGRAM_DECADES)
+				range2 += 10.0;
+			else
+				range2 = range2 + range2;
 		}
 		if (accurate != total) {
 			print("NOTE: %5.2f%% of the samples were inaccurate estimates.\n",
@@ -1360,6 +1375,7 @@ void show_help(char * const argv[])
 	printf("%s, version %s\n\n", APP_NAME, VERSION);
 	printf("usage: %s [options] [kernel_log]\n", argv[0]);
 	printf("\t-b list blocking wakelock names and count.\n");
+	printf("\t-d bucket histogram into 10s of seconds rather than powers of 2.\n");
 	printf("\t-h this help.\n");
 	printf("\t-H histogram of times between suspend and suspend duration.\n");
 	printf("\t-o output results in json format to an named files.\n");
@@ -1380,12 +1396,15 @@ int main(int argc, char **argv)
 	json_object *json_results = NULL;
 
 	for (;;) {
-		int c = getopt(argc, argv, "bhHrvo:qw:");
+		int c = getopt(argc, argv, "bhHrvo:qw:d");
 		if (c == -1)
 			break;
 		switch (c) {
 		case 'b':
 			opt_flags |= OPT_WAKELOCK_BLOCKERS;
+			break;
+		case 'd':
+			opt_flags |= OPT_HISTOGRAM_DECADES;
 			break;
 		case 'r':
 			opt_flags |= OPT_RESUME_CAUSES;
