@@ -1,3 +1,13 @@
+suspend-blocker (0.01.22) utopic; urgency=low
+
+  * Makefile: bump version
+  * Bucket data in decades (x 10) rather than in powers of two (-d option)
+  * Annotate histogram
+  * Calculate median and mode correctly
+  * Clear whence time stamp after we have dumped out the whence_text field
+
+ -- Colin King <colin.king@canonical.com>  Tue, 19 Aug 2014 12:14:12 +0100
+
 suspend-blocker (0.01.21) utopic; urgency=low
 
   * Makefile: bump version
