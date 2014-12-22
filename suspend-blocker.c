@@ -1224,8 +1224,8 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 
 		ptr = strstr(buf, "active wake lock");
 		if (ptr && (state & STATE_ENTER_SUSPEND)) {
-			sscanf(ptr + 17, "%[^,^\n]", wakelock);
-			if (opt_flags & OPT_WAKELOCK_BLOCKERS)
+			if ((sscanf(ptr + 17, "%[^,^\n]", wakelock) == 1) &&
+			    (opt_flags & OPT_WAKELOCK_BLOCKERS))
 				counter_increment(wakelock, wakelocks);
 			state |= STATE_ACTIVE_WAKELOCK;
 			continue;
