@@ -185,7 +185,7 @@ static const int signals[] = {
  *  timeval_to_double()
  *	convert timeval to seconds as a double
  */
-double timeval_to_double(const struct timeval *tv)
+static double timeval_to_double(const struct timeval *tv)
 {
 	return (double)tv->tv_sec + ((double)tv->tv_usec / 1000000.0);
 }
@@ -399,7 +399,7 @@ static int wakelock_read(const int nstat)
  *  wakelock_sort()
  *	qsort comparitor to sort wakelock hack by wakelock name
  */
-int wakelock_sort(const void *p1, const void *p2)
+static int wakelock_sort(const void *p1, const void *p2)
 {
 	wakelock_info **w1 = (wakelock_info **)p1;
 	wakelock_info **w2 = (wakelock_info **)p2;
@@ -418,7 +418,7 @@ int wakelock_sort(const void *p1, const void *p2)
  *  json_null
  *	report error if json object is null
  */
-void json_null(json_object *obj, char *name)
+static void json_null(json_object *obj, char *name)
 {
 	if (obj == NULL)
 		fprintf(stderr, "Cannot allocate json %s.\n", name);
@@ -488,7 +488,7 @@ static json_object *json_obj(void)
  *  wakelock_check()
  *	check wakelock activity
  */
-void wakelock_check(double request_duration, double duration, json_object *json_results)
+static void wakelock_check(double request_duration, double duration, json_object *json_results)
 {
 	int i;
 	json_object *results, *obj, *array, *wl_item;
@@ -701,7 +701,7 @@ static void counter_dump(counter_info counter[], const char *label, json_object 
 			free(counter[i].name);
 }
 
-int double_cmp(const void *v1, const void *v2)
+static int double_cmp(const void *v1, const void *v2)
 {
 	double *i1 = (double *)v1;
 	double *i2 = (double *)v2;
@@ -1435,7 +1435,7 @@ static int json_write(json_object *obj, const char *filename)
 	return 0;
 }
 
-void show_help(char * const argv[])
+static void show_help(char * const argv[])
 {
 	printf("%s, version %s\n\n", APP_NAME, VERSION);
 	printf("usage: %s [options] [kernel_log]\n", argv[0]);
