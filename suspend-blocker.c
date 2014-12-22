@@ -89,7 +89,7 @@ typedef struct {
 
 typedef struct {
 	char 		*name;		/* name of wakelock */
-	wakelock_stats	stats[2];	/* wakelock strat + end stats */
+	wakelock_stats	stats[2];	/* wakelock start + end stats */
 } wakelock_info;
 
 typedef struct {
@@ -192,7 +192,7 @@ static double timeval_to_double(const struct timeval *tv)
 
 /*
  *  print
- *	printf that can be supressed when OPT_QUIET is set
+ *	printf that can be suppressed when OPT_QUIET is set
  */
 static int print(const char *format, ...)
 {
