@@ -117,6 +117,71 @@ static wakelock_info *wakelocks[HASH_SIZE];
 static bool keep_running = true;
 
 /*
+ *  Attempt to catch a range of signals so
+ *  we can clean
+ */
+static const int signals[] = {
+	/* POSIX.1-1990 */
+#ifdef SIGHUP
+	SIGHUP,
+#endif
+#ifdef SIGINT
+	SIGINT,
+#endif
+#ifdef SIGQUIT
+	SIGQUIT,
+#endif
+#ifdef SIGILL
+	SIGILL,
+#endif
+#ifdef SIGABRT
+	SIGABRT,
+#endif
+#ifdef SIGFPE
+	SIGFPE,
+#endif
+#ifdef SIGSEGV
+	SIGSEGV,
+#endif
+#ifdef SIGTERM
+	SIGTERM,
+#endif
+#ifdef SIGUSR1
+	SIGUSR1,
+#endif
+#ifdef SIGUSR2
+	SIGUSR2,
+	/* POSIX.1-2001 */
+#endif
+#ifdef SIGBUS
+	SIGBUS,
+#endif
+#ifdef SIGXCPU
+	SIGXCPU,
+#endif
+#ifdef SIGXFSZ
+	SIGXFSZ,
+#endif
+	/* Linux various */
+#ifdef SIGIOT
+	SIGIOT,
+#endif
+#ifdef SIGSTKFLT
+	SIGSTKFLT,
+#endif
+#ifdef SIGPWR
+	SIGPWR,
+#endif
+#ifdef SIGINFO
+	SIGINFO,
+#endif
+#ifdef SIGVTALRM
+	SIGVTALRM,
+#endif
+	-1,
+};
+
+/*
  *  timeval_to_double()
  *	convert timeval to seconds as a double
  */
@@ -1384,7 +1449,7 @@ void show_help(char * const argv[])
 	printf("\t-w profile wakelocks.\n");
 }
 
-void sighandler(int dummy)
+static void handle_sig(int dummy)
 {
 	(void)dummy;
 	keep_running = false;
@@ -1438,13 +1503,23 @@ int main(int argc, char **argv)
 	}
 
 	if (opt_flags & OPT_PROC_WAKELOCK) {
+		struct sigaction new_action;
 		struct timeval tv, tv_start, tv_now;
-		int ret;
+		int ret, i;
 		double duration;
 
-		signal(SIGINT, sighandler);
-		signal(SIGUSR1, sighandler);
-		signal(SIGUSR2, sighandler);
+		memset(&new_action, 0, sizeof(new_action));
+		for (i = 0; signals[i] != -1; i++) {
+			new_action.sa_handler = handle_sig;
+			sigemptyset(&new_action.sa_mask);
+			new_action.sa_flags = 0;
+
+			if (sigaction(signals[i], &new_action, NULL) < 0) {
+				fprintf(stderr, "sigaction failed: errno=%d (%s)\n",
+					errno, strerror(errno));
+				exit(EXIT_FAILURE);
+			}
+		}
 
 		gettimeofday(&tv_start, NULL);
 
