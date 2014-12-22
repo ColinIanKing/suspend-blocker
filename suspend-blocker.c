@@ -269,7 +269,7 @@ static int wakelock_read_sys(const int nstat)
 		    ) == 10)
 			wakelock_update(name, &wakelock, nstat);
 	}
-	fclose(fp);
+	(void)fclose(fp);
 
 	return 0;
 }
@@ -310,7 +310,7 @@ static int wakelock_read_proc(const int nstat)
 			wakelock_update(name, &wakelock, nstat);
 		}
 	}
-	fclose(fp);
+	(void)fclose(fp);
 
 	return 0;
 }
@@ -1496,7 +1496,7 @@ int main(int argc, char **argv)
 				exit(EXIT_FAILURE);
 			}
 			suspend_blocker(fp, argv[optind], obj);
-			fclose(fp);
+			(void)fclose(fp);
 			optind++;
 		}
 	}
