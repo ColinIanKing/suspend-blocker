@@ -1521,7 +1521,11 @@ int main(int argc, char **argv)
 			}
 		}
 
-		gettimeofday(&tv_start, NULL);
+		if (gettimeofday(&tv_start, NULL) < 0) {
+			fprintf(stderr, "gettimeofday failed: errno=%d (%s)\n",
+				errno, strerror(errno));
+			exit(EXIT_FAILURE);
+		}
 
 		do {
 			wakelock_read(WAKELOCK_START);
@@ -1531,7 +1535,11 @@ int main(int argc, char **argv)
 			if (ret < 0) {
 				if (errno == EINTR) {
 					fprintf(stderr, "Interrupted by a signal\n");
-					gettimeofday(&tv_now, NULL);
+					if (gettimeofday(&tv_now, NULL) < 0) {
+						fprintf(stderr, "gettimeofday failed: errno=%d (%s)\n",
+							errno, strerror(errno));
+						exit(EXIT_FAILURE);
+					}
 					duration = timeval_to_double(&tv_now) - timeval_to_double(&tv_start);
 					break;
 				}
@@ -1540,7 +1548,11 @@ int main(int argc, char **argv)
 					exit(EXIT_FAILURE);
 				}
 			}
-			gettimeofday(&tv_now, NULL);
+			if (gettimeofday(&tv_now, NULL) < 0) {
+				fprintf(stderr, "gettimeofday failed: errno=%d (%s)\n",
+					errno, strerror(errno));
+				exit(EXIT_FAILURE);
+			}
 			duration = timeval_to_double(&tv_now) - timeval_to_double(&tv_start);
 		} while (keep_running && (duration < opt_wakelock_duration));
 
