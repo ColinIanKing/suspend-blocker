@@ -971,7 +971,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	int suspend_failed = 0;
 	int suspend_count;
 	double interval_mode, interval_median, suspend_mode, suspend_median;
-	double interval_mean, interval_min, interval_max, interval_sum, interval_percent;
+	double interval_mean, interval_min, interval_max = 0.0, interval_sum, interval_percent;
 	double suspend_mean, suspend_min, suspend_max, suspend_sum, suspend_percent;
 	double total_percent;
 	double percent_succeeded, percent_failed;
