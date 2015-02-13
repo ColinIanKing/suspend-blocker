@@ -1,11 +1,11 @@
 stdin:
        When         Duration (Seconds)
-<unknown>           2.87700 Successful suspend, resume cause: WAKE32, bcmsdh_sdmmc
-<unknown>           3.05200 Successful suspend, resume cause: WAKE32, bcmsdh_sdmmc
-<unknown>           0.01289 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
-<unknown>           2.68900 Successful suspend, resume cause: WAKE32, bcmsdh_sdmmc
-<unknown>           0.01417 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
-<unknown>           0.26223 Failed on wakelock event2-132, Wakelock during power_suspend_late
+  641.957571        2.87700 Successful suspend, resume cause: WAKE32, bcmsdh_sdmmc
+  644.654226        3.05200 Successful suspend, resume cause: WAKE32, bcmsdh_sdmmc
+  647.404993        0.01289 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
+  648.420895        2.68900 Successful suspend, resume cause: WAKE32, bcmsdh_sdmmc
+  649.890970        0.01417 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
+  650.937623        0.26223 Failed on wakelock event2-132, Wakelock during power_suspend_late
 
 Suspend blocking wakelocks:
   wlan_rx_wake                        2  50.00%
@@ -26,13 +26,13 @@ Suspends:
   minimum: 2.689000 seconds.
   maximum: 3.052000 seconds.
   mean: 2.872667 seconds.
-  mode: 2 seconds.
-  median: 2 seconds.
+  mode: 3.000000 seconds.
+  median: 2.877000 seconds.
 
 Time between successful suspends:
   total time: 5.866085 seconds (40.50%).
   minimum: 2.368570 seconds.
   maximum: 3.497515 seconds.
   mean: 2.933042 seconds.
-  mode: 3 seconds.
-  median: 3 seconds.
+  mode: 3.500000 seconds.
+  median: 2.933042 seconds.

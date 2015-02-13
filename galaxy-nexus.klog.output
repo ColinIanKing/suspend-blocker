@@ -1,72 +1,72 @@
 stdin:
        When         Duration (Seconds)
-<unknown>           6.44900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          19.45000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.31500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          26.94100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.41000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          26.73600 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.73900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          17.21400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          10.42300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          28.80900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           3.09900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           3.08100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          20.06100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          27.36800 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          29.82900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          18.03900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           9.54300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           8.99500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          18.52800 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           7.91300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          19.25300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          28.57500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          28.93100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          14.87000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           2.19600 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           8.74100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          16.70300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.13535 Failed on wakelock wlan_rx_wake, 
-<unknown>           0.03720 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
-<unknown>           0.51900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           9.49200 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.01639 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
-<unknown>          13.27400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          25.71900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           2.12100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          28.78000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          11.41000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           2.87000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          11.86400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          26.55300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.97200 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           5.84100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          21.72500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          26.42100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.96600 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          28.76100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          16.53900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          10.97700 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           2.48900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          25.09400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           6.25000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>          13.43000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.02036 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
-<unknown>           0.02292 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
-<unknown>           0.33100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           5.07000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.02078 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
-<unknown>           0.25000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.45500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           5.39000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.52400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           2.38900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           7.31400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc
-<unknown>           1.34100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.05100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.08500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
-<unknown>           0.01492 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
+  342.331817        6.44900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  343.549591       19.45000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  344.785034        0.31500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  346.002044       26.94100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  347.422698        0.41000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  348.642456       26.73600 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  349.945861        0.73900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  351.179321       17.21400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  352.413146       10.42300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  353.615753       28.80900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  354.810821        3.09900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  356.028717        3.08100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  357.371765       20.06100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  359.074218       27.36800 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  360.291900       29.82900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  361.510498       18.03900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  362.720397        9.54300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  363.962493        8.99500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  365.172973       18.52800 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  366.781616        7.91300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  368.023193       19.25300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  369.256927       28.57500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  370.631622       28.93100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  371.841796       14.87000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  373.621673        2.19600 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  374.832061        8.74100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  376.035095       16.70300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  378.798950        0.13535 Failed on wakelock wlan_rx_wake, 
+  405.401306        0.03720 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
+  417.077239        0.51900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  438.230163        9.49200 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  444.090789        0.01639 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
+  446.968536       13.27400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  455.128021       25.71900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  457.220855        2.12100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  458.447326       28.78000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  459.837341       11.41000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  461.063323        2.87000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  462.304931       11.86400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  463.601287       26.55300 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  464.858917        0.97200 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  466.107818        5.84100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  467.318389       21.72500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  468.543853       26.42100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  469.934356        0.96600 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  471.175903       28.76100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  472.558013       16.53900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  473.752746       10.97700 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  474.962677        2.48900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  476.189086       25.09400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  477.922637        6.25000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  479.133117       13.43000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  486.816497        0.02036 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
+  492.351593        0.02292 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
+  495.382843        0.33100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  496.655670        5.07000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  498.508880        0.02078 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
+  501.746826        0.25000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  503.222686        0.45500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  504.479888        5.39000 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  508.173492        0.52400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  512.953582        2.38900 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  522.899475        7.31400 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc
+  526.110046        1.34100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  527.485931        0.05100 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  528.735778        0.08500 Successful suspend, resume cause: IRQ 162, bcmsdh_sdmmc; IRQ 177, nfc_irq
+  531.936584        0.01492 Failed on wakelock wlan_rx_wake, Suspend aborted in freezer
 
 Suspend blocking wakelocks:
   wlan_rx_wake                        7  100.00%
@@ -86,13 +86,13 @@ Suspends:
   minimum: 0.051000 seconds.
   maximum: 29.829000 seconds.
   mean: 11.974633 seconds.
-  mode: 0 seconds.
-  median: 9 seconds.
+  mode: 0.500000 seconds.
+  median: 9.517500 seconds.
 
 Time between successful suspends:
   total time: 175.205347 seconds (19.60%).
   minimum: 1.022919 seconds.
   maximum: 40.837097 seconds.
   mean: 2.969582 seconds.
-  mode: 1 seconds.
-  median: 1 seconds.
+  mode: 1.000000 seconds.
+  median: 1.053802 seconds.
