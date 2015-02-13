@@ -1,3 +1,11 @@
+suspend-blocker (0.01.24) vivid; urgency=medium
+
+  * Makefile: bump version
+  * Update tests now that stats are fixed
+  * Initialise interval_max, bug found by CoveritScan
+
+ -- Colin King <colin.king@canonical.com>  Fri, 13 Feb 2014 11:46:00 +0000
+
 suspend-blocker (0.01.23) vivid; urgency=medium
 
   * Makefile: bump version
