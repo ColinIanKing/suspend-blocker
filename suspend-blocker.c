@@ -307,7 +307,7 @@ static int wakelock_read_sys(const int nstat)
 			continue;	/* skip header */
 
 		memset(&wakelock, 0, sizeof(wakelock));
-		if (sscanf(buf, "%s"
+		if (sscanf(buf, "%127s"
 		    " %" PRIu64 " %" PRIu64 " %" PRIu64
 		    " %" PRIu64 " %lg %lg %lg %lg %lg"
 		    ,
@@ -352,7 +352,7 @@ static int wakelock_read_proc(const int nstat)
 			continue;	/* skip header */
 
 		memset(&wakelock, 0, sizeof(wakelock));
-		if (sscanf(buf, "\"%[^\"]\" %" PRIu64 " %" PRIu64 " %" PRIu64
+		if (sscanf(buf, "\"%127[^\"]\" %" PRIu64 " %" PRIu64 " %" PRIu64
 		    " %lg %lg %lg %lg %lg",
 		    name,
 		    &wakelock.count, &wakelock.expire_count,
