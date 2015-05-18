@@ -1496,7 +1496,7 @@ int main(int argc, char **argv)
 	if (opt_flags & OPT_PROC_WAKELOCK) {
 		struct sigaction new_action;
 		struct timeval tv, tv_start, tv_now;
-		int ret, i;
+		int i;
 		double duration;
 
 		memset(&new_action, 0, sizeof(new_action));
@@ -1519,6 +1519,8 @@ int main(int argc, char **argv)
 		}
 
 		do {
+			int ret;
+
 			wakelock_read(WAKELOCK_START);
 			tv.tv_sec = (long)opt_wakelock_duration;
 			tv.tv_usec = (long)((opt_wakelock_duration - tv.tv_sec) * 1000000.0);
