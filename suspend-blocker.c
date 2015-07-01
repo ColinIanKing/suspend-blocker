@@ -482,7 +482,7 @@ static json_object *json_obj(void)
 static void wakelock_check(double request_duration, double duration, json_object *json_results)
 {
 	int i;
-	json_object *results, *obj, *array, *wl_item;
+	json_object *results, *obj, *array = NULL, *wl_item;
 
 	if (json_results) {
 		if ((results = json_obj()) == NULL)
