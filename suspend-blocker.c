@@ -998,7 +998,6 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	while (fgets(buf, sizeof(buf), fp) != NULL) {
 		char *ptr, *cause;
 		size_t len = strlen(buf);
-		bool valid = false;
 
 		if (buf[len - 1] == '\n')
 			buf[len - 1] = '\0';
@@ -1103,6 +1102,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 		if (state & STATE_EXIT_SUSPEND) {
 			double s_start = 0.0, s_exit = 0.0, s_duration = 0.0;
 			bool s_duration_accurate = false;
+			bool valid = false;
 
 			/*  1st, check least inaccurate way of measuring suspend */
 			if (suspend_start.whence_valid && suspend_exit.whence_valid) {
