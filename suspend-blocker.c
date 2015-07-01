@@ -879,7 +879,7 @@ static void parse_pm_timestamp(const char *ptr, timestamp *ts)
 
 	memset(&tm, 0, sizeof(tm));
 
-	n = sscanf(ptr, "%d-%d-%d %d:%d:%lf",
+	n = sscanf(ptr, "%4d-%2d-%2d %2d:%2d:%20lf",
 		&tm.tm_year, &tm.tm_mon, &tm.tm_mday,
 		&tm.tm_hour, &tm.tm_min, &sec);
 	if (n != 6) {
@@ -917,7 +917,7 @@ static void parse_timestamp(const char *line, timestamp *ts)
 	ts->whence = -1.0;
 
 	if (ptr1 && ptr2 && ptr2 > ptr1) {
-		int n = sscanf(ptr1 + 1, "%lf", &ts->whence);
+		int n = sscanf(ptr1 + 1, "%20lf", &ts->whence);
 		if (n == 1) {
 			ts->whence_valid = true;
 			sprintf(ts->whence_text, "%12.6f  ", ts->whence);
