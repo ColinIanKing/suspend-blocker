@@ -18,7 +18,7 @@
 
 VERSION=0.01.25
 
-CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"'
+CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2
 LDFLAGS += -ljson -lm
 
 BINDIR=/usr/bin
