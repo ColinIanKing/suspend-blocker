@@ -1,3 +1,14 @@
+suspend-blocker (0.01.26) vivid; urgency=medium
+
+  * Makefile: bump version
+  * Add some scanf format size specifiers
+  * Reduce scope of variable valid
+  * Remove SIGSEGV trap
+  * Default to -O2
+  * Initialiase array to stop gcc warning:
+
+ -- Colin King <colin.king@canonical.com>  Wed, 1 Jul 2015 10:18:00 +0100
+
 suspend-blocker (0.01.25) vivid; urgency=medium
 
   * Makefile: remove -g cc flag, bump version
