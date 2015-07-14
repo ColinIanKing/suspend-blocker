@@ -194,25 +194,21 @@ static int print(const char *format, ...)
 	return ret;
 }
 
+
 /*
- *  hash_pjw()
- *	Hash a string, from Aho, Sethi, Ullman, Compiling Techniques.
+ *  hash_djb2a()
+ *	Hash a string, from Dan Bernstein comp.lang.c (xor version)
  */
-static unsigned long hash_pjw(const char *str)
+static unsigned long hash_djb2a(const char *str)
 {
-  	unsigned long h = 0;
+	register unsigned long hash = 5381;
+	register int c;
 
-	while (*str) {
-		unsigned long g;
-		h = (h << 4) + (*str);
-		if (0 != (g = h & 0xf0000000)) {
-			h = h ^ (g >> 24);
-			h = h ^ g;
-		}
-		str++;
+	while ((c = *str++)) {
+		/* (hash * 33) ^ c */
+		hash = ((hash << 5) + hash) ^ c;
 	}
-
-  	return h % HASH_SIZE;
+	return hash % HASH_SIZE;
 }
 
 /*
@@ -222,7 +218,7 @@ static unsigned long hash_pjw(const char *str)
  */
 static void wakelock_new(const char *name, wakelock_stats *wakelock, int nstat)
 {
-	unsigned long h = hash_pjw(name);
+	unsigned long h = hash_djb2a(name);
 	int i;
 
 	for (i = 0; i < HASH_SIZE; i++) {
@@ -251,7 +247,7 @@ static void wakelock_new(const char *name, wakelock_stats *wakelock, int nstat)
  */
 static void wakelock_update(const char *name, wakelock_stats *wakelock, int nstat)
 {
-	unsigned long h = hash_pjw(name);
+	unsigned long h = hash_djb2a(name);
 	int i;
 
 	for (i = 0; i < HASH_SIZE; i++) {
@@ -601,7 +597,7 @@ static int counter_info_cmp(const void *p1, const void *p2)
  */
 static void counter_increment(const char *name, counter_info counter[])
 {
-	unsigned long i = hash_pjw(name);
+	unsigned long i = hash_djb2a(name);
 	unsigned long j = 0;
 
 	for (j = 0; j < HASH_SIZE; j++) {
