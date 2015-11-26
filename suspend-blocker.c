@@ -1410,6 +1410,7 @@ out:
 	counter_free(wakelocks);
 	counter_free(resume_causes);
 	counter_free(suspend_fail_causes);
+	counter_free(wakeup_sources);
 }
 
 
