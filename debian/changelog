@@ -1,3 +1,15 @@
+suspend-blocker (0.02.01) xenial; urgency=medium
+
+  * Makefile: bump version
+  * Add syslog.awk to make dist rule
+  * free wakeup_sources
+  * Update regression tests
+  * Add active wakeup sources information
+  * Only count wake up messages that are prefixed by [SPM]
+  * Add syslog event binning script
+
+ -- Colin King <colin.king@canonical.com>  Thu, 26 Nov 2015 13:37:00 +0000
+
 suspend-blocker (0.02.00) wily; urgency=medium
 
   * Makefile: bump version
