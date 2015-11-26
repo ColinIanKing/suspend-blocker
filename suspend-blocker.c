@@ -980,6 +980,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	counter_info wakelocks[HASH_SIZE];
 	counter_info resume_causes[HASH_SIZE];
 	counter_info suspend_fail_causes[HASH_SIZE];
+	counter_info wakeup_sources[HASH_SIZE];
 
 	if (json_results) {
 		if ((result = json_obj()) == NULL)
@@ -994,6 +995,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	memset(wakelocks, 0, sizeof(wakelocks));
 	memset(resume_causes, 0, sizeof(resume_causes));
 	memset(suspend_fail_causes, 0, sizeof(suspend_fail_causes));
+	memset(wakeup_sources, 0, sizeof(wakeup_sources));
 
 	last_exit = -1.0;
 
@@ -1048,6 +1050,14 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 				counter_increment(suspend_fail_cause, suspend_fail_causes);
 			}
 			continue;
+		}
+	
+
+		ptr = strstr(buf, "active wakeup source: ");
+		if (ptr) {
+			ptr += 22;
+			if (*ptr)
+				counter_increment(ptr, wakeup_sources);
 		}
 
 		ptr = strstr(buf, "Resume caused by");
@@ -1275,6 +1285,8 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 		counter_dump(resume_causes, "resume-wakeups", result);
 		print("Suspend failure causes:\n");
 		counter_dump(suspend_fail_causes, "suspend-failures", result);
+		printf("Active wakeup sources:\n");
+		counter_dump(wakeup_sources, "wakeup-sources", result);
 	}
 
 	time_calc_stats(suspend_interval_list, &interval_mode, &interval_median,
