@@ -33,7 +33,8 @@ suspend-blocker.8.gz: suspend-blocker.8
 dist:
 	rm -rf suspend-blocker-$(VERSION)
 	mkdir suspend-blocker-$(VERSION)
-	cp -rp Makefile suspend-blocker.c suspend-blocker.8 COPYING suspend-blocker-$(VERSION)
+	cp -rp Makefile suspend-blocker.c suspend-blocker.8 COPYING \
+		scripts/syslog.awk suspend-blocker-$(VERSION)
 	tar -zcf suspend-blocker-$(VERSION).tar.gz suspend-blocker-$(VERSION)
 	rm -rf suspend-blocker-$(VERSION)
 
