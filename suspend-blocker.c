@@ -592,6 +592,22 @@ static int counter_info_cmp(const void *p1, const void *p2)
 }
 
 /*
+ *  counter_free()
+ *	free counter hash table
+ */
+static void counter_free(counter_info counter[])
+{
+	unsigned long i;
+
+	for (i = 0; i < HASH_SIZE; i++) {
+		if (counter[i].name)
+			free(counter[i].name);
+
+		memset(&counter[i], 0, sizeof(counter_info));
+	}
+}
+
+/*
  *  counter_increment()
  *	increment a hashed counter
  */
@@ -679,10 +695,6 @@ static void counter_dump(counter_info counter[], const char *label, json_object 
 
 		json_object_object_add(json_results, label, array);
 	}
-
-	for (i = 0; i < HASH_SIZE; i++)
-		if (counter[i].name)
-			free(counter[i].name);
 }
 
 static int double_cmp(const void *v1, const void *v2)
@@ -1042,12 +1054,15 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 		if (ptr)
 			cause = ptr + 17;
 		else {
-			ptr = strstr(buf, "wake up by");
+			ptr = strstr(buf, "[SPM] wake up by");
 			if (ptr) {
 				char *ws;
 
-				cause = ptr + 11;
+				cause = ptr + 17;
 				ws = strchr(cause, ' ');
+				if (ws)
+					*ws = '\0';
+				ws = strchr(cause, ',');
 				if (ws)
 					*ws = '\0';
 			}
@@ -1380,6 +1395,9 @@ out:
 	free(suspend_fail_cause);
 	free_time_delta_info_list(suspend_interval_list);
 	free_time_delta_info_list(suspend_duration_list);
+	counter_free(wakelocks);
+	counter_free(resume_causes);
+	counter_free(suspend_fail_causes);
 }
 
 
