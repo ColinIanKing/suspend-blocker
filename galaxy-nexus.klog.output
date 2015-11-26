@@ -79,6 +79,9 @@ Suspend failure causes:
   user space freezer abort            5  83.33%
   tasks freezer abort                 1  16.67%
 
+Active wakeup sources:
+  None
+
 Suspends:
   7 suspends aborted (10.45%).
   60 suspends succeeded (89.55%).

@@ -72,6 +72,22 @@ Suspend failure causes:
   tasks freezer abort                14  93.33%
   devices failed to suspend           1   6.67%
 
+Active wakeup sources:
+  pmicAuxadc irq wakelock           137  56.85%
+  WLAN AHB ISR                       48  19.92%
+  mmc1_detect                        23   9.54%
+  MT662x                              7   2.90%
+  EINT wakelock                       6   2.49%
+  wireless                            4   1.66%
+  event0-1969                         3   1.24%
+  event1-1969                         3   1.24%
+  event4-1969                         3   1.24%
+  battery suspend wakelock            2   0.83%
+  eventpoll                           2   0.83%
+  USB suspend lock                    1   0.41%
+  ccci1_fs                            1   0.41%
+  pmicThread wakelock                 1   0.41%
+
 Suspends:
   15 suspends aborted (25.42%).
   44 suspends succeeded (74.58%).

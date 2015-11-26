@@ -110,6 +110,9 @@ Suspend failure causes:
   late suspend wakelock               7   7.95%
   user space freezer abort            5   5.68%
 
+Active wakeup sources:
+  None
+
 Suspends:
   88 suspends aborted (89.80%).
   10 suspends succeeded (10.20%).
