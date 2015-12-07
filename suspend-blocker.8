@@ -49,6 +49,13 @@ suspend got blocked by this wakelock.
 bucket histogram data into multiples of 10 rather than in powers of 2 (which
 is the default).
 .TP
+.B \-f mins
+collate frequency of suspends and failed suspends with the reasons for waking
+up or failing to suspend into a tab separated table that can be pasted into
+a spread sheet.  The data is collated into periods of "mins" minute bins,
+typically for a long run of a 24 hours, using 15, 20 or 60 minute binning is
+a good choice.
+.TP
 .B \-H
 show histogram of times between suspends and suspend durations.
 .TP

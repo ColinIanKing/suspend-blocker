@@ -54,6 +54,7 @@
 #define OPT_QUIET			0x00000010
 #define OPT_PROC_WAKELOCK		0x00000020
 #define OPT_HISTOGRAM_DECADES		0x00000040
+#define OPT_FREQUENCY_REPORT		0x00000080
 
 #define HASH_SIZE			(1997)
 #define MAX_INTERVALS			(30)
@@ -64,15 +65,32 @@
 #define WAKELOCK_NAME_SZ		(128)
 #define MS				(1000.0)
 
+#define SUSPEND_SUCCESS			(0)
+#define SUSPEND_FAIL			(1)
+#define SUSPEND_DURATION		(2)
+
 /*
  *  Calculate wakelock delta between start and end epoc
  */
 #define WL_DELTA(i, f)					\
 	((double)(wakelocks[i]->stats[WAKELOCK_END].f -	\
-	 (double)wakelocks[i]->stats[WAKELOCK_START].f)) 
+	 (double)wakelocks[i]->stats[WAKELOCK_START].f))
 
 #define NO_NEG(v) ((v) < 0.0 ? 0.0 : (v))
-	        
+
+#define FREQ_SIZE	(100)
+
+typedef struct {
+	unsigned int	succeed_count;
+	unsigned int	failed_count;
+	unsigned int	*reason_counts;
+} freq_info_t;
+
+typedef struct reason {
+	char *reason;
+	struct reason *next;
+} reason_t;
+
 typedef struct {
 	uint64_t	active_count;	/* active count (not used in this tool) */
 	uint64_t	count;		/* unlock count */
@@ -106,6 +124,9 @@ typedef struct {
 } counter_info;
 
 typedef struct time_delta_info {
+	int    type;			/* info type */
+	double start;			/* time it started */
+	char   *reason;			/* resume reason */
 	double delta;
 	bool   accurate;		/* accurate or not? */
 	struct time_delta_info *next;
@@ -213,7 +234,7 @@ static unsigned long hash_djb2a(const char *str)
 
 /*
  *  wakelock_new()
- *	create a new wakelock, nstat denotes start or end wakelock event 
+ *	create a new wakelock, nstat denotes start or end wakelock event
  *	collection time
  */
 static void wakelock_new(const char *name, wakelock_stats *wakelock, int nstat)
@@ -375,7 +396,6 @@ static int wakelock_read(const int nstat)
 	ret = wakelock_read_proc(nstat);
 	if (ret)
 		ret = wakelock_read_sys(nstat);
-	
 	return ret;
 }
 
@@ -387,7 +407,7 @@ static int wakelock_sort(const void *p1, const void *p2)
 {
 	wakelock_info **w1 = (wakelock_info **)p1;
 	wakelock_info **w2 = (wakelock_info **)p2;
-	
+
 	if (!*w1 && !*w2)
 		return 0;
 	if (!*w2)
@@ -486,7 +506,7 @@ static void wakelock_check(double request_duration, double duration, json_object
 			goto out;
 		json_object_object_add(results, "duration-seconds", obj);
 	}
-	
+
 	qsort(wakelocks, HASH_SIZE, sizeof(wakelock_info *), wakelock_sort);
 	/* since we're sorted, if entry 0 is empty then we have no wakelocks */
 	if (!wakelocks[0]) {
@@ -517,7 +537,7 @@ static void wakelock_check(double request_duration, double duration, json_object
 			d_total_time = NO_NEG(d_total_time);
 			d_sleep_time = NO_NEG(d_sleep_time);
 			d_prevent_time = NO_NEG(d_prevent_time);
-		
+
 			/* dump out stats if non-zero */
 			if (d_active_count + d_count + d_expire_count + d_wakeup_count + d_total_time + d_sleep_time + d_prevent_time > 0.0) {
 				print("%-32.32s %8.2f %8.2f %8.2f %8.2f %8.2f %8.2f %8.2f\n",
@@ -560,7 +580,6 @@ static void wakelock_check(double request_duration, double duration, json_object
 	}
 	printf("Requested test duration: %.2f seconds, actual duration: %.2f seconds\n",
 		request_duration, duration);
-		
 out:
 	return;
 }
@@ -817,6 +836,8 @@ static void histogram_dump(time_delta_info *info, const char *message)
 		sum[i] = 0.0;
 
 	for (tdi = info; tdi; tdi = tdi->next) {
+		if (tdi->type == SUSPEND_FAIL)
+			continue;
 		total++;
 		if (tdi->accurate)
 			accurate++;
@@ -824,6 +845,9 @@ static void histogram_dump(time_delta_info *info, const char *message)
 
 	for (tdi = info; tdi; tdi = tdi->next) {
 		double d = tdi->delta;
+
+		if (tdi->type == SUSPEND_FAIL)
+			continue;
 
 		for (i = 0; (i < MAX_INTERVALS - 1) && (d > 0.125); i++) {
 			if (opt_flags & OPT_HISTOGRAM_DECADES)
@@ -847,7 +871,7 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	} else {
 		double range1 = 0.0, range2;
 
-		if (opt_flags & OPT_HISTOGRAM_DECADES) 
+		if (opt_flags & OPT_HISTOGRAM_DECADES)
 			range2 = 10.0;
 		else
 			range2 = 0.125;
@@ -874,6 +898,109 @@ static void histogram_dump(time_delta_info *info, const char *message)
 	}
 	print("\n");
 }
+
+
+/*
+ *  frequency_dump()
+ * 	for importing into a spreadsheet
+ */
+static void frequency_dump(
+	time_delta_info *suspend_list,
+	const int opt_freq_min)
+{
+	time_delta_info *tdi;
+	double t_start = 1.0e50, t_end = 0.0;
+	int hours, i;
+	freq_info_t *freq;
+	reason_t *reason_list = NULL, *r;
+	int reasons = 0;
+	int secs = opt_freq_min * 60;
+
+	for (tdi = suspend_list; tdi; tdi = tdi->next) {
+		if (t_end < tdi->start)
+			t_end = tdi->start;
+		if (t_start > tdi->start)
+			t_start = tdi->start;
+		if (tdi->reason) {
+			bool found = false;
+
+			for (r = reason_list; r; r = r->next) {
+				if (!strcmp(r->reason, tdi->reason)) {
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				r = malloc(sizeof(reason_t));
+				if (!r) {
+					fprintf(stderr, "Cannot allocate memory\n");
+					exit(EXIT_FAILURE);
+				}
+				r->reason = tdi->reason;
+				r->next = reason_list;
+				reason_list = r;
+				reasons++;
+			}
+		}
+	}
+
+	hours = (int)(((t_end - t_start) / secs) + 0.9999);
+	if (hours < 1) {
+		printf("\nNot enough data for frequency data\n");
+		goto free_list;
+	}
+	freq = alloca(sizeof(freq_info_t) * hours);
+
+	memset(freq, 0, sizeof(freq_info_t) * hours);
+	for (i = 0; i < hours; i++)
+		freq[i].reason_counts = calloc(reasons, sizeof(unsigned int));
+
+	for (tdi = suspend_list; tdi; tdi = tdi->next) {
+		int whence = (int)((tdi->start - t_start) / secs);
+		if (tdi->type == SUSPEND_FAIL)
+			freq[whence].failed_count++;
+		else
+			freq[whence].succeed_count++;
+		if (tdi->reason) {
+			for (i = 0, r = reason_list; r; r = r->next, i++) {
+				if (!strcmp(r->reason, tdi->reason))
+					freq[whence].reason_counts[i]++;
+			}
+		}
+	}
+
+	printf("\n%s\t%s\t%s\t%s", "Time", "Hour", "Good", "Failed");
+	for (r = reason_list; r; r = r->next)
+		printf("\t%s", r->reason);
+	printf("\n");
+
+	for (i = 0; i < hours; i++) {
+		int j;
+		time_t t = (time_t)(t_start + (3600.0 * (double)i));
+		struct tm *tm;
+
+		tm = localtime(&t);
+		printf("%2.2d:%2.2d\t%d\t%u\t%u",
+			tm->tm_hour, tm->tm_min, i,
+			freq[i].succeed_count,
+			freq[i].failed_count);
+		for (j = 0; j < reasons; j++)
+			printf("\t%u", freq[i].reason_counts[j]);
+		printf("\n");
+	}
+	printf("\nPrefixes:\n");
+	printf(" 'A:' - Aborted suspend\n");
+	printf(" 'R:' - Resumed\n");
+
+free_list:
+	for (r = reason_list; r;) {
+		reason_t *next = r->next;
+
+		free(r);
+		r = next;
+	}
+}
+
 
 /*
  *  Parse PM time stamps of the form:
@@ -945,16 +1072,70 @@ static void free_time_delta_info_list(time_delta_info *list)
 {
 	while (list) {
 		time_delta_info *next = list->next;
+		if (list->reason)
+			free(list->reason);
 		free(list);
 		list = next;
 	}
+}
+
+int str_cmp(const void *p1, const void *p2)
+{
+	return strcmp(* (char * const *) p1, * (char * const *) p2);
+}
+
+char *str_sort_add(char *resume_cause, const char *cause)
+{
+	char *str, *token;
+	char **ptrs;
+	size_t n, i;
+
+	/* Don't duplicate */
+	if (resume_cause == NULL) {
+		if ((str = strdup(cause)) == NULL)
+			goto err;
+		return str;
+	}
+	if (strstr(resume_cause, cause))
+		return resume_cause;
+
+	for (n = 2, str = resume_cause; *str; str++)
+		if (*str == '+')
+			n++;
+
+	ptrs = alloca(sizeof(char *) * n);
+	for (i = 0, str = resume_cause; (token = strtok(str, "+")) != NULL; str = NULL) {
+		if ((ptrs[i++] = strdup(token)) == NULL)
+			goto err;
+	}
+	if ((ptrs[i] = strdup(cause)) == NULL)
+		goto err;
+
+	qsort(ptrs, n, sizeof(char *), str_cmp);
+	str = ptrs[0];
+	for (i = 1; i < n; i++) {
+		str = realloc(str, strlen(str) + strlen(ptrs[i]) + 3);
+		if (!str)
+			goto err;
+		strcat(str, "+");
+		strcat(str, ptrs[i]);
+		free(ptrs[i]);
+	}
+	return str;
+err:
+	fprintf(stderr, "Out of memory allocating string\n");
+	exit(EXIT_FAILURE);
 }
 
 /*
  *  suspend_blocker()
  *	parse a kernel log looking for suspend/resume and wakelocks
  */
-static void suspend_blocker(FILE *fp, const char *filename, json_object *json_results)
+static void suspend_blocker(
+	FILE *fp,
+	const char *filename,
+	json_object *json_results,
+	const int opt_freq_min)
 {
 	char buf[4096];
 	char wakelock[4096];
@@ -972,7 +1153,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	double total_percent;
 	double percent_succeeded, percent_failed;
 	double suspend_duration_parsed = -1.0;
-	time_delta_info *suspend_interval_list = NULL;
+	time_delta_info *suspend_list = NULL;
 	time_delta_info *suspend_duration_list = NULL;
 	bool needs_config_suspend_time = true;
 	json_object *result = NULL, *obj;
@@ -1046,12 +1227,11 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 			state |= STATE_SUSPEND_FAIL_CAUSE;
 			/* Pick first failure cause up, ignore rest */
 			if (!suspend_fail_cause) {
-				suspend_fail_cause = strdup("devices failed to suspend");
+				suspend_fail_cause = strdup("device suspend failure");
 				counter_increment(suspend_fail_cause, suspend_fail_causes);
 			}
 			continue;
 		}
-	
 
 		ptr = strstr(buf, "active wakeup source: ");
 		if (ptr) {
@@ -1078,28 +1258,8 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 			}
 		}
 		if (ptr) {
-			size_t len = strlen(cause);
-
 			state |= STATE_RESUME_CAUSE;
-			if (resume_cause) {
-				char *tmp = realloc(resume_cause, strlen(resume_cause) + 3 + len);
-				if (tmp) {
-					resume_cause = tmp;
-					strcat(resume_cause, "; ");
-					strcat(resume_cause, cause);
-				} else {
-					fprintf(stderr, "Out of memory\n");
-					exit(EXIT_FAILURE);
-				}
-			} else {
-				resume_cause = malloc(len + 1);
-				if (resume_cause) 
-					strcpy(resume_cause, cause);
-				else {
-					fprintf(stderr, "Out of memory\n");
-					exit(EXIT_FAILURE);
-				}
-			}
+			resume_cause = str_sort_add(resume_cause, cause);
 			if (opt_flags & OPT_RESUME_CAUSES)
 				counter_increment(cause, resume_causes);
 		}
@@ -1163,70 +1323,118 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 					print("Successful suspend");
 					if (resume_cause && (state & STATE_RESUME_CAUSE)) {
 						print(", resume cause: %s", resume_cause);
-						free(resume_cause);
-						resume_cause = NULL;
 					}
 				}
 
-				suspend_succeeded++;
-
 				if (valid && last_exit > 0.0) {
+					char buffer[1024];
 					double delta = s_start - last_exit;
+
 					if (delta > 0.0) {
 						new_info = malloc(sizeof(time_delta_info));
 						if (!new_info) {
 							fprintf(stderr, "Out of memory!\n");
 							exit(EXIT_FAILURE);
 						}
+						new_info->type = SUSPEND_SUCCESS;
+						snprintf(buffer, sizeof(buffer), "R:%s", resume_cause);
+						new_info->reason = strdup(buffer);
+						new_info->start = s_start;
 						new_info->delta = s_start - last_exit;
 						new_info->accurate = true;
-						new_info->next = suspend_interval_list;
-						suspend_interval_list = new_info;
+						new_info->next = suspend_list;
+						suspend_list = new_info;
 						if (interval_max < new_info->delta)
 							interval_max = new_info->delta;
 					}
 				}
-
 				if (s_duration > 0.0) {
+					char buffer[1024];
+
 					new_info = malloc(sizeof(time_delta_info));
 					if (!new_info) {
 						fprintf(stderr, "Out of memory!\n");
 						exit(EXIT_FAILURE);
 					}
+					snprintf(buffer, sizeof(buffer), "R:%s", resume_cause);
+					new_info->reason = strdup(buffer);
+					new_info->type = SUSPEND_DURATION;
+					new_info->start = s_start;
 					new_info->delta = s_duration;
 					new_info->accurate = s_duration_accurate;
 					new_info->next = suspend_duration_list;
 					suspend_duration_list = new_info;
 				}
+				free(resume_cause);
+				resume_cause = NULL;
+				suspend_succeeded++;
 
 				last_exit = s_exit;
 			} else {
+				time_delta_info *new_info;
+
+				new_info = malloc(sizeof(time_delta_info));
+				if (!new_info) {
+					fprintf(stderr, "Out of memory!\n");
+					exit(EXIT_FAILURE);
+				}
+				new_info->type = SUSPEND_FAIL;
+				new_info->reason = NULL;
+				new_info->start = s_start;
+				new_info->delta = 0;
+				new_info->accurate = false;
+				new_info->next = suspend_list;
+				suspend_list = new_info;
+
 				suspend_failed++;
-				if (opt_flags & OPT_VERBOSE) {
-					if (resume_cause && (state & STATE_RESUME_CAUSE)) {
+				if (resume_cause && (state & STATE_RESUME_CAUSE)) {
+					char buffer[1024];
+
+					if (opt_flags & OPT_VERBOSE)
 						print("Suspend aborted, resume cause: %s\n", resume_cause);
-						free(resume_cause);
-						resume_cause = NULL;
-						state = STATE_UNDEFINED;
-						continue;
-					}
-					if (suspend_fail_cause && (state & STATE_SUSPEND_FAIL_CAUSE)) {
+
+					snprintf(buffer, sizeof(buffer), "A:%s", resume_cause);
+					new_info->reason = strdup(buffer);
+					free(resume_cause);
+					resume_cause = NULL;
+					state = STATE_UNDEFINED;
+					continue;
+				}
+				if (suspend_fail_cause && (state & STATE_SUSPEND_FAIL_CAUSE)) {
+					char buffer[1024];
+
+					if (opt_flags & OPT_VERBOSE)
 						print("Suspend aborted, %s\n", suspend_fail_cause);
-						free(suspend_fail_cause);
-						suspend_fail_cause = NULL;
-						state = STATE_UNDEFINED;
-						continue;
-					}
-					if (state & STATE_ACTIVE_WAKELOCK)
+					snprintf(buffer, sizeof(buffer), "A:%s", suspend_fail_cause);
+
+					new_info->reason = strdup(buffer);
+					free(suspend_fail_cause);
+					suspend_fail_cause = NULL;
+					state = STATE_UNDEFINED;
+				}
+				if (state & STATE_ACTIVE_WAKELOCK) {
+					char buffer[1024];
+
+					if (opt_flags & OPT_VERBOSE)
 						print("Failed on wakelock %s, ", wakelock);
-					if (state & STATE_FREEZE_ABORTED) {
+
+					snprintf(buffer, sizeof(buffer), "F:%s", wakelock);
+					new_info->reason = strdup(buffer);
+				}
+				if (state & STATE_FREEZE_ABORTED) {
+					new_info->reason = strdup("freezer abort");
+					if (opt_flags & OPT_VERBOSE) {
 						if (state & STATE_FREEZE_TASKS_REFUSE)
 							print("Suspend aborted in freezer, tasks refused to freeze");
-						else 
+						else
 							print("Suspend aborted in freezer");
 					}
-					if (state & STATE_LATE_HAS_WAKELOCK)
+					new_info->reason = strdup("A:freezer");
+				}
+				if (state & STATE_LATE_HAS_WAKELOCK) {
+					if (opt_flags & OPT_VERBOSE)
 						print("Wakelock during power_suspend_late");
+					new_info->reason = strdup("A:wakelock");
 				}
 
 			}
@@ -1294,13 +1502,13 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 		counter_dump(wakeup_sources, "wakeup-sources", result);
 	}
 
-	time_calc_stats(suspend_interval_list, &interval_mode, &interval_median,
+	time_calc_stats(suspend_list, &interval_mode, &interval_median,
 		&interval_mean, &interval_min, &interval_max, &interval_sum);
 	time_calc_stats(suspend_duration_list, &suspend_mode, &suspend_median,
 		&suspend_mean, &suspend_min, &suspend_max, &suspend_sum);
 
 	if (opt_flags & OPT_HISTOGRAM) {
-		histogram_dump(suspend_interval_list, "Time between successful suspends:");
+		histogram_dump(suspend_list, "Time between successful suspends:");
 		histogram_dump(suspend_duration_list, "Duration of successful suspends:");
 	}
 
@@ -1335,6 +1543,10 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 	if ((suspend_count > 0) && needs_config_suspend_time) {
 		print("\nNOTE: suspend times are very dubious, enable kernel config setting\n");
 		print("      CONFIG_SUSPEND_TIME=y for accurate suspend times.\n");
+	}
+
+	if (opt_flags & OPT_FREQUENCY_REPORT) {
+		frequency_dump(suspend_list, opt_freq_min);
 	}
 
 	if (json_results) {
@@ -1381,7 +1593,6 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 			goto out;
 		json_object_object_add(result, "suspend-median-duration-seconds", obj);
 
-		
 		/* Awake (between suspend) stats */
 		if ((obj = json_double(interval_sum)) == NULL)
 			goto out;
@@ -1410,7 +1621,7 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 out:
 	free(resume_cause);
 	free(suspend_fail_cause);
-	free_time_delta_info_list(suspend_interval_list);
+	free_time_delta_info_list(suspend_list);
 	free_time_delta_info_list(suspend_duration_list);
 	counter_free(wakelocks);
 	counter_free(resume_causes);
@@ -1459,14 +1670,15 @@ static void show_help(char * const argv[])
 {
 	printf("%s, version %s\n\n", APP_NAME, VERSION);
 	printf("usage: %s [options] [kernel_log]\n", argv[0]);
-	printf("\t-b list blocking wakelock names and count.\n");
-	printf("\t-d bucket histogram into 10s of seconds rather than powers of 2.\n");
-	printf("\t-h this help.\n");
-	printf("\t-H histogram of times between suspend and suspend duration.\n");
-	printf("\t-o output results in json format to an named files.\n");
-	printf("\t-r list causes of resume.\n");
-	printf("\t-v verbose information.\n");
-	printf("\t-w profile wakelocks.\n");
+	printf("\t-b       list blocking wakelock names and count.\n");
+	printf("\t-d       bucket histogram into 10s of seconds rather than powers of 2.\n");
+	printf("\t-f mins  dump suspend frequency stats for importing into spreadsheet.\n");
+	printf("\t-h       this help.\n");
+	printf("\t-H       histogram of times between suspend and suspend duration.\n");
+	printf("\t-o       output results in json format to an named files.\n");
+	printf("\t-r       list causes of resume.\n");
+	printf("\t-v       verbose information.\n");
+	printf("\t-w       profile wakelocks.\n");
 }
 
 static void handle_sig(int dummy)
@@ -1479,9 +1691,10 @@ int main(int argc, char **argv)
 {
 	char *opt_json_file = NULL;
 	json_object *json_results = NULL;
+	int opt_freq_min = 60;
 
 	for (;;) {
-		int c = getopt(argc, argv, "bhHrvo:qw:d");
+		int c = getopt(argc, argv, "bhHrvo:qw:df:");
 		if (c == -1)
 			break;
 		switch (c) {
@@ -1490,6 +1703,14 @@ int main(int argc, char **argv)
 			break;
 		case 'd':
 			opt_flags |= OPT_HISTOGRAM_DECADES;
+			break;
+		case 'f':
+			opt_flags |= OPT_FREQUENCY_REPORT;
+			opt_freq_min = atoi(optarg);	/* Minutes */
+			if (opt_freq_min < 1) {
+				fprintf(stderr, "-f option must be 1 or more minutes\n");
+				exit(EXIT_FAILURE);
+			}
 			break;
 		case 'r':
 			opt_flags |= OPT_RESUME_CAUSES;
@@ -1593,18 +1814,18 @@ int main(int argc, char **argv)
 
 		if (optind == argc) {
 			print("stdin:\n");
-			suspend_blocker(stdin, "stdin", obj);
+			suspend_blocker(stdin, "stdin", obj, opt_freq_min);
 		}
 
 		while (optind < argc) {
 			FILE *fp;
-	
+
 			print("%s:\n", argv[optind]);
 			if ((fp = fopen(argv[optind], "r")) == NULL) {
 				fprintf(stderr, "Cannot open %s.\n", argv[optind]);
 				exit(EXIT_FAILURE);
 			}
-			suspend_blocker(fp, argv[optind], obj);
+			suspend_blocker(fp, argv[optind], obj, opt_freq_min);
 			(void)fclose(fp);
 			optind++;
 		}
