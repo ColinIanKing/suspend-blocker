@@ -757,6 +757,8 @@ static int time_calc_stats(
 	*sum = 0.0;
 
 	for (total = 0, tdi = info; tdi; tdi = tdi->next) {
+		if (tdi->type == SUSPEND_FAIL)
+			continue;
 		if (total == 0) {
 			*min = tdi->delta;
 			*max = tdi->delta;
@@ -781,8 +783,11 @@ static int time_calc_stats(
 		return 1;
 	}
 
-	for (i = 0, tdi = info; tdi; i++, tdi = tdi->next)
-		deltas[i] = tdi->delta;
+	for (i = 0, tdi = info; tdi; tdi = tdi->next) {
+		if (tdi->type == SUSPEND_FAIL)
+			continue;
+		deltas[i++] = tdi->delta;
+	}
 
 	qsort(deltas, total, sizeof(double), double_cmp);
 
