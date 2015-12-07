@@ -1,3 +1,16 @@
+suspend-blocker (0.02.02) xenial; urgency=medium
+
+  * Makefile: bump version
+  * Debian: update debhelper to version 9
+  * Update Debian standards version
+  * Update debian compat to 9
+  * Update regression test data
+  * Calc stats only on valid successful suspends
+  * Add -f option
+  * Guard against -ve duration and deltas
+
+ -- Colin King <colin.king@canonical.com>  Mon, 7 Nov 2015 19:05:00 +0000
+
 suspend-blocker (0.02.01) xenial; urgency=medium
 
   * Makefile: bump version
