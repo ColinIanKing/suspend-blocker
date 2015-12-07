@@ -1171,28 +1171,33 @@ static void suspend_blocker(FILE *fp, const char *filename, json_object *json_re
 				suspend_succeeded++;
 
 				if (valid && last_exit > 0.0) {
+					double delta = s_start - last_exit;
+					if (delta > 0.0) {
+						new_info = malloc(sizeof(time_delta_info));
+						if (!new_info) {
+							fprintf(stderr, "Out of memory!\n");
+							exit(EXIT_FAILURE);
+						}
+						new_info->delta = s_start - last_exit;
+						new_info->accurate = true;
+						new_info->next = suspend_interval_list;
+						suspend_interval_list = new_info;
+						if (interval_max < new_info->delta)
+							interval_max = new_info->delta;
+					}
+				}
+
+				if (s_duration > 0.0) {
 					new_info = malloc(sizeof(time_delta_info));
 					if (!new_info) {
 						fprintf(stderr, "Out of memory!\n");
 						exit(EXIT_FAILURE);
 					}
-					new_info->delta = s_start - last_exit;
-					new_info->accurate = true;
-					new_info->next = suspend_interval_list;
-					suspend_interval_list = new_info;
-					if (interval_max < new_info->delta)
-						interval_max = new_info->delta;
+					new_info->delta = s_duration;
+					new_info->accurate = s_duration_accurate;
+					new_info->next = suspend_duration_list;
+					suspend_duration_list = new_info;
 				}
-
-				new_info = malloc(sizeof(time_delta_info));
-				if (!new_info) {
-					fprintf(stderr, "Out of memory!\n");
-					exit(EXIT_FAILURE);
-				}
-				new_info->delta = s_duration;
-				new_info->accurate = s_duration_accurate;
-				new_info->next = suspend_duration_list;
-				suspend_duration_list = new_info;
 
 				last_exit = s_exit;
 			} else {
