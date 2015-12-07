@@ -3,7 +3,8 @@ stdin:
 12:12:38.15993      0.05940 Suspend aborted in freezer, tasks refused to freeze
 12:12:38.44346      0.06255 Suspend aborted in freezer, tasks refused to freeze
 12:12:38.50605      0.03941 Suspend aborted in freezer, tasks refused to freeze
-12:12:38.61984      0.54157 Suspend aborted, devices failed to suspend
+12:12:38.61984      0.54157 Suspend aborted, device suspend failure
+
 12:12:39.18004      1.11648 Successful suspend, resume cause: CONN
 12:12:40.34990     77.95841 Successful suspend, resume cause: CONN
 12:13:58.34548    125.94274 Successful suspend, resume cause: CONN
@@ -70,7 +71,7 @@ Resume wakeup causes:
 
 Suspend failure causes:
   tasks freezer abort                14  93.33%
-  devices failed to suspend           1   6.67%
+  device suspend failure              1   6.67%
 
 Active wakeup sources:
   pmicAuxadc irq wakelock           137  56.85%
