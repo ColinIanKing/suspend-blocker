@@ -950,7 +950,7 @@ static void frequency_dump(
 	}
 
 	hours = (int)(((t_end - t_start) / secs) + 0.9999);
-	if (hours < 1) {
+	if ((reasons < 1) || (hours < 1)) {
 		printf("\nNot enough data for frequency data\n");
 		goto free_list;
 	}
