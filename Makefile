@@ -19,7 +19,7 @@
 VERSION=0.02.02
 
 CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2
-LDFLAGS += -ljson -lm
+LDFLAGS += -ljson-c -lm
 
 BINDIR=/usr/bin
 MANDIR=/usr/share/man/man8
