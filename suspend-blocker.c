@@ -69,6 +69,9 @@
 #define SUSPEND_FAIL			(1)
 #define SUSPEND_DURATION		(2)
 
+#define FLOAT_TINY			(0.0000001)
+#define FLOAT_CMP(a, b)			(fabs((a) - (b)) < FLOAT_TINY)
+
 /*
  *  Calculate wakelock delta between start and end epoc
  */
@@ -1521,12 +1524,12 @@ static void suspend_blocker(
 	print("Suspends:\n");
 	percent_failed = (suspend_count == 0) ?
 		0.0 : 100.0 * (double)suspend_failed / (double)suspend_count;
-	percent_succeeded = (suspend_count == 0) ?
+	percent_succeeded = FLOAT_CMP(suspend_count, 0.0) ?
 		0.0 : 100.0 * (double)suspend_succeeded / (double)suspend_count;
 	total_percent = interval_sum + suspend_sum;
-	suspend_percent = total_percent == 0.0 ?
+	suspend_percent = FLOAT_CMP(total_percent, 0.0) ?
 		0.0 : 100.0 * suspend_sum / total_percent;
-	interval_percent = total_percent == 0.0 ?
+	interval_percent = FLOAT_CMP(total_percent, 0.0) ?
 		0.0 : 100.0 * interval_sum / total_percent;
 
 	print("  %d suspends aborted (%.2f%%).\n", suspend_failed, percent_failed);
