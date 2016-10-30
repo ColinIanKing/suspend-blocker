@@ -136,6 +136,7 @@ static int opt_flags;
 static double opt_wakelock_duration;
 static wakelock_info *wakelocks[HASH_SIZE];
 static bool keep_running = true;
+static int print(const char *format, ...) __attribute__((format(printf, 1, 2)));
 
 /*
  *  Attempt to catch a range of signals so
