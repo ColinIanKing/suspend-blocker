@@ -1164,7 +1164,7 @@ static void suspend_blocker(
 	bool needs_config_suspend_time = true;
 	json_object *result = NULL, *obj;
 
-	counter_info wakelocks[HASH_SIZE];
+	counter_info wakelocks_count[HASH_SIZE];
 	counter_info resume_causes[HASH_SIZE];
 	counter_info suspend_fail_causes[HASH_SIZE];
 	counter_info wakeup_sources[HASH_SIZE];
@@ -1179,7 +1179,7 @@ static void suspend_blocker(
 		json_object_object_add(result, "kernel-log", obj);
 	}
 
-	memset(wakelocks, 0, sizeof(wakelocks));
+	memset(wakelocks_count, 0, sizeof(wakelocks_count));
 	memset(resume_causes, 0, sizeof(resume_causes));
 	memset(suspend_fail_causes, 0, sizeof(suspend_fail_causes));
 	memset(wakeup_sources, 0, sizeof(wakeup_sources));
@@ -1454,7 +1454,7 @@ static void suspend_blocker(
 		if (ptr && (state & STATE_ENTER_SUSPEND)) {
 			if ((sscanf(ptr + 17, "%[^,^\n]", wakelock) == 1) &&
 			    (opt_flags & OPT_WAKELOCK_BLOCKERS))
-				counter_increment(wakelock, wakelocks);
+				counter_increment(wakelock, wakelocks_count);
 			state |= STATE_ACTIVE_WAKELOCK;
 			continue;
 		}
@@ -1496,7 +1496,7 @@ static void suspend_blocker(
 
 	if (opt_flags & OPT_WAKELOCK_BLOCKERS) {
 		print("Suspend blocking wakelocks:\n");
-		counter_dump(wakelocks, "suspend-blocking-wakelocks", result);
+		counter_dump(wakelocks_count, "suspend-blocking-wakelocks", result);
 	}
 
 	if (opt_flags & OPT_RESUME_CAUSES) {
@@ -1629,7 +1629,7 @@ out:
 	free(suspend_fail_cause);
 	free_time_delta_info_list(suspend_list);
 	free_time_delta_info_list(suspend_duration_list);
-	counter_free(wakelocks);
+	counter_free(wakelocks_count);
 	counter_free(resume_causes);
 	counter_free(suspend_fail_causes);
 	counter_free(wakeup_sources);
