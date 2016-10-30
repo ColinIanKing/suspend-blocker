@@ -1084,12 +1084,12 @@ static void free_time_delta_info_list(time_delta_info *list)
 	}
 }
 
-int str_cmp(const void *p1, const void *p2)
+static int str_cmp(const void *p1, const void *p2)
 {
 	return strcmp(* (char * const *) p1, * (char * const *) p2);
 }
 
-char *str_sort_add(char *resume_cause, const char *cause)
+static char *str_sort_add(char *resume_cause, const char *cause)
 {
 	char *str, *token;
 	char **ptrs;
