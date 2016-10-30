@@ -1559,8 +1559,6 @@ static void suspend_blocker(
 	}
 
 	if (json_results) {
-		json_object *obj;
-
 		/* suspend stats */
 		if ((obj = json_int(suspend_count)) == NULL)
 			goto out;
