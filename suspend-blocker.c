@@ -405,8 +405,8 @@ static int wakelock_read(const int nstat)
  */
 static int wakelock_sort(const void *p1, const void *p2)
 {
-	wakelock_info **w1 = (wakelock_info **)p1;
-	wakelock_info **w2 = (wakelock_info **)p2;
+	wakelock_info *const *w1 = (wakelock_info *const *)p1;
+	wakelock_info *const *w2 = (wakelock_info *const *)p2;
 
 	if (!*w1 && !*w2)
 		return 0;
@@ -600,8 +600,8 @@ static inline void timestamp_init(timestamp *ts)
 
 static int counter_info_cmp(const void *p1, const void *p2)
 {
-	counter_info *w1 = (counter_info *)p1;
-	counter_info *w2 = (counter_info *)p2;
+	counter_info const *w1 = (counter_info const *)p1;
+	counter_info const *w2 = (counter_info const *)p2;
 	int diff = w2->count - w1->count;
 
 	if ((diff == 0) && (w1->count | w2->count))
@@ -718,8 +718,8 @@ static void counter_dump(counter_info counter[], const char *label, json_object 
 
 static int double_cmp(const void *v1, const void *v2)
 {
-	double *i1 = (double *)v1;
-	double *i2 = (double *)v2;
+	double const *i1 = (double const *)v1;
+	double const *i2 = (double const *)v2;
 	double d = *i1 - *i2;
 
 
