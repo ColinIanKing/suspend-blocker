@@ -1523,9 +1523,9 @@ static void suspend_blocker(
 
 	print("Suspends:\n");
 	percent_failed = (suspend_count == 0) ?
-		0.0 : 100.0 * (double)suspend_failed / (double)suspend_count;
-	percent_succeeded = FLOAT_CMP(suspend_count, 0.0) ?
-		0.0 : 100.0 * (double)suspend_succeeded / (double)suspend_count;
+		0.0 : 100.0 * (double)suspend_failed / suspend_count;
+	percent_succeeded = (suspend_count == 0) ?
+		0.0 : 100.0 * (double)suspend_succeeded / suspend_count;
 	total_percent = interval_sum + suspend_sum;
 	suspend_percent = FLOAT_CMP(total_percent, 0.0) ?
 		0.0 : 100.0 * suspend_sum / total_percent;
