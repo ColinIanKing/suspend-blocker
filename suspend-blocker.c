@@ -29,7 +29,7 @@
 #include <float.h>
 #include <signal.h>
 #include <sys/time.h>
-#include <json-c/json.h>
+#include <json.h>
 #include <math.h>
 
 #define APP_NAME			"suspend-blocker"

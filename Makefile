@@ -18,7 +18,7 @@
 
 VERSION=0.02.02
 
-CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -I/usr/include/json
+CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -I/usr/include/json -I/usr/include/json-c
 LDFLAGS += -ljson-c -lm
 
 #
