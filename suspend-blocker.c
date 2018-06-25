@@ -31,6 +31,7 @@
 #include <sys/time.h>
 #include <json.h>
 #include <math.h>
+#include <inttypes.h>
 
 #define APP_NAME			"suspend-blocker"
 
@@ -326,8 +327,8 @@ static int wakelock_read_sys(const int nstat)
 
 		memset(&wakelock, 0, sizeof(wakelock));
 		if (sscanf(buf, "%127s"
-		    " %" PRIu64 " %" PRIu64 " %" PRIu64
-		    " %" PRIu64 " %lg %lg %lg %lg %lg"
+		    " %" SCNu64 " %" SCNu64 " %" SCNu64
+		    " %" SCNu64 " %lg %lg %lg %lg %lg"
 		    ,
 		    name,
 		    &wakelock.active_count,
@@ -370,7 +371,7 @@ static int wakelock_read_proc(const int nstat)
 			continue;	/* skip header */
 
 		memset(&wakelock, 0, sizeof(wakelock));
-		if (sscanf(buf, "\"%127[^\"]\" %" PRIu64 " %" PRIu64 " %" PRIu64
+		if (sscanf(buf, "\"%127[^\"]\" %" SCNu64 " %" SCNu64 " %" SCNu64
 		    " %lg %lg %lg %lg %lg",
 		    name,
 		    &wakelock.count, &wakelock.expire_count,
