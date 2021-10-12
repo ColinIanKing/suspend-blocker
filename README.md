@@ -10,7 +10,7 @@ The suspend-blocker tool parses the kernel log and will explain the reasons that
 * -r list causes of resume
 * -v verbose information 
 
-##Example Output:
+## Example Output:
 
 ```
 suspend-blocker -r -H  < /var/log/kern.log 
